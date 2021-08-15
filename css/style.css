@@ -192,9 +192,8 @@
 }
 
 .titleText {
-    font-size: 18px;
     font-weight: 700;
-    color: var(--titleColor);
+    color: #23b5b5;
 }
 
 .descriptionText {
@@ -295,6 +294,15 @@ iframe {
     position: relative;
 }
 
+.ncontainer {
+    padding: 1.5rem 17px 100px 17px;
+    max-width: 700px;
+    min-height: -webkit-fill-available;
+    min-height: calc(100vh);
+    position: relative;
+    display:none;
+}
+
 .brand {
     width: 100%;
     text-align: center;
@@ -318,6 +326,13 @@ iframe {
 }
 
 .btn > img {
+    position: absolute;
+    right: 4px;
+    top: calc(50% - 20px);
+    height: 40px;
+}
+
+.btn > a {
     position: absolute;
     right: 4px;
     top: calc(50% - 20px);
@@ -399,4 +414,3 @@ iframe {
 .customSocialColor a:hover {
     color: var(--socialColor) !important;
     fill: var(--socialColor) !important;
-}
