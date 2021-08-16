@@ -294,15 +294,6 @@ iframe {
     position: relative;
 }
 
-.ncontainer {
-    padding: 1.5rem 17px 100px 17px;
-    max-width: 700px;
-    min-height: -webkit-fill-available;
-    min-height: calc(100vh);
-    position: relative;
-    display:none;
-}
-
 .brand {
     width: 100%;
     text-align: center;
