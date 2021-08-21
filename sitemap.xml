@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- generator="NAR" -->
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+<loc>https://devnar.github.io</loc>
+<changefreq>daily</changefreq>
+<priority>1.0</priority>
+</url>
+<url>
+<loc>https://devnar.github.io/masa</loc>
+<changefreq>daily</changefreq>
+<priority>1.0</priority>
+</url>
+<url>
+<loc>https://devnar.github.io/botlimon</loc>
+<changefreq>daily</changefreq>
+<priority>1.0</priority>
+</url>
+<url>
+<image:image>
+<image:loc>https://devnar.github.io/nar.png</image:loc>
+<image:title>NAR profil fotoğrafı</image:title>
+</image:image>
+<changefreq>daily</changefreq>
+<priority>1.0</priority>
+</url>
+</urlset>
