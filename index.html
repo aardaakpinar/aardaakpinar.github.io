@@ -9,9 +9,10 @@
 <title>NAR</title>
 <style>
 body {
---bg1: #FFF;
+--bg1: #fff;
+--bg2: #23B5B5;
 --titleColor: #23B5B5;
---descriptionColor: #23B5B5;
+--descriptionColor: #000;
 --buttonColor: ;
 --buttonTextColor: #000;
 --fontColor: #000;
@@ -42,8 +43,8 @@ gtag('config', 'UA-180733706-1');
 <div class="container" id="container">
 <!-- content -->
 <div id="icontainer">
-<i class="fa fa-newspaper-o" style="float: left; font-size: 25px;" onclick="document.getElementById('icontainer').style.display = 'none'; document.getElementById('ncontainer').style.display = 'block';"></i>
-<i class="fa fa-envelope-o" style="float: right; font-size: 25px;" id="mail" onclick="location.href='mailto:yardim.nar@yaani.com'" data-id="12485"></i>
+<i class="fa fa-newspaper-o" style="float: left; font-size: 25px;" id="news"  onclick="document.getElementById('icontainer').style.display = 'none'; document.getElementById('ncontainer').style.display = 'block';" data-id="12485"></i>
+<i class="fa fa-envelope-o" style="float: right; font-size: 25px;" id="mail" onclick="document.getElementById('icontainer').style.display = 'none'; document.getElementById('ccontainer').style.display = 'block';"></i>
 <div class="mb-3">
 <img class="rounded-circle" height="80px" src="https://devnar.github.io/nar.png" alt="Logo"/>
 </div>
@@ -116,6 +117,23 @@ button-8" data-toggle="embed-11514" data-id="11514">---- Projelerim ----</a></di
 <br>
 </div>
 <!-- news -->
+<!-- contact -->
+<div style="display: none;" id="ccontainer">
+<table width="100%" style="border-bottom: 3px solid;">
+<tr>
+<td width="20px"><i class="fa fa-times" style="font-size: 20px;" onclick="document.getElementById('ccontainer').style.display = 'none'; document.getElementById('icontainer').style.display = 'block';"></i></td>
+<td align="center">İletişim</td>
+</tr>
+</table>
+<br>
+<form>
+<input class="btn-block btn-lg animate__infinite button-4" style="outline: none;" id="sub" placeholder="Konu" maxlength="25" required></input>
+<br>
+<textarea class="btn-block btn-lg animate__infinite button-4" style="outline: none;" id="body" placeholder="Açıklama" required></textarea>
+<br>
+<button class="btn btn-block btn-lg animate__infinite button-4" onclick="post()">Gönder</button>
+</div>
+<!-- contact -->
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css" />
@@ -148,6 +166,13 @@ button-8" data-toggle="embed-11514" data-id="11514">---- Projelerim ----</a></di
             $(clickedToClose ? button : embed).fadeToggle("fast");
         });
     });
+  
+function post() {
+var sub = document.getElementById("sub").value;
+var body = document.getElementById("body").value;
+
+window.open("mailto:yardim.nar@yaani.com?subject="+ sub +"&body="+ body)
+}
 </script>
 </body>
 </html>
