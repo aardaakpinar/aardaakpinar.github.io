@@ -48,7 +48,7 @@
 .button-3,
 .button-4,
 .button-5 {
-    border: 2px solid var(--buttonColor);
+    border: 3px solid var(--buttonColor);
     transition: all .3s;
     color: var(--buttonColor) !important;
     fill: var(--buttonColor) !important;
@@ -58,8 +58,8 @@
 .button-4:hover,
 .button-5:hover {
     background-color: var(--buttonColor);
-    color: var(--bg1) !important;
-    fill: var(--bg1) !important;
+    color: var(--bg2) !important;
+    fill: var(--bg2) !important;
 }
 
 .button-6 {
