@@ -1,4 +1,0 @@
-- 👋 Hi, I’m NAR
-- 👀 I’m interested in Front-end
-- 🌱 I’m currently learning HTML, CSS, JS
-- 📫 contact me by mail (yardim.nar@yaani.com)
