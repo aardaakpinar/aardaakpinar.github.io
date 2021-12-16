@@ -35,13 +35,13 @@
                   <i class="n n-x"></i>
                 </a>
                 <img src="https://devnar.github.io/logos/nar.png" style="width:45%;" class="nc-round"><br><br>
-                <h4><b>PORTFOLIO</b></h4>
+                <h4><b>PORTFÖY</b></h4>
               </div>
               <div class="nc-bar-block">
-                <a href="#about" onclick="nc_close()" class="nc-bar-item nc-button nc-padding"><i class="n n-user fa-fw nc-margin-right"></i>ABOUT</a> 
-                <a href="#projects" onclick="nc_close()" class="nc-bar-item nc-button nc-padding nc-text-teal"><i class="n n-grid-alt fa-fw nc-margin-right"></i>PROJECTS</a> 
+                <a href="#about" onclick="nc_close()" class="nc-bar-item nc-button nc-padding"><i class="n n-user fa-fw nc-margin-right"></i>HAKKIMDA</a> 
+                <a href="#projects" onclick="nc_close()" class="nc-bar-item nc-button nc-padding nc-text-teal"><i class="n n-grid-alt fa-fw nc-margin-right"></i>PROJELER</a> 
                 <a href="news.html" onclick="nc_close()" class="nc-bar-item nc-button nc-padding nc-text-teal"><i class="n n-detail fa-fw nc-margin-right"></i>BLOG</a> 
-                <a href="#contact" onclick="nc_close()" class="nc-bar-item nc-button nc-padding"><i class="n n-envelope fa-fw nc-margin-right"></i>CONTACT</a>
+                <a href="#contact" onclick="nc_close()" class="nc-bar-item nc-button nc-padding"><i class="n n-envelope fa-fw nc-margin-right"></i>İLETİŞİM</a>
               </div>
               <div class="nc-panel nc-large">
               <div class="link">
@@ -61,14 +61,14 @@
             
               <!-- Header -->
               <header id="about">
-                <a href="#"><img src="https://devnar.github.io/logos/nar.png" style="width:65px;" class="nc-circle nc-right nc-margin nc-hide-large nc-hover-opacity"></a>
-                <span class="nc-button nc-hide-large nc-xxlarge nc-hover-text-grey" onclick="nc_open()"><i class="n n-menu"></i></span>
+                <a href="#"><img src="https://devnar.github.io/logos/nar.png" style="width:50px;" class="nc-circle nc-right nc-margin nc-hide-large nc-hover-opacity"></a>
+                <span class="nc-button nc-hide-large nc-xxlarge nc-hover-text-grey nc-padding-16" onclick="nc_open()"><i class="n n-menu"></i></span>
                 <div class="nc-container nc-padding-large" style="margin-bottom:32px">
-                    <h4><b>About Me</b></h4>
-                    <p>Merhaba, Ben <span id="yas"></span> yaşında bir web site geliştiricisiyim. Sevgi dolu bir <i class="n n-heart"></i> ve w3(Front-End)'e meraklı bir <i class="n n-brain"></i> var. BilimKurgu kitaplarını okumayı ve yeni bilgiler edinmeyi severim. Yaptığım <a href="#project">Projelere</a> bakabilir vaya <a href="blog.html">Bloğumu</a> ziyaret edebilirsin.</p>
+                    <h4><b>Hakkımda</b></h4>
+                    <p>Merhaba, Ben <span id="yas"></span> yaşında bir web site geliştiricisiyim. Sevgi dolu bir <i class="n n-heart"></i> ve w3(Front-End)'e meraklı bir <i class="n n-brain"></i> var. BilimKurgu kitaplarını okumayı ve yeni bilgiler edinmeyi severim. Yaptığım <a href="#projects">Projelere</a> bakabilir vaya <a href="blog.html">Bloğumu</a> ziyaret edebilirsin.</p>
                     <hr>
                     
-                    <h4>Skills</h4>
+                    <h4>Yeteneklerim</h4>
                     <!-- Progress bars / Skills -->
                     <p>HTML & CSS</p>
                     <div class="nc-grey">
@@ -88,13 +88,13 @@
                     </div>
                     <p>
                       <button class="nc-button nc-dark-grey nc-padding-large nc-margin-top nc-margin-bottom">
-                        <i class="n n-download nc-margin-right"></i>Download Resume
+                        <i class="n n-download nc-margin-right"></i>ÖzGeçmişi indir
                       </button>
                     </p>
                     </div>
                 
                 <div class="nc-container" id="projects">
-                <h1><b>Projects</b></h1>
+                <h1><b>Projeler</b></h1>
                 </div>
               </header>
               
@@ -131,18 +131,18 @@
 
               <!-- Contact Section -->
               <div class="nc-container nc-padding-large nc-grey">
-                <h4 id="contact"><b>Contact Me</b></h4>
+                <h4 id="contact"><b>İletişim</b></h4>
                 <hr class="nc-opacity">
-                <form action="mailto:yardim.nar@yaani.com?">
+                <form onsubmit="form()">
                   <div class="nc-section">
-                    <label>Title</label>
-                    <input class="nc-input nc-border" type="text" name="subject" required>
+                    <label>Başlık</label>
+                    <input class="nc-input nc-border" type="text" name="subject" id="title" required>
                   </div>
                   <div class="nc-section">
-                    <label>Message</label>
-                    <input class="nc-input nc-border" type="text" name="body" required>
+                    <label>Mesaj</label>
+                    <input class="nc-input nc-border" type="text" name="body" id="message" required>
                   </div>
-                  <button type="submit" class="nc-button nc-black nc-margin-bottom"><i class="n n-paper-plane nc-margin-right"></i>Send Message</button>
+                  <button type="submit" class="nc-button nc-black nc-margin-bottom"><i class="n n-paper-plane nc-margin-right"></i>Gönder</button>
                 </form>
               </div>
             
@@ -159,6 +159,13 @@
             function nc_close() {
                 document.getElementById("mySidebar").style.display = "none";
                 document.getElementById("myOverlay").style.display = "none";
+            }
+
+            function form() {
+                var msg = document.getElementById("message").value;
+                var tit =document.getElementById("title").value;
+
+                window.location.assign("mailto:yardim.nar@yaani.com?title=" + tit + "body=" + msg)
             }
 
             function calculateAge(birthMonth, birthDay, birthYear) {
