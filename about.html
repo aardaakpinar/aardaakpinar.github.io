@@ -65,7 +65,6 @@
         </style>
     </head>
     <body>
-        
         <div class="container">
             <div class="mb-3">
                 <img class="rounded-circle" height="80px" src="https://devnar.github.io/logos/nar.png" alt="NAR" />
@@ -198,6 +197,22 @@
                     $(clickedToClose ? button : embed).fadeToggle("fast");
                 });
             });
+
+            function calculateAge(birthMonth, birthDay, birthYear) {
+                todayDate = new Date();
+                todayYear = todayDate.getFullYear();
+                todayMonth = todayDate.getMonth();
+                todayDay = todayDate.getDate();
+                age = todayYear - birthYear;
+                if (todayMonth < birthMonth - 1) {
+                    age--;
+                }
+                if (birthMonth - 1 == todayMonth && todayDay < birthDay) {
+                    age--;
+                }
+                return age;
+            }
+            document.getElementById("yas").innerHTML = calculateAge(12, 09, 2006);
         </script>
     </body>
 </html>
