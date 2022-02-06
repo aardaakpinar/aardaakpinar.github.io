@@ -5,15 +5,13 @@ I am a developer who is always upset and hungry. Im hungry to learning new thing
 
 ## 📫 Get Contact with me at
 * Discord: https://discord.gg/9hME88ntka  
-<img src="https://komarev.com/ghpvc/?username=devnar"> <img src="https://img.shields.io/badge/favourite%20language-javascript-blue"/>
 * Website: https://devnar.github.io
 * E-Mail Adress: yardim.nar@yaani.com
 
 ## 🔭 I’m currently working on 'a lot of things'.                                        
- * Teknofest Projects                                                
- * Minecraft Plugins                                                       
+ * Teknofest Projects                                                   
  * Learning new languages like JavaScript and Python                                    
- * Learning libraries like AndroidX and JavaFX                                                          
+ * Learning libraries like Vue.js and W3                                                          
 
 ## 🥅 My 2022 goals are
  * Committing every day!
