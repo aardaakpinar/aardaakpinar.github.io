@@ -20,9 +20,10 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
         <link rel="stylesheet" href="https://devnar.github.io/depo/style.css" />
+        <link rel="stylesheet" href="depo/page.css" />
         <!-- Script -->
         <script src="https://devnar.github.io/lib/all.js"></script>
-        <script src="https://devnar.github.io/depo/script.js"></script>
+        <script src="depo/data.js"></script>
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="msapplication-TileImage" content="https://devnar.github.io/logos/nar.png" />
         <meta name="theme-color" content="#23b5b5" />
@@ -41,44 +42,12 @@
             gtag("config", "UA-180733706-1");
         </script>
         <!-- Style -->
-        <style>
-            .input {
-                border: none;
-                border-bottom: 2px solid #363940;
-                width: 100%;
-                outline: none;
-            }
-            .button {
-                border: 2px solid #23b5b5;
-                background: #363940;
-                color: white;
-                border-radius: 5px;
-            }
-
-            body {
-                --bg1: #363940;
-                --buttonColor: #ffffff;
-                --fontColor: #363940;
-                --socialColor: #363940;
-                font-family: "Open Sans", sans-serif !important;
-                background-color: var(--bg1) !important;
-            }
-
-            header {
-                width: 100%;
-                height: 25%;
-                opacity: 0.5;
-                background-image: url(https://devnar.github.io/gif/oda.gif);
-                text-align: center;
-                position: fixed;
-            }
-        </style>
     </head>
     <body onload="load()">
         <header info="top-bgimg" style="overflow: hidden;"></header>
         <div class="container" id="main">
             <i class="n n-bell n-tada-hover nc-left nc-text-white nc-xxlarge nc-margin" onclick="nj.show('#news');nj.hide('#main')"></i>
-            <i class="n n-brain nc-right nc-text-cyan nc-xxlarge nc-margin" style="visibility: hidden;"></i>
+            <i class="n n-envelope n-tada-hover nc-right nc-text-white nc-xxlarge nc-margin" onclick="window.location='mailto:yardim.nar@yaani.com'"></i>
             <div class="mb-3">
                     <img class="rounded-circle" height="80px" src="https://devnar.github.io/logos/nar.png" alt="NAR" />
                 </div>
@@ -97,31 +66,49 @@
                 <div class="embed-1 embed-group" style="display: none;">
                     <div class="iframe" style="height: auto;">
                         <div class="link customLinkColor">
-                            <a class="btn btn-block btn-lg text-left animate__infinite withImg button-1" href="https://tr.wikipedia.org/wiki/HTML" data-profile="" data-id="14930" target="_blank">
+                            <a class="btn btn-block btn-lg text-left animate__infinite withImg button-1" data-profile="" data-id="15277" target="_blank">
                                 HTML (öğendim)
                                 <img src="https://img.icons8.com/color/4x/html-5.png" alt="html" />
                             </a>
                         </div>
-                        <div class="link customLinkColor">
-                            <a class="btn btn-block btn-lg text-left animate__infinite withImg button-1" href="https://tr.wikipedia.org/wiki/CSS" data-profile="" data-id="14931" target="_blank">
+                        <div class="link customLinkColor" onclick="nj.toggleShow('#sass')">
+                            <a class="btn btn-block btn-lg text-left animate__infinite withImg button-1" data-profile="" data-id="15278" target="_blank">
                                 CSS (öğrendim)
                                 <img src="https://img.icons8.com/color/4x/css3.png" alt="css" />
                             </a>
                         </div>
-                        <div class="link customLinkColor">
-                            <a class="btn btn-block btn-lg text-left animate__infinite withImg button-1" href="https://tr.wikipedia.org/wiki/javascript" data-profile="" data-id="14932" target="_blank">
+                        <div class="link customLinkColor" id="sass" style="display: none;">
+                            <a class="btn btn-block btn-lg text-left animate__infinite withImg button-2" data-profile="" data-id="15299" target="_blank">
+                                <i class="n n-right-arrow-alt"></i> Sass (öğreneceğim)
+                                <img src="https://img.icons8.com/color/4x/sass.png" alt="sass" />
+                            </a>
+                        </div>
+                        <div class="link customLinkColor" onclick="nj.toggleShow('#react');nj.toggleShow('#vue')">
+                            <a class="btn btn-block btn-lg text-left animate__infinite withImg button-1" data-profile="" data-id="15279" target="_blank">
                                 JavaScript (öğreniyorum)
                                 <img src="https://img.icons8.com/color/4x/javascript.png" alt="javascript" />
                             </a>
                         </div>
+                        <div class="link customLinkColor" style="display: none;" id="react">
+                            <a class="btn btn-block btn-lg text-left animate__infinite withImg button-2" data-profile="" data-id="15300" target="_blank">
+                                <i class="n n-right-arrow-alt"></i> React (öğreneceğim)
+                                <img src="https://img.icons8.com/color/4x/react-native.png" alt="react-native" />
+                            </a>
+                        </div>
+                        <div class="link customLinkColor" style="display: none;" id="vue">
+                            <a class="btn btn-block btn-lg text-left animate__infinite withImg button-2" data-profile="" data-id="15301" target="_blank">
+                                <i class="n n-right-arrow-alt"></i> Vue (öğreneceğim)
+                                <img src="https://img.icons8.com/color/4x/vue-js.png" alt="vue" />
+                            </a>
+                        </div>
                         <div class="link customLinkColor">
-                            <a class="btn btn-block btn-lg text-left animate__infinite withImg button-1" href="https://tr.wikipedia.org/wiki/Go_(programlama_dili)" data-profile="" data-id="14933" target="_blank">
+                            <a class="btn btn-block btn-lg text-left animate__infinite withImg button-1" data-profile="" data-id="15280" target="_blank">
                                 GO (öğreniyorum)
                                 <img src="https://img.icons8.com/color/4x/golang.png" alt="html" />
                             </a>
                         </div>
                         <div class="link customLinkColor">
-                            <a class="btn btn-block btn-lg text-left animate__infinite withImg button-1" href="https://tr.wikipedia.org/wiki/arduino" data-profile="" data-id="14934" target="_blank">
+                            <a class="btn btn-block btn-lg text-left animate__infinite withImg button-1" data-profile="" data-id="15281" target="_blank">
                                 Arduino (öğreneceğim)
                                 <img src="https://img.icons8.com/color/4x/arduino.png" alt="arduino" />
                             </a>
@@ -141,19 +128,19 @@
                 <div class="embed-2 embed-group" style="display: none;">
                     <div class="iframe" style="height: auto;">
                         <div class="link customLinkColor">
-                            <a class="btn btn-block btn-lg text-left animate__infinite withImg button-1" href="http://devnar.github.io/masa" data-profile="" data-id="14924" target="_blank">
+                            <a class="btn btn-block btn-lg text-left animate__infinite withImg button-1" href="http://devnar.github.io/masa" data-profile="" data-id="15284" target="_blank">
                                 MASA
                                 <img src="https://devnar.github.io/logos/masa.png" alt="Masa" />
                             </a>
                         </div>
                         <div class="link customLinkColor">
-                            <a class="btn btn-block btn-lg text-left animate__infinite withImg button-1" href="http://devnar.github.io/botlimon" data-profile="" data-id="14925" target="_blank">
+                            <a class="btn btn-block btn-lg text-left animate__infinite withImg button-1" href="http://devnar.github.io/botlimon" data-profile="" data-id="15282" target="_blank">
                                 Limon
                                 <img src="https://devnar.github.io/logos/limon.png" alt="Limon" />
                             </a>
                         </div>
                         <div class="link customLinkColor">
-                            <a class="btn btn-block btn-lg text-left animate__infinite withImg button-1" href="http://devnar.github.io/lib" data-profile="" data-id="14926" target="_blank">
+                            <a class="btn btn-block btn-lg text-left animate__infinite withImg button-1" href="http://devnar.github.io/lib" data-profile="" data-id="15283" target="_blank">
                                 {nar}
                                 <img src="https://devnar.github.io/logos/n.png" alt="{nar}" />
                             </a>
@@ -167,30 +154,6 @@
                 </div>
                 <a class="btn btn-block btn-lg embed-2 button-1" data-toggle="embed-2" data-id="2" target="_blank">
                     Projeler
-                </a>
-            </div>
-            <div class="link customLinkColor text-left">
-                <div class="embed-3 embed-group" style="display: none;">
-                    <div class="iframe" style="height: auto;">
-                        <div class="link customLinkColor btn btn-block btn-lg text-left button-1">
-                            <h4 class="nc-center">Posta Gönder</h4>
-                            <form action="mailto:yardim.nar@yaani.com" target="_blank" method="post">
-                                <input type="text" name="subject" class="input" placeholder="Konu" required />
-                                <input type="text" name="body" class="input" placeholder="Mesaj" required /><br />
-                                <br />
-                                <input type="submit" class="button" />
-                                <input type="reset" class="button" />
-                            </form>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <span class="btn-close embed-group" data-toggle="embed-3">
-                            <i class="n n-chevron-up"></i>
-                        </span>
-                    </div>
-                </div>
-                <a class="btn btn-block btn-lg embed-3 button-1" data-toggle="embed-3" data-id="3" target="_blank">
-                    İletişim
                 </a>
             </div>
             <div class="my-3 socialIcons customSocialColor">
@@ -214,7 +177,7 @@
         <!-- news -->
         <div class="container" style="display: none;" id="news">
             <i class="n n-chevron-left n-tada-hover nc-left nc-text-white nc-xxlarge nc-margin" onclick="nj.show('#main');nj.hide('#news')"></i>
-            <i class="n n-brain nc-right nc-text-cyan nc-xxlarge nc-margin" style="visibility: hidden;"></i>
+            <i class="n n-envelope n-tada-hover nc-right nc-text-white nc-xxlarge nc-margin" onclick="window.location='mailto:yardim.nar@yaani.com'"></i>
             <div class="mb-3">
                 <img class="rounded-circle" height="80px" src="https://devnar.github.io/logos/nar.png" alt="NAR" />
             </div>
