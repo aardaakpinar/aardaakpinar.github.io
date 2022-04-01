@@ -36,6 +36,6 @@ header {
     background-image: url(https://devnar.github.io/gif/oda.gif);
     text-align: center;
     position: fixed;
-    min-height: 286px;
+    min-height: 100px;
     max-height: 286px;
 }
