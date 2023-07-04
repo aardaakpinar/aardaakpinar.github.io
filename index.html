@@ -137,9 +137,10 @@
             <i class="icon n-envelope n-tada-hover" style="float: right; color: white; margin: 16px; font-size: xx-large;" onclick="window.location='mailto:yardim.nar@yaani.com'"></i>
             <div class="mb-3"><img class="rounded-circle" height="80px" src="https://devnar.github.io/logos/nar.png" alt="NAR" /></div>
             <div id="user"><h5 class="username dark">@nar</h5></div>
-            <a class="twitter-timeline" href="https://twitter.com/_devnar" data-chrome="noheader nofooter">Yükleniyor lütfen bekle</a>
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-            
+            <div class="btn btn-block btn-lg text-left button-1">
+                <select id="repo" onchange="feeder()"></select>
+                <ul id="ul"></ul>
+            </div>
             <div class="my-3 socialIcons customSocialColor">
                 <a href="https://www.youtube.com/@_devnar" class="btn button-2" target="_blank"> <i class="icon nl-youtube"></i> </a>
                 <a href="https://twitter.com/_devnar" class="btn button-2" target="_blank"> <i class="icon nl-twitter"></i> </a> <a href="https://github.com/devnar" class="btn button-2" target="_blank"> <i class="icon nl-github"></i> </a>
@@ -191,6 +192,30 @@
                 return age;
             }
             document.getElementById("yas").innerHTML = calculateAge(9, 12, 2006);
+            /* news */
+            fetch('https://api.github.com/users/devnar/repos')
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(d => {
+                    document.getElementById("repo").innerHTML += "<option value='"+ d.name +"''>" + d.name + "</option>";
+                    });
+                })
+                .catch(error => {
+                    console.error('Hata:', error);
+                });
+            function feeder() {
+                document.getElementById("ul").innerHTML = "";
+                fetch("https://api.github.com/repos/devnar/" + document.getElementById("repo").value + "/commits")
+                    .then(response => response.json())
+                    .then(data => {
+                        data.forEach(d => {
+                        document.getElementById("ul").innerHTML += "<li><a href='" + d.html_url + "'>"+ d.commit.message + "</a></li>";
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Hata:', error);
+                    });
+            }
         </script>
     </body>
 </html>
