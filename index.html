@@ -74,8 +74,12 @@
                             Bu işleri yapabilmem "Onlar yaptıysa bende yaparım." dediğim içindir.
                         </h6>
                     </a>
-                    <a class="btn btn-block btn-lg text-left animate__infinite withImg button-1" data-profile="" data-id="15277" target="_blank"> HTML (öğrendim) <img src="https://img.icons8.com/color/4x/html-5.png" alt="html" /> </a>
-                    <a class="btn btn-block btn-lg text-left animate__infinite withImg button-1" data-profile="" data-id="15278" target="_blank"> CSS (öğrendim) <img src="https://img.icons8.com/color/4x/css3.png" alt="css" /> </a>
+                    <a class="btn btn-block btn-lg text-left animate__infinite withImg button-1" data-profile="" data-id="15277" target="_blank"> 
+                        HTML (öğrendim) <img src="https://img.icons8.com/color/4x/html-5.png" alt="html" /> 
+                    </a>
+                    <a class="btn btn-block btn-lg text-left animate__infinite withImg button-1" data-profile="" data-id="15278" target="_blank"> 
+                        CSS (öğrendim) <img src="https://img.icons8.com/color/4x/css3.png" alt="css" /> 
+                    </a>
                     <a class="btn btn-block btn-lg text-left animate__infinite withImg button-1" data-profile="" data-id="15279" target="_blank">
                         JavaScript (öğrendim) <img src="https://img.icons8.com/color/4x/javascript.png" alt="javascript" />
                     </a>
@@ -137,9 +141,9 @@
             <i class="icon n-envelope n-tada-hover" style="float: right; color: white; margin: 16px; font-size: xx-large;" onclick="window.location='mailto:yardim.nar@yaani.com'"></i>
             <div class="mb-3"><img class="rounded-circle" height="80px" src="https://devnar.github.io/logos/nar.png" alt="NAR" /></div>
             <div id="user"><h5 class="username dark">@nar</h5></div>
-            <div class="btn btn-block btn-lg text-left button-1">
-                <select id="repo" onchange="feeder()"></select>
-                <ul id="ul"></ul>
+            <div style="border-radius: 10px;padding: 10px;background-color: rgb(218, 218, 218);border-radius: 10px;">
+                <select id="repo" onchange="feeder()" class="btn-lg text-left"></select><br><br>
+                <ul id="ul" style="list-style: none;padding: 0;"></ul>
             </div>
             <div class="my-3 socialIcons customSocialColor">
                 <a href="https://www.youtube.com/@_devnar" class="btn button-2" target="_blank"> <i class="icon nl-youtube"></i> </a>
@@ -209,7 +213,7 @@
                     .then(response => response.json())
                     .then(data => {
                         data.forEach(d => {
-                        document.getElementById("ul").innerHTML += "<li><a href='" + d.html_url + "'>"+ d.commit.message + "</a></li>";
+                        document.getElementById("ul").innerHTML += "<a class='btn btn-block btn-lg text-left button-1' href='" + d.html_url + "'>"+ d.commit.message + "</a>";
                         });
                     })
                     .catch(error => {
