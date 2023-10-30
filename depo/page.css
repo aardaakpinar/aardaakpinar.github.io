@@ -1,3 +1,7 @@
+* {
+    font-family: 'Nunito', sans-serif;
+}
+
 .input {
     border: none;
     border-bottom: 2px solid #363940;
