@@ -141,10 +141,7 @@
             <i class="icon n-envelope n-tada-hover" style="float: right; color: white; margin: 16px; font-size: xx-large;" onclick="window.location='mailto:yardim.nar@yaani.com'"></i>
             <div class="mb-3"><img class="rounded-circle" height="80px" src="https://devnar.github.io/logos/nar.png" alt="NAR" /></div>
             <div id="user"><h5 class="username dark">@nar</h5></div>
-            <div style="border-radius: 10px;padding: 10px;background-color: rgb(218, 218, 218);border-radius: 10px;">
-                <select id="repo" onchange="feeder()" class="btn-lg text-left"><option selected disabled>yapılan değişiklikleri görmek için seç</option></select><br><br>
-                <ul id="ul" style="list-style: none;padding: 0;"></ul>
-            </div>
+            <ul id="ul" style="list-style: none;padding: 0;"></ul>
             <div class="my-3 socialIcons customSocialColor">
                 <a href="https://www.youtube.com/@_devnar" class="btn button-2" target="_blank"> <i class="icon nl-youtube"></i> </a>
                 <a href="https://twitter.com/_devnar" class="btn button-2" target="_blank"> <i class="icon nl-twitter"></i> </a> <a href="https://github.com/devnar" class="btn button-2" target="_blank"> <i class="icon nl-github"></i> </a>
@@ -197,29 +194,31 @@
             }
             document.getElementById("yas").innerHTML = calculateAge(9, 12, 2006);
             /* news */
-            fetch('https://api.github.com/users/devnar/repos')
-                .then(response => response.json())
-                .then(data => {
-                    data.forEach(d => {
-                    document.getElementById("repo").innerHTML += "<option value='"+ d.name +"''>" + d.name + "</option>";
-                    });
-                })
-                .catch(error => {
-                    console.error('Hata:', error);
-                });
-            function feeder() {
-                document.getElementById("ul").innerHTML = "";
-                fetch("https://api.github.com/repos/devnar/" + document.getElementById("repo").value + "/commits")
-                    .then(response => response.json())
-                    .then(data => {
-                        data.forEach(d => {
-                        document.getElementById("ul").innerHTML += "<a class='btn btn-block btn-lg text-left button-1' href='" + d.html_url + "'>"+ d.commit.message + "</a>";
-                        });
-                    })
-                    .catch(error => {
-                        console.error('Hata:', error);
-                    });
-            }
+            // labels=Diller&
+            var url = `https://www.googleapis.com/blogger/v3/blogs/4662232524370608435/posts?key=AIzaSyDVOFvJBwStabZ-rs7y-vBtK8ID-rnDfk0`;
+
+    fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                console.log('API Cevabı:', data);
+
+                if (data && data.items) {
+                    var titles = data.items.map(item => item.title);
+                    var urls = data.items.map(item => item.url);
+                    displayTitles(titles, urls);
+                } else {
+                    console.error('API Cevabı Uygun Değil');
+                }
+            })
+            .catch(error => console.error('Hata:', error));
+
+        function displayTitles(titles, urls) {
+            
+
+            titles.forEach((title, index) => {
+                document.getElementById("ul").innerHTML += "<a class='btn btn-block btn-lg text-left button-1' href='" + urls[index] + "'>"+ title + "</a>";
+            });
+        }
         </script>
     </body>
 </html>
