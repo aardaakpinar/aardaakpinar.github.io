@@ -194,8 +194,7 @@
             }
             document.getElementById("yas").innerHTML = calculateAge(9, 12, 2006);
             /* news */
-            // labels=Diller&
-            var url = `https://www.googleapis.com/blogger/v3/blogs/4662232524370608435/posts?key=AIzaSyDVOFvJBwStabZ-rs7y-vBtK8ID-rnDfk0`;
+            var url = `https://www.googleapis.com/blogger/v3/blogs/4662232524370608435/posts?labels=DevLog&key=AIzaSyDVOFvJBwStabZ-rs7y-vBtK8ID-rnDfk0`;
 
     fetch(url)
             .then(response => response.json())
@@ -213,8 +212,6 @@
             .catch(error => console.error('Hata:', error));
 
         function displayTitles(titles, urls) {
-            
-
             titles.forEach((title, index) => {
                 document.getElementById("ul").innerHTML += "<a class='btn btn-block btn-lg text-left button-1' href='" + urls[index] + "'>"+ title + "</a>";
             });
