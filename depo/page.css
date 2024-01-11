@@ -14,10 +14,6 @@
     outline: none;
 }
 
-.about {
-    font-size: 15px;
-}
-
 .about p {
     display: block;
     text-align: -webkit-center;
@@ -69,5 +65,4 @@ select {
     border: none;
     border-bottom: 2px solid #23b5b5;
     font-size: 20px;
-    
 }
