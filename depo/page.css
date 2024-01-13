@@ -14,6 +14,18 @@
     outline: none;
 }
 
+#tags {
+    list-style: none;
+}
+
+#tags li {
+    float: left;
+    background-color: white;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
 .about p {
     display: block;
     text-align: -webkit-center;
