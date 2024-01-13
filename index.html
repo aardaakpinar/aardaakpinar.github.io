@@ -66,15 +66,16 @@
                                 Bu projeleri başarabilmemdeki temel motivasyonum, "Onlar yaptıysa, ben de yapabilirim." düşüncesidir. Sürekli öğrenme ve gelişme isteğim, her zaman yeni ve daha ileri seviyedeki projelere yönelme motivasyonumu sürdürüyor.
                             </h6>
                         </a><br>
-                        Programlama Dilleri
+                        Kullandığım Diller
                         <a class="limg btn-block btn-lg  animate__infinite button-1" data-profile="" data-id="15277" target="_blank"> 
                              <img src="https://img.icons8.com/color/4x/html-5.png" alt="html" /> 
                              <img src="https://img.icons8.com/color/4x/css3.png" alt="css" />
                              <img src="https://img.icons8.com/color/4x/javascript.png" alt="javascript" />
                              <img src="https://img.icons8.com/color/4x/python.png" alt="python" />
                              <img src="https://img.icons8.com/color/4x/discord-bot.png" alt="discord bot" />
-                             <img src="https://img.icons8.com/color/4x/arduino.png" alt="arduino" />
+                             <img src="https://img.icons8.com/color/4x/markdown.png" alt="markdown" />
                              <img src="https://img.icons8.com/color/4x/bash.png" alt="bash" />
+                             <img src="https://img.icons8.com/color/4x/arduino.png" alt="arduino" />
                              <img src="https://img.icons8.com/color/4x/react-native.png" alt="react native" />
                              <img src="https://img.icons8.com/color/4x/flutter.png" alt="flutter" />
                         </a><br>
@@ -104,11 +105,13 @@
                             <img src="https://img.icons8.com/color/4x/bill-cipher.png" alt="bill cipher"/>
                             <img src="https://img.icons8.com/color/4x/tom.png" alt="tom"/>
                             <img src="https://img.icons8.com/color/4x/ghost.png" alt="Casper"/>
-                            <img src="https://img.icons8.com/color/4x/shrek.png" alt="shrek"/>
+                            <img src="https://img.icons8.com/?id=39087&format=png" alt="madagascar"/>
                             <img src="https://img.icons8.com/color/4x/rick-sanchez.png" alt="rick sanchez"/>
                             <img src="https://img.icons8.com/color/4x/deadpool.png" alt="deadpool"/>
                             <img src="https://img.icons8.com/color/4x/venom-head.png" alt="venom"/>
                             <img src="https://img.icons8.com/color/4x/groot.png" alt="groot"/>
+                            <img src="https://img.icons8.com/color/4x/squid-game-square-guard.png" alt="shrek"/>
+                            <img src="https://img.icons8.com/color/4x/shrek.png" alt="shrek"/>
                             <img src="https://img.icons8.com/color/4x/iron-man.png" alt="iron man"/>
                             <img src="https://img.icons8.com/color/4x/lord-voldemort.png" alt="lord voldemort"/>
                         </a>
@@ -171,10 +174,6 @@
             <i class="icon n-envelope n-tada-hover" style="float: right; color: white; margin: 16px; font-size: xx-large;" onclick="window.location='mailto:yardim.nar@yaani.com'"></i>
             <div class="mb-3"><img class="rounded-circle" height="80px" src="https://devnar.github.io/logos/nar.png" alt="NAR" /></div>
             <div id="user"><h5 class="username dark">@nar</h5></div>
-            <ul id="tags" class="btn">
-                <li onclick="loadPost(this.innerText)">Bu nedir</li>
-                <li onclick="loadPost(this.innerText)">DevLog</li>
-            </ul>
             <ul id="posts" style="list-style: none;padding: 0;"></ul>
             <div class="my-3 socialIcons customSocialColor">
                 <a href="https://www.youtube.com/@_devnar" class="btn button-2" target="_blank"> <i class="icon nl-youtube"></i> </a>
@@ -230,8 +229,7 @@
             }
             document.getElementById("yas").innerHTML = calculateAge(9, 12, 2006);
             /* news */
-            function loadPost(tags) {
-            fetch(`https://www.googleapis.com/blogger/v3/blogs/4662232524370608435/posts?labels=${tags}&key=AIzaSyDVOFvJBwStabZ-rs7y-vBtK8ID-rnDfk0`)
+            fetch(`https://www.googleapis.com/blogger/v3/blogs/4662232524370608435/posts?labels=DevLog&key=AIzaSyDVOFvJBwStabZ-rs7y-vBtK8ID-rnDfk0`)
                         .then(response => response.json())
                         .then(data => {
                             console.log('API Cevabı:', data);
@@ -245,8 +243,6 @@
                             }
                         })
                         .catch(error => console.error('Hata:', error));
-            }
-            loadPost("DevLog")
 
             function displayTitles(titles, urls) {
                 document.getElementById("posts").innerHTML ="";
