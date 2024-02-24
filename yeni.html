@@ -1,0 +1,2644 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta property="og:url" content="https://bento.me/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image:alt" content="Bento - Show everything you are, create and sell." />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content="Bento" />
+        <title>NAR</title>
+        <meta name="robots" content="index,follow" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:title" content="NAR" />
+        <meta
+            property="og:description"
+            content="Merhaba, ben web geliştiricisiyim. Front-End&#x27;i sevmemle birlikte AI (yapay zeka) ve Oyunlarada ilgim var, kendimi sürekli olarak geliştirmeye odaklanan biryim. Ayrıca, bilimkurgu kitapları okumak ve yeni bilgiler edinmek beni motive eden diğer"
+        />
+        <meta property="og:image" content="https://api.bento.me/v1/og/devnar?v=474655" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="shortcut icon" href="https://creatorspace.imgix.net/users/clr9afhld004for01x5jdgrg0/I7GF9KucXAJlhWij-nar.png?w=200&amp;h=200&amp;fit=crop" />
+        <meta name="next-head-count" content="18" />
+        <script>
+            !(function (t, e) {
+                var o, n, p, r;
+                e.__SV ||
+                    ((window.posthog = e),
+                    (e._i = []),
+                    (e.init = function (i, s, a) {
+                        function g(t, e) {
+                            var o = e.split(".");
+                            2 == o.length && ((t = t[o[0]]), (e = o[1])),
+                                (t[e] = function () {
+                                    t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+                                });
+                        }
+                        ((p = t.createElement("script")).type = "text/javascript"), (p.async = !0), (p.src = s.api_host + "/static/array.js"), (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r);
+                        var u = e;
+                        for (
+                            void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
+                                u.people = u.people || [],
+                                u.toString = function (t) {
+                                    var e = "posthog";
+                                    return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e;
+                                },
+                                u.people.toString = function () {
+                                    return u.toString(1) + ".people (stub)";
+                                },
+                                o = "capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(
+                                    " "
+                                ),
+                                n = 0;
+                            n < o.length;
+                            n++
+                        )
+                            g(u, o[n]);
+                        e._i.push([i, s, a]);
+                    }),
+                    (e.__SV = 1));
+            })(document, window.posthog || []);
+            posthog.init("phc_G4AFfCmEbWIvWKNFZUKihi5tHhcISQXwlUazK2nLvA4", { api_host: "https://app.posthog.com" });
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#768CFF" />
+        <meta name="msapplication-TileColor" content="#768CFF" />
+        <meta name="theme-color" content="#ffffff" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.css" rel="stylesheet" />
+        <link href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css" rel="stylesheet" />
+        <link rel="preload" href="https://bento.me/_next/static/css/462325b6daab7f6b.css" as="style" />
+        <link rel="stylesheet" href="https://bento.me/_next/static/css/462325b6daab7f6b.css" data-n-g="" />
+        <link rel="preload" href="https://bento.me/_next/static/css/792ae22bffd9c8a3.css" as="style" />
+        <link rel="stylesheet" href="https://bento.me/_next/static/css/792ae22bffd9c8a3.css" data-n-p="" />
+        <noscript data-n-css=""></noscript>
+        <script defer="" nomodule="" src="https://bento.me/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script>
+        <script src="https://bento.me/_next/static/chunks/webpack-fb536ae542bf2809.js" defer=""></script>
+        <script src="https://bento.me/_next/static/chunks/framework-d6b15d8b3dd1dcdb.js" defer=""></script>
+        <script src="https://bento.me/_next/static/chunks/main-2da2b1f6525027ba.js" defer=""></script>
+        <script src="https://bento.me/_next/static/chunks/pages/_app-19e41c57edc7cd5c.js" defer=""></script>
+        <script src="https://bento.me/_next/static/chunks/b155a556-2563bfd0c0314e19.js" defer=""></script>
+        <script src="https://bento.me/_next/static/chunks/736-fc525af6d7db5aa7.js" defer=""></script>
+        <script src="https://bento.me/_next/static/chunks/25-c16969475fbc89ce.js" defer=""></script>
+        <script src="https://bento.me/_next/static/chunks/759-75aa9d2cc73403ce.js" defer=""></script>
+        <script src="https://bento.me/_next/static/chunks/784-27828082e6fc043d.js" defer=""></script>
+        <script src="https://bento.me/_next/static/chunks/879-57353426c45ce39a.js" defer=""></script>
+        <script src="https://bento.me/_next/static/chunks/767-2e87e299c046e2a2.js" defer=""></script>
+        <script src="https://bento.me/_next/static/chunks/891-29ee6dd56c03b80a.js" defer=""></script>
+        <script src="https://bento.me/_next/static/chunks/739-fc97641648d19345.js" defer=""></script>
+        <script src="https://bento.me/_next/static/chunks/223-14896529b76aff22.js" defer=""></script>
+        <script src="https://bento.me/_next/static/chunks/pages/%5Bhandle%5D-2aee1c6fe3302d9e.js" defer=""></script>
+        <script src="https://bento.me/_next/static/L9xm8td2YSxgCuMjdA0fa/_buildManifest.js" defer=""></script>
+        <script src="https://bento.me/_next/static/L9xm8td2YSxgCuMjdA0fa/_ssgManifest.js" defer=""></script>
+        <style id="__jsx-f5ceee4426fc8276">
+            :root {
+                --inter-font: "Inter", sans-serif;
+            }
+            html {
+                font-family: var(--inter-font);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="__next">
+            <div data-dummy="true"></div>
+            <div style="position: fixed; z-index: 9999; top: 16px; left: 16px; right: 16px; bottom: 16px; pointer-events: none; padding: 32px;"></div>
+        </div>
+        <script id="__NEXT_DATA__" type="application/json">
+            {
+                "props": {
+                    "pageProps": {
+                        "profile": {
+                            "id": "clr9afhld004for01x5jdgrg0",
+                            "name": "NAR",
+                            "handle": "devnar",
+                            "bento": {
+                                "items": [
+                                    {
+                                        "data": {
+                                            "id": "ZPytqrAbISf2oqTP",
+                                            "href": "https://twitter.com/_devnar",
+                                            "type": "link",
+                                            "style": {
+                                                "mobile": "2x2",
+                                                "desktop": "2x4"
+                                            },
+                                            "overrides": {
+                                                "title": {
+                                                    "type": "doc",
+                                                    "content": [
+                                                        {
+                                                            "type": "paragraph",
+                                                            "content": [
+                                                                {
+                                                                    "text": "Twitter",
+                                                                    "type": "text"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        "position": {
+                                            "mobile": {
+                                                "x": 0,
+                                                "y": 0
+                                            },
+                                            "desktop": {
+                                                "x": 0,
+                                                "y": 0
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "sOCG2nklOZo0GURT",
+                                            "href": "https://github.com/devnar",
+                                            "type": "link",
+                                            "style": {
+                                                "mobile": "4x2",
+                                                "desktop": "4x2"
+                                            },
+                                            "overrides": {
+                                                "title": {
+                                                    "type": "doc",
+                                                    "content": [
+                                                        {
+                                                            "type": "paragraph",
+                                                            "content": [
+                                                                {
+                                                                    "text": "Büyük Projeler",
+                                                                    "type": "text"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        "position": {
+                                            "mobile": {
+                                                "x": 2,
+                                                "y": 0
+                                            },
+                                            "desktop": {
+                                                "x": 4,
+                                                "y": 0
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "aJG02Hv4y3RYgEJv",
+                                            "href": "https://www.youtube.com/@_devnar",
+                                            "type": "link",
+                                            "style": {
+                                                "mobile": "2x4",
+                                                "desktop": "2x4"
+                                            },
+                                            "overrides": {
+                                                "title": {
+                                                    "type": "doc",
+                                                    "content": [
+                                                        {
+                                                            "type": "paragraph",
+                                                            "content": [
+                                                                {
+                                                                    "text": "Youtube",
+                                                                    "type": "text"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        "position": {
+                                            "mobile": {
+                                                "x": 0,
+                                                "y": 4
+                                            },
+                                            "desktop": {
+                                                "x": 0,
+                                                "y": 2
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "AUmwQQcTlPNEjTTR",
+                                            "href": "https://codepen.io/_devnar",
+                                            "type": "link",
+                                            "style": {
+                                                "mobile": "2x4",
+                                                "desktop": "2x2"
+                                            },
+                                            "overrides": {
+                                                "title": {
+                                                    "type": "doc",
+                                                    "content": [
+                                                        {
+                                                            "type": "paragraph",
+                                                            "content": [
+                                                                {
+                                                                    "text": "Küçük Projeler",
+                                                                    "type": "text"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                "ogImage": "https://storage.googleapis.com/creatorspace-public/users%2Fclr9afhld004for01x5jdgrg0%2FRpLOxeMNGkyUu7Oc-abLoOWz-1280.webp"
+                                            }
+                                        },
+                                        "position": {"mobile": {
+                                            "x": 0,
+                                            "y": 6
+                                        },
+                                        "desktop": {
+                                            "x": 6,
+                                            "y": 0
+                                        }
+                                    }
+                                },
+                                {
+                                    "data": {
+                                        "id": "CiEf7POvpoFIeVa2",
+                                        "type": "section-header",
+                                        "title": {
+                                            "type": "doc",
+                                            "content": [
+                                                {
+                                                    "type": "paragraph",
+                                                    "content": [
+                                                        {
+                                                            "text": "Projelerim",
+                                                            "type": "text"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "position": {
+                                        "mobile": {
+                                            "x": 0,
+                                            "y": 12
+                                        },
+                                        "desktop": {
+                                            "x": 0,
+                                            "y": 10
+                                        }
+                                    }
+                                },
+                                {
+                                    "data": {
+                                        "id": "wTZMZrdz8oYjtOhn",
+                                        "type": "section-header",
+                                        "title": {
+                                            "type": "doc",
+                                            "content": [
+                                                {
+                                                    "type": "paragraph",
+                                                    "content": [
+                                                        {
+                                                            "text": "Kullandığım Diller",
+                                                            "type": "text"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "position": {
+                                        "mobile": {
+                                            "x": 0,
+                                            "y": 10
+                                        },
+                                        "desktop": {
+                                            "x": 0,
+                                            "y": 8
+                                        }
+                                    }
+                                },
+                                {
+                                    "data": {
+                                        "id": "JjX9Kvh07wvYwLuV",
+                                        "type": "rich-text",
+                                        "style": {
+                                            "mobile": "1x4",
+                                            "desktop": "1x4"
+                                        },
+                                        "halign": {
+                                            "desktop": "center"
+                                        },
+                                        "valign": {
+                                            "desktop": "top"
+                                        },
+                                        "content": {
+                                            "type": "doc",
+                                            "content": [
+                                                {
+                                                    "type": "paragraph",
+                                                    "content": [
+                                                        {
+                                                            "text": "HTML, CSS, JS, Python,",
+                                                            "type": "text"
+                                                        },
+                                                        {
+                                                            "text": " ",
+                                                            "type": "text",
+                                                            "marks": [
+                                                                {
+                                                                    "type": "overflowChar"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "text": "arduino",
+                                                            "type": "text",
+                                                            "marks": [
+                                                                {
+                                                                    "type": "highlight"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "position": {
+                                        "mobile": {
+                                            "x": 0,
+                                            "y": 11
+                                        },
+                                        "desktop": {
+                                            "x": 0,
+                                            "y": 9
+                                        }
+                                    }
+                                },
+                                {
+                                    "data": {
+                                        "id": "q8NzruYT9NXG9zo3",
+                                        "href": "https://devnar.hashnode.dev/",
+                                        "type": "link",
+                                        "style": {
+                                            "mobile": "2x2",
+                                            "desktop": "2x2"
+                                        },
+                                        "overrides": {
+                                            "title": {
+                                                "type": "doc",
+                                                "content": [
+                                                    {
+                                                        "type": "paragraph",
+                                                        "content": [
+                                                            {
+                                                                "text": "Blog",
+                                                                "type": "text"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    "position": {
+                                        "mobile": {
+                                            "x": 0,
+                                            "y": 2
+                                        },
+                                        "desktop": {
+                                            "x": 6,
+                                            "y": 2
+                                        }
+                                    }
+                                },
+                                {
+                                    "data": {
+                                        "id": "dnPQpIifC7tCE9wL",
+                                        "href": "http://devnar.github.io/tickle",
+                                        "type": "link",
+                                        "style": {
+                                            "mobile": "2x2",
+                                            "desktop": "2x2"
+                                        }
+                                    },
+                                    "position": {
+                                        "mobile": {
+                                            "x": 2,
+                                            "y": 13
+                                        },
+                                        "desktop": {
+                                            "x": 2,
+                                            "y": 11
+                                        }
+                                    }
+                                },
+                                {
+                                    "data": {
+                                        "id": "kCidoDntBjAa3ApT",
+                                        "href": "http://devnar.github.io/masa",
+                                        "type": "link",
+                                        "style": {
+                                            "desktop": "2x2"
+                                        }
+                                    },
+                                    "position": {
+                                        "mobile": {
+                                            "x": 0,
+                                            "y": 13
+                                        },
+                                        "desktop": {
+                                            "x": 0,
+                                            "y": 11
+                                        }
+                                    }
+                                },
+                                {
+                                    "data": {
+                                        "id": "Hhf9cWHI5wuSlmjP",
+                                        "href": "https://devnar.github.io/botlimon/",
+                                        "type": "link",
+                                        "style": {
+                                            "desktop": "2x2"
+                                        }
+                                    },
+                                    "position": {
+                                        "mobile": {
+                                            "x": 0,
+                                            "y": 15
+                                        },
+                                        "desktop": {
+                                            "x": 4,
+                                            "y": 11
+                                        }
+                                    }
+                                },
+                                {
+                                    "data": {
+                                        "id": "IHQB3NjwDfwL2ICM",
+                                        "href": "https://sites.google.com/view/whosinsane",
+                                        "type": "link",
+                                        "style": {
+                                            "desktop": "2x2"
+                                        }
+                                    },
+                                    "position": {
+                                        "mobile": {
+                                            "x": 2,
+                                            "y": 15
+                                        },
+                                        "desktop": {
+                                            "x": 6,
+                                            "y": 11
+                                        }
+                                    }
+                                },
+                                {
+                                    "data": {
+                                        "id": "vIR6FHRL2uLdwEVe",
+                                        "href": "https://open.spotify.com/playlist/0chaPYul3MS8GD0QppnEgS?si=d1c2470665a543ea",
+                                        "type": "link",
+                                        "style": {
+                                            "desktop": "4x4"
+                                        },
+                                        "overrides": {
+                                            "title": {
+                                                "type": "doc",
+                                                "content": [
+                                                    {
+                                                        "type": "paragraph",
+                                                        "content": [
+                                                            {
+                                                                "text": "Listem",
+                                                                "type": "text"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    "position": {
+                                        "mobile": {
+                                            "x": 0,
+                                            "y": 8
+                                        },
+                                        "desktop": {
+                                            "x": 0,
+                                            "y": 4
+                                        }
+                                    }
+                                }
+                            ],
+                            "version": "v2"
+                        },
+                        "image": "https://storage.googleapis.com/creatorspace-public/users%2Fclr9afhld004for01x5jdgrg0%2FI7GF9KucXAJlhWij-nar.png",
+                        "bio": {
+                            "type": "doc",
+                            "content": [
+                                {
+                                    "type": "paragraph",
+                                    "content": [
+                                        {
+                                            "text": "Merhaba, ben web geliştiricisiyim. Front-End'i sevmemle birlikte AI (yapay zeka) ve Oyunlarada ilgim var, kendimi sürekli olarak geliştirmeye odaklanan biryim. Ayrıca, bilimkurgu kitapları okumak ve yeni bilgiler edinmek beni motive eden diğer",
+                                            "type": "text"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "ogImage": null
+                    },
+                    "fallback": {
+                        "/urlmetadata/https%3A%2F%2Ftwitter.com%2F_devnar": {
+                            "url": "https://twitter.com/_devnar",
+                            "title": "X",
+                            "description": null,
+                            "siteName": "X (formerly Twitter)",
+                            "siteVideoUrl": null,
+                            "imageUrl": null,
+                            "audioUrl": null,
+                            "videoUrl": null,
+                            "faviconUrl": "https://storage.googleapis.com/creatorspace-public/sites%2Ffavicons%2FaHR0cHM6Ly9hYnMudHdpbWcuY29tL2Zhdmljb25zL3R3aXR0ZXIuMy5pY28%3D.ico",
+                            "touchIconUrl": "https://storage.googleapis.com/creatorspace-public/sites%2Ftouchicons%2FaHR0cHM6Ly9hYnMudHdpbWcuY29tL3Jlc3BvbnNpdmUtd2ViL2NsaWVudC13ZWIvaWNvbi1pb3MuNzdkMjVlYmEucG5n.png",
+                            "screenshotUrl": "https://storage.googleapis.com/creatorspace-public/sites/aHR0cHM6Ly90d2l0dGVyLmNvbS9fZGV2bmFy/screenshot.jpeg",
+                            "status": "COMPLETED",
+                            "createdAt": "2024-02-24T07:05:14.908Z",
+                            "updatedAt": "2024-02-24T07:05:18.763Z"
+                        },
+                        "/urlmetadata/https%3A%2F%2Fgithub.com%2Fdevnar": {
+                            "url": "https://github.com/devnar",
+                            "title": "devnar - Overview",
+                            "description": "Merhaba, Ben web site geliştiricisiyim. Sevgi dolu bir 💖 ve Front-End'e meraklı bir 🧠 var. BilimKurgu kitaplarını okumayı ve yeni bilgiler edinmeyi severim. - devnar",
+                            "siteName": "GitHub",
+                            "siteVideoUrl": null,
+                            "imageUrl": "https://storage.googleapis.com/creatorspace-public/sites%2Fogimages%2FaHR0cHM6Ly9hdmF0YXJzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91Lzg4MjY2ODIzP3Y9ND9zPTQwMA%3D%3D.jpeg",
+                            "audioUrl": null,
+                            "videoUrl": null,
+                            "faviconUrl": "https://storage.googleapis.com/creatorspace-public/sites%2Ffavicons%2FaHR0cHM6Ly9naXRodWIuZ2l0aHViYXNzZXRzLmNvbS9mYXZpY29ucy9mYXZpY29uLnN2Zw%3D%3D.svg",
+                            "touchIconUrl": null,
+                            "screenshotUrl": null,
+                            "status": "COMPLETED",
+                            "createdAt": "2024-02-24T07:05:14.926Z",
+                            "updatedAt": "2024-02-24T07:05:16.296Z"
+                        },
+                        "/urlmetadata/https%3A%2F%2Fwww.youtube.com%2F%40_devnar": {
+                            "url": "https://www.youtube.com/@_devnar",
+                            "title": "NAR",
+                            "description": "Merhaba, Ben web site geliştiricisiyim. Sevgi dolu bir 💖 ve Front-End'e meraklı bir 🧠 var. BilimKurgu kitaplarını okumayı ve yeni bilgiler edinmeyi severim...",
+                            "siteName": "YouTube",
+                            "siteVideoUrl": null,
+                            "imageUrl": "https://storage.googleapis.com/creatorspace-public/sites%2Fogimages%2FaHR0cHM6Ly95dDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tLzhhdGFjbUc0ZmNNb1JWOTlZMTZ6RU1OTU9ZalQyT21iWXYzMGtyNXp5NjU4SXpRYjZBeTZIRFNqZWRpTUVnV2NIcE1qV1BVZkJRPXM5MDAtYy1rLWMweDAwZmZmZmZmLW5vLXJq.jpeg",
+                            "audioUrl": null,
+                            "videoUrl": null,
+                            "faviconUrl": "https://storage.googleapis.com/creatorspace-public/sites%2Ffavicons%2FaHR0cHM6Ly93d3cueW91dHViZS5jb20vcy9kZXNrdG9wLzBmMTI4ZmZkL2ltZy9mYXZpY29uXzk2eDk2LnBuZw%3D%3D.png",
+                            "touchIconUrl": null,
+                            "screenshotUrl": null,
+                            "status": "COMPLETED",
+                            "createdAt": "2024-02-24T07:06:20.118Z",
+                            "updatedAt": "2024-02-24T07:06:21.185Z"
+                        },
+                        "/urlmetadata/https%3A%2F%2Fcodepen.io%2F_devnar": {
+                            "url": "https://codepen.io/_devnar",
+                            "title": null,
+                            "description": null,
+                            "siteName": null,
+                            "siteVideoUrl": null,
+                            "imageUrl": null,
+                            "audioUrl": null,
+                            "videoUrl": null,
+                            "faviconUrl": null,
+                            "touchIconUrl": null,
+                            "screenshotUrl": null,
+                            "status": "FAILED",
+                            "createdAt": "2024-02-24T07:09:35.915Z",
+                            "updatedAt": "2024-02-24T07:12:36.325Z"
+                        },
+                        "/urlmetadata/https%3A%2F%2Fdevnar.hashnode.dev%2F": {
+                            "url": "https://devnar.hashnode.dev/",
+                            "title": "title",
+                            "description": "description",
+                            "siteName": "NAR",
+                            "siteVideoUrl": null,
+                            "imageUrl": "https://devnar.github.io/nar.png",
+                            "audioUrl": null,
+                            "videoUrl": null,
+                            "faviconUrl": "https://storage.googleapis.com/creatorspace-public/sites%2Ffavicons%2FaHR0cHM6Ly9jZG4uaGFzaG5vZGUuY29tL3Jlcy9oYXNobm9kZS9pbWFnZS91cGxvYWQvdjE3MDg2NjExNTA4MjYvNzdocWJoVlduLnBuZz9hdXRvPWNvbXByZXNzLGZvcm1hdCZmb3JtYXQ9d2VicCZmbT1wbmc%3D.jpeg",
+                            "touchIconUrl": null,
+                            "screenshotUrl": null,
+                            "status": "COMPLETED",
+                            "createdAt": "2024-02-24T07:10:44.502Z",
+                            "updatedAt": "2024-02-24T07:10:45.789Z"
+                        },
+                        "/urlmetadata/http%3A%2F%2Fdevnar.github.io%2Ftickle": {
+                            "url": "http://devnar.github.io/tickle",
+                            "title": "Tickle",
+                            "description": "Not alma uygulaması",
+                            "siteName": null,
+                            "siteVideoUrl": null,
+                            "imageUrl": "http://devnar.github.io/tikle.png",
+                            "audioUrl": null,
+                            "videoUrl": null,
+                            "faviconUrl": "https://storage.googleapis.com/creatorspace-public/sites%2Ffavicons%2FaHR0cHM6Ly9kZXZuYXIuZ2l0aHViLmlvL2xvZ29zL3Rpa2xlLnBuZw%3D%3D.png",
+                            "touchIconUrl": null,
+                            "screenshotUrl": null,
+                            "status": "COMPLETED",
+                            "createdAt": "2024-02-24T07:27:01.353Z",
+                            "updatedAt": "2024-02-24T07:27:02.363Z"
+                        },
+                        "/urlmetadata/http%3A%2F%2Fdevnar.github.io%2Fmasa": {
+                            "url": "http://devnar.github.io/masa",
+                            "title": "MASA",
+                            "description": "MASA, Haberleşme, Eğlence ve Paylaşım Topluluğudur. hadi sende bir sandalye çek ve aramıza otur!",
+                            "siteName": null,
+                            "siteVideoUrl": null,
+                            "imageUrl": "http://devnar.github.io/depo/resimler/main.png",
+                            "audioUrl": null,
+                            "videoUrl": null,
+                            "faviconUrl": "http://devnar.github.io/depo/resimler/main.png",
+                            "touchIconUrl": null,
+                            "screenshotUrl": null,
+                            "status": "COMPLETED",
+                            "createdAt": "2024-02-24T07:26:27.208Z",
+                            "updatedAt": "2024-02-24T07:26:27.902Z"
+                        },
+                        "/urlmetadata/https%3A%2F%2Fdevnar.github.io%2Fbotlimon%2F": {
+                            "url": "https://devnar.github.io/botlimon/",
+                            "title": "Limon",
+                            "description": "Limon, eğlenmenize ve öğrenmenize yarayacak bir sohbet robotudur.",
+                            "siteName": null,
+                            "siteVideoUrl": null,
+                            "imageUrl": "https://storage.googleapis.com/creatorspace-public/sites%2Fogimages%2FaHR0cHM6Ly9kZXZuYXIuZ2l0aHViLmlvL2xvZ29zL2xpbW9uLnBuZw%3D%3D.png",
+                            "audioUrl": null,
+                            "videoUrl": null,
+                            "faviconUrl": "https://storage.googleapis.com/creatorspace-public/sites%2Ffavicons%2FaHR0cHM6Ly9kZXZuYXIuZ2l0aHViLmlvL2xvZ29zL2xpbW9uLnBuZw%3D%3D.png",
+                            "touchIconUrl": null,
+                            "screenshotUrl": null,
+                            "status": "COMPLETED",
+                            "createdAt": "2024-01-11T14:12:50.047Z",
+                            "updatedAt": "2024-02-24T07:27:33.023Z"
+                        },
+                        "/urlmetadata/https%3A%2F%2Fsites.google.com%2Fview%2Fwhosinsane": {
+                            "url": "https://sites.google.com/view/whosinsane",
+                            "title": "Who's Insane",
+                            "description": "Multiplayer\n",
+                            "siteName": null,
+                            "siteVideoUrl": null,
+                            "imageUrl": "https://storage.googleapis.com/creatorspace-public/sites%2Fogimages%2FaHR0cHM6Ly9saDQuZ29vZ2xldXNlcmNvbnRlbnQuY29tL09vbU9Yazl5Mmo3YjJCZEZjLWNSMFA5QVBKcEVjNEM4M0xWc1pjT3hBVmtGTUhLYzVyeE54MjJVdHhncmk0M095d0tpTVFhMmRFczhPbkt6eUdCRDh1az13MTYzODM%3D.jpeg",
+                            "audioUrl": null,
+                            "videoUrl": null,
+                            "faviconUrl": "https://storage.googleapis.com/creatorspace-public/sites%2Ffavicons%2FaHR0cHM6Ly9saDUuZ29vZ2xldXNlcmNvbnRlbnQuY29tL3VjbFdKVTFud3ZDMVVDMU9TYklpeTJyRkN3b3dxOXU5T1QxLU5ZOWFaaWdMRUtIWnJjbE5SNFZKbjBucmMxRGhjN0lScW5NY3hacDFjTEt2b3F2TVFSMHZrRHlxcDE1bzhlWUMyazl2Y0IxSTNPZy0%3D.jpeg",
+                            "touchIconUrl": null,
+                            "screenshotUrl": null,
+                            "status": "COMPLETED",
+                            "createdAt": "2024-02-24T07:27:47.327Z",
+                            "updatedAt": "2024-02-24T07:27:48.261Z"
+                        },
+                        "/urlmetadata/https%3A%2F%2Fopen.spotify.com%2Fplaylist%2F0chaPYul3MS8GD0QppnEgS%3Fsi%3Dd1c2470665a543ea": {
+                            "url": "https://open.spotify.com/playlist/0chaPYul3MS8GD0QppnEgS?si=d1c2470665a543ea",
+                            "title": "Listem",
+                            "description": "Listem · Playlist · 54 songs",
+                            "siteName": "Spotify",
+                            "siteVideoUrl": null,
+                            "imageUrl": "https://storage.googleapis.com/creatorspace-public/sites%2Fogimages%2FaHR0cHM6Ly9tb3NhaWMuc2Nkbi5jby82NDAvYWI2NzYxNmQwMDAwMWUwMjAxNGVhNDNiY2M3MDA3MjhkM2I2ZTVhNGFiNjc2MTZkMDAwMDFlMDIzZTQ1YzM5ZDBlNzUyYTcyOGJlMmIyNGRhYjY3NjE2ZDAwMDAxZTAyNWNmOGM5NTRlMWJiNjljMjg2MjNkYjc1YWI2NzYxNmQwMDAwMWUwMmVlNDRiOGUzMDEzYTc2MWI2ZDQ4MmY3MA%3D%3D.jpeg",
+                            "audioUrl": null,
+                            "videoUrl": null,
+                            "faviconUrl": "https://storage.googleapis.com/creatorspace-public/sites%2Ffavicons%2FaHR0cHM6Ly9vcGVuLnNwb3RpZnljZG4uY29tL2Nkbi9pbWFnZXMvZmF2aWNvbjMyLmI2NGVjYzAzLnBuZw%3D%3D.png",
+                            "touchIconUrl": null,
+                            "screenshotUrl": null,
+                            "status": "COMPLETED",
+                            "createdAt": "2024-02-24T08:15:00.694Z",
+                            "updatedAt": "2024-02-24T08:15:05.421Z"
+                        },
+                        "/urlrichdata/https%3A%2F%2Ftwitter.com%2F_devnar": {
+                            "url": "https://twitter.com/_devnar",
+                            "data": {
+                                "bio": "Front-End Developer",
+                                "cover": "https://storage.googleapis.com/creatorspace-public/richdata%2Ftwitter%2Fcovers%2FaHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfYmFubmVycy8xNDc1NTMyMjcxMDM3OTE1MTM2LzE2NzE5MDk4MDMvMTUwMHg1MDA%3D.jpeg",
+                                "avatar": "https://storage.googleapis.com/creatorspace-public/richdata%2Ftwitter%2Favatars%2FaHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE0NzU1MzI0NTExMjQ1NTU3NzYvdE1UQU9GU3hfMjAweDIwMC5qcGc%3D.jpeg",
+                                "handle": "_devnar",
+                                "bioLinks": [
+                                    "devnar.github.io"
+                                ],
+                                "userName": "NAR",
+                                "following": 28
+                            },
+                            "status": "COMPLETED",
+                            "createdAt": "2024-01-11T14:11:33.446Z",
+                            "updatedAt": "2024-02-24T07:05:15.552Z"
+                        },
+                        "/urlrichdata/https%3A%2F%2Fgithub.com%2Fdevnar": {
+                            "url": "https://github.com/devnar",
+                            "data": {
+                                "name": "NAR",
+                                "handle": "devnar",
+                                "followers": 3,
+                                "following": 0,
+                                "repositories": 8,
+                                "contributions": [
+                                    {
+                                        "week": "2023-02-19",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-02-26",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-03-05",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-03-12",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#40c463",
+                                                "count": 4
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 2
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 1
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-03-19",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-03-26",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-04-02",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-04-09",
+                                        "contributions": [
+                                            {
+                                                "color": "#40c463",
+                                                "count": 3
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 2
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-04-16",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 1
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-04-23",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-04-30",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-05-07",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-05-14",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#30a14e",
+                                                "count": 5
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-05-21",
+                                        "contributions": [
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 1
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 2
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 2
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 1
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-05-28",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-06-04",
+                                        "contributions": [
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 2
+                                            },
+                                            {
+                                                "color": "#30a14e",
+                                                "count": 5
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#40c463",
+                                                "count": 3
+                                            },
+                                            {
+                                                "color": "#40c463",
+                                                "count": 3
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 2
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-06-11",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#40c463",
+                                                "count": 4
+                                            },
+                                            {
+                                                "color": "#30a14e",
+                                                "count": 5
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-06-18",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-06-25",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-07-02",
+                                        "contributions": [
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 2
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 1
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 2
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-07-09",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 1
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-07-16",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#40c463",
+                                                "count": 4
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 1
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-07-23",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-07-30",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-08-06",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 1
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-08-13",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 1
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#40c463",
+                                                "count": 3
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 2
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-08-20",
+                                        "contributions": [
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 2
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 2
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 1
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 1
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-08-27",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 1
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 1
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-09-03",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 1
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#30a14e",
+                                                "count": 5
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-09-10",
+                                        "contributions": [
+                                            {
+                                                "color": "#40c463",
+                                                "count": 3
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 2
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-09-17",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#30a14e",
+                                                "count": 6
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-09-24",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-10-01",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-10-08",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#40c463",
+                                                "count": 4
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-10-15",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#30a14e",
+                                                "count": 5
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-10-22",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 1
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-10-29",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#40c463",
+                                                "count": 3
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 2
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-11-05",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-11-12",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 2
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 1
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-11-19",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 1
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-11-26",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-12-03",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#216e39",
+                                                "count": 8
+                                            },
+                                            {
+                                                "color": "#216e39",
+                                                "count": 8
+                                            },
+                                            {
+                                                "color": "#216e39",
+                                                "count": 8
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-12-10",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 1
+                                            },
+                                            {
+                                                "color": "#40c463",
+                                                "count": 3
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 1
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-12-17",
+                                        "contributions": [
+                                            {
+                                                "color": "#40c463",
+                                                "count": 4
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-12-24",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2023-12-31",
+                                        "contributions": [
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 2
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 1
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2024-01-07",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#40c463",
+                                                "count": 4
+                                            },
+                                            {
+                                                "color": "#40c463",
+                                                "count": 3
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 1
+                                            },
+                                            {
+                                                "color": "#30a14e",
+                                                "count": 5
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2024-01-14",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2024-01-21",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2024-01-28",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#40c463",
+                                                "count": 3
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 2
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2024-02-04",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2024-02-11",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#40c463",
+                                                "count": 4
+                                            },
+                                            {
+                                                "color": "#40c463",
+                                                "count": 3
+                                            },
+                                            {
+                                                "color": "#9be9a8",
+                                                "count": 2
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "week": "2024-02-18",
+                                        "contributions": [
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            },
+                                            {
+                                                "color": "#ebedf0",
+                                                "count": 0
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "totalContributions": 173
+                            },
+                            "status": "COMPLETED",
+                            "createdAt": "2024-01-11T14:11:39.363Z",
+                            "updatedAt": "2024-02-24T07:05:12.576Z"
+                        },
+                        "/urlrichdata/https%3A%2F%2Fwww.youtube.com%2F%40_devnar": {
+                            "url": "https://www.youtube.com/@_devnar",
+                            "data": {
+                                "videos": [
+                                    {
+                                        "url": "https://youtube.com/watch?v=7tuYFGHZxAA",
+                                        "title": "Arkadaşımın yaptığı oyunu Hackledim",
+                                        "thumbnail": "https://storage.googleapis.com/creatorspace-public/richdata%2Fyoutube%2Fvideothumbnails%2FaHR0cHM6Ly9pLnl0aW1nLmNvbS92aS83dHVZRkdIWnhBQS9tcWRlZmF1bHQuanBn.jpeg"
+                                    },
+                                    {
+                                        "url": "https://youtube.com/watch?v=9WQHqmSUHu0",
+                                        "title": "ChatGPT ile Pong Kodluyoruz",
+                                        "thumbnail": "https://storage.googleapis.com/creatorspace-public/richdata%2Fyoutube%2Fvideothumbnails%2FaHR0cHM6Ly9pLnl0aW1nLmNvbS92aS85V1FIcW1TVUh1MC9tcWRlZmF1bHQuanBn.jpeg"
+                                    },
+                                    {
+                                        "url": "https://youtube.com/watch?v=iRagYY6VOkg",
+                                        "title": "Yazma Efekti Yaptım",
+                                        "thumbnail": "https://storage.googleapis.com/creatorspace-public/richdata%2Fyoutube%2Fvideothumbnails%2FaHR0cHM6Ly9pLnl0aW1nLmNvbS92aS9pUmFnWVk2Vk9rZy9tcWRlZmF1bHQuanBn.jpeg"
+                                    },
+                                    {
+                                        "url": "https://youtube.com/watch?v=jHhEi1Tf4MU",
+                                        "title": "Minecraft ama Kod yazabiliyorum",
+                                        "thumbnail": "https://storage.googleapis.com/creatorspace-public/richdata%2Fyoutube%2Fvideothumbnails%2FaHR0cHM6Ly9pLnl0aW1nLmNvbS92aS9qSGhFaTFUZjRNVS9tcWRlZmF1bHQuanBn.jpeg"
+                                    },
+                                    {
+                                        "url": "https://youtube.com/watch?v=8l6jaMKCAFw",
+                                        "title": "Rastgele Şifre Oluşturucu",
+                                        "thumbnail": "https://storage.googleapis.com/creatorspace-public/richdata%2Fyoutube%2Fvideothumbnails%2FaHR0cHM6Ly9pLnl0aW1nLmNvbS92aS84bDZqYU1LQ0FGdy9tcWRlZmF1bHQuanBn.jpeg"
+                                    },
+                                    {
+                                        "url": "https://youtube.com/watch?v=UM-kjigP5-8",
+                                        "title": "Wordle oyun hilesi",
+                                        "thumbnail": "https://storage.googleapis.com/creatorspace-public/richdata%2Fyoutube%2Fvideothumbnails%2FaHR0cHM6Ly9pLnl0aW1nLmNvbS92aS9VTS1ramlnUDUtOC9tcWRlZmF1bHQuanBn.jpeg"
+                                    },
+                                    {
+                                        "url": "https://youtube.com/watch?v=vGNZhFFhrqw",
+                                        "title": "Togg'un Logosunu paint programı ile yaptım",
+                                        "thumbnail": "https://storage.googleapis.com/creatorspace-public/richdata%2Fyoutube%2Fvideothumbnails%2FaHR0cHM6Ly9pLnl0aW1nLmNvbS92aS92R05aaEZGaHJxdy9tcWRlZmF1bHQuanBn.jpeg"
+                                    },
+                                    {
+                                        "url": "https://youtube.com/watch?v=djaBCWWoXEU",
+                                        "title": "Chrome Dino Oyununu bozdum",
+                                        "thumbnail": "https://storage.googleapis.com/creatorspace-public/richdata%2Fyoutube%2Fvideothumbnails%2FaHR0cHM6Ly9pLnl0aW1nLmNvbS92aS9kamFCQ1dXb1hFVS9tcWRlZmF1bHQuanBn.jpeg"
+                                    },
+                                    {
+                                        "url": "https://youtube.com/watch?v=EjYPTFc8_ro",
+                                        "title": "Toggle Menü",
+                                        "thumbnail": "https://storage.googleapis.com/creatorspace-public/richdata%2Fyoutube%2Fvideothumbnails%2FaHR0cHM6Ly9pLnl0aW1nLmNvbS92aS9FallQVEZjOF9yby9tcWRlZmF1bHQuanBn.jpeg"
+                                    },
+                                    {
+                                        "url": "https://youtube.com/watch?v=eTablwY-A_E",
+                                        "title": "sound of lemon",
+                                        "thumbnail": "https://storage.googleapis.com/creatorspace-public/richdata%2Fyoutube%2Fvideothumbnails%2FaHR0cHM6Ly9pLnl0aW1nLmNvbS92aS9lVGFibHdZLUFfRS9tcWRlZmF1bHQuanBn.jpeg"
+                                    },
+                                    {
+                                        "url": "https://youtube.com/watch?v=B2C3PdtmO84",
+                                        "title": "Limon - ilk görüntüleri",
+                                        "thumbnail": "https://storage.googleapis.com/creatorspace-public/richdata%2Fyoutube%2Fvideothumbnails%2FaHR0cHM6Ly9pLnl0aW1nLmNvbS92aS9CMkMzUGR0bU84NC9tcWRlZmF1bHQuanBn.jpeg"
+                                    }
+                                ],
+                                "numVideos": 13,
+                                "channelName": "NAR",
+                                "subscribers": 25,
+                                "channelHandle": "@_devnar"
+                            },
+                            "status": "COMPLETED",
+                            "createdAt": "2024-02-24T07:06:19.188Z",
+                            "updatedAt": "2024-02-24T07:06:23.519Z"
+                        },
+                        "/urlrichdata/https%3A%2F%2Fopen.spotify.com%2Fplaylist%2F0chaPYul3MS8GD0QppnEgS%3Fsi%3Dd1c2470665a543ea": {
+                            "url": "https://open.spotify.com/playlist/0chaPYul3MS8GD0QppnEgS?si=d1c2470665a543ea",
+                            "data": {
+                                "name": "Listem",
+                                "tracks": [
+                                    {
+                                        "title": "Bir Pesimistin Gözyaşları",
+                                        "artists": [
+                                            "Sagopa Kajmer"
+                                        ],
+                                        "duration": 263080,
+                                        "thumbnail": "https://i.scdn.co/image/ab67616d0000b2735cf8c954e1bb69c28623db75",
+                                        "audioSnippet": "https://p.scdn.co/mp3-preview/35cc16a3b3ec6c70c3028d55ddb91b3556ce8991?cid=e9674deaf4924833947faecd37ddcd55"
+                                    },
+                                    {
+                                        "title": "Kalbim Krizin Bekçisi Olmuş",
+                                        "artists": [
+                                            "Sagopa Kajmer"
+                                        ],
+                                        "duration": 196626,
+                                        "thumbnail": "https://i.scdn.co/image/ab67616d0000b2735cf8c954e1bb69c28623db75",
+                                        "audioSnippet": "https://p.scdn.co/mp3-preview/67370c14610be160b9da385e4b71e645fd4c31b1?cid=e9674deaf4924833947faecd37ddcd55"
+                                    },
+                                    {
+                                        "title": "Karikatür Komedya",
+                                        "artists": [
+                                            "Sagopa Kajmer"
+                                        ],
+                                        "duration": 236160,
+                                        "thumbnail": "https://i.scdn.co/image/ab67616d0000b2735cf8c954e1bb69c28623db75",
+                                        "audioSnippet": "https://p.scdn.co/mp3-preview/46536aa81bd3d6256e5ee1bc598b9f67e80480ec?cid=e9674deaf4924833947faecd37ddcd55"
+                                    },
+                                    {
+                                        "title": "Maskeli Balo",
+                                        "artists": [
+                                            "Sagopa Kajmer"
+                                        ],
+                                        "duration": 294480,
+                                        "thumbnail": "https://i.scdn.co/image/ab67616d0000b2735cf8c954e1bb69c28623db75",
+                                        "audioSnippet": "https://p.scdn.co/mp3-preview/84ddbcef31c5382b9dd5d73ce41ef3816250218e?cid=e9674deaf4924833947faecd37ddcd55"
+                                    }
+                                ],
+                                "ownerName": "NAR",
+                                "thumbnail": "https://storage.googleapis.com/creatorspace-public/richdata%2Fspotify%2Fplaylists%2FaHR0cHM6Ly9tb3NhaWMuc2Nkbi5jby82NDAvYWI2NzYxNmQwMDAwYjI3MzAxNGVhNDNiY2M3MDA3MjhkM2I2ZTVhNGFiNjc2MTZkMDAwMGIyNzM1Y2Y4Yzk1NGUxYmI2OWMyODYyM2RiNzVhYjY3NjE2ZDAwMDBiMjczNWVmNTkxM2E4NmEwYTc5Mzg3NzJmZDU5YWI2NzYxNmQwMDAwYjI3M2VlNDRiOGUzMDEzYTc2MWI2ZDQ4MmY3MA%3D%3D.jpeg",
+                                "totalSongs": 54
+                            },
+                            "status": "COMPLETED",
+                            "createdAt": "2024-02-24T08:14:58.913Z",
+                            "updatedAt": "2024-02-24T08:14:59.916Z"
+                        }
+                    }
+                },
+                "__N_SSG": true
+            },
+            "page": "/[handle]",
+            "query": {
+                "handle": "devnar"
+            },
+            "buildId": "L9xm8td2YSxgCuMjdA0fa",
+            "isFallback": false,
+            "gsp": true,
+            "locale": "en",
+            "locales": [
+                "en"
+            ],
+            "defaultLocale": "en",
+            "scriptLoader": [
+            ]
+        }
+        </script>
+    </body>
+</html>
