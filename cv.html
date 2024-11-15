@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>NAR - cv</title>
+        <meta property="og:url" content="https://devnar.github.io/">
+        <meta property="og:title" content="NAR">
+        <meta property="og:description" content="🌐 Software Developer with experience since 2019. 🤝 For now, he is developing his own projects. JS, Python, Arduino, Raspberry-pi, Unity, Android Studio, Canva">
+        <meta property="og:image" content="https://res.cloudinary.com/read-cv/image/upload/v1/1/profilePhotos/7xr06fnPOodGXy460ZtoqTKa3S83/open-graph-047e0361-b616-451f-a663-83ef7b8872e6.png?_a=DATAdtAAZAA0">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <link rel="shortcut icon" href="/logos/nar.png">
+        <style>
+            body {
+                flex-direction: column;
+                align-items: center;
+                font-family: "Nunito", sans-serif;
+                box-sizing: border-box;
+                color: #333;
+            }
+            body {
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            section {
+                border-bottom: 1px solid #ddd;
+            }
+            .profile-header {
+                display: flex;
+                align-items: center;
+                padding-left: 40px;
+                padding-top: 40px;
+            }
+            .profile-photo-wrap {
+                position: relative;
+                margin-right: 16px;
+            }
+            .profile-photo-picker {
+                display: block;
+                width: 92px;
+                height: 92px;
+                border-radius: 50%;
+                overflow: hidden;
+                cursor: pointer;
+            }
+            .profile-photo-picker img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .tooltip-wrap {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                z-index: 11;
+            }
+            .status-button {
+                display: flex;
+                align-items: center;
+                height: 24px;
+                border: none;
+                border-radius: 12px;
+                box-shadow: rgb(0 0 0 / 0.05) 0 0 0 1px, rgb(0 0 0 / 0.1) 0 1px 4px;
+                cursor: pointer;
+                padding: 0 8px;
+            }
+            .profile-info {
+                flex: 1;
+                display: grid;
+            }
+            .display-name h2 {
+                font-size: 20px;
+                font-weight: 400;
+                margin: 0;
+            }
+            .profile-info p {
+                margin: 4px 0;
+            }
+            .badges .mega-link {
+                cursor: pointer;
+                align-items: center;
+                border-radius: 12px;
+                font-size: 14px;
+                padding: 5px 10px;
+                text-decoration: none;
+                background-color: #f3f3f3;
+            }
+            .button-icon svg {
+                fill: none;
+                height: 16px;
+                width: 16px;
+            }
+            #about {
+                padding: 40px;
+                background-color: #fff;
+            }
+            #about h3 {
+                font-size: 1.5em;
+                margin-bottom: 20px;
+            }
+            #projects {
+                padding: 40px;
+            }
+            #projects h3 {
+                font-size: 1.5em;
+                margin-bottom: 20px;
+            }
+            .profile-item {
+                display: flex;
+                align-items: flex-start;
+                margin-bottom: 20px;
+            }
+            .item-duration {
+                flex-shrink: 0;
+                width: 80px;
+            }
+            .item-content {
+                flex: 1;
+                background-color: #fff;
+                border-radius: 8px;
+            }
+            .item-title a {
+                color: #000;
+                text-decoration: none;
+                font-weight: 700;
+            }
+            .item-description {
+                margin-top: 10px;
+            }
+            .item-images img {
+                width: 90px;
+                height: 90px;
+                border-radius: 8px;
+            }
+            #contact {
+                padding: 40px;
+            }
+            #contact h3 {
+                font-size: 24px;
+                font-weight: 600;
+                margin-bottom: 12px;
+            }
+            .contact-item {
+                display: flex;
+                align-items: center;
+                margin-bottom: 12px;
+            }
+            .platform {
+                font-size: 14px;
+                font-weight: 500;
+                color: #333;
+                margin-right: 8px;
+            }
+            .platform-link .mega-link {
+                color: #000;
+                text-decoration: none;
+                font-weight: 600;
+            }
+            .platform-link .mega-link:hover {
+                text-decoration: underline;
+            }
+            a:visited {
+                color: #333;
+                background-color: transparent;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="profile-header">
+            <div class="profile-photo-wrap">
+                <label for="profile-photo-picker" class="profile-photo-picker">
+                    <img alt="profile photo" src="https://devnar.github.io/logos/nar.png" />
+                </label>
+                <div class="tooltip-wrap">
+                    <button class="status-button">
+                        🧐
+                    </button>
+                </div>
+            </div>
+            <div class="profile-info">
+                <div class="display-name">
+                    <h2>NAR</h2>
+                </div>
+                <div>
+                    <p>Front-end Developer in web, he/him</p>
+                </div>
+                <div class="badges">
+                    <a class="mega-link" href="https://devnar.github.io">devnar.github.io</a>
+                    <a class="mega-link" onclick="window.print()" target="_blank">Download CV</a>
+                </div>
+            </div>
+        </header>
+
+        <section id="about">
+            <h3>About</h3>
+            <p>
+                Hello, I am a 17 year old web developer. I started my web development journey on 22/11/2019. In my first experiences, I started by using ready-made site building tools such as Google Sites and WordPress, and in the process I
+                completed my first project by creating a gaming site. Since then, developing projects has become a passion for me.
+            </p>
+            <h4 id="skills">Skills</h4>
+            <p><img src="https://img.shields.io/badge/firebase%20DataBase-F38020?style=for-the-badge&logo=firebase&logoColor=white" alt="Firebase database"> <img src="https://img.shields.io/badge/Google%20Cloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white" alt="Google Cloud"> <img src="https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Shell Script"> <img src="https://img.shields.io/badge/HTML-%23323330.svg?style=for-the-badge&logo=html5&logoColor=f16529" alt="HTML"> <img src="https://img.shields.io/badge/CSS-%23323330.svg?style=for-the-badge&logo=css3&logoColor=33a9dc" alt="CSS"> <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript"> <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python"> <img src="https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white" alt="NPM"> <img src="https://img.shields.io/badge/Unity-%2320232a.svg?style=for-the-badge&logo=unity&logoColor=white" alt="UNITY"> <img src="https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white" alt="Canva"> <img src="https://img.shields.io/badge/-RaspberryPi-C51A4A?style=for-the-badge&logo=Raspberry-Pi" alt="Raspberry Pi"> <img src="https://img.shields.io/badge/Bot-%235835CC.svg?style=for-the-badge&logo=discord&logoColor=white" alt="Discord Bot"> <img src="https://img.shields.io/badge/PowerShell-%23000.svg?style=for-the-badge&logo=powershell&logoColor=white" alt="PowerShell"> <img src="https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white" alt="Markdown"> <img src="https://img.shields.io/badge/Windows%20Terminal-%234D4D4D.svg?style=for-the-badge&logo=windows-terminal&logoColor=white" alt="Windows Terminal"> <img src="https://img.shields.io/badge/Arduino-199a9f?style=for-the-badge&logo=Arduino&logoColor=white" alt="Arduino"> <img src="https://img.shields.io/badge/-Stackoverflow-FE7A16?style=for-the-badge&logo=stack-overflow&logoColor=white" alt="Stack Overflow"> <img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white" alt="NodeJS"> <img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="Visual Studio Code"> <img src="https://img.shields.io/badge/opencv-%23white.svg?style=for-the-badge&logo=opencv&logoColor=white" alt="OpenCV"> <img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white" alt="Figma"> <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows"></p>
+        </section>
+
+        <section id="projects">
+            <h3>Projects</h3>
+            <div class="profile-item">
+                <div class="item-duration">
+                    <span>2024</span>
+                </div>
+                <div class="item-content">
+                    <div class="item-title">
+                        <a class="mega-link" href="https://bytestacker.blogspot.com/" target="_blank">ByteStacker</a>
+                    </div>
+                    <div class="item-description">
+                        <p>It presents technology news on the world and Türkiye agenda to its users by linking the sources.</p>
+                    </div>
+                    <div class="item-images">
+                        <div class="scrollable-gallery">
+                            <img src="https://devnar.github.io/logos/bytestacker-icon.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-item">
+                <div class="item-duration">
+                    <span>2024</span>
+                </div>
+                <div class="item-content">
+                    <div class="item-title">
+                        <a class="mega-link" href="https://devnar.github.io/pigeongo/" target="_blank">PigeonGo</a>
+                    </div>
+                    <div class="item-description">
+                        <p>A tiny search engine</p>
+                    </div>
+                    <div class="item-images">
+                        <div class="scrollable-gallery">
+                            <img src="https://devnar.github.io/logos/pigeongo.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-item">
+                <div class="item-duration">
+                    <span>2024</span>
+                </div>
+                <div class="item-content">
+                    <div class="item-title">
+                        <a class="mega-link" href="https://devnar.github.io/sayidisi/" target="_blank">SayıDışı</a>
+                    </div>
+                    <div class="item-description">
+                        <p>
+                            Find the digit that is not in a 9-digit number.<br />
+                            <br />
+                            It is a short game that you can make as difficult as you want. When you're bored but don't have much time, it's offline time.
+                        </p>
+                    </div>
+                    <div class="item-images">
+                        <div class="scrollable-gallery">
+                            <img src="https://devnar.github.io/logos/sayidisi.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-item">
+                <div class="item-duration">
+                    <span>2024</span>
+                </div>
+                <div class="item-content">
+                    <div class="item-title">
+                        <a class="mega-link" href="https://inh.vercel.app" target="_blank">I'm Not Hacker</a>
+                    </div>
+                    <div class="item-description">
+                        <p>
+                            itself is a website with a CMD screen. some features are available. the purpose of this screen is to create a big cmd social network by developing programs and sharing them to people
+                        </p>
+                    </div>
+                    <div class="item-images">
+                        <div class="scrollable-gallery">
+                            <img src="https://devnar.github.io/logos/inh-icon.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-item">
+                <div class="item-duration">
+                    <span>2023</span>
+                </div>
+                <div class="item-content">
+                    <div class="item-title">
+                        <a class="mega-link" href="https://devnar.github.io/WhosInsane/" target="_blank">Who's Insane</a>
+                    </div>
+                    <div class="item-description">
+                        <p>It is the second project I developed myself. It is a social media site and is still in service.</p>
+                    </div>
+                    <div class="item-images">
+                        <div class="scrollable-gallery">
+                            <img src="https://devnar.github.io/logos/whoinsane.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-item">
+                <div class="item-duration">
+                    <span>2021</span>
+                </div>
+                <div class="item-content">
+                    <div class="item-title">
+                        <a class="mega-link" href="https://devnar.github.io/masa/" target="_blank">MASA</a>
+                    </div>
+                    <div class="item-description">
+                        <p>It is the second project I developed myself. It is a social media site and is still in service.</p>
+                    </div>
+                    <div class="item-images">
+                        <div class="scrollable-gallery">
+                            <img src="https://devnar.github.io/logos/masa.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-item">
+                <div class="item-duration">
+                    <span>2020</span>
+                </div>
+                <div class="item-content">
+                    <div class="item-title">
+                        <a class="mega-link" href="#" target="_blank">Limon (closed)</a>
+                    </div>
+                    <div class="item-description">
+                        <p>
+                            It is a discord bot that I made in the past and it is not being developed.<br />
+                            <br />
+                            the adventure that started with me wanting to build a chatbot
+                        </p>
+                    </div>
+                    <div class="item-images">
+                        <div class="scrollable-gallery">
+                            <img src="https://devnar.github.io/logos/limon.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h3>Contact</h3>
+            <div class="contact-item">
+                <div class="platform">
+                    <span>GitHub</span>
+                </div>
+                <div class="platform-link">
+                    <a class="mega-link" href="https://github.com/devnar" target="_blank">devnar</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="platform">
+                    <span>Linkedin</span>
+                </div>
+                <div class="platform-link">
+                    <a class="mega-link" href="https://linkedin.com/in/devnar" target="_blank">devnar</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="platform">
+                    <span>X</span>
+                </div>
+                <div class="platform-link">
+                    <a class="mega-link" href="https://x.com/_devnar" target="_blank">_devnar</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="platform">
+                    <span>Codepen</span>
+                </div>
+                <div class="platform-link">
+                    <a class="mega-link" href="https://codepen.io/_devnar" target="_blank">_devnar</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="platform">
+                    <span>Youtube</span>
+                </div>
+                <div class="platform-link">
+                    <a class="mega-link" href="https://www.youtube.com/@_devnar" target="_blank">_devnar</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="platform">
+                    <span>Suno</span>
+                </div>
+                <div class="platform-link">
+                    <a class="mega-link" href="https://suno.com/@_devnar" target="_blank">_devnar</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="platform">
+                    <span>Discord</span>
+                </div>
+                <div class="platform-link">
+                    <a class="mega-link" href="https://discord.gg/7ANkUb8Dyu" target="_blank">NAR Support</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="platform">
+                    <span>Email</span>
+                </div>
+                <div class="platform-link">
+                    <a class="mega-link" href="mailto:devnar@duck.com" target="_blank">devnar@duck.com</a>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
