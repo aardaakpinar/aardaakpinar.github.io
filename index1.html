@@ -198,9 +198,60 @@
                     margin: 0 auto;
                 }
             }
+
+            #balloon-container {
+                height: 100vh;
+                padding: 1em;
+                box-sizing: border-box;
+                display: flex;
+                position: fixed;
+                flex-wrap: wrap;
+                transition: opacity 500ms;
+            }
+
+            .balloon {
+                height: 125px;
+                width: 105px;
+                border-radius: 75% 75% 70% 70%;
+                position: relative;
+            }
+
+            .balloon:before {
+                content: "";
+                height: 75px;
+                width: 1px;
+                padding: 1px;
+                background-color: #FDFD96;
+                display: block;
+                position: absolute;
+                top: 125px;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+
+            .balloon:after {
+                content: "▲";
+                text-align: center;
+                display: block;
+                position: absolute;
+                color: inherit;
+                top: 120px;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+
+            @keyframes float {
+            from {transform: translateY(100vh);
+            opacity: 1;}
+            to {transform: translateY(-300vh);
+            opacity: 0;}
+            }
         </style>
     </head>
     <body>
+        <div id="balloon-container"></div>
         <header class="profile-header">
             <div class="profile-photo-wrap">
                 <img alt="profile photo" src="https://devnar.github.io/logos/nar.png" />
@@ -219,51 +270,57 @@
                 </div>
             </div>
         </header>
+        <nav class="tabs">
+            <h3 class="tab-button active" data-tab="Projects">Projects</h3>
+            <h3 class="tab-button" data-tab="About">About</h3>
+            <h3 class="tab-button" data-tab="Bookmarks">Bookmarks</h3>
+        </nav>
+        <main>
+            <div class="tab-content active" id="Projects">
+                <div class="projects-item">
+                    <a href="https://devnar.github.io/masa/"><img src="https://opengraph.githubassets.com/1/devnar/masa" alt="masa" /></a>
+                    <a href="https://devnar.github.io/targeto/"><img src="https://opengraph.githubassets.com/1/devnar/targeto" alt="targeto" /></a>
+                    <a href="https://devnar.github.io/sayidisi/"><img src="https://opengraph.githubassets.com/1/devnar/sayidisi" alt="sayidisi" /></a>
+                    <a href="https://devnar.github.io/radio/"><img src="https://opengraph.githubassets.com/1/devnar/radio" alt="radio" /></a>
+                    <a href="https://devnar.github.io/pigeongo/"><img src="https://opengraph.githubassets.com/1/devnar/pigeongo" alt="pigeongo" /></a>
+                    <a href="https://inh.vercel.app"><img src="https://opengraph.githubassets.com/1/devnar/imnothacker" alt="imnothacker" /></a>
+                    <a href="https://sites.google.com/view/botlimon/"><img src="https://opengraph.githubassets.com/1/devnar/limon" alt="badland" /></a>
+                </div>
+            </div>
 
-        <section id="about">
-            <nav class="tabs">
-                <h3 class="tab-button active" data-tab="About">About</h3>
-                <h3 class="tab-button" data-tab="Skills">Skills</h3>
-                <h3 class="tab-button" data-tab="Stack">Stack</h3>
-                <h3 class="tab-button" data-tab="Bookmarks">Bookmarks</h3>
-            </nav>
-            <div class="tab-content active" id="About">
+            <div class="tab-content" id="About">
                 <p>
-                    Hi 👋 I'm NAR (I'm using the name of an app I used to make as a pseudonym for now), a Frontend developer, Thinker and minimalist based in Istanbul, Turkey.
+                    Hello 👋 I am NAR (the name of the app I used to make, which I now use as a pseudonym), an <span id="age"></span> year old front-end developer living in Istanbul. The profile picture you see features a white rooster, symbolizing my deceased pet that I once took care of. The background color is one of my favorite colors.<br><br>
+                    I started my web development journey on November 22, 2019. Initially, I completed my second project by creating a game center site using ready-made tools like WordPress, Google Sites and scripts. Since then, developing projects has become a passion for me.
                 </p>
                 <p>
-                    I started on November 22, 2019. In the beginning, I completed my second project by creating a game center site using ready-made programs such as WordPress, Google Sites and Scripts.
+                    <img src="https://img.shields.io/badge/HTML-%23323330.svg?style=for-the-badge&amp;logo=html5&amp;logoColor=f16529" alt="HTML">
+                    <img src="https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&amp;logo=markdown&amp;logoColor=white" alt="Markdown">
+                    <img src="https://img.shields.io/badge/CSS-%23323330.svg?style=for-the-badge&amp;logo=css3&amp;logoColor=33a9dc" alt="CSS">
+                    <img src="https://img.shields.io/badge/WordPress-%23117AC9.svg?style=for-the-badge&logo=WordPress&logoColor=white" alt="WordPress">
+                    <img src="https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&amp;logo=Canva&amp;logoColor=white" alt="Canva">
+                    <img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&amp;logo=figma&amp;logoColor=white" alt="Figma">
+                    <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&amp;logo=javascript&amp;logoColor=%23F7DF1E" alt="JavaScript">
+                    <img src="https://img.shields.io/badge/Bot-%235835CC.svg?style=for-the-badge&amp;logo=discord&amp;logoColor=white" alt="Discord Bot">
+                    <img src="https://img.shields.io/badge/firebase%20DataBase-F38020?style=for-the-badge&amp;logo=firebase&amp;logoColor=white" alt="Firebase database">
+                    <img src="https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&amp;logo=npm&amp;logoColor=white" alt="NPM">
+                    <img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&amp;logo=node.js&amp;logoColor=white" alt="NodeJS">
+                    <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&amp;logo=python&amp;logoColor=ffdd54" alt="Python">
+                    <img src="https://img.shields.io/badge/opencv-%23white.svg?style=for-the-badge&amp;logo=opencv&amp;logoColor=white" alt="OpenCV">
+                    <img src="https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&amp;logo=php&amp;logoColor=white" alt="Php">
+                    <img src="https://img.shields.io/badge/Google%20Cloud-%234285F4.svg?style=for-the-badge&amp;logo=google-cloud&amp;logoColor=white" alt="Google Cloud">
+                    <img src="https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&amp;logo=gnu-bash&amp;logoColor=white" alt="Shell Script">
+                    <img src="https://img.shields.io/badge/-RaspberryPi-C51A4A?style=for-the-badge&amp;logo=Raspberry-Pi" alt="Raspberry Pi">
+                    <img src="https://img.shields.io/badge/Arduino-199a9f?style=for-the-badge&amp;logo=Arduino&amp;logoColor=white" alt="Arduino">
+                    <img src="https://img.shields.io/badge/-Stackoverflow-FE7A16?style=for-the-badge&amp;logo=stack-overflow&amp;logoColor=white" alt="Stack Overflow">
+                    <img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&amp;logo=visual-studio-code&amp;logoColor=white" alt="Visual Studio Code">
+                    <img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&amp;logo=android&amp;logoColor=white" alt="Android">
+                    <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&amp;logo=windows&amp;logoColor=white" alt="Windows">
+                    <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&amp;logo=ubuntu&amp;logoColor=white" alt="Ubuntu">
                 </p>
-            </div>
-            <div class="tab-content" id="Skills">
                 <p>
-                    <img src="https://img.shields.io/badge/HTML-%23323330.svg?style=for-the-badge&amp;logo=html5&amp;logoColor=f16529" alt="HTML" />
-                    <img src="https://img.shields.io/badge/CSS-%23323330.svg?style=for-the-badge&amp;logo=css3&amp;logoColor=33a9dc" alt="CSS" />
-                    <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&amp;logo=javascript&amp;logoColor=%23F7DF1E" alt="JavaScript" />
-                    <img src="https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&amp;logo=markdown&amp;logoColor=white" alt="Markdown" />
-                    <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&amp;logo=python&amp;logoColor=ffdd54" alt="Python" />
-                    <img src="https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&amp;logo=php&amp;logoColor=white" alt="Php" />
-                    <img src="https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&amp;logo=gnu-bash&amp;logoColor=white" alt="Shell Script" />
-                </p>
-            </div>
-            <div class="tab-content" id="Stack">
-                <p>
-                    <img src="https://img.shields.io/badge/Discord.js-%235835CC.svg?style=for-the-badge&amp;logo=discord&amp;logoColor=white" alt="Discord Bot" />
-                    <img src="https://img.shields.io/badge/Discord.py-%235835CC.svg?style=for-the-badge&amp;logo=discord&amp;logoColor=white" alt="Discord Bot" />
-                    <img src="https://img.shields.io/badge/opencv-%23white.svg?style=for-the-badge&amp;logo=opencv&amp;logoColor=white" alt="OpenCV" />
-                    <img src="https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&amp;logo=npm&amp;logoColor=white" alt="NPM" />
-                    <img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&amp;logo=node.js&amp;logoColor=white" alt="NodeJS" />
-                    <img src="https://img.shields.io/badge/firebase%20DataBase-F38020?style=for-the-badge&amp;logo=firebase&amp;logoColor=white" alt="Firebase database" />
-                    <img src="https://img.shields.io/badge/Google%20Cloud-%234285F4.svg?style=for-the-badge&amp;logo=google-cloud&amp;logoColor=white" alt="Google Cloud" />
-                    <img src="https://img.shields.io/badge/-RaspberryPi-C51A4A?style=for-the-badge&amp;logo=Raspberry-Pi" alt="Raspberry Pi" />
-                    <img src="https://img.shields.io/badge/Arduino-199a9f?style=for-the-badge&amp;logo=Arduino&amp;logoColor=white" alt="Arduino" />
-                    <img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&amp;logo=visual-studio-code&amp;logoColor=white" alt="Visual Studio Code" />
-                    <img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&amp;logo=android&amp;logoColor=white" alt="Android" />
-                    <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&amp;logo=windows&amp;logoColor=white" alt="Windows" />
-                    <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&amp;logo=ubuntu&amp;logoColor=white" alt="Ubuntu" />
-                    <img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&amp;logo=figma&amp;logoColor=white" alt="Figma" />
-                    <img src="https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&amp;logo=Canva&amp;logoColor=white" alt="Canva" />
-                    <img src="https://img.shields.io/badge/-Stackoverflow-FE7A16?style=for-the-badge&amp;logo=stack-overflow&amp;logoColor=white" alt="Stack Overflow" />
+                    <a href="https://buymeacoffee.com/devnar"><img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&amp;logo=buy-me-a-coffee&amp;logoColor=black" alt="Buy Me A Coffee"></a>
+                    <a href="https://patreon.com/_devnar"><img src="https://img.shields.io/badge/Patreon-F96854?style=for-the-badge&amp;logo=patreon&amp;logoColor=white" alt="Buy Me A Coffee"></a>
                 </p>
             </div>
 
@@ -456,20 +513,7 @@
                     </a>
                 </div>
             </div>
-        </section>
-
-        <section id="projects">
-            <h3>Projects</h3>
-            <div class="projects-item">
-                <a href="https://devnar.github.io/masa/"><img src="https://opengraph.githubassets.com/1/devnar/masa" alt="masa" /></a>
-                <a href="https://devnar.github.io/targeto/"><img src="https://opengraph.githubassets.com/1/devnar/targeto" alt="targeto" /></a>
-                <a href="https://devnar.github.io/sayidisi/"><img src="https://opengraph.githubassets.com/1/devnar/sayidisi" alt="sayidisi" /></a>
-                <a href="https://devnar.github.io/radio/"><img src="https://opengraph.githubassets.com/1/devnar/radio" alt="radio" /></a>
-                <a href="https://devnar.github.io/pigeongo/"><img src="https://opengraph.githubassets.com/1/devnar/pigeongo" alt="pigeongo" /></a>
-                <a href="https://inh.vercel.app"><img src="https://opengraph.githubassets.com/1/devnar/imnothacker" alt="imnothacker" /></a>
-                <a href="https://sites.google.com/view/botlimon/"><img src="https://opengraph.githubassets.com/1/devnar/limon" alt="badland" /></a>
-            </div>
-        </section>
+        </main>
 
         <script>
             document.querySelectorAll(".tab-button").forEach((button) => {
@@ -480,13 +524,57 @@
                     button.classList.add("active");
                     const tabId = button.getAttribute("data-tab");
                     document.getElementById(tabId).classList.add("active");
-                    if (tabId != "About" && tabId != "Skills" && tabId != "Stack") {
-                        document.getElementById("projects").classList.add("disabled");
-                    } else {
-                        document.getElementById("projects").classList.remove("disabled");
-                    }
                 });
             });
+
+            var dob = new Date("09/12/2006"); 
+            var month_diff = Date.now() - dob.getTime();  
+            var age_dt = new Date(month_diff); 
+            var year = age_dt.getUTCFullYear();  
+            var age = Math.abs(year - 1970);
+            document.getElementById("age").innerText = age;
+            const balloonContainer = document.getElementById("balloon-container");
+            function random(num) {return Math.floor(Math.random() * num);}
+
+            function getRandomStyles() {
+                var r = random(255);
+                var g = random(255);
+                var b = random(255);
+                var mt = random(200);
+                var ml = random(50);
+                var dur = random(5) + 5;
+                return `
+                background-color: rgba(${r},${g},${b},0.7);
+                color: rgba(${r},${g},${b},0.7); 
+                box-shadow: inset -7px -3px 10px rgba(${r - 10},${g - 10},${b - 10},0.7);
+                margin: ${mt}px 0 0 ${ml}px;
+                animation: float ${dur}s ease-in infinite
+                `;
+            }
+
+            function createBalloons(num) {
+                for (var i = num; i > 0; i--) {
+                    var balloon = document.createElement("div");
+                    balloon.className = "balloon";
+                    balloon.style.cssText = getRandomStyles();
+                    balloonContainer.append(balloon);
+                }
+            }
+
+            function checkBirthday(month, day) {
+                const today = new Date();
+                if (today.getMonth() + 1 === month && today.getDate() === day) {
+                    document.getElementById("age").innerText += "🎂";  
+                    createBalloons(15);
+                }
+            }
+                
+            setTimeout(() => {
+                balloonContainer.style.opacity = 0;
+                balloonContainer.remove()
+            }, 6000)
+
+            checkBirthday(9, 12);
         </script>
     </body>
 </html>
