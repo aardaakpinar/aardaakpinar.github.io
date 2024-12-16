@@ -1,48 +1,226 @@
-<html>
-<head>
-  <title>NAR - 404</title>
-    <!-- Meta -->
-      <meta name="viewport" content="width=device-width,  initial-scale=1, maximum-scale=1 user-scalable=0">
-      <meta name="description" content="NAR, 2006 doğumlu Web site Geliştiricisiyim.">
-      <meta name="copyright" content="NAR © 2021 Tüm hakları saklı">
-      <meta name="theme-color" content="#23b5b5">
-      <meta property="og:title" content="NAR - 404" > 
-      <meta property="og:description" content="NAR'ın sayfa bulunamadı sayfasıdır" /> 
-      <meta property="og:image" content="https://devnar.github.io/logos/nar.png" /> 
-    <!-- /robots -->
-      <meta name="robots" content="index,follow">
-      <meta name="revisit-after" content="1 days">
-    <!-- Link -->
-      <link rel="shortcut icon" type="image/png" href="https://devnar.github.io/logos/nar.png"/>
-    <!-- style -->
-    <style>
-          body{background:#363940;color:#d3d7de;font-family:"Courier new";font-size:18px;line-height:1.5em;cursor:default}a{color:#fff}.code-area{position:absolute;min-width:320px;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.code-area>span{display:block}@media screen and (max-width:320px){.code-area{font-size:5vw;min-width:auto;width:95%;margin:auto;padding:5px 5px 5px 10px;line-height:6.5vw}}
-    </style>
-</head>
-<body>
-    <div class="code-area">
-        <span style="color: #777;font-style:italic;">
-          // 404 sayfa bulunamadı.
-        </span>
-        <span>
-          <span style="color:#d65562;">
-            if
-          </span>
-            (<span style="color:#4ca8ef;">!</span><span style="font-style: italic;color:#bdbdbd;">found</span>)
-          {
-        </span>
-        <span>
-          <span style="padding-left: 15px;color:#2796ec">
-             <i style="width: 10px;display:inline-block"></i>throw
-          </span>
-          <span>
-            (<span style="color: #a6a61f">"＞﹏＜"</span>);
-          </span>
-            <span style="display:block">}</span>
-            <span style="color: #777;font-style:italic;">
-                // <a href="/">Eve Git!</a>
-            </span>
-        </span>
-      </div>
-</body>    
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="🌐 Software Developer with experience since 2019. 🤝 For now, he is developing his own projects. JS, Python, Arduino, Raspberry-pi, Android Studio, Canva" />
+        <meta property="og:title" content="NAR - Page Not Found" />
+        <meta property="og:description" content="🌐 Software Developer with experience since 2019. 🤝 For now, he is developing his own projects. JS, Python, Arduino, Raspberry-pi, Android Studio, Canva" />
+        <meta property="og:url" content="https://devnar.github.io/" />
+        <meta property="og:image" content="https://devnar.github.io/logos/nar.png" />
+        <meta property="og:site_name" content="NAR" />
+        <link rel="icon" href="https://devnar.github.io/logos/nar.png" />
+        <title>NAR - Page Not Found</title>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet" />
+        <style>
+            html,
+            body {
+                height: 100%;
+                margin: 0;
+            }
+
+            html {
+                font-size: 62.5%;
+            }
+
+            body {
+                font-family: "Lato", sans-serif;
+                font-size: 1.5rem;
+                color: #23b5b5;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            .wrapper {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .error {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-content: center;
+            }
+
+            .number {
+                font-weight: 900;
+                font-size: 15rem;
+                line-height: 1;
+            }
+
+            .illustration {
+                position: relative;
+                width: 12.2rem;
+                margin: 0 2.1rem;
+            }
+
+            :where(.circle, .clip, .paper, .eyes, .eye, .cheeks, .mouth) {
+                position: absolute;
+            }
+
+            .circle {
+                bottom: 0;
+                left: 0;
+                width: 12.2rem;
+                height: 11.4rem;
+                border-radius: 50%;
+                background-color: #23b5b5;
+            }
+
+            .clip {
+                bottom: 0.3rem;
+                left: 50%;
+                transform: translateX(-50%);
+                overflow: hidden;
+                width: 12.5rem;
+                height: 13rem;
+                border-radius: 0 0 50% 50%;
+            }
+
+            .paper {
+                bottom: -0.3rem;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 9.2rem;
+                height: 12.4rem;
+                border: 0.3rem solid #333;
+                background-color: white;
+                border-radius: 0.8rem;
+            }
+
+            .paper::before {
+                content: "";
+                position: absolute;
+                top: -0.7rem;
+                right: -0.7rem;
+                width: 1.4rem;
+                height: 1rem;
+                background-color: white;
+                border-bottom: 0.3rem solid #333;
+                transform: rotate(45deg);
+            }
+
+            .face {
+                position: relative;
+                margin-top: 2.3rem;
+            }
+
+            .eyes {
+                top: 0;
+                left: 2.4rem;
+                width: 4.6rem;
+                height: 0.8rem;
+            }
+
+            .eye {
+                bottom: 0;
+                width: 0.8rem;
+                height: 0.8rem;
+                border-radius: 50%;
+                background-color: #333;
+                animation-name: eye;
+                animation-duration: 4s;
+                animation-iteration-count: infinite;
+                animation-timing-function: ease-in-out;
+            }
+
+            .eye__left {
+                left: 0;
+            }
+
+            .eye__right {
+                right: 0;
+            }
+
+            @keyframes eye {
+                0% {
+                    height: 0.8rem;
+                }
+
+                50% {
+                    height: 0.8rem;
+                }
+
+                52% {
+                    height: 0.1rem;
+                }
+
+                54% {
+                    height: 0.8rem;
+                }
+
+                100% {
+                    height: 0.8rem;
+                }
+            }
+
+            .cheeks {
+                top: 1.6rem;
+                width: 1rem;
+                height: 0.2rem;
+                border-radius: 50%;
+                background-color: #fdabaf;
+            }
+
+            .cheeks__left {
+                left: 1.4rem;
+            }
+
+            .cheeks__right {
+                right: 1.4rem;
+            }
+
+            .mouth {
+                top: 3.1rem;
+                left: 50%;
+                width: 1.6rem;
+                height: 0.2rem;
+                border-radius: 0.1rem;
+                transform: translateX(-50%);
+                background-color: #333;
+            }
+
+            .button {
+                margin-top: 4rem;
+                border-radius: 6px;
+                padding: 1.2rem 3rem;
+                color: white;
+                background-color: #23b5b5;
+            }
+
+            .button:hover {
+                background-color: #169494;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="error">
+                <div class="number">4</div>
+                <div class="illustration">
+                    <div class="circle"></div>
+                    <div class="clip">
+                        <div class="paper">
+                            <div class="face">
+                                <div class="eyes">
+                                    <div class="eye eye__left"></div>
+                                    <div class="eye eye__right"></div>
+                                </div>
+                                <div class="cheeks cheeks__left"></div>
+                                <div class="cheeks cheeks__right"></div>
+                                <div class="mouth"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="number">4</div>
+            </div>
+            <a class="button" href="/">Back Home</a>
+        </div>
+    </body>
 </html>
