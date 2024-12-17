@@ -114,7 +114,7 @@
                 display: block;
             }
 
-            .grid {
+            /*.grid {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-between;
@@ -131,17 +131,35 @@
                 transition: transform 0.3s ease-in-out;
             }
 
-            .h img {
+            .grid img:hover {
+                transform: scale(1.1);
+            }*/
+
+            .grid {
+                display: grid;
+                gap: 40px;
+                margin-bottom: 30px;
+                justify-items: center;
+                align-items: center;
+            }
+
+            .grid.sites {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .grid.other {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+
+            .grid img {
                 width: 100%;
-                max-width: 170px;
-                height: auto;
-                border-radius: 8px;
-                object-fit: cover;
-                transition: transform 0.3s ease-in-out;
+                border-radius: 5px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
             }
 
             .grid img:hover {
-                transform: scale(1.1);
+                transform: translateY(-5px);
             }
 
             h3 {
@@ -192,8 +210,6 @@
 
             @media (max-width: 600px) {
                 .profile-header {
-                    flex-direction: column;
-                    text-align: center;
                     align-items: center;
                     gap: 15px;
                 }
@@ -205,10 +221,6 @@
 
                 .profile-photo-wrap img {
                     margin: 0 auto;
-                }
-
-                .tabs {
-                    justify-content: center;
                 }
             }
 
@@ -354,7 +366,7 @@
             </section>
 
             <section class="tab-content" id="Sites">
-                <div class="grid h">
+                <div class="grid sites">
                     <a href="https://excalidraw.com/"><img src="https://creatorspace.imgix.net/sites/ogimages/aHR0cHM6Ly9leGNhbGlkcmF3LmNvbS9vZy1pbWFnZS0zLnBuZw==.png?width=600&height=600" alt="Excalidraw" /></a>
                     <a href="https://app.haikei.app/"><img src="https://creatorspace.imgix.net/sites/ogimages/aHR0cHM6Ly9oYWlrZWkuYXBwL2hhaWtlaS1jb3Zlci5wbmc=.png?width=600&height=600" alt="Haikei" /></a>
                     <a href="https://freecodetools.org/"><img src="https://creatorspace.imgix.net/sites/ogimages/aHR0cHM6Ly9mcmVlY29kZXRvb2xzLm9yZy9vZ3AucG5n.png?width=600&height=600" alt="Free Code Tools" /></a>
@@ -367,7 +379,7 @@
             </section>
 
             <section class="tab-content" id="Books">
-                <div class="grid">
+                <div class="grid other">
                     <img src="https://i.dr.com.tr/cache/500x400-0/originals/0001712159001-1.jpg" alt="Kuşkucu Somon 9786051715117" />
                     <img src="https://i.dr.com.tr/cache/500x400-0/originals/0001705121001-1.jpg" alt="Çoğunlukla Zararsız 9786051715131" />
                     <img src="https://i.dr.com.tr/cache/500x400-0/originals/0001705122001-1.jpg" alt="Elveda ve Bütün O Balıklar İçin Teşekkürler 9786051715087" />
@@ -399,7 +411,7 @@
                 </div>
             </section>
             <section class="tab-content" id="Films">
-                <div class="grid">
+                <div class="grid other">
                     <a href="https://www.imdb.com/title/tt1375666"><img src="https://m.media-amazon.com/images/M/MV5BMjBhZDFmNDMtODUwZC00OWYwLTk5NmItZDA1YmNmMTdlOTc3XkEyXkFqcGdeQXVyOTgxMDMxNTc@._V1_FMjpg_UX800_.jpg" alt="Inception" /></a>
                     <a href="https://www.imdb.com/title/tt0133093"><img src="https://m.media-amazon.com/images/M/MV5BMDFiN2RlNjYtNWY2ZS00NjVjLWFmM2UtM2NmNmJkYTgwZmU0XkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Matrix *" /></a>
                     <a href="https://www.imdb.com/title/tt0096874">
@@ -492,7 +504,7 @@
                 </div>
             </section>
             <section class="tab-content" id="TvSeries">
-                <div class="grid">
+                <div class="grid other">
                     <a href="https://www.imdb.com/title/tt2861424">
                         <img src="https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_FMjpg_UX800_.jpg" alt="Rick and Morty" />
                     </a>
