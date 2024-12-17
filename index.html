@@ -141,6 +141,7 @@
                 margin-bottom: 30px;
                 justify-items: center;
                 align-items: center;
+                padding-top: 30px;
             }
 
             .grid.sites {
@@ -148,7 +149,7 @@
             }
 
             .grid.other {
-                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                grid-template-columns: repeat(auto-fit, max(100px));
             }
 
             .grid img {
@@ -177,6 +178,7 @@
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
                 gap: 40px;
+                margin-top: 30px;
                 margin-bottom: 30px;
                 justify-items: center;
                 align-items: center;
@@ -206,22 +208,6 @@
 
             #skills img:hover {
                 transform: scale(1.05);
-            }
-
-            @media (max-width: 600px) {
-                .profile-header {
-                    align-items: center;
-                    gap: 15px;
-                }
-
-                .profile-photo-wrap {
-                    margin-right: 0;
-                    margin-bottom: 10px;
-                }
-
-                .profile-photo-wrap img {
-                    margin: 0 auto;
-                }
             }
 
             #balloon-container {
@@ -265,6 +251,24 @@
                 left: 0;
                 right: 0;
                 margin: auto;
+            }
+
+            @media (max-width: 600px) {
+                .profile-header {
+                    align-items: center;
+                    gap: 15px;
+                }
+
+                .profile-photo-wrap {
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                }
+
+                .profile-photo-wrap img {
+                    width: 100px;
+                    height: 100px;
+                    margin: 0 auto;
+                }
             }
 
             @keyframes float {
