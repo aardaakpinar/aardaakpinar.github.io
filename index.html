@@ -20,8 +20,15 @@
                 --text-color: #333;
                 --background-color: #fff;
                 --accent-color: #23b5b5;
-                --border-color: #e0e0e0;
+                --border-color: #f0f0f0;
                 --transition: all 0.3s ease;
+            }
+
+            [data-theme='dark'] {
+                --text-color: #fff;
+                --background-color: #1e1e1e;
+                --accent-color: #23b5b5;
+                --border-color: #333;
             }
 
             body {
@@ -66,9 +73,9 @@
             .mega-link {
                 display: inline-block;
                 padding: 5px 10px;
-                color: var(--accent-color);
+                color: var(--text-color);
                 text-decoration: none;
-                border: 1px solid var(--accent-color);
+                background-color: var(--border-color);
                 border-radius: 20px;
                 transition: var(--transition);
             }
@@ -81,7 +88,9 @@
             .tabs {
                 display: flex;
                 gap: 10px;
-                flex-wrap: wrap;
+                overflow-x: auto;
+                white-space: nowrap;
+                scrollbar-width: none;
             }
 
             nav {
@@ -91,7 +100,7 @@
             .tab-button {
                 font-size: 1rem;
                 padding: 10px 15px;
-                background-color: #f0f0f0;
+                background-color: var(--border-color);
                 border: none;
                 cursor: pointer;
                 border-radius: 5px;
@@ -99,8 +108,8 @@
             }
 
             .tab-button.active {
-                background-color: #23b5b5;
-                color: #fff;
+                background-color: var(--accent-color);
+                color: var(--background-color);
             }
 
             .disabled {
@@ -120,7 +129,6 @@
                 flex-wrap: wrap;
                 justify-content: space-between;
                 gap: 16px;
-                padding: 10px;
             }
 
             .grid img {
@@ -304,12 +312,13 @@
         <nav class="tabs">
             <h3 class="tab-button active" data-tab="Projects">Projects</h3>
             <h3 class="tab-button" data-tab="About">About</h3>
+            <h3 class="tab-button" data-tab="Blog">Blog</h3>
             <h3 class="tab-button" data-tab="Bookmarks">Bookmarks</h3>
         </nav>
         <main>
             <section class="tab-content active" id="Projects">
                 <div class="projects-item">
-                    <a href="https://devnar.github.io/masa/"><img src="https://opengraph.githubassets.com/1/devnar/masa" alt="masa" /></a>
+                    <a href="https://devnar.github.io/masa/"><img src="https://opengraph.githubassets.com/1/devnar/masa?dark=true" alt="masa" /></a>
                     <a href="https://devnar.github.io/targeto/"><img src="https://opengraph.githubassets.com/1/devnar/targeto" alt="targeto" /></a>
                     <a href="https://devnar.github.io/sayidisi/"><img src="https://opengraph.githubassets.com/1/devnar/sayidisi" alt="sayidisi" /></a>
                     <a href="https://devnar.github.io/radio/"><img src="https://opengraph.githubassets.com/1/devnar/radio" alt="radio" /></a>
@@ -358,29 +367,32 @@
                 </p>
             </section>
 
+            <section class="tab-content" id="Blog">
+            </section>
+
             <section class="tab-content" id="Bookmarks">
-                <div class="tabs">
-                    <h3 class="tab-button" data-tab="Sites">Sites</h3>
+                <div class="grid" style="justify-content: left;">
+                    <h3 class="tab-button" data-tab="Tools">Tools</h3>
                     <h3 class="tab-button" data-tab="Books">Books</h3>
                     <h3 class="tab-button" data-tab="Films">Films</h3>
                     <h3 class="tab-button" data-tab="TvSeries">TV Series</h3>
-                    <!--<h3 class="tab-button" data-tab="Tools">Tools</h3>
-                    <h3 class="tab-button" data-tab="Design">Design</h3>
+                    
+                    <!--<h3 class="tab-button" data-tab="Design">Design</h3>
                     <h3 class="tab-button" data-tab="Reading">Reading</h3>
                     <h3 class="tab-button" data-tab="Reading">Listening</h3>-->
                 </div>
             </section>
 
-            <section class="tab-content" id="Sites">
+            <section class="tab-content" id="Tools">
                 <div class="grid1">
                     <a href="https://excalidraw.com/"><img src="https://creatorspace.imgix.net/sites/ogimages/aHR0cHM6Ly9leGNhbGlkcmF3LmNvbS9vZy1pbWFnZS0zLnBuZw==.png?width=600&height=600" alt="Excalidraw" /></a>
                     <a href="https://app.haikei.app/"><img src="https://creatorspace.imgix.net/sites/ogimages/aHR0cHM6Ly9oYWlrZWkuYXBwL2hhaWtlaS1jb3Zlci5wbmc=.png?width=600&height=600" alt="Haikei" /></a>
-                    <a href="https://freecodetools.org/"><img src="https://creatorspace.imgix.net/sites/ogimages/aHR0cHM6Ly9mcmVlY29kZXRvb2xzLm9yZy9vZ3AucG5n.png?width=600&height=600" alt="Free Code Tools" /></a>
                     <a href="https://neal.fun/ambient-chaos/"><img src="https://neal.fun/share-cards/ambient-chaos.png" alt="Ambient Chaos" /></a>
                     <a href="https://radio.madza.dev/"><img src="https://cdn.madza.dev/uploads/2021/12/devtunes-social-card.png" alt="DevTunes" /></a>
-                    <a href="link"><img src="https://img.itch.zone/aW1hZ2UvMTY3NzcyOC8xMzY5MjIzMi5wbmc=/347x500/ECHU8C.png?width=600&height=600" alt="Tiny Jens" /></a>
-                    <a href="link"><img src="https://creatorspace.imgix.net/sites/ogimages/aHR0cHM6Ly9zbG93cm9hZHMuaW8vaW1nLmpwZw==.jpeg?width=600&height=600" alt="Slow Roads" /></a>
-                    <a href="link"><img src="https://creatorspace.imgix.net/sites/ogimages/aHR0cHM6Ly9pbWcuaXRjaC56b25lL2FXMW5MekV5TmpjMk56WTNMbkJ1Wnc9PS9vcmlnaW5hbC9FZzMzekoucG5n.png?width=600&height=600" alt="STACKS:VILLAGE!" /></a>
+                    <a href="https://bmrk.cc/"><img src="https://bmrk.cc/images/og.jpg" alt="Bookmark.it" /></a>
+                    <a href="https://uselumen.com/"><img src="https://rdl.ink/render/https%3A%2F%2Fuselumen.com%2F" alt="Lumen" /></a>
+                    <a href="https://typefully.com/minimal-twitter"><img src="https://typefully.com/images/minimal-twitter/card.png" alt="Typefully" /></a>
+                    <a href="https://www.modernwiki.app/"><img src="https://www.modernwiki.app/assets/share-cce8f1b8262a4442370a9a6dfb5dd04f07d3fe8695a7240e85f32c316215abe3.png" alt="Modernwiki" /></a>
                 </div>
             </section>
 
@@ -562,6 +574,9 @@
         </main>
 
         <script>
+            const userTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', userTheme);
+
             document.querySelectorAll(".tab-button").forEach((button) => {
                 button.addEventListener("click", () => {
                     // Aktif sekme ve içerikleri kaldır
@@ -571,6 +586,10 @@
                     // Yeni sekmeyi aktif yap
                     button.classList.add("active");
                     const tabId = button.getAttribute("data-tab");
+                    if (tabId === "Blog") {
+                        window.location.href = "https://narlog.blogspot.com";
+                        return;
+                    }
                     document.getElementById(tabId).classList.add("active");
 
                     // URL'yi güncelle
