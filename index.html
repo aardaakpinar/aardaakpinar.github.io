@@ -574,9 +574,7 @@
         </main>
 
         <script>
-            const userTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-            document.documentElement.setAttribute('data-theme', userTheme);
-
+            
             document.querySelectorAll(".tab-button").forEach((button) => {
                 button.addEventListener("click", () => {
                     // Aktif sekme ve içerikleri kaldır
