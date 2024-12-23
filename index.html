@@ -417,7 +417,7 @@
                     <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&amp;logo=ubuntu&amp;logoColor=white" alt="Ubuntu" />
                 </p>
             </section>
-
+            
             <section class="tab-content" id="Blog">
                 <div class="flex" id="blog-container"></div>
             </section>
@@ -648,6 +648,43 @@
                     }
                 });
             });
+
+            async function fetchBlogPosts() {
+            const url = 'https://narlog.blogspot.com/feeds/posts/default';
+            
+            try {
+                const response = await fetch(url); // XML verisini alıyoruz
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const xmlText = await response.text(); // Metin olarak alıyoruz
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xmlText, "application/xml"); // XML'e çeviriyoruz
+
+                // Postları alıyoruz
+                const entries = xmlDoc.getElementsByTagName("entry");
+                const postsList = document.getElementById("Blog");
+
+                for (let entry of entries) {
+                    const title = entry.getElementsByTagName("title")[0].textContent;
+                    const link = entry.getElementsByTagName("link")[0].getAttribute("href");
+                    const summary = entry.getElementsByTagName("summary")[0]?.textContent || "No summary available";
+
+                    // Listeye ekliyoruz
+                    const listItem = document.createElement("li");
+                    listItem.innerHTML = `
+                        <a href="${link}" target="_blank">${title}</a>
+                        <p>${summary}</p>
+                    `;
+                    postsList.appendChild(listItem);
+                }
+            } catch (error) {
+                console.error("Error fetching blog posts:", error);
+            }
+        }
+
+        fetchBlogPosts();
 
             // Sayfa yüklendiğinde URL'deki hash'i veya path'i kontrol et
             window.addEventListener("load", () => {
