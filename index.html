@@ -667,18 +667,65 @@
             // Haberleri card şeklinde ekrana yazdırma
             function displayNews(newsItems) {
                 const container = document.getElementById("blog-container");
+                container.innerHTML ="";
 
                 newsItems.forEach((item) => {
                     const card = document.createElement("div");
                     card.classList.add("card");
 
                     card.innerHTML = `
-                                <a href="${item.link}"><h1>${item.title}</h1></a>
+                                <a class="news-title"><h1>${item.title}</h1></a>
                             `;
+
+                    card.querySelector(".news-title").addEventListener("click", () => {
+                        showContent(item, newsItems);
+                    });
 
                     container.appendChild(card);
                 });
             }
+
+            function showContent(item, newsItems) {
+                const container = document.getElementById("blog-container");
+
+                // Başlıkları tekrar göstermek için önce tüm içeriği temizleyelim
+                container.innerHTML = "";
+
+                // Seçilen içeriği card şeklinde ekleyelim
+                const contentCard = document.createElement("div");
+                contentCard.classList.add("content-card");
+
+                function formatDate(dateString) {
+                    const date = new Date(dateString);
+                    const day = String(date.getDate()).padStart(2, "0");
+                    const month = String(date.getMonth() + 1).padStart(2, "0"); // 0'dan başladığı için +1
+                    const year = date.getFullYear();
+
+                    return `${day}.${month}.${year}`;
+                }
+
+                contentCard.innerHTML = `
+                    <h1>${item.title}</h1>
+                    <i>${formatDate(item.pubDate)}</i>
+                    <div>${item.content}</div>
+                `;
+
+                container.appendChild(contentCard);
+
+                const card = document.createElement("div");
+                card.classList.add("card");
+
+                card.innerHTML = `
+                    <a class="news-title"><h1>Geri Dön</h1></a>
+                `;
+
+                card.querySelector(".news-title").addEventListener("click", () => {
+                    fetchRSS()
+                });
+
+                container.appendChild(card);
+            }
+
 
             // Sayfa yüklendiğinde RSS'yi çek
             fetchRSS();
