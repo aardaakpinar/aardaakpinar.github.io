@@ -128,7 +128,7 @@
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: flex-start;
-                gap: 35px;
+                gap: 15px;
                 padding: 10px;
             }
 
@@ -158,7 +158,7 @@
                 justify-items: center;
                 align-items: center;
                 padding-top: 30px;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             }
 
             .grid img {
@@ -408,42 +408,36 @@
             <section class="tab-content" id="Bookmarks">
                 <div class="flex" style="justify-content: left; padding: 0;">
                     <h3 class="tab-button" data-tab="Tools">Tools</h3>
-                    <h3 class="tab-button" data-tab="Design">Design</h3>
                     <h3 class="tab-button" data-tab="Books">Books</h3>
                     <h3 class="tab-button" data-tab="Films">Films</h3>
                     <h3 class="tab-button" data-tab="TvSeries">TV Series</h3>
 
                     <!--
                     <h3 class="tab-button" data-tab="Reading">Reading</h3>
+                    <h3 class="tab-button" data-tab="Design">Design</h3>
                     <h3 class="tab-button" data-tab="Reading">Listening</h3>-->
                 </div>
             </section>
 
             <section class="tab-content" id="Tools">
-                <div class="grid">
+                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
                     <a href="https://excalidraw.com/"><img loading="lazy" src="https://creatorspace.imgix.net/sites/ogimages/aHR0cHM6Ly9leGNhbGlkcmF3LmNvbS9vZy1pbWFnZS0zLnBuZw==.png?width=600&height=600" alt="Excalidraw" /></a>
+                    <a href="https://app.haikei.app/"><img loading="lazy" src="https://creatorspace.imgix.net/sites/ogimages/aHR0cHM6Ly9oYWlrZWkuYXBwL2hhaWtlaS1jb3Zlci5wbmc=.png?width=600&height=600" alt="Haikei" /></a>
                     <a href="https://neal.fun/ambient-chaos/"><img loading="lazy" src="https://neal.fun/share-cards/ambient-chaos.png" alt="Ambient Chaos" /></a>
                     <a href="https://radio.madza.dev/"><img loading="lazy" src="https://cdn.madza.dev/uploads/2021/12/devtunes-social-card.png" alt="DevTunes" /></a>
                     <a href="https://bmrk.cc/"><img loading="lazy" src="https://bmrk.cc/images/og.jpg" alt="Bookmark.it" /></a>
                     <a href="https://typefully.com/minimal-twitter"><img loading="lazy" src="https://typefully.com/images/minimal-twitter/card.png" alt="Typefully" /></a>
                     <a href="https://www.modernwiki.app/"><img loading="lazy" src="https://www.modernwiki.app/assets/share-cce8f1b8262a4442370a9a6dfb5dd04f07d3fe8695a7240e85f32c316215abe3.png" alt="Modernwiki" /></a>
                     <a href="https://uselumen.com/"><img loading="lazy" src="https://rdl.ink/render/https%3A%2F%2Fuselumen.com%2F" alt="Lumen" /></a>
-                </div>
-            </section>
-
-            <section class="tab-content" id="Design">
-                <div class="grid">
-                    <a href="https://iconic.app/"><img loading="lazy" src="https://urlscan.io/liveshot/?url=http://iconic.app" alt="Iconic" /></a>
-                    <a href="https://boxicons.com/"><img loading="lazy" src="https://urlscan.io/liveshot/?url=http://boxicons.com" alt="Boxicons" /></a>
-                    <a href="https://lucide.dev/"><img loading="lazy" src="https://rdl.ink/render/https%3A%2F%2Flucide.dev%2F" alt="Lucide icon" /></a>
+                    <a href="https://ionic.io/ionicons"><img loading="lazy" src="https://ionic.io/ionicons/assets/img/meta/ionicons-og.png" alt="ionicons" /></a>
+                    <a href="https://boxicons.com/"><img loading="lazy" src="https://cdn.prod.website-files.com/672211731c6546626029ce06/67239158bd1a9c86e63444bf_1132b0adbb1b9c-1730384199100.webp" alt="Boxicons" /></a>
+                    <a href="https://lucide.dev/"><img loading="lazy" src="https://lucide.dev/og.png" alt="Lucide icon" /></a>
                     <a href="https://tailwindui.com/"><img loading="lazy" src="https://tailwindui.com/plus/img/og-default.png" alt="Tailwind" /></a>
-                    <a href="https://baklava.design/"><img loading="lazy" src="https://urlscan.io/liveshot/?url=https://baklava.design/" alt="Baklava" /></a>
-                    <a href="https://app.haikei.app/"><img loading="lazy" src="https://creatorspace.imgix.net/sites/ogimages/aHR0cHM6Ly9oYWlrZWkuYXBwL2hhaWtlaS1jb3Zlci5wbmc=.png?width=600&height=600" alt="Haikei" /></a>
                 </div>
             </section>
 
             <section class="tab-content" id="Books">
-                <div class="flex">
+                <div class="grid">
                     <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0001712159001-1.jpg" alt="Kuşkucu Somon 9786051715117" />
                     <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0001705121001-1.jpg" alt="Çoğunlukla Zararsız 9786051715131" />
                     <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0001705122001-1.jpg" alt="Elveda ve Bütün O Balıklar İçin Teşekkürler 9786051715087" />
@@ -475,7 +469,7 @@
                 </div>
             </section>
             <section class="tab-content" id="Films">
-                <div class="flex">
+                <div class="grid">
                     <a href="https://www.imdb.com/title/tt1375666"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMjBhZDFmNDMtODUwZC00OWYwLTk5NmItZDA1YmNmMTdlOTc3XkEyXkFqcGdeQXVyOTgxMDMxNTc@._V1_FMjpg_UX800_.jpg" alt="Inception" /></a>
                     <a href="https://www.imdb.com/title/tt0133093"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMDFiN2RlNjYtNWY2ZS00NjVjLWFmM2UtM2NmNmJkYTgwZmU0XkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Matrix *" /></a>
                     <a href="https://www.imdb.com/title/tt0096874"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BODZjNWE4M2ItYWQ5OS00NmRjLThmMzktN2E1Y2U0MTQ4OGY4XkEyXkFqcGdeQXVyMjI0NTA4NzA@._V1_FMjpg_UX800_.jpg" alt="Back to the Future 1-2" /></a>
@@ -535,7 +529,7 @@
                 </div>
             </section>
             <section class="tab-content" id="TvSeries">
-                <div class="flex">
+                <div class="grid">
                     <a href="https://www.imdb.com/title/tt2861424"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_FMjpg_UX800_.jpg" alt="Rick and Morty" /></a>
                     <a href="https://www.imdb.com/title/tt1710308"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNWJjZjQ5NWUtMTkwZC00NGY2LWEyMDEtMGIyZThkMmMyZTZlXkEyXkFqcGdeQXVyMTI2MzY3NTA3._V1_FMjpg_UX800_.jpg" alt="Regular Show" /></a>
                     <a href="https://www.imdb.com/title/tt4083422"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMGIzZmQ4YmUtZGQ4NC00OTkyLWE1MGUtMTQ3N2Y3N2E2NWEyXkEyXkFqcGdeQXVyODAzNzAwOTU@._V1_FMjpg_UX800_.jpg" alt="Doraemon" /></a>
