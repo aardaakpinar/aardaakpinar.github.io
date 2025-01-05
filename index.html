@@ -124,6 +124,32 @@
                 display: block;
             }
 
+            .blur {
+                position: relative;
+            }
+
+            .blur::after {
+                content: "Planned";
+                background-color: var(--background-color);
+                padding: 5px;
+                border-radius: 5px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
+                font-weight: bold;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+
+            .blur img:hover {
+                transform: none !important;
+            }
+
+            .blur img {
+                filter: blur(2px) brightness(0.5);
+            }
+
             .flex {
                 display: flex;
                 flex-wrap: wrap;
@@ -429,7 +455,7 @@
                     <a href="https://bmrk.cc/"><img loading="lazy" src="https://bmrk.cc/images/og.jpg" alt="Bookmark.it" /></a>
                     <a href="https://typefully.com/minimal-twitter"><img loading="lazy" src="https://typefully.com/images/minimal-twitter/card.png" alt="Typefully" /></a>
                     <a href="https://www.modernwiki.app/"><img loading="lazy" src="https://www.modernwiki.app/assets/share-cce8f1b8262a4442370a9a6dfb5dd04f07d3fe8695a7240e85f32c316215abe3.png" alt="Modernwiki" /></a>
-                    <a href="https://uselumen.com/"><img loading="lazy" src="https://rdl.ink/render/https%3A%2F%2Fuselumen.com%2F" alt="Lumen" /></a>
+                    <a href="https://uselumen.com/"><img loading="lazy" src="https://web.archive.org/web/20240713025616im_/https://github-production-user-asset-6210df.s3.amazonaws.com/4608155/293108465-6e52c46b-59f4-46c6-987d-65abee003b8a.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240713%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240713T025616Z&X-Amz-Expires=300&X-Amz-Signature=f60940e0508b3e3edbb87f4bcfe16cec42c9af473fcce2e209e48276a4d6146f&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=517126881" alt="Lumen" /></a>
                     <a href="https://ionic.io/ionicons"><img loading="lazy" src="https://ionic.io/ionicons/assets/img/meta/ionicons-og.png" alt="ionicons" /></a>
                     <a href="https://boxicons.com/"><img loading="lazy" src="https://cdn.prod.website-files.com/672211731c6546626029ce06/67239158bd1a9c86e63444bf_1132b0adbb1b9c-1730384199100.webp" alt="Boxicons" /></a>
                     <a href="https://lucide.dev/"><img loading="lazy" src="https://lucide.dev/og.png" alt="Lucide icon" /></a>
@@ -439,7 +465,12 @@
 
             <section class="tab-content" id="Books">
                 <div class="grid">
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0001712159001-1.jpg" alt="Kuşkucu Somon 9786051715117" />
+                    <div class="blur" >
+                        <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0000000064038-1.jpg" alt="1984 9789750718533" />
+                    </div>
+                    <div class="blur" >
+                        <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0001712159001-1.jpg" alt="Kuşkucu Somon 9786051715117" />
+                    </div>
                     <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0001705121001-1.jpg" alt="Çoğunlukla Zararsız 9786051715131" />
                     <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0001705122001-1.jpg" alt="Elveda ve Bütün O Balıklar İçin Teşekkürler 9786051715087" />
                     <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0000000373271-1.jpg" alt="Ready Player 1 9786050903447" />
@@ -466,17 +497,24 @@
                     <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0000000311400-1.jpg" alt="Saftirik 2  9789944821889" />
                     <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0000000284528-1.jpg" alt="Saftirik 1 9789944821117" />
                     <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0000000411500-1.jpg" alt="Fareler ve İnsanlar 9789755705859" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0000000349965-1.jpg" alt="Halime Kaptan 9786053600626" /> <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0000000052555-1.jpg" alt="acımak 9789751026569" />
+                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0000000349965-1.jpg" alt="Halime Kaptan 9786053600626" /> 
+                    <img loading="lazy" src="https://cdn.bkmkitap.com/acimak-13011901-74-O.jpg" alt="acımak 9789751026569" />
                 </div>
             </section>
             <section class="tab-content" id="Films">
                 <div class="grid">
                     <a href="https://www.imdb.com/title/tt1375666"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMjBhZDFmNDMtODUwZC00OWYwLTk5NmItZDA1YmNmMTdlOTc3XkEyXkFqcGdeQXVyOTgxMDMxNTc@._V1_FMjpg_UX800_.jpg" alt="Inception" /></a>
-                    <a href="https://www.imdb.com/title/tt0133093"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMDFiN2RlNjYtNWY2ZS00NjVjLWFmM2UtM2NmNmJkYTgwZmU0XkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Matrix *" /></a>
+                    <div class="blur" >
+                        <a href="https://www.imdb.com/title/tt0120382"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNzA3ZjZlNzYtMTdjMy00NjMzLTk5ZGYtMTkyYzNiOGM1YmM3XkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Truman Show" /></a>
+                    </div>
+                    <a href="https://www.imdb.com/title/tt0133093"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMDFiN2RlNjYtNWY2ZS00NjVjLWFmM2UtM2NmNmJkYTgwZmU0XkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Matrix" /></a>
                     <a href="https://www.imdb.com/title/tt0096874"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BODZjNWE4M2ItYWQ5OS00NmRjLThmMzktN2E1Y2U0MTQ4OGY4XkEyXkFqcGdeQXVyMjI0NTA4NzA@._V1_FMjpg_UX800_.jpg" alt="Back to the Future 1-2" /></a>
                     <a href="https://www.imdb.com/title/tt3659388"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMTcwMjI2NzM2MF5BMl5BanBnXkFtZTgwNDkyNTI5NTE@._V1_FMjpg_UX800_.jpg" alt="The Martian" /></a>
                     <a href="https://www.imdb.com/title/tt14055868"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BODE5OWFkNzMtNmE5Zi00NDFkLWIyMDktZWQ0YjNiNTQ5NzlmXkEyXkFqcGdeQXVyODk1MjAxNzQ@._V1_FMjpg_UX800_.jpg" alt="WALL·E" /></a>
                     <a href="https://www.imdb.com/title/tt2245084"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BYzcyZjg4YjAtMGRmNC00M2MzLTkyZTMtNjU1Y2Q2MTg5MTdlXkEyXkFqcGdeQXVyOTU2NDAzNDE@._V1_FMjpg_UX800_.jpg" alt="Big Hero 6" /></a>
+                    <div class="blur" >
+                        <a href="https://www.imdb.com/title/tt29623480"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZjM2M2E3YzAtZDJjYy00MDhkLThiYmItOGZhNzQ3NTgyZmI0XkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="The Wild Robot" /></a>
+                    </div>
                     <a href="https://www.imdb.com/title/tt0382932"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMTMzODU0NTkxMF5BMl5BanBnXkFtZTcwMjQ4MzMzMw@@._V1_FMjpg_UX800_.jpg" alt="Ratatouille" /></a>
                     <a href="https://www.imdb.com/title/tt1431045"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BYzE5MjY1ZDgtMTkyNC00MTMyLThhMjAtZGI5OTE1NzFlZGJjXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_FMjpg_UX800_.jpg" alt="Deadpool" /></a>
                     <a href="https://www.imdb.com/title/tt1049413"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BY2JiNDliN2ItODY3OS00ZGJmLWI1NjEtMGVhNmRjZGI1MWZjXkEyXkFqcGdeQXVyOTgxMDMxNTc@._V1_FMjpg_UX800_.jpg" alt="Up" /></a>
