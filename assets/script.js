@@ -1,8 +1,8 @@
 const links = [
-    { url: "https://devnar.github.io/masa/", category: "Projects" },
-    { url: "https://devnar.github.io/sayidisi/", category: "Projects" },
-    { url: "https://devnar.github.io/pitopi/", category: "Projects" },
-    { url: "https://devnar.github.io/inh/", category: "Projects" },
+    { url: "https://devnar.github.io/masa/", category: "Projects", type: "fav" },
+    { url: "https://devnar.github.io/sayidisi/", category: "Projects", type: "fav" },
+    { url: "https://devnar.github.io/pitopi/", category: "Projects", type: "fav" },
+    { url: "https://devnar.github.io/inh/", category: "Projects", type: "fav" },
     { url: "https://excalidraw.com/", category: "Tools" },
     { url: "https://obsidian.md/", category: "Tools" },
     { url: "https://www.todoist.com/", category: "Tools" },
@@ -19,7 +19,7 @@ const links = [
     { url: "https://boxicons.com/", category: "Tools" },
     { url: "https://lucide.dev/", category: "Tools" },
     { url: "https://tailwindui.com/", category: "Tools" },
-    { url: "https://yarn.co/", category: "Tools" },
+    { url: "https://yarn.co/", category: "Tools", type: "none" },
     { url: "https://www.dr.com.tr/kitap/1984/edebiyat/roman/dunya-roman/urunno=0000000064038?srsltid=AfmBOoo6xDD6_icAcVFG6jb7Qdi0Jug1T3ZBIU6gfP_zRzCut2JNg_Gh", category: "Books" },
     { url: "https://www.dr.com.tr/kitap/kuskucu-somon/edebiyat/roman/bilim-kurgu/urunno=0001712159001?srsltid=AfmBOopUjcfkingDrMua3Egz2r76PR0wvvHZx1ajunizIn7USgDQIbar", category: "Books" },
     { url: "https://www.dr.com.tr/kitap/cogunlukla-zararsiz/edebiyat/roman/bilim-kurgu/urunno=0001705121001?srsltid=AfmBOoqw8WbGECBls_TXlCOT11VWWrzTa4v7JcocbFkobzU7GDOTbDkw", category: "Books" },
@@ -62,30 +62,42 @@ links.forEach(async (link) => {
     const title = data.data.title || link.url;
     const description = data.data.description || "";
     const image = data.data.image?.url;
+    const fav = data.data.logo?.url;
 
     const card = document.createElement("a");
-    card.className = "relative thumbnail-shadow flex aspect-auto min-w-0 cursor-pointer flex-col gap-4 overflow-hidden rounded-xl bg-zinc-950 p-4 transition-colors duration-300 hover:bg-gray-900";
+    card.className = "card relative thumbnail-shadow flex aspect-auto min-w-0 cursor-pointer flex-col gap-4 overflow-hidden rounded-xl bg-zinc-950 p-4 transition-colors duration-300 hover:bg-gray-900";
     card.href = link.url;
     card.target = "_blank";
     card.rel = "noopener noreferrer";
 
     // Etiket
-    const tag = document.createElement("span");
+    const tag = document.createElement("div");
     tag.textContent = link.category;
-    tag.className = "absolute top-3 right-3 rounded-md bg-[#23b5b5] px-2 py-0.5 text-xs font-medium text-black";
+    tag.className = "category absolute top-3 right-3 rounded-md bg-[#23b5b5] px-2 py-0.5 text-xs font-medium text-black";
     tag.style.backgroundColor = categoryColorMap[link.category] || "#ccc";
     card.appendChild(tag);
 
     // Görsel varsa
-    if (image) {
+    if (image && link.type != "fav" && link.type != "none") {
         const imgWrap = document.createElement("span");
         imgWrap.className = "aspect-1200/630 overflow-hidden rounded-lg";
         const img = document.createElement("img");
         img.src = image;
         img.alt = title;
-        img.className = "animate-reveal aspect-1200 rounded-lg border bg-cover bg-center bg-no-repeat object-cover mb-5";
+        img.className = "animate-reveal aspect-1200 rounded-lg bg-cover bg-center bg-no-repeat object-cover mb-5";
         img.loading = "eager";
         img.width = 1200;
+        imgWrap.appendChild(img);
+        card.appendChild(imgWrap);
+    } else if (link.type != "none") {
+        const imgWrap = document.createElement("span");
+        imgWrap.className = "aspect-40/40 overflow-hidden rounded-lg";
+        const img = document.createElement("img");
+        img.src = fav;
+        img.alt = title;
+        img.className = "animate-reveal aspect-40 rounded-lg bg-cover bg-center bg-no-repeat object-cover mb-5";
+        img.loading = "eager";
+        img.width = 40;
         imgWrap.appendChild(img);
         card.appendChild(imgWrap);
     }
@@ -102,15 +114,7 @@ links.forEach(async (link) => {
     const domain = new URL(link.url).hostname.replace("www.", "");
     const domainSpan = document.createElement("span");
     domainSpan.className = "line-clamp-4 inline-flex items-center gap-1 text-sm text-gray-500";
-    domainSpan.innerHTML = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" 
-      viewBox="0 0 24 24" fill="none" stroke="currentColor" 
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
-      class="lucide lucide-link2">
-      <path d="M9 17H7A5 5 0 0 1 7 7h2"></path>
-      <path d="M15 7h2a5 5 0 1 1 0 10h-2"></path>
-      <line x1="8" x2="16" y1="12" y2="12"></line>
-    </svg>${domain}`;
+    domainSpan.innerHTML = `<i class="bx  bx-link"></i> ${domain}`;
     textBox.appendChild(domainSpan);
 
     if (description) {
@@ -122,4 +126,37 @@ links.forEach(async (link) => {
 
     card.appendChild(textBox);
     container.appendChild(card);
+});
+
+const btn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+  btn.style.display = window.scrollY > 300 ? "block" : "none";
+});
+
+btn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+
+document.querySelectorAll("#filterButtons button").forEach((btn) => {
+    const cat = btn.getAttribute("data-category");
+  if (categoryColorMap[cat]) {
+    btn.style.backgroundColor = categoryColorMap[cat];
+    btn.style.color = "black";
+  }
+  btn.addEventListener("click", () => {
+    const selected = btn.getAttribute("data-category");
+
+    document.querySelectorAll(".card").forEach((card) => {
+      const categoryEl = card.querySelector(".category");
+      const category = categoryEl?.textContent?.trim();
+
+      if (selected === "all" || category === selected) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
 });
