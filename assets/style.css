@@ -64,13 +64,6 @@ body {
     opacity: 0.8;
 }
 
-#filterButtons {
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 1000;
-    margin: 2rem;
-}
 
 .container {
     max-width: 750px;
