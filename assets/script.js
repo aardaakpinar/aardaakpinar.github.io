@@ -65,15 +65,13 @@ const categoryColorMap = {
     const container = document.getElementById("links");
 
     const promises = links.map(async (link) => {
-        const res = await fetch(`https://api.microlink.io/?url=${encodeURIComponent(link.url)}`);
+        const res = await fetch(`http://pitopi.onrender.com/api/preview?url=${encodeURIComponent(link.url)}`);
         const data = await res.json();
 
-        console.log(data);
-
-        const title = data.data.title || link.url;
-        const description = data.data.description || "";
-        const image = data.data.image?.url;
-        const fav = data.data.logo?.url;
+        const title = data.title || link.url;
+        const description = data.description;
+        const image = data.image;
+        const fav = data.favicon;
 
         if (link.type === "writeless") {
             const card = document.createElement("a");
