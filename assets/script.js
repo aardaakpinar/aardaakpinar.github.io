@@ -65,7 +65,7 @@ const categoryColorMap = {
     const container = document.getElementById("links");
 
     const promises = links.map(async (link) => {
-        const res = await fetch(`https://pitopi.onrender.com/api/preview?url=${encodeURIComponent(link.url)}`);
+        const res = await fetch(`https://pitopi.onrender.com:10000/api/metadata?url=${encodeURIComponent(link.url)}`);
         const data = await res.json();
 
         const title = data.title || link.url;
