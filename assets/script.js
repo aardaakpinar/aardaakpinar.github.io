@@ -1,12 +1,12 @@
 const links = [
     { url: "https://x.com/_devnar", category: "Contact", type: "fav" },
-    { url: "https://www.linkedin.com/in/devnar/", category: "Contact", type: "fav" },
+    //{ url: "https://www.linkedin.com/in/devnar/", category: "Contact", type: "fav" },
     { url: "https://github.com/devnar", category: "Contact", type: "fav" },
     { url: "https://buymeacoffee.com/devnar", category: "Contact", type: "fav" },
     { url: "https://www.patreon.com/c/_devnar", category: "Contact", type: "fav" },
     { url: "https://www.youtube.com/@_devnar", category: "Contact", type: "fav" },
-    { url: "https://www.reddit.com/user/_devnar_", category: "Contact", type: "fav" },
-    { url: "https://codepen.io/_devnar", category: "Contact", type: "fav" },
+    //{ url: "https://www.reddit.com/user/_devnar_", category: "Contact", type: "fav" },
+    //{ url: "https://codepen.io/_devnar", category: "Contact", type: "fav" },
     { url: "https://dev.to/devnar", category: "Contact", type: "fav" },
     { url: "https://suno.com/@_devnar", category: "Contact", type: "fav" },
     { url: "https://devnar.github.io/masa/", category: "Projects", type: "fav" },
@@ -17,7 +17,7 @@ const links = [
     { url: "https://obsidian.md/", category: "Tools" },
     { url: "https://www.todoist.com/", category: "Tools" },
     { url: "https://app.haikei.app/", category: "Tools" },
-    { url: "https://neal.fun/ambient-chaos/", category: "Tools", type: "none" },
+    //{ url: "https://neal.fun/ambient-chaos/", category: "Tools", type: "none" },
     { url: "https://radio.madza.dev/", category: "Tools" },
     { url: "https://bmrk.cc/", category: "Tools" },
     { url: "https://www.oldmapsonline.org/", category: "Tools" },
@@ -34,7 +34,7 @@ const links = [
     { url: "https://www.imdb.com/title/tt1710308", category: "TvSeries", type: "writeless" },
     { url: "https://www.imdb.com/title/tt1305826", category: "TvSeries", type: "writeless" },
     { url: "https://www.imdb.com/title/tt4083422", category: "TvSeries", type: "writeless" },
-    { url: "https://www.imdb.com/title/tt0063950", category: "TvSeries", type: "writeless" },
+    /*{ url: "https://www.imdb.com/title/tt0063950", category: "TvSeries", type: "writeless" },
     { url: "https://www.imdb.com/title/tt0063950", category: "TvSeries", type: "writeless" },
     { url: "https://www.imdb.com/title/tt1865718", category: "TvSeries", type: "writeless" },
     { url: "https://www.imdb.com/title/tt1812523", category: "TvSeries", type: "writeless" },
@@ -160,7 +160,7 @@ const links = [
     { url: "https://www.imdb.com/title/tt19759204", category: "Films", type: "writeless" },
     { url: "https://www.imdb.com/title/tt4477292", category: "Films", type: "writeless" },
     { url: "https://www.imdb.com/title/tt5779228", category: "Films", type: "writeless" },
-    { url: "https://www.imdb.com/title/tt0952640", category: "Films", type: "writeless" },
+    { url: "https://www.imdb.com/title/tt0952640", category: "Films", type: "writeless" },*/
 ];
 
 const categoryColorMap = {
@@ -177,7 +177,7 @@ const categoryColorMap = {
     const container = document.getElementById("links");
 
     const cards = await Promise.all(links.map(async (link) => {
-        const res = await fetch(`https://pitopi.onrender.com/api/metadata?url=${encodeURIComponent(link.url)}`);
+        const res = await fetch(`https://metadata-qdnb.onrender.com/api/metadata?url=${encodeURIComponent(link.url)}`);
         const data = await res.json();
 
         const title = data.title || link.url;
