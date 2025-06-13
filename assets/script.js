@@ -176,7 +176,7 @@ const categoryColorMap = {
 (async () => {
     const container = document.getElementById("links");
 
-    const cards = await Promise.all(links.map(async (link) => {
+    for (const link of links) {
         const res = await fetch(`https://metadata-qdnb.onrender.com/api/metadata?url=${encodeURIComponent(link.url)}`);
         const data = await res.json();
 
@@ -185,8 +185,10 @@ const categoryColorMap = {
         const image = data.image;
         const fav = data.favicon;
 
+        let card;
+
         if (link.type === "writeless") {
-            const card = document.createElement("a");
+            card = document.createElement("a");
             card.href = link.url;
             card.target = "_blank";
             card.rel = "noopener noreferrer";
@@ -211,17 +213,14 @@ const categoryColorMap = {
                 absolute inset-0 bg-gradient-to-t from-black/70 to-transparent
                 flex flex-col justify-end p-4
             `;
-
             const haveatitle = title !== "No title";
             const h2 = document.createElement("h2");
             h2.className = "text-lg font-semibold line-clamp-2";
             if (haveatitle) h2.textContent = title;
             overlay.appendChild(h2);
             card.appendChild(overlay);
-
-            return card;
         } else {
-            const card = document.createElement("a");
+            card = document.createElement("a");
             card.className = "card relative thumbnail-shadow flex aspect-auto min-w-0 cursor-pointer flex-col gap-4 overflow-hidden rounded-xl bg-zinc-950 p-4 transition-colors duration-300 hover:bg-gray-900";
             card.href = link.url;
             card.target = "_blank";
@@ -269,6 +268,7 @@ const categoryColorMap = {
             const domainSpan = document.createElement("span");
             domainSpan.className = "inline-flex items-center gap-1 text-sm text-gray-500";
             domainSpan.innerHTML = `<i class="bx bx-link"></i> ${domain}`;
+
             textBox.appendChild(domainSpan);
 
             if (description && link.type !== "writeless") {
@@ -277,14 +277,11 @@ const categoryColorMap = {
                 desc.textContent = description;
                 textBox.appendChild(desc);
             }
-
             card.appendChild(textBox);
-            return card;
         }
-    }));
-
-    // Tüm kartları sırayla ekle
-    cards.forEach(card => container.appendChild(card));
+        
+        container.appendChild(card);
+    }
 })();
 
 
