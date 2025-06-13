@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yer İmleri - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Effects -->
+    <div class="background-effects">
+        <div class="bg-blur bg-blur-1"></div>
+        <div class="bg-blur bg-blur-2"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="navigation">
+        <div class="nav-container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">Portfolio</a>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menüyü aç">
+                    <svg class="menu-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                    <svg class="close-icon hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+
+                <nav class="desktop-nav">
+                    <a href="projects.html" class="nav-link">Projects</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="bookmarks.html" class="nav-link active">Bookmarks</a>
+                </nav>
+            </div>
+
+            <div class="mobile-nav hidden" id="mobileNav">
+                <div class="mobile-nav-content">
+                    <nav class="mobile-nav-links">
+                        <a href="projects.html" class="mobile-nav-link">Projects</a>
+                        <a href="about.html" class="mobile-nav-link">About</a>
+                        <a href="blog.html" class="mobile-nav-link">Blog</a>
+                        <a href="bookmarks.html" class="mobile-nav-link active">Bookmarks</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <div class="container">
+            <h1 class="page-title">Yer İmleri</h1>
+
+            <div class="bookmarks-section">
+                <div class="category-section">
+                    <h2 class="category-title">CSS</h2>
+                    <div class="bookmarks-grid">
+                        <a href="https://example.com/css-techniques" class="bookmark-card" target="_blank" rel="noopener noreferrer">
+                            <div class="bookmark-header">
+                                <h3 class="bookmark-title">Modern CSS Teknikleri</h3>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15,3 21,3 21,9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </div>
+                            <p class="bookmark-description">CSS Grid ve Flexbox kullanarak modern layout tasarımı</p>
+                        </a>
+
+                        <a href="https://example.com/tailwind-tips" class="bookmark-card" target="_blank" rel="noopener noreferrer">
+                            <div class="bookmark-header">
+                                <h3 class="bookmark-title">Tailwind CSS İpuçları</h3>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15,3 21,3 21,9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </div>
+                            <p class="bookmark-description">Tailwind CSS ile daha hızlı geliştirme yapın</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="category-section">
+                    <h2 class="category-title">React</h2>
+                    <div class="bookmarks-grid">
+                        <a href="https://example.com/react-performance" class="bookmark-card" target="_blank" rel="noopener noreferrer">
+                            <div class="bookmark-header">
+                                <h3 class="bookmark-title">React Performans Optimizasyonu</h3>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15,3 21,3 21,9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </div>
+                            <p class="bookmark-description">React uygulamalarında performansı artırmak için ipuçları</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="category-section">
+                    <h2 class="category-title">Next.js</h2>
+                    <div class="bookmarks-grid">
+                        <a href="https://example.com/nextjs-server-components" class="bookmark-card" target="_blank" rel="noopener noreferrer">
+                            <div class="bookmark-header">
+                                <h3 class="bookmark-title">Next.js 13 ile Server Components</h3>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15,3 21,3 21,9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </div>
+                            <p class="bookmark-description">Next.js 13'ün yeni özelliklerini keşfedin</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="category-section">
+                    <h2 class="category-title">TypeScript</h2>
+                    <div class="bookmarks-grid">
+                        <a href="https://example.com/typescript-best-practices" class="bookmark-card" target="_blank" rel="noopener noreferrer">
+                            <div class="bookmark-header">
+                                <h3 class="bookmark-title">TypeScript En İyi Uygulamalar</h3>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15,3 21,3 21,9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </div>
+                            <p class="bookmark-description">TypeScript projelerinizi daha iyi hale getirin</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="category-section">
+                    <h2 class="category-title">Design</h2>
+                    <div class="bookmarks-grid">
+                        <a href="https://example.com/ui-ux-trends" class="bookmark-card" target="_blank" rel="noopener noreferrer">
+                            <div class="bookmark-header">
+                                <h3 class="bookmark-title">UI/UX Tasarım Trendleri</h3>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15,3 21,3 21,9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </div>
+                            <p class="bookmark-description">2023 yılının en popüler UI/UX tasarım trendleri</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
