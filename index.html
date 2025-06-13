@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,795 +11,191 @@
         <meta property="og:image" content="https://devnar.github.io/logos/nar.png" />
         <meta property="og:image:alt" content="NAR Logo" />
         <meta property="og:site_name" content="NAR" />
-        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
         <link rel="icon" href="https://devnar.github.io/logos/nar.png" />
         <title>NAR</title>
+        <link rel="stylesheet" href="src/styles.css" />
         <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet" />
-        <style>
-            :root {
-                --text-color: #27272a;
-                --background-color: #fff;
-                --accent-color: #23b5b5;
-                --border-color: #f0f0f0;
-                --transition: all 0.3s ease;
-            }
-
-            [data-theme="dark"] {
-                --text-color: #fff;
-                --background-color: #0e0e12;
-                --accent-color: #23b5b5;
-                --border-color: #27272a;
-            }
-
-            body {
-                font-family: "Nunito", sans-serif;
-                color: var(--text-color);
-                background-color: var(--background-color);
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 20px;
-            }
-
-            .profile-header {
-                display: flex;
-                align-items: center;
-            }
-
-            .profile-photo-wrap {
-                width: 100px;
-                height: 100px;
-                margin-right: 20px;
-            }
-
-            .profile-photo-wrap img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                border-radius: 50%;
-            }
-
-            .profile-info h2 {
-                margin: 0 0 10px 0;
-                font-size: 2rem;
-            }
-
-            .badges {
-                margin-top: 10px;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 10px;
-            }
-
-            .mega-link {
-                display: inline-block;
-                padding: 5px 10px;
-                color: var(--text-color);
-                text-decoration: none;
-                background-color: var(--border-color);
-                border-radius: 20px;
-                transition: var(--transition);
-            }
-
-            .mega-link:hover {
-                background-color: var(--accent-color);
-                color: var(--background-color);
-            }
-
-            .tabs {
-                display: flex;
-                gap: 10px;
-                overflow-x: auto;
-                white-space: nowrap;
-                scrollbar-width: none;
-            }
-
-            nav {
-                border-bottom: 2px solid var(--border-color);
-            }
-
-            .tab-button {
-                font-size: 1rem;
-                padding: 10px 15px;
-                background-color: var(--border-color);
-                border: none;
-                cursor: pointer;
-                border-radius: 5px;
-                font-weight: bold;
-            }
-
-            .tab-button.active {
-                background-color: var(--accent-color);
-                color: var(--background-color);
-            }
-
-            .disabled {
-                display: none;
-            }
-
-            .tab-content {
-                display: none;
-            }
-
-            .tab-content.active {
-                display: block;
-            }
-
-            .blur {
-                position: relative;
-            }
-
-            .blur::after {
-                content: "Planned";
-                background-color: var(--background-color);
-                padding: 5px;
-                border-radius: 5px;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                color: white;
-                font-weight: bold;
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            }
-
-            .blur img:hover {
-                transform: none !important;
-            }
-
-            .blur img {
-                filter: blur(2px) brightness(0.5);
-            }
-
-            .flex {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: flex-start;
-                gap: 15px;
-                padding: 10px;
-            }
-
-            .flex img {
-                width: 100%;
-                max-width: 100px;
-                height: auto;
-                border-radius: 8px;
-                object-fit: cover;
-                transition: transform 0.3s ease-in-out;
-            }
-
-            .flex img:hover {
-                transform: scale(1.1);
-            }
-
-            .list {
-                display: block;
-                margin-top: 20px;
-                margin-bottom: 20px;
-            }
-
-            .grid {
-                display: grid;
-                gap: 40px;
-                margin-bottom: 30px;
-                justify-items: center;
-                align-items: center;
-                padding-top: 30px;
-                grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
-            }
-
-            .grid img {
-                width: 100%;
-                border-radius: 5px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                transition: var(--transition);
-            }
-
-            .grid img:hover {
-                transform: translateY(-5px);
-            }
-
-            h3 {
-                font-size: 1.5rem;
-                margin: 30px 0 20px;
-                border-bottom: 2px solid var(--border-color);
-            }
-
-            a {
-                color: var(--accent-color);
-                text-decoration: none;
-            }
-
-            .projects-item {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 40px;
-                margin-top: 30px;
-                margin-bottom: 30px;
-                justify-items: center;
-                align-items: center;
-            }
-
-            .projects-item a img {
-                width: 100%;
-                border-radius: 5px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                transition: var(--transition);
-            }
-
-            .projects-item a img:hover {
-                transform: translateY(-5px);
-            }
-
-            #skills p {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 10px;
-            }
-
-            #skills img {
-                transition: var(--transition);
-                border-radius: 5px;
-            }
-
-            #skills img:hover {
-                transform: scale(1.05);
-            }
-
-            .card {
-                background-color: var(--border-color);
-                border-radius: 8px;
-                margin: 15px 0 15px 0;
-                transition: var(--transition);
-                border: 1px solid var(--border-color);
-                padding: 5px;
-            }
-
-            .card-header {
-                font-size: 1.5rem;
-                margin-bottom: 10px;
-                color: var(--text-color);
-            }
-
-            .card-description {
-                font-size: 1rem;
-                color: var(--text-color);
-                margin-bottom: 15px;
-            }
-
-            .card a h1 {
-                color: var(--text-color);
-                padding: 5px;
-                font-size: 22px;
-            }
-
-            .card a span {
-                color: var(--text-color);
-                padding: 5px;
-                font-size: 12px;
-                display: block;
-                width: 100%;
-            }
-
-            .card a h2 {
-                color: var(--text-color);
-                padding: 5px;
-                font-size: 16px;
-            }
-
-            .content-card img {
-                width: 100%;
-                height: auto;
-            }
-
-            #balloon-container {
-                height: 100vh;
-                padding: 1em;
-                box-sizing: border-box;
-                display: flex;
-                position: fixed;
-                flex-wrap: wrap;
-                transition: opacity 500ms;
-            }
-
-            .balloon {
-                height: 125px;
-                width: 105px;
-                border-radius: 75% 75% 70% 70%;
-                position: relative;
-            }
-
-            .balloon:before {
-                content: "";
-                height: 75px;
-                width: 1px;
-                padding: 1px;
-                background-color: #fdfd96;
-                display: block;
-                position: absolute;
-                top: 125px;
-                left: 0;
-                right: 0;
-                margin: auto;
-            }
-
-            .balloon:after {
-                content: "▲";
-                text-align: center;
-                display: block;
-                position: absolute;
-                color: inherit;
-                top: 120px;
-                left: 0;
-                right: 0;
-                margin: auto;
-            }
-
-            @media (max-width: 600px) {
-                .profile-header {
-                    align-items: flex-start;
-                    gap: 15px;
-                }
-
-                .profile-photo-wrap {
-                    margin-right: 0;
-                    margin-bottom: 10px;
-                }
-
-                .profile-photo-wrap img {
-                    width: 100px;
-                    height: 100px;
-                    margin: 0 auto;
-                }
-
-                .card-header {
-                    font-size: 1.3rem;
-                }
-            }
-
-            @keyframes float {
-                from {
-                    transform: translateY(100vh);
-                    opacity: 1;
-                }
-                to {
-                    transform: translateY(-300vh);
-                    opacity: 0;
-                }
-            }
-        </style>
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     </head>
     <body>
-        <div id="balloon-container"></div>
-        <header class="profile-header">
-            <div class="profile-photo-wrap">
-                <img loading="lazy" alt="profile photo" src="https://devnar.github.io/logos/nar.png" />
-            </div>
-            <div class="profile-info">
-                <h2>NAR</h2>
-                <p>Front-end Developer in Istanbul, he/him</p>
-                <div class="badges">
-                    <a class="mega-link bx bxl-twitter" href="https://x.com/_devnar"></a>
-                    <a class="mega-link bx bxl-linkedin" href="https://www.linkedin.com/in/devnar"></a>
-                    <a class="mega-link bx bxl-github" href="https://github.com/devnar"></a>
-                    <a class="mega-link bx bxl-codepen" href="https://codepen.io/_devnar"></a>
-                    <a class="mega-link bx bxl-stack-overflow" href="https://stackoverflow.com/users/29798754"></a>
-                    <a class="mega-link bx bxl-youtube" href="https://www.youtube.com/@_devnar"></a>
-                    <a class="mega-link bx bxl-dev-to" href="https://dev.to/devnar"></a>
-                    <a class="mega-link bx bxs-envelope" href="mailto:hidevnar@proton.me"></a>
-                </div>
-            </div>
-        </header>
-        <nav class="tabs">
-            <h3 class="tab-button active" data-tab="Projects">Projects</h3>
-            <h3 class="tab-button" data-tab="About">About</h3>
-            <h3 class="tab-button" data-tab="Blog">Blog</h3>
-            <h3 class="tab-button" data-tab="Bookmarks">Bookmarks</h3>
-        </nav>
-        <main>
-            <section class="tab-content active" id="Projects">
-                <div class="projects-item">
-                    <a href="https://devnar.github.io/masa/"><img loading="lazy" src="https://opengraph.githubassets.com/1/devnar/masa" alt="masa" /></a>
-                    <a href="https://devnar.github.io/sayidisi/"><img loading="lazy" src="https://opengraph.githubassets.com/1/devnar/sayidisi" alt="sayidisi" /></a>
-                    <a href="https://devnar.github.io/pitopi/"><img loading="lazy" src="https://opengraph.githubassets.com/1/devnar/pitopi" alt="pitopi" /></a>
-                    <a href="https://devnar.github.io/inh/"><img loading="lazy" src="https://opengraph.githubassets.com/1/devnar/imnothacker" alt="I'm Not Hacker Terminal" /></a>
-                    <a href="https://devnar.github.io/targeto/"><img loading="lazy" src="https://opengraph.githubassets.com/1/devnar/targeto" alt="targeto" /></a>
-                    <a href="https://devnar.github.io/radio/"><img loading="lazy" src="https://opengraph.githubassets.com/1/devnar/radio" alt="radio" /></a>
+        <!-- Background Effects -->
+        <div class="background-effects">
+            <div class="bg-blur bg-blur-1"></div>
+            <div class="bg-blur bg-blur-2"></div>
+            <div class="bg-blur bg-blur-3"></div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="homepage">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-left">
+                            <div class="hero-greeting">
+                                <span class="greeting-text">Hi 👋 I'm</span>
+                            </div>
+                            <h1 class="hero-name">NAR</h1>
+                            <h2 class="hero-title">Frontend Developer</h2>
+                            <p class="hero-description">
+                                18 years old developer from Istanbul with 5+ years of experience. Started my journey in 2019 and been crafting digital experiences ever since.
+                            </p>
+
+                            <div class="hero-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number">5+</span>
+                                    <span class="stat-label">Years Experience</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">50+</span>
+                                    <span class="stat-label">Projects Built</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">∞</span>
+                                    <span class="stat-label">Lines of Code</span>
+                                </div>
+                            </div>
+
+                            <div class="hero-actions">
+                                <a href="src/projects.html" class="btn btn-primary">View My Work</a>
+                                <a href="src/about.html" class="btn btn-secondary">Learn More</a>
+                                <a href="#cta" class="btn btn-secondary">Get In Touch</a>
+                            </div>
+                        </div>
+
+                        <div class="hero-right">
+                            <div class="profile-container">
+                                <div class="profile-image-wrapper">
+                                    <img src="https://devnar.github.io/logos/nar.png" alt="NAR Profile" class="profile-image" />
+                                    <div class="profile-ring"></div>
+                                </div>
+                                <div class="profile-status">
+                                    <div class="status-dot-red"></div>
+                                    <span>Not Available for work</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <section class="tab-content" id="About">
-                <p>
-                    Hi👋 I'm NAR, and I'm <span id="age"></span> years old. My nickname comes from the first application where I tried to learn by integrating everything into it. My profile picture represents my late rooster.<br><br>
-                    I've been involved in frontend development since November 22, 2019. I started this journey with website builders like WordPress and Google Sites. However, after realizing the limitations of these tools, I decided to write my own code.<br><br>
-                </p>
-                <p>
-                    <a href="https://buymeacoffee.com/devnar"><img loading="lazy" src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&amp;logo=buy-me-a-coffee&amp;logoColor=black" alt="Buy Me A Coffee" /></a>
-                    <a href="https://patreon.com/_devnar"><img loading="lazy" src="https://img.shields.io/badge/Patreon-F96854?style=for-the-badge&amp;logo=patreon&amp;logoColor=white" alt="Patreon" /></a>
-                </p>
-                <h3>Skills</h3>
-                <p>
-                    <img loading="lazy" src="https://img.shields.io/badge/HTML-%23323330.svg?style=for-the-badge&amp;logo=html5&amp;logoColor=f16529" alt="HTML" />
-                    <img loading="lazy" src="https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&amp;logo=markdown&amp;logoColor=white" alt="Markdown" />
-                    <img loading="lazy" src="https://img.shields.io/badge/CSS-%23323330.svg?style=for-the-badge&amp;logo=css3&amp;logoColor=33a9dc" alt="CSS" />
-                    <img loading="lazy" src="https://img.shields.io/badge/WordPress-%23117AC9.svg?style=for-the-badge&logo=WordPress&logoColor=white" alt="WordPress" />
-                    <img loading="lazy" src="https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&amp;logo=Canva&amp;logoColor=white" alt="Canva" />
-                    <img loading="lazy" src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&amp;logo=figma&amp;logoColor=white" alt="Figma" />
-                    <img loading="lazy" src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&amp;logo=javascript&amp;logoColor=%23F7DF1E" alt="JavaScript" />
-                    <img loading="lazy" src="https://img.shields.io/badge/Bot-%235835CC.svg?style=for-the-badge&amp;logo=discord&amp;logoColor=white" alt="Discord Bot" />
-                    <img loading="lazy" src="https://img.shields.io/badge/firebase%20DataBase-F38020?style=for-the-badge&amp;logo=firebase&amp;logoColor=white" alt="Firebase database" />
-                    <img loading="lazy" src="https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&amp;logo=npm&amp;logoColor=white" alt="NPM" />
-                    <img loading="lazy" src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&amp;logo=node.js&amp;logoColor=white" alt="NodeJS" />
-                    <img loading="lazy" src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&amp;logo=python&amp;logoColor=ffdd54" alt="Python" />
-                    <img loading="lazy" src="https://img.shields.io/badge/opencv-%23white.svg?style=for-the-badge&amp;logo=opencv&amp;logoColor=white" alt="OpenCV" />
-                    <img loading="lazy" src="https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&amp;logo=php&amp;logoColor=white" alt="Php" />
-                    <img loading="lazy" src="https://img.shields.io/badge/Google%20Cloud-%234285F4.svg?style=for-the-badge&amp;logo=google-cloud&amp;logoColor=white" alt="Google Cloud" />
-                    <img loading="lazy" src="https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&amp;logo=gnu-bash&amp;logoColor=white" alt="Shell Script" />
-                    <img loading="lazy" src="https://img.shields.io/badge/-RaspberryPi-C51A4A?style=for-the-badge&amp;logo=Raspberry-Pi" alt="Raspberry Pi" />
-                    <img loading="lazy" src="https://img.shields.io/badge/Arduino-199a9f?style=for-the-badge&amp;logo=Arduino&amp;logoColor=white" alt="Arduino" />
-                    <img loading="lazy" src="https://img.shields.io/badge/-Stackoverflow-FE7A16?style=for-the-badge&amp;logo=stack-overflow&amp;logoColor=white" alt="Stack Overflow" />
-                    <img loading="lazy" src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&amp;logo=visual-studio-code&amp;logoColor=white" alt="Visual Studio Code" />
-                    <img loading="lazy" src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&amp;logo=android&amp;logoColor=white" alt="Android" />
-                    <img loading="lazy" src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&amp;logo=windows&amp;logoColor=white" alt="Windows" />
-                    <img loading="lazy" src="https://img.shields.io/badge/Spotify-1ED760?style=for-the-badge&logo=spotify&logoColor=white" alt="Spotify" />
-                </p>
-            </section>
-            
-            <section class="tab-content" id="Blog">
-                <div class="list" id="blog-container"></div>
-            </section>
+            <!-- Featured Projects -->
+            <section class="featured-projects">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Featured Projects</h2>
+                        <p class="section-subtitle">Some of my recent work</p>
+                    </div>
 
-            <section class="tab-content" id="Bookmarks">
-                <div class="flex" style="justify-content: left; padding: 0;">
-                    <h3 class="tab-button" data-tab="Tools">Tools</h3>
-                    <h3 class="tab-button" data-tab="Books">Books</h3>
-                    <h3 class="tab-button" data-tab="Music">Music</h3>
-                    <h3 class="tab-button" data-tab="Films">Films</h3>
-                    <h3 class="tab-button" data-tab="TvSeries">TV Series</h3>
-                </div>
-            </section>
+                    <div class="projects-preview">
+                        <div class="project-card featured">
+                            <h2 class="project-title">Pitopi</h2>
+                            <p class="project-description">Real-Time and Secure Peer to Peer Chat</p>
 
-            <section class="tab-content" id="Music">
-                <div class="list">
-                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7dYG68KS1zLfHs0UKvUJfn?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
-            </section>
+                            <div class="project-tags">
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JS</span>
+                                <span class="tag">Node.js</span>
+                            </div>
 
-            <section class="tab-content" id="Tools">
-                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-                    <a href="https://excalidraw.com/"><img loading="lazy" src="https://creatorspace.imgix.net/sites/ogimages/aHR0cHM6Ly9leGNhbGlkcmF3LmNvbS9vZy1pbWFnZS0zLnBuZw==.png?width=600&height=600" alt="Excalidraw" /></a>
-                    <a href="https://obsidian.md/"><img loading="lazy" src="https://obsidian.md/images/banner.png" alt="Obsidian" /></a>
-                    <a href="https://www.todoist.com/"><img loading="lazy" src="https://www.todoist.com/static/ogimages/tr/og-image-home.png" alt="Todoist" /></a>
-                    <a href="https://app.haikei.app/"><img loading="lazy" src="https://creatorspace.imgix.net/sites/ogimages/aHR0cHM6Ly9oYWlrZWkuYXBwL2hhaWtlaS1jb3Zlci5wbmc=.png?width=600&height=600" alt="Haikei" /></a>
-                    <a href="https://neal.fun/ambient-chaos/"><img loading="lazy" src="https://neal.fun/share-cards/ambient-chaos.png" alt="Ambient Chaos" /></a>
-                    <a href="https://radio.madza.dev/"><img loading="lazy" src="https://cdn.madza.dev/uploads/2021/12/devtunes-social-card.png" alt="DevTunes" /></a>
-                    <a href="https://bmrk.cc/"><img loading="lazy" src="https://bmrk.cc/images/og.jpg" alt="Bookmark.it" /></a>
-                    <a href="https://www.oldmapsonline.org/"><img loading="lazy" src="https://www.oldmapsonline.org/images/omo_share_img.jpg" alt="Old Maps Online" /></a>
-                    <a href="https://muetab.com/"><img loading="lazy" src="https://muetab.com/og-image.png" alt="muetab.com" /></a>
-                    <a href="https://typefully.com/minimal-twitter"><img loading="lazy" src="https://typefully.com/images/minimal-twitter/card.png" alt="Typefully" /></a>
-                    <a href="https://www.modernwiki.app/"><img loading="lazy" src="https://www.modernwiki.app/assets/share-cce8f1b8262a4442370a9a6dfb5dd04f07d3fe8695a7240e85f32c316215abe3.png" alt="Modernwiki" /></a>
-                    <a href="https://uselumen.com/"><img loading="lazy" src="https://web.archive.org/web/20240713025616im_/https://github-production-user-asset-6210df.s3.amazonaws.com/4608155/293108465-6e52c46b-59f4-46c6-987d-65abee003b8a.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240713%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240713T025616Z&X-Amz-Expires=300&X-Amz-Signature=f60940e0508b3e3edbb87f4bcfe16cec42c9af473fcce2e209e48276a4d6146f&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=517126881" alt="Lumen" /></a>
-                    <a href="https://ionic.io/ionicons"><img loading="lazy" src="https://ionic.io/ionicons/assets/img/meta/ionicons-og.png" alt="ionicons" /></a>
-                    <a href="https://boxicons.com/"><img loading="lazy" src="https://cdn.prod.website-files.com/672211731c6546626029ce06/67239158bd1a9c86e63444bf_1132b0adbb1b9c-1730384199100.webp" alt="Boxicons" /></a>
-                    <a href="https://lucide.dev/"><img loading="lazy" src="https://lucide.dev/og.png" alt="Lucide icon" /></a>
-                    <a href="https://tailwindui.com/"><img loading="lazy" src="https://tailwindui.com/plus-assets/img/og-default.png" alt="Tailwind" /></a>
-                    <a href="https://yarn.co/"><img loading="lazy" src="https://pbs.twimg.com/profile_banners/3329006124/1443127710/1080x360" alt="Yarn.co" /></a>
+                            <a href="https://devnar.github.io/pitopi/" class="project-link" target="_blank" rel="noopener noreferrer">
+                                Projeyi Görüntüle
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15,3 21,3 21,9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="project-card">
+                            <h2 class="project-title">SayıDışı</h2>
+                            <p class="project-description">Find the digit that is not in a 9-digit number.</p>
+
+                            <div class="project-tags">
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JS</span>
+                            </div>
+
+                            <a href="https://devnar.github.io/sayidisi/" class="project-link" target="_blank" rel="noopener noreferrer">
+                                Projeyi Görüntüle
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15,3 21,3 21,9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="projects-cta">
+                        <a href="src/projects.html" class="btn btn-outline">View All Projects</a>
+                    </div>
                 </div>
             </section>
 
-            <section class="tab-content" id="Books">
-                <div class="grid">
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0000000064038-1.jpg" alt="1984 9789750718533" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0001712159001-1.jpg" alt="Kuşkucu Somon 9786051715117" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0001705121001-1.jpg" alt="Çoğunlukla Zararsız 9786051715131" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0001705122001-1.jpg" alt="Elveda ve Bütün O Balıklar İçin Teşekkürler 9786051715087" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0000000373271-1.jpg" alt="Ready Player 1 9786050903447" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0002006508001-1.jpg" alt="Ready Player 2 9786258021837" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0001772519001-1.jpg" alt="Dirk Gently&#39;nin Holistik Dedektiflik Bürosu 9786051717944" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0001730588001-1.jpg" alt="Vakıf 9786053757375" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0001705124001-1.jpg" alt="Hayat Evren ve Her Şey 9786051715100" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0001705123001-1.jpg" alt="Evrenin Sonundaki Restoran 9786051715094" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0001705120001-1.jpg" alt="Otostopçunun Galaksi Rehberi 9786051715124" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0000000291906-1.jpg" alt="Pal Sokağı Çocukları 9789750815546" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0000000682540-1.jpg" alt="Haritalı Adam 9786059176545" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0001683839001-1.jpg" alt="Gece Yarısına 12 Dakika Kala 9786053849964" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0000000398506-1.jpg" alt="Süper Ajan Jack Stalwart 9789759996093" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0001747016001-1.jpg" alt="Küçük Hazerfen&#39;in Serüvenleri 2 9786058214620" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0000000696782-1.jpg" alt="Küçük Hazerfen&#39;in Serüvenleri 9786056656118" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0001772538002-1.jpg" alt="Beyin Avcısı 4 9786257463294" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0001700513003-1.jpg" alt="Beyin Avcısı 1 9786257463256" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0000000713754-1.jpg" alt="Yaratık Departmanı 9786053439486" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0001781937001-1.jpg" alt="Süperozorlar 9786051734217" />
-                    <img loading="lazy" src="https://img.kitapyurdu.com/v1/getImage/fn:1009425/wh:true/wi:220" alt="Meraklı kaşif dinazorlar ülkesinde 9786054704651" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0000000628979-1.jpg" alt="Küçük prens 9789750724435" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0000000351286-1.jpg" alt="Saftirik 4 9789944823579" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0000000327414-1.jpg" alt="Saftirik 3 9789944822534" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0000000311400-1.jpg" alt="Saftirik 2  9789944821889" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0000000284528-1.jpg" alt="Saftirik 1 9789944821117" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0000000411500-1.jpg" alt="Fareler ve İnsanlar 9789755705859" />
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0000000349965-1.jpg" alt="Halime Kaptan 9786053600626" /> 
-                    <img loading="lazy" src="https://i.dr.com.tr/cache/500x400-0/originals/0000000052555-1.jpg" alt="acımak 9789751026569" />
+            <!-- Social Links -->
+            <section class="social-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Let's Connect</h2>
+                        <p class="section-subtitle">Find me on these platforms</p>
+                    </div>
+
+                    <div class="social-grid">
+                        <a href="https://x.com/_devnar" class="social-card" target="_blank" rel="noopener noreferrer">
+                            <i class="bx bxl-twitter"></i>
+                            <span>Twitter</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/devnar" class="social-card" target="_blank" rel="noopener noreferrer">
+                            <i class="bx bxl-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/devnar" class="social-card" target="_blank" rel="noopener noreferrer">
+                            <i class="bx bxl-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://codepen.io/_devnar" class="social-card" target="_blank" rel="noopener noreferrer">
+                            <i class="bx bxl-codepen"></i>
+                            <span>CodePen</span>
+                        </a>
+                        <a href="https://stackoverflow.com/users/29798754" class="social-card" target="_blank" rel="noopener noreferrer">
+                            <i class="bx bxl-stack-overflow"></i>
+                            <span>Stack Overflow</span>
+                        </a>
+                        <a href="https://www.youtube.com/@_devnar" class="social-card" target="_blank" rel="noopener noreferrer">
+                            <i class="bx bxl-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                        <a href="https://dev.to/devnar" class="social-card" target="_blank" rel="noopener noreferrer">
+                            <i class="bx bxl-dev-to"></i>
+                            <span>Dev.to</span>
+                        </a>
+                        <a href="mailto:hidevnar@proton.me" class="social-card">
+                            <i class="bx bxs-envelope"></i>
+                            <span>Email</span>
+                        </a>
+                    </div>
                 </div>
             </section>
-            <section class="tab-content" id="Films">
-                <div class="grid">
-                    <a href="https://www.imdb.com/title/tt1375666"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMjBhZDFmNDMtODUwZC00OWYwLTk5NmItZDA1YmNmMTdlOTc3XkEyXkFqcGdeQXVyOTgxMDMxNTc@._V1_FMjpg_UX800_.jpg" alt="Inception" /></a>
-                    <a href="https://www.imdb.com/title/tt0120382"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNzA3ZjZlNzYtMTdjMy00NjMzLTk5ZGYtMTkyYzNiOGM1YmM3XkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Truman Show" /></a>
-                    <a href="https://www.imdb.com/title/tt0133093"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMDFiN2RlNjYtNWY2ZS00NjVjLWFmM2UtM2NmNmJkYTgwZmU0XkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Matrix" /></a>
-                    <a href="https://www.imdb.com/title/tt0096874"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BODZjNWE4M2ItYWQ5OS00NmRjLThmMzktN2E1Y2U0MTQ4OGY4XkEyXkFqcGdeQXVyMjI0NTA4NzA@._V1_FMjpg_UX800_.jpg" alt="Back to the Future 1-2" /></a>
-                    <a href="https://www.imdb.com/title/tt3659388"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMTcwMjI2NzM2MF5BMl5BanBnXkFtZTgwNDkyNTI5NTE@._V1_FMjpg_UX800_.jpg" alt="The Martian" /></a>
-                    <a href="https://www.imdb.com/title/tt14055868"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BODE5OWFkNzMtNmE5Zi00NDFkLWIyMDktZWQ0YjNiNTQ5NzlmXkEyXkFqcGdeQXVyODk1MjAxNzQ@._V1_FMjpg_UX800_.jpg" alt="WALL·E" /></a>
-                    <a href="https://www.imdb.com/title/tt2245084"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BYzcyZjg4YjAtMGRmNC00M2MzLTkyZTMtNjU1Y2Q2MTg5MTdlXkEyXkFqcGdeQXVyOTU2NDAzNDE@._V1_FMjpg_UX800_.jpg" alt="Big Hero 6" /></a>
-                    <a href="https://www.imdb.com/title/tt29623480"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZjM2M2E3YzAtZDJjYy00MDhkLThiYmItOGZhNzQ3NTgyZmI0XkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="The Wild Robot" /></a>
-                    <a href="https://www.imdb.com/title/tt0434409"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BOTI5ODc3NzExNV5BMl5BanBnXkFtZTcwNzYxNzQzMw@@._V1_FMjpg_UX800_.jpg" alt="V for Vendetta" /></a>
-                    <a href="https://www.imdb.com/title/tt1431045"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BYzE5MjY1ZDgtMTkyNC00MTMyLThhMjAtZGI5OTE1NzFlZGJjXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_FMjpg_UX800_.jpg" alt="Deadpool" /></a>
-                    <a href="https://www.imdb.com/title/tt0382932"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMTMzODU0NTkxMF5BMl5BanBnXkFtZTcwMjQ4MzMzMw@@._V1_FMjpg_UX800_.jpg" alt="Ratatouille" /></a>
-                    <a href="https://www.imdb.com/title/tt1049413"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BY2JiNDliN2ItODY3OS00ZGJmLWI1NjEtMGVhNmRjZGI1MWZjXkEyXkFqcGdeQXVyOTgxMDMxNTc@._V1_FMjpg_UX800_.jpg" alt="Up" /></a>
-                    <a href="https://www.imdb.com/title/tt0892769"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMjA5NDQyMjc2NF5BMl5BanBnXkFtZTcwMjg5ODcyMw@@._V1_FMjpg_UX800_.jpg" alt="How to Train Your Dragon" /></a>
-                    <a href="https://www.imdb.com/title/tt0252487"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMGRjOGJhNDctZWYyNi00YzE1LWIwMGQtNTI1MDU1OTNmZjhlXkEyXkFqcGdeQXVyMTA1MzE1MjA4._V1_FMjpg_UX800_.jpg" alt="Hababam Sınıfı" /></a>
-                    <a href="https://www.imdb.com/title/tt1578118"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNDNmMjllMjgtYzdjNy00NDhmLThmNWYtOTI1OTM3ZjZjMjFlXkEyXkFqcGdeQXVyNTM3NzExMDQ@._V1_FMjpg_UX800_.jpg" alt="CMYLMZ" /></a>
-                    <a href="https://www.imdb.com/title/tt2592910"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMjE0Njc3MDQ5MV5BMl5BanBnXkFtZTcwNzIwNTQ5OA@@._V1_FMjpg_UX800_.jpg" alt="CM101MMXI" /></a>
-                    <a href="https://www.imdb.com/title/tt1063669"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BOGQ4NWM1MWEtNjRjZS00ZTBjLWE3NjYtZDgwMGFmNWZmYTYxXkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Die Welle" /></a>
-                    <a href="https://www.imdb.com/title/tt5074352"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMTQ4MzQzMzM2Nl5BMl5BanBnXkFtZTgwMTQ1NzU3MDI@._V1_FMjpg_UX800_.jpg" alt="Dangal" /></a>
-                    <a href="https://www.imdb.com/title/tt1201607"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNDUxZDhmNjUtMjY5ZC00YTdmLTk1Y2YtNjBiZmJlMjNiNWM5XkEyXkFqcGdeQXVyOTgxMDMxNTc@._V1_FMjpg_UX800_.jpg" alt="Harry Poter 1-8" /></a>
-                    <a href="https://www.imdb.com/title/tt2015381"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNDIzMTk4NDYtMjg5OS00ZGI0LWJhZDYtMzdmZGY1YWU5ZGNkXkEyXkFqcGdeQXVyMTI5NzUyMTIz._V1_FMjpg_UX800_.jpg" alt="Guardians of the Galaxy" /></a>
-                    <a href="https://www.imdb.com/title/tt3450958"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNTZlNjQ4NjItYzgxNi00MDA1LWFjZTktZjIxYzlhNTE0ZWRjXkEyXkFqcGdeQXVyOTgxMDMxNTc@._V1_FMjpg_UX800_.jpg" alt="The Planet of the Apes *" /></a>
-                    <a href="https://www.imdb.com/title/tt0145487"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZDEyN2NhMjgtMjdhNi00MmNlLWE5YTgtZGE4MzNjMTRlMGEwXkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_FMjpg_UX800_.jpg" alt="Spider-Man" /></a>
-                    <a href="https://www.imdb.com/title/tt1300854"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMjE5MzcyNjk1M15BMl5BanBnXkFtZTcwMjQ4MjcxOQ@@._V1_FMjpg_UX800_.jpg" alt="Iron Man 1-3" /></a>
-                    <a href="https://www.imdb.com/title/tt1790809"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMTYyMTcxNzc5M15BMl5BanBnXkFtZTgwOTg2ODE2MTI@._V1_FMjpg_UX800_.jpg" alt="Pirates of the Caribbean *" /></a>
-                    <a href="https://www.imdb.com/title/tt6264654"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BOTY2NzFjODctOWUzMC00MGZhLTlhNjMtM2Y2ODBiNGY1ZWRiXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_FMjpg_UX800_.jpg" alt="Free Guy" /></a>
-                    <a href="https://www.imdb.com/title/tt0120338"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BOTZkYzMzODItMTcyZi00N2ZjLTg0ZTgtMjIzYzE2ZmU0MTcyXkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Titanic" /></a>
-                    <a href="https://www.imdb.com/title/tt0369610"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNzQ3OTY4NjAtNzM5OS00N2ZhLWJlOWUtYzYwZjNmOWRiMzcyXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX800_.jpg" alt="Jurassic World" /></a>
-                    <a href="https://www.imdb.com/title/tt2283362"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BN2Q5Yjk0ZTgtMjE1ZS00ZGRhLTk4YWEtMGJkNzdkNzQ1NmIyXkEyXkFqcGdeQXVyMTYwMDIyNzk1._V1_FMjpg_UX800_.jpg" alt="Jumanji" /></a>
-                    <a href="https://www.imdb.com/title/tt0478970"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMjdkYjY0ZDYtZmFhYS00ZTEwLWI1NGUtOTM0ZTFlODg4NTA4XkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Ant-Man" /></a>
-                    <a href="https://www.imdb.com/title/tt1104001"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMTk4NTk4MTk1OF5BMl5BanBnXkFtZTcwNTE2MDIwNA@@._V1_FMjpg_UX800_.jpg" alt="Tron: Legacy" /></a>
-                    <a href="https://www.imdb.com/title/tt0837562"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZGViZjJmYWMtZDgzNS00NzEwLWIyODQtOWJhYmYzYjMwYTA1XkEyXkFqcGdeQXVyOTgxMDMxNTc@._V1_FMjpg_UX800_.jpg" alt="Hotel Transylvania" /></a>
-                    <a href="https://www.imdb.com/title/tt0499549"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BOTczNGU2YjUtM2QxNS00YzY2LTg1ODgtNGU0OTZhYWI0ZmUyXkEyXkFqcGdeQXVyMTIzMzQ1ODg4._V1_FMjpg_UX800_.jpg" alt="Avatar" /></a>
-                    <a href="https://www.imdb.com/title/tt7504818"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMzMxMjllYTgtZWNjZS00ODc0LTljZWUtYjdiMDQ2ZDJkM2FkXkEyXkFqcGdeQXVyNjY1MTg4Mzc@._V1_FMjpg_UX800_.jpg" alt="Ron&#39;s Gone Wrong" /></a>
-                    <a href="https://www.imdb.com/title/tt1323594"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMTY3NjY0MTQ0Nl5BMl5BanBnXkFtZTcwMzQ2MTc0Mw@@._V1_FMjpg_UX800_.jpg" alt="Despicable Me" /></a>
-                    <a href="https://www.imdb.com/title/tt22022452"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BYTc1MDQ3NjAtOWEzMi00YzE1LWI2OWUtNjQ0OWJkMzI3MDhmXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_FMjpg_UX800_.jpg" alt="Inside Out 1-2" /></a>
-                    <a href="https://www.imdb.com/title/tt15789038"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZjYxYWVjMDMtZGRjZS00ZDE4LTk0OWUtMjUyOTI4MmYxNjgwXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_FMjpg_UX800_.jpg" alt="Elemental" /></a>
-                    <a href="https://www.imdb.com/title/tt7146812"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BODQ0NjM2MjQtNjkyMS00ZDNjLThlMWQtMGVlZTAxZmRlNjhkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX800_.jpg" alt="Onward" /></a>
-                    <a href="https://www.imdb.com/title/tt0351283"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BN2I5YzFlYWEtZjRhNy00ZmQzLWJhNTktZGIwYjFjODdmNDgxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_FMjpg_UX800_.jpg" alt="Madagascar" /></a>
-                    <a href="https://www.imdb.com/title/tt0397892"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMTY3NGVkMmItYWNjMy00MmE0LTlkZmUtNGIxZGJmZTA1YWI0XkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Bolt" /></a>
-                    <a href="https://www.imdb.com/title/tt0418279"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNWI1NjkxM2MtOTU4My00YzQ5LTliNGMtNmFlM2U5NWM3MDY1XkEyXkFqcGdeQXVyNTUyMzE4Mzg@._V1_FMjpg_UX800_.jpg" alt="Transformers" /></a>
-                    <a href="https://www.imdb.com/title/tt4701182"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMjUwNjU5NDMyNF5BMl5BanBnXkFtZTgwNzgxNjM2NzM@._V1_FMjpg_UX800_.jpg" alt="Bumblebee" /></a>
-                    <a href="https://www.imdb.com/title/tt3416828"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BYzY4MDZiYWQtMzM3ZC00ZTVlLTk0OTctNDYyNGQ1NmNhNTgwXkEyXkFqcGdeQXVyOTU2NDAzNDE@._V1_FMjpg_UX800_.jpg" alt="Ice Age" /></a>
-                    <a href="https://www.imdb.com/title/tt3606752"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNjEwMDgwMmMtNjgyMy00ZTlmLWI5MTMtN2JkMmMzMzY1MGIwXkEyXkFqcGdeQXVyOTgxMDMxNTc@._V1_FMjpg_UX800_.jpg" alt="Cars 1-3" /></a>
-                    <a href="https://www.imdb.com/title/tt5814534"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNzg1MzM3OWUtNjgzZC00NjMzLWE1NzAtOThiMDgyMjhhZDBhXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_FMjpg_UX800_.jpg" alt="Spies in Disguise" /></a>
-                    <a href="https://www.imdb.com/title/tt0448694"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BOTQwMGU5YTEtYmQzMy00MTM0LWFhNzAtOGY2Yzc1MzBkYTYyXkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Puss in Boots" /></a>
-                    <a href="https://www.imdb.com/title/tt1935859"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BYWMyMGE5MGQtMjMyNi00ZDE3LTkzMmEtZTU0NzNmOTMxMjlhXkEyXkFqcGdeQXVyNDI3NjU1NzQ@._V1_FMjpg_UX800_.jpg" alt="Miss Peregrine&#39;s Home for Peculiar Children" /></a>
-                    <a href="https://www.imdb.com/title/tt1637688"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMjA3NzI1ODc1MV5BMl5BanBnXkFtZTcwMzI5NjQwNg@@._V1_FMjpg_UX800_.jpg" alt="In Time" /></a>
-                    <a href="https://www.imdb.com/title/tt4777008"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNzdhN2NjYzUtZWQzNy00ZTE5LWIyNzQtNmM0MjY3YjUwYzA1XkEyXkFqcGdeQXVyMTQyMTMwOTk0._V1_FMjpg_UX800_.jpg" alt="Maleficent" /></a>
-                    <a href="https://www.imdb.com/title/tt1979388"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BOWEzMjBjZWItMTJiMy00MmIwLTk3OGItMTg3ZDZjNjdhYmM1XkEyXkFqcGdeQXVyOTgxMDMxNTc@._V1_FMjpg_UX800_.jpg" alt="The Good Dinosaur" /></a>
-                    <a href="https://www.imdb.com/title/tt1679335"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BOWVhNzVhYzYtNGMwMy00ZmM5LWFhZjQtZDY4ZmE1ZWQ5Y2YzXkEyXkFqcGdeQXVyMTQyMTMwOTk0._V1_FMjpg_UX800_.jpg" alt="Trolls" /></a>
-                    <a href="https://www.imdb.com/title/tt1860353"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMTA4NTgwMjM5MzheQTJeQWpwZ15BbWU3MDg2ODA1ODk@._V1_FMjpg_UX800_.jpg" alt="Turbo" /></a>
-                    <a href="https://www.imdb.com/title/tt3861390"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BM2IzZDQyMTYtMGZjOC00YzYxLThlYWMtOTI2OGIxYzMxMzJhXkEyXkFqcGdeQXVyMTQyMTMwOTk0._V1_FMjpg_UX800_.jpg" alt="Dumbo" /></a>
-                    <a href="https://www.imdb.com/title/tt0113243"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNmExMTkyYjItZTg0YS00NWYzLTkwMjItZWJiOWQ2M2ZkYjE4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_FMjpg_UX800_.jpg" alt="Hackers" /></a>
-                    <a href="https://www.imdb.com/title/tt1289401"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNGYzNDM0M2QtZDFkNy00OTI2LWIyNjctNjNhNDM5Zjk3NzU2XkEyXkFqcGdeQXVyNjQ3MDg0MTY@._V1_FMjpg_UX800_.jpg" alt="Ghostbusters" /></a>
-                    <a href="https://www.imdb.com/title/tt4123432"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNGVhMThlZDUtOGU2ZC00ZTkyLTljMTUtNTEyMTBmMmJjMDY5XkEyXkFqcGdeQXVyMTM1MDExOTE2._V1_FMjpg_UX800_.jpg" alt="Fantastic Beasts" /></a>
-                    <a href="https://www.imdb.com/title/tt11210390"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZmRkMGU0NTctMTQzMi00YjNjLWExMTItMjZmYzNmYzVhOWI2XkEyXkFqcGdeQXVyMTQ4MTMxMzY5._V1_FMjpg_UX800_.jpg" alt="Astérix &amp; Obélix 1-5" /></a>
-                    <a href="https://www.imdb.com/title/tt19759204"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZmM4NzZiMzctM2M3OS00MWNhLWFiYzQtODRjMTEzYWVmMTc4XkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Recep Ivedik" /></a>
-                    <a href="https://www.imdb.com/title/tt4477292"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BOThkMjRjMzgtY2ZkMS00ZmJhLWEzYTQtNWUwMjk5YmI3N2UzXkEyXkFqcGdeQXVyMjY0Njg5MjE@._V1_FMjpg_UX800_.jpg" alt="Cosmos" /></a>
-                    <a href="https://www.imdb.com/title/tt2543164"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMGRiNzc5NmUtODUwNS00OTA4LTg0N2MtZTZkY2Y5YzBiMGRlXkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Arrival" /></a>
-                    <a href="https://www.imdb.com/title/tt5779228"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BYjY2NDZhN2EtZmYwNS00NDU2LThiODAtNmY4OWY2ODNmZWRmXkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Garfield" /></a>
-                    <a href="https://www.imdb.com/title/tt0952640"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMGY5OTgzNmEtNjFlOC00MDU2LWJmZDUtODY0Y2YwY2MwZGFiXkEyXkFqcGdeQXVyOTgxMDMxNTc@._V1_FMjpg_UX800_.jpg" alt="Alvin and the Chipmunks" /></a>
-                </div>
-            </section>
-            <section class="tab-content" id="TvSeries">
-                <div class="grid">
-                    <a href="https://www.imdb.com/title/tt2861424"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_FMjpg_UX800_.jpg" alt="Rick and Morty" /></a>
-                    <a href="https://www.imdb.com/title/tt1710308"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNWJjZjQ5NWUtMTkwZC00NGY2LWEyMDEtMGIyZThkMmMyZTZlXkEyXkFqcGdeQXVyMTI2MzY3NTA3._V1_FMjpg_UX800_.jpg" alt="Regular Show" /></a>
-                    <a href="https://www.imdb.com/title/tt1305826"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMjkxMzIwNmQtMzM5Ni00YWJiLTg4YjQtNjBiN2IxMjZhMGQ2XkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Adventure Time" /></a>
-                    <a href="https://www.imdb.com/title/tt4083422"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMGIzZmQ4YmUtZGQ4NC00OTkyLWE1MGUtMTQ3N2Y3N2E2NWEyXkEyXkFqcGdeQXVyODAzNzAwOTU@._V1_FMjpg_UX800_.jpg" alt="Doraemon" /></a>
-                    <a href="https://www.imdb.com/title/tt0063950"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BN2EyMmIyMWItZTRiYy00MmE1LTkyOTAtMTliMzYwZGJlYmFjXkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_FMjpg_UX800_.jpg" alt="Scooby Doo, Where Are You!" /></a>
-                    <a href="https://www.imdb.com/title/tt1865718"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMTEzNDc3MDQ2NzNeQTJeQWpwZ15BbWU4MDYzMzUwMDIx._V1_FMjpg_UX800_.jpg" alt="Gravity Falls" /></a>
-                    <a href="https://www.imdb.com/title/tt1812523"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMmI5OWZiYzktMDc3OC00Y2Q5LWE3MzAtOTUyYTVlNzAzZGYyXkEyXkFqcGdeQXVyNjExODE1MDc@._V1_FMjpg_UX800_.jpg" alt="Tron: Uprising" /></a>
-                    <a href="https://www.imdb.com/title/tt14688458"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZjQ4NDM3MDItM2IzZC00YWRkLTlmZjQtNDJkMTllZGRmNjQzXkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Silo" /></a>
-                    <a href="https://www.imdb.com/title/tt2879552"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BODA4MDE5MTk4Nl5BMl5BanBnXkFtZTgwMzA2MTk5NzE@._V1_FMjpg_UX800_.jpg" alt="10.22.63" /></a>
-                    <a href="https://www.imdb.com/title/tt2741602"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNDRiMzFlNGEtYjM3Yi00OWY1LTk5YWItMWU0NzNiZTUzY2U0XkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="The Blacklist" /></a>
-                    <a href="https://www.imdb.com/title/tt5296406"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZTdkMGNhZmYtNzAxMy00NWJkLThkN2MtNjVkNzY0NzVlMWQ4XkEyXkFqcGdeQXVyMTA0MDgzNTE1._V1_FMjpg_UX800_.jpg" alt="Designated Survivor" /></a>
-                    <a href="https://www.imdb.com/title/tt10234724"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BYTc5OWNhYjktMThlOS00ODUxLTgwNDQtZjdjYjkyM2IwZTZlXkEyXkFqcGdeQXVyNTA3MTU2MjE@._V1_FMjpg_UX800_.jpg" alt="Moon Knight" /></a>
-                    <a href="https://www.imdb.com/title/tt6468322"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZjkxZWJiNTUtYjQwYS00MTBlLTgwODQtM2FkNWMyMjMwOGZiXkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="La casa de papel" /></a>
-                    <a href="https://www.imdb.com/title/tt11256260"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNTg5YTE2OTYtMDQzYi00NmQ1LTg2NTUtMGFiZTcyMGNhN2IxXkEyXkFqcGdeQXVyNDg4MjkzNDk@._V1_FMjpg_UX800_.jpg" alt="Hekimoğlu" /></a>
-                    <a href="https://www.imdb.com/title/tt10919420"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BYWE3MDVkN2EtNjQ5MS00ZDQ4LTliNzYtMjc2YWMzMDEwMTA3XkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_FMjpg_UX800_.jpg" alt="Squid Game" /></a>
-                    <a href="https://www.imdb.com/title/tt9764362"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BN2Q0YWE1MjktODJlMi00NTRiLWI2ZTctZTAxNjkyODVjM2EyXkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="The Menu" /></a>
-                    <a href="https://www.imdb.com/title/tt14452776"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZjE0MjBkNWMtOGUzZS00MzMyLTgwYjgtNTBkZWQ5YWRlMmM1XkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="The Bear" /></a>
-                    <a href="https://www.imdb.com/title/tt11988676"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMGJkNjcyN2ItODM0MC00NTdlLTgwNzUtM2YxOGE2ZTlhZmFlXkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Sıcak Kafa" /></a>
-                    <a href="https://www.imdb.com/title/tt7827112"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZDYwYzM1NzAtMzZhMy00Y2Y5LWIwNTItNmQ2YjZmODIwMjgyXkEyXkFqcGdeQXVyNDg4MjkzNDk@._V1_FMjpg_UX800_.jpg" alt="TOLGSHOW" /></a>
-                    <a href="https://www.imdb.com/title/tt35082593"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMDU3MjIzZDctOTVlMC00MjI1LTllZjAtZmY3ZmY2NjcyZmQ2XkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Gassal" /></a>
-                    <a href="https://www.imdb.com/title/tt4241744"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMTMyMzVjZTYtYTJiYi00NTljLWE4YzQtYmQxNzgxZjFmNGJiXkEyXkFqcGdeQXVyNTM3NzExMDQ@._V1_FMjpg_UX800.jpg" alt="Arkadaşım Hoşgeldin" /></a>
-                    <a href="https://www.imdb.com/title/tt8309422"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMmYxNjI2MzEtZTQ3MS00NDMxLTkwYjgtNzQ3MTVhMmE5NTVjXkEyXkFqcGdeQXVyNTM5NjkxMzM@._V1_FMjpg_UX800_.jpg" alt="Rafadan Tayfa" /></a>
-                    <a href="https://www.imdb.com/title/tt0294023"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZjIzYWNmNjItZjdmMC00MGRmLWJmYTItYjYxZjk0ZTI0OTczXkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Kyaputen Tsubasa" /></a>
-                    <a href="https://www.imdb.com/title/tt13622958"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMGZiZmNkZWMtMjE0OS00NzBmLWIwNjMtZmZjMWE1MjE1MTM2XkEyXkFqcGdeQXVyMTQzNTA5MzYz._V1_FMjpg_UX800_.jpg" alt="Baymax!" /></a>
-                    <a href="https://www.imdb.com/title/tt0169414"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMjkxOGNlZmItODk4ZC00NjJhLWE4YTAtOWE4MjlhZTY0ZjJmXkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Arthur" /></a>
-                    <a href="https://www.imdb.com/title/tt0081933"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNTA3MTExZTQtYWQwOS00M2ZjLTg2NTAtN2FiZDU1ZDdlOGJkXkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Şirinler" /></a>
-                    <a href="https://www.imdb.com/title/tt1109624"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNmZjYzQxNmYtMTc1MS00YjQzLWEwZmMtNGZlYmI5OGEzYWRlXkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Ayı Paddington" /></a>
-                    <a href="https://www.imdb.com/title/tt5687910"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BOTIxMDE2NzMtOTRiNC00YjUyLTgwYzktNDA3NzAwZmY2MGQ2XkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Marsupilami" /></a>
-                    <a href="https://www.imdb.com/title/tt2080922"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNWNkNGNkNTItODVkZi00MjVmLThiMWEtOGJhOGIyNjExMjEwXkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Oscar's Oasis" /></a>
-                    <a href="https://www.imdb.com/title/tt1726839"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BOGM3YTM4ZjUtNTk1Mi00OWU2LWIxMTQtNmQxNmQzMjViMWY2XkEyXkFqcGdeQXVyNzMwOTY2NTI@._V1_FMjpg_UX800_.jpg" alt="Looney Tunes" /></a>
-                    <a href="https://www.imdb.com/title/tt0130417"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNGZhZTY4OTItNzc4MS00NTI2LTkyOTAtZjIzZGMwNGE1ODhmXkEyXkFqcGdeQXVyMTQ4NTcxNTI0._V1_FMjpg_UX800_.jpg" alt="Tom &amp; Jerry" /></a>
-                    <a href="https://www.imdb.com/title/tt0760437"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BYWVjODZjNDgtYjk4ZS00OTg5LTg5NDQtZDMxZDQ4ZmM5MGJmXkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Ben 10" /></a>
-                    <a href="https://www.imdb.com/title/tt0118360"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BYjQzN2Q4MjAtZDA2YS00MGQ1LTg1OWUtOTdkNmJjNzFhMGQ1XkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Johnny Bravo" /></a>
-                    <a href="https://www.imdb.com/title/tt2638376"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BYTZhZDI5MWMtOTA3ZC00ZTZhLTgyYjAtZjRlNzc4YzBjMTI1XkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Casper" /></a>
-                    <a href="https://www.imdb.com/title/tt7639726"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMjJhNjdmZTktMDEzNC00YmJkLWIxZGEtMzhlNTkxZmE3YWRlXkEyXkFqcGdeQXVyNTM5NjkxMzM@._V1_QL75_UX800_.jpg" alt="Kral Şakir" /></a>
-                    <a href="https://www.imdb.com/title/tt14533970"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMzBmZDFkNWYtYWJiMy00NzRkLTlmYzktODEzOTE1ZDA1OTBkXkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Prens" /></a>
-                    <a href="https://www.imdb.com/title/tt0175058"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BYzFkNmQwZDEtOThhYS00ZTgyLWIxNjktYzk3N2QwMjAwZWQ1XkEyXkFqcGc@._V1_FMjpg_UX800_.jpg" alt="Powerpuff Girls" /></a>
-                    <a href="https://www.imdb.com/title/tt0843548"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNDc4OTJmZGQtZTdlNC00MWYxLWEwY2UtMjUwOGVkOGNiYmNmXkEyXkFqcGdeQXVyNjIzMDU3NTU@._V1_FMjpg_UX800_.jpg" alt="Zorro" /></a>
-                    <a href="https://www.imdb.com/title/tt0318913"><img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BM2JjY2VkMDktNDIwNi00MGY2LTk1YTktM2M2OGIyMWY3MmMxXkEyXkFqcGdeQXVyOTgwMzk1MTA@._V1_FMjpg_UX780_.jpg" alt="Teenage Mutant Ninja Turtles" /></a>
+
+            <!-- CTA Section -->
+            <section class="cta-section" id="cta">
+                <div class="container">
+                    <div class="cta-content">
+                        <h2 class="cta-title">Ready to work together?</h2>
+                        <p class="cta-description">I'm always interested in new opportunities and exciting projects.</p>
+                        <div class="cta-actions">
+                            <a href="mailto:hidevnar@proton.me" class="btn btn-primary">Start a Project</a>
+                            <a href="src/about.html" class="btn btn-secondary">Learn More</a>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
 
-        <script>
-            const userTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-            document.documentElement.setAttribute("data-theme", userTheme);
-
-            document.querySelectorAll(".tab-button").forEach((button) => {
-                button.addEventListener("click", () => {
-                    // Aktif sekme ve içerikleri kaldır
-                    document.querySelectorAll(".tab-button").forEach((btn) => btn.classList.remove("active"));
-                    document.querySelectorAll(".tab-content").forEach((content) => content.classList.remove("active"));
-
-                    // Yeni sekmeyi aktif yap
-                    button.classList.add("active");
-                    const tabId = button.getAttribute("data-tab");
-                    document.getElementById(tabId).classList.add("active");
-
-                    // URL'yi güncelle
-                    if (history.pushState) {
-                        history.pushState(null, null, `#${tabId}`);
-                    } else {
-                        location.hash = tabId;
-                    }
-                });
-            });
-
-            function formatDate(dateString) {
-                const date = new Date(dateString);
-                const day = String(date.getDate()).padStart(2, "0");
-                const month = String(date.getMonth() + 1).padStart(2, "0"); // 0'dan başladığı için +1
-                const year = date.getFullYear();
-
-                return `${day}.${month}.${year}`;
-            }
-
-            // Sayfa yüklendiğinde URL'deki hash'i veya path'i kontrol et
-            window.addEventListener("load", () => {
-                const hashOrPath = location.hash.replace("#", "") || "Projects";
-                const tabButton = document.querySelector(`.tab-button[data-tab="${hashOrPath}"]`);
-                if (tabButton) {
-                    tabButton.click();
-                }
-            });
-
-            var dob = new Date("09/12/2006");
-            var month_diff = Date.now() - dob.getTime();
-            var age_dt = new Date(month_diff);
-            var year = age_dt.getUTCFullYear();
-            var age = Math.abs(year - 1970);
-            document.getElementById("age").innerText = age;
-            const balloonContainer = document.getElementById("balloon-container");
-            function random(num) {
-                return Math.floor(Math.random() * num);
-            }
-
-            function getRandomStyles() {
-                var r = random(255);
-                var g = random(255);
-                var b = random(255);
-                var mt = random(200);
-                var ml = random(50);
-                var dur = random(5) + 5;
-                return `
-                background-color: rgba(${r},${g},${b},0.7);
-                color: rgba(${r},${g},${b},0.7); 
-                box-shadow: inset -7px -3px 10px rgba(${r - 10},${g - 10},${b - 10},0.7);
-                margin: ${mt}px 0 0 ${ml}px;
-                animation: float ${dur}s ease-in infinite
-                `;
-            }
-
-            function createBalloons(num) {
-                for (var i = num; i > 0; i--) {
-                    var balloon = document.createElement("div");
-                    balloon.className = "balloon";
-                    balloon.style.cssText = getRandomStyles();
-                    balloonContainer.append(balloon);
-                }
-            }
-
-            function checkBirthday(month, day) {
-                const today = new Date();
-                if (today.getMonth() + 1 === month && today.getDate() === day) {
-                    document.getElementById("age").innerText += "🎂";
-                    createBalloons(15);
-                }
-            }
-
-            setTimeout(() => {
-                balloonContainer.style.opacity = 0;
-                balloonContainer.remove();
-            }, 6000);
-
-            checkBirthday(9, 12);
-        </script>
-        <script>
-            const feedUrl = "https://narlog.blogspot.com/feeds/posts/default";
-            async function fetchRSS() {
-                try {
-                    const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}`);
-                    const data = await response.json();
-
-                    if (data.status === "ok") {
-                        displayNews(data.items);
-                    } else {
-                        console.error("RSS verisi alınırken hata oluştu");
-                    }
-                } catch (error) {
-                    console.error("Veri çekilirken hata oluştu: ", error);
-                }
-            }
-
-            // Haberleri card şeklinde ekrana yazdırma
-            function displayNews(newsItems) {
-                const container = document.getElementById("blog-container");
-                container.innerHTML ="";
-
-                newsItems.forEach((item) => {
-                    const card = document.createElement("div");
-                    card.classList.add("card");
-
-                    card.innerHTML = `<a class="news-title"><h1>${item.title}</h1><span>${formatDate(item.pubDate)}</span></a>`;
-
-                    card.querySelector(".news-title").addEventListener("click", () => {
-                        showContent(item, newsItems);
-                    });
-
-                    container.appendChild(card);
-                });
-            }
-
-            function showContent(item, newsItems) {
-                const container = document.getElementById("blog-container");
-                container.innerHTML = "";
-
-                // Seçilen içeriği card şeklinde ekleyelim
-                const contentCard = document.createElement("div");
-                contentCard.classList.add("content-card");
-
-                function formatDate(dateString) {
-                    const date = new Date(dateString);
-                    const day = String(date.getDate()).padStart(2, "0");
-                    const month = String(date.getMonth() + 1).padStart(2, "0"); // 0'dan başladığı için +1
-                    const year = date.getFullYear();
-
-                    return `${day}.${month}.${year}`;
-                }
-
-                contentCard.innerHTML = `
-                    <h1>${item.title}</h1>
-                    <div>${item.content}</div>
-                `;
-
-                const card = document.createElement("div");
-                card.classList.add("tabs");
-
-                card.innerHTML = `
-                    <a class="news-title"><h1 class="tab-button">Geri Dön</h1></a>
-                `;
-
-                card.querySelector(".news-title").addEventListener("click", () => {
-                    fetchRSS()
-                });
-
-                container.appendChild(card);
-                container.appendChild(contentCard);
-            }
-
-
-            // Sayfa yüklendiğinde RSS'yi çek
-            fetchRSS();
-        </script>
-        <script async="" src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+        <script src="src/script.js"></script>
     </body>
 </html>
