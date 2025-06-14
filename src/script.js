@@ -325,23 +325,6 @@ document.addEventListener("DOMContentLoaded", () => {
     gameTimer = setTimeout(moveGameRooster, 1500 - gameScoreValue * 50)
   }
 
-  gameRooster.addEventListener("click", () => {
-    if (!gameActive) return
-    gameScoreValue++
-    gameScore.textContent = gameScoreValue
-    gameRooster.style.transform = "scale(1.2)"
-    setTimeout(() => {
-      gameRooster.style.transform = "scale(1)"
-    }, 100)
-  })
-
-  closeGame.addEventListener("click", () => {
-    gameActive = false
-    clearTimeout(gameTimer)
-    easterEggGame.classList.add("hidden")
-    easterEggGame.classList.remove("show")
-  })
-
   // Secret game trigger (click rooster 5 times quickly)
   let roosterClickCount = 0
   let roosterClickTimer
@@ -391,9 +374,4 @@ document.addEventListener("DOMContentLoaded", () => {
         break
     }
   })
-
-  // Initial rooster message
-  setTimeout(() => {
-    showRoosterMessage("Merhaba! Beni 5 kez tıkla, sürpriz var! 😉")
-  }, 1000)
 })
