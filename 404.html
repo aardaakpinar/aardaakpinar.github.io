@@ -1,226 +1,171 @@
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="🌐 Software Developer with experience since 2019. 🤝 For now, he is developing his own projects. JS, Python, Arduino, Raspberry-pi, Android Studio, Canva" />
-        <meta property="og:title" content="NAR - Page Not Found" />
-        <meta property="og:description" content="🌐 Software Developer with experience since 2019. 🤝 For now, he is developing his own projects. JS, Python, Arduino, Raspberry-pi, Android Studio, Canva" />
-        <meta property="og:url" content="https://devnar.github.io/" />
-        <meta property="og:image" content="https://devnar.github.io/logos/nar.png" />
-        <meta property="og:site_name" content="NAR" />
-        <link rel="icon" href="https://devnar.github.io/logos/nar.png" />
-        <title>NAR - Page Not Found</title>
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet" />
-        <style>
-            html,
-            body {
-                height: 100%;
-                margin: 0;
-            }
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Sayfa Bulunamadı | NAR</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- Background Effects -->
+    <div class="background-effects">
+        <div class="bg-blur bg-blur-1"></div>
+        <div class="bg-blur bg-blur-2"></div>
+        <div class="bg-blur bg-blur-3"></div>
+    </div>
 
-            html {
-                font-size: 62.5%;
-            }
+    <!-- Navigation -->
+    <header class="navigation">
+        <div class="nav-container">
+            <div class="nav-content">
+                <a href="/index.html" class="logo">NAR</a>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menüyü aç">
+                    <svg class="menu-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                    <svg class="close-icon hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
 
-            body {
-                font-family: "Lato", sans-serif;
-                font-size: 1.5rem;
-                color: #23b5b5;
-            }
+                <nav class="desktop-nav">
+                    <a href="/index.html" class="nav-link">Home</a>
+                    <a href="projects.html" class="nav-link">Projects</a>
+                    <a href="about.html" class="nav-link">About</a>
+                </nav>
+            </div>
 
-            a {
-                text-decoration: none;
-            }
+            <div class="mobile-nav hidden" id="mobileNav">
+                <div class="mobile-nav-content">
+                    <nav class="mobile-nav-links">
+                        <a href="/index.html" class="mobile-nav-link">Home</a>
+                        <a href="projects.html" class="mobile-nav-link">Projects</a>
+                        <a href="about.html" class="mobile-nav-link">About</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
 
-            .wrapper {
-                height: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-            }
+    <!-- 404 Content -->
+    <main class="error-page">
+        <div class="container">
+            <div class="error-content">
+                <!-- Animated 404 -->
+                <div class="error-number">
+                    <span class="digit" data-digit="4">4</span>
+                    <div class="rooster-container">
+                        <div class="rooster" id="rooster">
+                            🐓
+                        </div>
+                        <div class="rooster-speech" id="roosterSpeech">
+                            <span class="speech-text" id="speechText">Bawk! Sayfa kaybolmuş!</span>
+                        </div>
+                    </div>
+                    <span class="digit" data-digit="4">4</span>
+                </div>
 
-            .error {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-content: center;
-            }
+                <!-- Error Message -->
+                <div class="error-message">
+                    <h1 class="error-title">Oops! Sayfa Bulunamadı</h1>
+                    <p class="error-description" id="errorDescription">
+                        Aradığınız sayfa kaybolmuş gibi görünüyor. Belki horozum onu gizlemiştir? 🤔
+                    </p>
+                </div>
 
-            .number {
-                font-weight: 900;
-                font-size: 15rem;
-                line-height: 1;
-            }
+                <!-- Interactive Elements -->
+                <div class="error-actions">
+                    <a href="/index.html" class="btn btn-primary">
+                        <i class="bx bx-home"></i>
+                        Ana Sayfaya Dön
+                    </a>
+                    <button class="btn btn-secondary" id="surpriseBtn">
+                        <i class="bx bx-gift"></i>
+                        Sürpriz!
+                    </button>
+                    <button class="btn btn-outline" id="jokeBtn">
+                        <i class="bx bx-laugh"></i>
+                        Şaka Yap
+                    </button>
+                </div>
 
-            .illustration {
-                position: relative;
-                width: 12.2rem;
-                margin: 0 2.1rem;
-            }
-
-            :where(.circle, .clip, .paper, .eyes, .eye, .cheeks, .mouth) {
-                position: absolute;
-            }
-
-            .circle {
-                bottom: 0;
-                left: 0;
-                width: 12.2rem;
-                height: 11.4rem;
-                border-radius: 50%;
-                background-color: #23b5b5;
-            }
-
-            .clip {
-                bottom: 0.3rem;
-                left: 50%;
-                transform: translateX(-50%);
-                overflow: hidden;
-                width: 12.5rem;
-                height: 13rem;
-                border-radius: 0 0 50% 50%;
-            }
-
-            .paper {
-                bottom: -0.3rem;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 9.2rem;
-                height: 12.4rem;
-                border: 0.3rem solid #333;
-                background-color: white;
-                border-radius: 0.8rem;
-            }
-
-            .paper::before {
-                content: "";
-                position: absolute;
-                top: -0.7rem;
-                right: -0.7rem;
-                width: 1.4rem;
-                height: 1rem;
-                background-color: white;
-                border-bottom: 0.3rem solid #333;
-                transform: rotate(45deg);
-            }
-
-            .face {
-                position: relative;
-                margin-top: 2.3rem;
-            }
-
-            .eyes {
-                top: 0;
-                left: 2.4rem;
-                width: 4.6rem;
-                height: 0.8rem;
-            }
-
-            .eye {
-                bottom: 0;
-                width: 0.8rem;
-                height: 0.8rem;
-                border-radius: 50%;
-                background-color: #333;
-                animation-name: eye;
-                animation-duration: 4s;
-                animation-iteration-count: infinite;
-                animation-timing-function: ease-in-out;
-            }
-
-            .eye__left {
-                left: 0;
-            }
-
-            .eye__right {
-                right: 0;
-            }
-
-            @keyframes eye {
-                0% {
-                    height: 0.8rem;
-                }
-
-                50% {
-                    height: 0.8rem;
-                }
-
-                52% {
-                    height: 0.1rem;
-                }
-
-                54% {
-                    height: 0.8rem;
-                }
-
-                100% {
-                    height: 0.8rem;
-                }
-            }
-
-            .cheeks {
-                top: 1.6rem;
-                width: 1rem;
-                height: 0.2rem;
-                border-radius: 50%;
-                background-color: #fdabaf;
-            }
-
-            .cheeks__left {
-                left: 1.4rem;
-            }
-
-            .cheeks__right {
-                right: 1.4rem;
-            }
-
-            .mouth {
-                top: 3.1rem;
-                left: 50%;
-                width: 1.6rem;
-                height: 0.2rem;
-                border-radius: 0.1rem;
-                transform: translateX(-50%);
-                background-color: #333;
-            }
-
-            .button {
-                margin-top: 4rem;
-                border-radius: 6px;
-                padding: 1.2rem 3rem;
-                color: white;
-                background-color: #23b5b5;
-            }
-
-            .button:hover {
-                background-color: #169494;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="wrapper">
-            <div class="error">
-                <div class="number">4</div>
-                <div class="illustration">
-                    <div class="circle"></div>
-                    <div class="clip">
-                        <div class="paper">
-                            <div class="face">
-                                <div class="eyes">
-                                    <div class="eye eye__left"></div>
-                                    <div class="eye eye__right"></div>
-                                </div>
-                                <div class="cheeks cheeks__left"></div>
-                                <div class="cheeks cheeks__right"></div>
-                                <div class="mouth"></div>
-                            </div>
+                <!-- Fun Stats -->
+                <div class="fun-stats">
+                    <div class="stat-card" id="visitCounter">
+                        <div class="stat-icon">👀</div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="visitCount">1</span>
+                            <span class="stat-label">Bu sayfayı ziyaret eden</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card" id="timeSpent">
+                        <div class="stat-icon">⏰</div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="timeCounter">0</span>
+                            <span class="stat-label">Saniye burada geçirdin</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card" id="clickCounter">
+                        <div class="stat-icon">🖱️</div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="clickCount">0</span>
+                            <span class="stat-label">Tıklama yaptın</span>
                         </div>
                     </div>
                 </div>
-                <div class="number">4</div>
+
+                <!-- Easter Egg Game -->
+                <div class="easter-egg-game hidden" id="easterEggGame">
+                    <div class="game-container">
+                        <h3 class="game-title">🎮 Horozu Yakala!</h3>
+                        <p class="game-description">Horozu yakalamaya çalış! Skor: <span id="gameScore">0</span></p>
+                        <div class="game-area" id="gameArea">
+                            <div class="game-rooster" id="gameRooster">🐓</div>
+                        </div>
+                        <button class="btn btn-small" id="closeGame">Oyunu Kapat</button>
+                    </div>
+                </div>
+
+                <!-- Helpful Links -->
+                <div class="helpful-links">
+                    <h3 class="links-title">Belki bunlar işine yarar:</h3>
+                    <div class="links-grid">
+                        <a href="/index.html" class="link-card">
+                            <i class="bx bx-home"></i>
+                            <span>Home</span>
+                        </a>
+                        <a href="projects.html" class="link-card">
+                            <i class="bx bx-code-alt"></i>
+                            <span>Projelerim</span>
+                        </a>
+                        <a href="about.html" class="link-card">
+                            <i class="bx bx-user"></i>
+                            <span>Hakkımda</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="error-contact">
+                    <p>Eğer bu bir hata ise, bana ulaşabilirsin:</p>
+                    <a href="mailto:hidevnar@proton.me" class="contact-link">
+                        <i class="bx bx-envelope"></i>
+                        hidevnar@proton.me
+                    </a>
+                </div>
             </div>
-            <a class="button" href="/">Back Home</a>
         </div>
-    </body>
+    </main>
+
+    <script src="/src/script.js"></script>
+    <script src="/src/404-script.js"></script>
+</body>
 </html>
