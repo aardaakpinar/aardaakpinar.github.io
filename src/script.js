@@ -194,14 +194,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const errorDescription = document.getElementById("errorDescription")
   const surpriseBtn = document.getElementById("surpriseBtn")
   const jokeBtn = document.getElementById("jokeBtn")
-  const visitCount = document.getElementById("visitCount")
-  const timeCounter = document.getElementById("timeCounter")
-  const clickCount = document.getElementById("clickCount")
-  const easterEggGame = document.getElementById("easterEggGame")
-  const gameRooster = document.getElementById("gameRooster")
-  const gameScore = document.getElementById("gameScore")
-  const closeGame = document.getElementById("closeGame")
-  const gameArea = document.getElementById("gameArea")
 
   // Funny messages
   const roosterMessages = [
@@ -229,28 +221,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "Programcı horoz ne der? 'Bak Bak, syntax error!' 🤖",
   ]
 
-  // Initialize counters
-  let visits = localStorage.getItem("404-visits") || 0
-  let clicks = 0
-  let seconds = 0
-  let gameScoreValue = 0
-
-  // Update visit counter
-  visits++
-  localStorage.setItem("404-visits", visits)
-  visitCount.textContent = visits
-
-  // Time counter
-  setInterval(() => {
-    seconds++
-    timeCounter.textContent = seconds
-  }, 1000)
-
-  // Click counter
-  document.addEventListener("click", () => {
-    clicks++
-    clickCount.textContent = clicks
-  })
 
   // Rooster animations
   function animateRooster() {
@@ -298,67 +268,12 @@ document.addEventListener("DOMContentLoaded", () => {
     animateRooster()
   })
 
-  // Easter egg game
-  let gameActive = false
-  let gameTimer
-
-  function startGame() {
-    gameActive = true
-    gameScoreValue = 0
-    gameScore.textContent = gameScoreValue
-    easterEggGame.classList.remove("hidden")
-    easterEggGame.classList.add("show")
-    moveGameRooster()
-  }
-
-  function moveGameRooster() {
-    if (!gameActive) return
-
-    const maxX = gameArea.offsetWidth - 40
-    const maxY = gameArea.offsetHeight - 40
-    const x = Math.random() * maxX
-    const y = Math.random() * maxY
-
-    gameRooster.style.left = x + "px"
-    gameRooster.style.top = y + "px"
-
-    gameTimer = setTimeout(moveGameRooster, 1500 - gameScoreValue * 50)
-  }
-
-  // Secret game trigger (click rooster 5 times quickly)
-  let roosterClickCount = 0
-  let roosterClickTimer
-
-  rooster.addEventListener("click", () => {
-    roosterClickCount++
-    clearTimeout(roosterClickTimer)
-
-    if (roosterClickCount >= 5) {
-      startGame()
-      roosterClickCount = 0
-    } else {
-      roosterClickTimer = setTimeout(() => {
-        roosterClickCount = 0
-      }, 2000)
-    }
-  })
-
-  // Random rooster movements
-  setInterval(() => {
-    if (!gameActive && Math.random() < 0.3) {
-      animateRooster()
-      if (Math.random() < 0.5) {
-        const randomMessage = roosterMessages[Math.floor(Math.random() * roosterMessages.length)]
-        showRoosterMessage(randomMessage)
-      }
-    }
-  }, 5000)
-
+  
   // Keyboard shortcuts
   document.addEventListener("keydown", (e) => {
     switch (e.key.toLowerCase()) {
       case "h":
-        window.location.href = "index.html"
+        window.location.href = "/"
         break
       case "r":
         animateRooster()
@@ -368,9 +283,6 @@ document.addEventListener("DOMContentLoaded", () => {
         break
       case "s":
         surpriseBtn.click()
-        break
-      case "g":
-        if (!gameActive) startGame()
         break
     }
   })

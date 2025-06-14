@@ -1096,7 +1096,7 @@ section {
 /* Social Section */
 .social-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 1rem;
     max-width: 800px;
     margin: 0 auto;
@@ -1656,12 +1656,7 @@ section {
 /* Responsive Design */
 @media (max-width: 768px) {
     .error-number {
-        font-size: 4rem;
         gap: 1rem;
-    }
-
-    .rooster {
-        font-size: 3rem;
     }
 
     .error-title {
@@ -1689,13 +1684,13 @@ section {
 
 @media (max-width: 480px) {
     .error-number {
-        font-size: 3rem;
+        font-size: 5rem;
         flex-direction: row;
         gap: 0.5rem;
     }
 
     .rooster {
-        font-size: 2.5rem;
+        font-size: 4rem;
     }
 
     .error-title {
