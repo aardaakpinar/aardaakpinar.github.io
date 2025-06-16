@@ -294,6 +294,7 @@ a {
 }
 
 .project-card {
+    height: 100%;
     padding: 1.5rem;
     border-radius: 12px;
     background: rgba(0, 20, 21, 0.6);
@@ -366,8 +367,8 @@ a {
 }
 
 .section-about {
-    padding: 2em;
-    margin: 2rem;
+    padding: 2rem;
+    margin-bottom: 1rem;
 }
 
 .section-title {
