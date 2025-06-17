@@ -111,7 +111,9 @@ body {
 }
 
 .nav-container {
-    margin: 1rem 3rem;
+    max-width: 1200px;
+    margin: 1rem auto;
+    padding: 0 1rem;
 }
 
 .nav-content {
@@ -127,6 +129,7 @@ body {
     color: #fff;
     text-decoration: none;
 }
+
 
 .mobile-menu-btn {
     display: none;
@@ -1104,8 +1107,7 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 1rem;
-    max-width: 800px;
-    margin: 0 auto;
+    margin: 0rem 2rem;
 }
 
 .social-card {
@@ -1152,7 +1154,7 @@ section {
 }
 
 .cta-title {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: #fff;
     margin-bottom: 1rem;
@@ -1193,6 +1195,15 @@ section {
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .social-grid {
+        max-width: 550px;
+        margin: 0 auto;
     }
 
     .hero-name {
