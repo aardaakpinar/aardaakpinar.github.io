@@ -253,3 +253,35 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+// Enhanced dropdown functionality
+document.addEventListener("DOMContentLoaded", function () {
+    // Desktop dropdown
+    const dropdownTriggers = document.querySelectorAll(".dropdown-trigger");
+    const mobileDropdownTriggers = document.querySelectorAll(".mobile-dropdown .dropdown-trigger");
+
+    dropdownTriggers.forEach((trigger) => {
+        const dropdown = trigger.parentElement;
+
+        trigger.addEventListener("click", function (e) {
+            e.preventDefault();
+            dropdown.classList.toggle("active");
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", function (e) {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove("active");
+            }
+        });
+    });
+
+    // Mobile dropdown
+    mobileDropdownTriggers.forEach((trigger) => {
+        trigger.addEventListener("click", function (e) {
+            e.preventDefault();
+            const mobileDropdown = trigger.parentElement;
+            mobileDropdown.classList.toggle("active");
+        });
+    });
+});

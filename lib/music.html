@@ -12,7 +12,7 @@
         <meta property="og:image:alt" content="NAR Logo" />
         <meta property="og:site_name" content="NAR" />
         <link rel="icon" href="https://devnar.github.io/logos/nar.png" />
-        <title>NAR | Sayfa Bulunamadı</title>
+        <title>NAR | Music</title>
         <link rel="stylesheet" href="/src/styles.css" />
         <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet" />
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
@@ -22,7 +22,6 @@
         <div class="background-effects">
             <div class="bg-blur bg-blur-1"></div>
             <div class="bg-blur bg-blur-2"></div>
-            <div class="bg-blur bg-blur-3"></div>
         </div>
 
         <!-- Navigation -->
@@ -48,7 +47,7 @@
                         <a href="/projects.html" class="nav-link">Projects</a>
                         <a href="/about.html" class="nav-link">About</a>
                         <div class="nav-dropdown">
-                            <a href="/library.html" class="nav-link dropdown-trigger active">
+                            <a class="nav-link dropdown-trigger active">
                                 Library
                                 <i class="bx bx-chevron-down dropdown-icon"></i>
                             </a>
@@ -85,11 +84,11 @@
                             <a href="/projects.html" class="mobile-nav-link">Projects</a>
                             <a href="/about.html" class="mobile-nav-link">About</a>
                             <div class="mobile-dropdown">
-                                <a href="/library.html" class="mobile-nav-link dropdown-trigger active">
+                                <a class="mobile-nav-link dropdown-trigger active">
                                     Library
                                     <i class="bx bx-chevron-down dropdown-icon"></i>
                                 </a>
-                                <div class="mobile-dropdown-menu">
+                                <div class="mobile-dropdown-menu open">
                                     <a href="/lib/tools.html" class="mobile-dropdown-item">
                                         <i class="bx bx-cog"></i>
                                         <span>Tools</span>
@@ -118,58 +117,15 @@
             </div>
         </header>
 
-        <!-- 404 Content -->
-        <main class="error-page">
+        <!-- Main Content -->
+        <main class="page-content">
             <div class="container">
-                <div class="error-content">
-                    <!-- Animated 404 -->
-                    <div class="error-number">
-                        <span class="digit" data-digit="4">4</span>
-                        <div class="rooster-container">
-                            <div class="rooster" id="rooster">
-                                🐓
-                            </div>
-                            <div class="rooster-speech" id="roosterSpeech">
-                                <span class="speech-text" id="speechText">Bawk! Sayfa kaybolmuş!</span>
-                            </div>
-                        </div>
-                        <span class="digit" data-digit="4">4</span>
-                    </div>
-
-                    <!-- Error Message -->
-                    <div class="error-message">
-                        <h1 class="error-title">Oops! Sayfa Bulunamadı</h1>
-                        <p class="error-description" id="errorDescription">
-                            Aradığınız sayfa kaybolmuş gibi görünüyor. Belki horozum onu gizlemiştir? 🤔
-                        </p>
-                    </div>
-
-                    <!-- Helpful Links -->
-                    <div class="helpful-links">
-                        <h3 class="links-title">Belki bunlar işine yarar:</h3>
-                        <div class="links-grid">
-                            <a href="/" class="link-card">
-                                <i class="bx bx-home"></i>
-                                <span>Home</span>
-                            </a>
-                            <a href="/projects.html" class="link-card">
-                                <i class="bx bx-code-alt"></i>
-                                <span>Projelerim</span>
-                            </a>
-                            <a href="/about.html" class="link-card">
-                                <i class="bx bx-user"></i>
-                                <span>Hakkımda</span>
-                            </a>
-                            <a href="/library.html" class="link-card">
-                                <i class="bx bx-book-bookmark"></i>
-                                <span>Kütüphanem</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <h1 class="page-title">Music</h1>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7dYG68KS1zLfHs0UKvUJfn?utm_source=generator&amp;theme=0" width="100%" height="450" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
         </main>
 
         <script src="/src/script.js"></script>
+        <script async="" src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
     </body>
 </html>
