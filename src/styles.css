@@ -632,16 +632,6 @@ a {
     margin-bottom: 1.5rem;
 }
 
-.skill-item {
-    padding: 0.75rem;
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
-    font-size: 0.875rem;
-    color: #fff;
-}
-
 .experience-list {
     display: flex;
     flex-direction: column;
@@ -1284,9 +1274,10 @@ section {
     background: rgba(35, 181, 181, 0.1);
     border: 1px solid rgba(35, 181, 181, 0.3);
     border-radius: 20px;
-    color: #23b5b5;
+    color: #fff;
     transition: all 0.3s ease;
 }
+
 
 .skill-item:hover {
     background: rgba(35, 181, 181, 0.2);
@@ -1378,54 +1369,17 @@ section {
     align-items: center;
     gap: 0.5rem;
     padding: 1.5rem 1rem;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(35, 35, 35, 0.3);
+    background: rgba(35, 181, 181, 0.1);
+    border: 1px solid rgba(35, 181, 181, 0.3);
+    color: #fff;
     border-radius: 12px;
     text-decoration: none;
-    color: #fff;
     transition: all 0.3s ease;
 }
 
-.social-card.black {
-    background-color: #000;
-}
-
-.social-card.white {
-    background-color: #fff;
-    color: #000;
-}
-
-.social-card.red {
-    background-color: #e1002d;
-}
-
-.social-card.blue {
-    background-color: #0a66c2;
-}
-
-.social-card.yellow {
-    background-color: #ffdd00;
-    color: #000;
-}
-
-.social-card.orange {
-    background-color: #fe6a1c;
-}
-
-
 .social-card:hover {
+    background: rgba(35, 181, 181, 0.2);
     border-color: #23b5b5;
-    transform: translateY(-3px);
-}
-
-.social-card i {
-    font-size: 1.5rem;
-}
-
-.social-card span {
-    font-size: 0.875rem;
-    font-weight: 500;
 }
 
 /* CTA Section */
