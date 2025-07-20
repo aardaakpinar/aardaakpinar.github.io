@@ -133,6 +133,7 @@ body {
 .mobile-menu-btn {
     display: none;
     padding: 0.5rem;
+    padding-bottom: 0.3rem;
     border-radius: 50%;
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
@@ -228,6 +229,10 @@ body {
 .dropdown-item:hover {
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
+}
+
+.dropdown-item.border {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .dropdown-item i {
@@ -864,10 +869,6 @@ a {
         display: none;
     }
 
-    .nav-container {
-        margin: 1rem;
-    }
-
     .hero-title {
         font-size: 2rem;
     }
@@ -1369,7 +1370,6 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 1rem;
-    margin: 0rem 2rem;
 }
 
 .social-card {
@@ -1378,18 +1378,44 @@ section {
     align-items: center;
     gap: 0.5rem;
     padding: 1.5rem 1rem;
-    background: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(35, 35, 35, 0.3);
     border-radius: 12px;
     text-decoration: none;
-    color: #d1d5db;
+    color: #fff;
     transition: all 0.3s ease;
 }
 
+.social-card.black {
+    background-color: #000;
+}
+
+.social-card.white {
+    background-color: #fff;
+    color: #000;
+}
+
+.social-card.red {
+    background-color: #e1002d;
+}
+
+.social-card.blue {
+    background-color: #0a66c2;
+}
+
+.social-card.yellow {
+    background-color: #ffdd00;
+    color: #000;
+}
+
+.social-card.orange {
+    background-color: #fe6a1c;
+}
+
+
 .social-card:hover {
     border-color: #23b5b5;
-    color: #23b5b5;
     transform: translateY(-3px);
 }
 
@@ -1458,12 +1484,15 @@ section {
         align-items: center;
     }
 
+    .nav-container {
+        margin: 1rem;
+    }
+
     .hero-actions {
         justify-content: center;
     }
 
     .social-grid {
-        max-width: 550px;
         margin: 0 auto;
     }
 
