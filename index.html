@@ -14,7 +14,6 @@
         <link rel="icon" href="https://devnar.github.io/logos/nar.png" />
         <title>NAR</title>
         <link rel="stylesheet" href="src/styles.css" />
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet" />
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     </head>
     <body>
@@ -38,7 +37,7 @@
                             <h1 class="hero-name">NAR</h1>
                             <h2 class="hero-title">Frontend Developer</h2>
                             <p class="hero-description">
-                                18 years old developer from Istanbul with 5+ years of experience. Started my journey in 2019 and been crafting digital experiences ever since.
+                                <span id="age">15</span> years old developer from Istanbul with <span id="experience">0</span>+ years of experience. Started my journey in 2020 and been crafting digital experiences ever since.
                             </p>
 
                             <div class="hero-stats">
@@ -47,7 +46,7 @@
                                     <span class="stat-label">Years Experience</span>
                                 </div>
                                 <div class="stat-item">
-                                    <span class="stat-number">50+</span>
+                                    <span class="stat-number">30+</span>
                                     <span class="stat-label">Projects Built</span>
                                 </div>
                                 <div class="stat-item">
@@ -98,7 +97,24 @@
             </section>
         </main>
 
-        <script src="src/script.js"></script>
+        <script>
+            const birthDay = new Date('2006-09-12');
+            const today = new Date();
+            let age = today.getFullYear() - birthDay.getFullYear();
+            const monthDifference = today.getMonth() - birthDay.getMonth();
+            if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDay.getDate())) {
+                age--;
+            }
+
+            // Deneyim yılını hesaplama
+            const startYear = 2020;
+            const currentYear = new Date().getFullYear();
+            const experienceYear = currentYear - startYear;
+
+            // Elemanları doldurma
+            document.getElementById('age').innerText = age;
+            document.getElementById('experience').innerText = experienceYear;
+        </script>
         <script async="" src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
     </body>
 </html>

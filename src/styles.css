@@ -1382,6 +1382,10 @@ section {
     border-color: #23b5b5;
 }
 
+.social-card span {
+    text-align: center;
+}
+
 /* CTA Section */
 .cta-section {
     background: rgba(35, 181, 181, 0.05);
