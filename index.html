@@ -3,119 +3,162 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="🌐 Software Developer with experience since 2019. 🤝 For now, he is developing his own projects. JS, Python, Arduino, Raspberry-pi, Android Studio, Canva" />
-        <meta property="og:title" content="NAR" />
-        <meta property="og:description" content="🌐 Software Developer with experience since 2019. 🤝 For now, he is developing his own projects. JS, Python, Arduino, Raspberry-pi, Android Studio, Canva" />
-        <meta property="og:url" content="https://devnar.github.io/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://devnar.github.io/logos/nar.png" />
-        <meta property="og:image:alt" content="NAR Logo" />
-        <meta property="og:site_name" content="NAR" />
-        <link rel="icon" href="https://devnar.github.io/logos/nar.png" />
-        <title>NAR</title>
-        <link rel="stylesheet" href="src/styles.css" />
+        <title>A. Arda (NAR)</title>
+        <script src="https://cdn.tailwindcss.com"></script>
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="assets/tailwind.css" />
     </head>
+
     <body>
-        <!-- Background Effects -->
-        <div class="background-effects">
-            <div class="bg-blur bg-blur-1"></div>
-            <div class="bg-blur bg-blur-2"></div>
-            <div class="bg-blur bg-blur-3"></div>
-        </div>
-
-        <!-- Main Content -->
-        <main class="homepage">
-            <!-- Hero Section -->
-            <section class="hero-section">
-                <div class="container">
-                    <div class="hero-content">
-                        <div class="hero-left">
-                            <div class="hero-greeting">
-                                <span class="greeting-text">Hi 👋 I'm</span>
-                            </div>
-                            <h1 class="hero-name">NAR</h1>
-                            <h2 class="hero-title">Frontend Developer</h2>
-                            <p class="hero-description">
-                                <span id="age">15</span> years old developer from Istanbul with <span id="experience">0</span>+ years of experience. Started my journey in 2020 and been crafting digital experiences ever since.
-                            </p>
-
-                            <div class="hero-stats">
-                                <div class="stat-item">
-                                    <span class="stat-number">5+</span>
-                                    <span class="stat-label">Years Experience</span>
-                                </div>
-                                <div class="stat-item">
-                                    <span class="stat-number">30+</span>
-                                    <span class="stat-label">Projects Built</span>
-                                </div>
-                                <div class="stat-item">
-                                    <span class="stat-number">∞</span>
-                                    <span class="stat-label">Lines of Code</span>
-                                </div>
-                            </div>
-
-                            <div class="hero-actions">
-                                <a href="projects.html" class="btn btn-primary">View My Work</a>
-                                <a href="about.html" class="btn btn-secondary">Learn More</a>
-                                <a href="library.html" class="btn btn-secondary">My Library</a>
-                            </div>
-                        </div>
-
-                        <div class="hero-right">
-                            <div class="profile-container">
-                                <div class="profile-image-wrapper">
-                                    <img src="logos/nar.png" alt="NAR Profile" class="profile-image" />
-                                    <div class="profile-ring"></div>
-                                </div>
-                                <div class="profile-status">
-                                    <div class="status-dot-red"></div>
-                                    <span>Not Available for work</span>
-                                </div>
-                            </div>
-                        </div>
+        <!-- Navigation -->
+        <nav class="border-b glass-effect sticky top-0 z-50">
+            <div class="max-w-6xl mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div class="text-xl font-semibold">ARDA</div>
+                    <div class="flex items-center gap-6">
+                        <a href="#" class="text-sm font-medium primary-color hover:opacity-80 transition-opacity">Home</a>
+                        <a href="projects.html" class="text-sm font-medium muted-color hover:opacity-80 transition-opacity">Projects</a>
+                        <a href="bookmarks.html" class="text-sm font-medium muted-color hover:opacity-80 transition-opacity">Bookmarks</a>
                     </div>
                 </div>
-            </section>
+            </div>
+        </nav>
 
-            <!-- CTA Section -->
-            <section class="cta-section" id="cta">
-                <div class="container">
-                    <div class="cta-content">
-                        <!--<h2 class="cta-title">Discover My Work</h2>
-                        <p class="cta-description">
-                            From tiny prototypes to large scale applications, I love turning ideas into code.<br>
-                            Take a look at what I've been up to.
+        <main class="p-4 sm:p-8">
+            <!-- Ana düzen - Sidebar ve ana içerik -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <!-- Sol Sidebar -->
+                <aside class="sm:col-span-1 space-y-8">
+                    <!-- Profil Kartı -->
+                    <div class="card rounded-2xl p-6 text-center">
+                        <div class="w-24 h-24 mx-auto mb-6 relative ">
+                            <img src="assets/images/logos/nar.png" alt="ARDA's profile picture" class="rounded-full w-full h-full object-cover border-4 border-white border-opacity-20" />
+
+                            <!-- Müsait Badge -->
+                            <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-neutral-700 text-green-600 text-xs font-medium px-3 py-1 rounded-full shadow-md flex flex-nowrap items-center">
+                                <span class="w-2.5 h-2.5 flex flex-wrap rounded-full bg-green-500 mr-1"></span>
+                                Available
+                            </div>
+                        </div>
+
+                        <h1 class="text-xl font-bold">A. Arda (NAR)</h1>
+                        <p class="text-sm muted-color mb-4">Frontend Developer</p>
+                    </div>
+
+                    <!-- Sosyal Medya ve İletişim -->
+                    <div class="w-full">
+                            <!-- Social Links -->
+                            <div class="flex flex-wrap justify-center gap-4">
+                                <a href="https://twitter.com/aardaakpinar" class="social-link px-3 py-1 rounded-xl" aria-label="Twitter">
+                                    <i class='bx bxl-twitter text-xl muted-color'></i>
+                                </a>
+                                <a href="https://linkedin.com/in/aardaakpinar" class="social-link px-3 py-1 rounded-xl" aria-label="LinkedIn">
+                                    <i class='bx bxl-linkedin text-xl muted-color'></i>
+                                </a>
+                                <a href="https://github.com/aardaakpinar" class="social-link px-3 py-1 rounded-xl" aria-label="GitHub">
+                                    <i class='bx bxl-github text-xl muted-color'></i>
+                                </a>
+                                <a href="https://codepen.io/aardaakpinar" class="social-link px-3 py-1 rounded-xl" aria-label="CodePen">
+                                    <i class='bx bxl-codepen text-xl muted-color'></i>
+                                </a>
+                                <a href="https://youtube.com/@aardaakpinar" class="social-link px-3 py-1 rounded-xl" aria-label="YouTube">
+                                    <i class='bx bxl-youtube text-xl muted-color'></i>
+                                </a>
+                                <a href="https://mastodon.social/@aardaakpinar" class="social-link px-3 py-1 rounded-xl" aria-label="Mastodon">
+                                    <i class='bx bxl-mastodon text-xl muted-color'></i>
+                                </a>
+                                <a href="https://suno.com/@_devnar" class="social-link px-3 py-1 rounded-xl" aria-label="Suno">
+                                    <i class='bx bx-music text-xl muted-color'></i>
+                                </a>
+                                <a href="https://patreon.com/aardaakpinar" class="social-link px-3 py-1 rounded-xl" aria-label="Patreon">
+                                    <i class='bx bxl-patreon text-xl muted-color'></i>
+                                </a>
+                                <a href="https://dev.to/aardaakpinar" class="social-link px-3 py-1 rounded-xl" aria-label="Dev.to">
+                                    <i class='bx bxl-dev-to text-xl muted-color'></i>
+                                </a>
+                                <a href="mailto:hidevnar@proton.me" class="social-link px-3 py-1 rounded-xl" aria-label="Email">
+                                    <i class='bx bx-envelope text-xl muted-color'></i>
+                                </a>
+                            </div>
+                        </div>
+                </aside>
+
+                <main class="grid md:col-span-2 lg:col-span-3  grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+
+                    <div class="card rounded-2xl p-8 col-span-2">
+                        <h2 class="text-xl font-semibold mb-6">Hi 👋 I'm ARDA</h2>
+                        <p class="muted-color leading-relaxed">
+                            I'm 18 years old. I’ve been into frontend development since November 22, 2019, starting with website builders like WordPress and Google Sites, but later I switched to coding my own projects after realizing their limitations.
                         </p>
-                        <div class="cta-actions">
-                            <a href="projects.html" class="btn btn-primary">View My Projects</a>
-                            <a href="mailto:hidevnar@proton.me" class="btn btn-secondary">Work With Me</a>
-                        </div>-->
-                        <span>© NAR. All rights reserved.</span>
-                        <a rel="me" href="https://mastodon.social/@_devnar" class="hidden">Mastodon</a>
                     </div>
-                </div>
-            </section>
+
+                    <div class="card rounded-2xl p-8 col-span-2">
+                        <h2 class="text-xl font-semibold mb-6">Skills</h2>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="badge px-3 py-1 rounded-full text-sm">HTML</span>
+                            <span class="badge px-3 py-1 rounded-full text-sm">Markdown</span>
+                            <span class="badge px-3 py-1 rounded-full text-sm">CSS</span>
+                            <span class="badge px-3 py-1 rounded-full text-sm">JavaScript</span>
+                            <span class="badge px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
+                            <span class="badge px-3 py-1 rounded-full text-sm">WordPress</span>
+                            <span class="badge px-3 py-1 rounded-full text-sm">Canva</span>
+                            <span class="badge px-3 py-1 rounded-full text-sm">Figma</span>
+                            <span class="badge px-3 py-1 rounded-full text-sm">Discord Bot</span>
+                            <span class="badge px-3 py-1 rounded-full text-sm">Firebase Database</span>
+                            <span class="badge px-3 py-1 rounded-full text-sm">Node.js</span>
+                            <span class="badge px-3 py-1 rounded-full text-sm">Python</span>
+                            <span class="badge px-3 py-1 rounded-full text-sm">PHP</span>
+                            <span class="badge px-3 py-1 rounded-full text-sm">Arduino</span>
+                        </div>
+                    </div>
+
+                    <div class="card rounded-2xl p-8 col-span-2">
+                        <h2 class="text-xl font-semibold mb-6">Experience</h2>
+                        <div class="space-y-6">
+                            <div class="relative pl-6 border-l-2 border-opacity-20" style="border-color: var(--primary);">
+                                <div class="absolute -left-2 top-0 w-4 h-4 rounded-full" style="background-color: var(--primary);"></div>
+                                <div class="space-y-1">
+                                    <p class="text-sm primary-color font-medium">2020 - Present</p>
+                                    <h4 class="font-medium">Frontend Developer</h4>
+                                    <p class="text-sm muted-color">
+                                        I'm moving forward with my own projects
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="relative pl-6 border-l-2 border-opacity-20" style="border-color: var(--primary);">
+                                <div class="absolute -left-2 top-0 w-4 h-4 rounded-full" style="background-color: var(--primary);"></div>
+                                <div class="space-y-1">
+                                    <p class="text-sm primary-color font-medium">2024</p>
+                                    <h4 class="font-medium">Website Design</h4>
+                                    <p class="text-sm muted-color">
+                                        Ka Serbest Muhasebecilik ve Mali Müşavirlik Ltd. Şti.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card rounded-2xl p-8 col-span-2">
+                        <h2 class="text-xl font-semibold mb-8">Education</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="space-y-6">
+                                <div class="relative pl-6 border-l-2 border-opacity-20" style="border-color: var(--primary);">
+                                <div class="absolute -left-2 top-0 w-4 h-4 rounded-full" style="background-color: var(--primary);"></div>
+                                <div class="space-y-1">
+                                    <p class="text-sm primary-color font-medium">202X - 202Y</p>
+                                    <h4 class="font-medium">???</h4>
+                                    <p class="text-sm muted-color">
+                                        ABC university
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+            <script src="assets/script.js"></script>
         </main>
-
-        <script>
-            const birthDay = new Date('2006-09-12');
-            const today = new Date();
-            let age = today.getFullYear() - birthDay.getFullYear();
-            const monthDifference = today.getMonth() - birthDay.getMonth();
-            if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDay.getDate())) {
-                age--;
-            }
-
-            // Deneyim yılını hesaplama
-            const startYear = 2020;
-            const currentYear = new Date().getFullYear();
-            const experienceYear = currentYear - startYear;
-
-            // Elemanları doldurma
-            document.getElementById('age').innerText = age;
-            document.getElementById('experience').innerText = experienceYear;
-        </script>
-        <script async="" src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
     </body>
 </html>

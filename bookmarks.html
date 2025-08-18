@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A. Arda | Bookmarks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="assets/tailwind.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="border-b glass-effect sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-xl font-semibold">ARDA</div>
+                <div class="flex items-center gap-6">
+                    <a href="index.html" class="text-sm font-medium muted-color hover:opacity-80 transition-opacity">Home</a>
+                    <a href="projects.html" class="text-sm font-medium muted-color hover:opacity-80 transition-opacity">Projects</a>
+                    <a href="#" class="text-sm font-medium primary-color hover:opacity-80 transition-opacity">Bookmarks</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-6 py-12">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold mb-4">Bookmarks</h1>
+            <p class="text-lg muted-color max-w-2xl mx-auto">
+                A carefully curated collection of things I've discovered throughout my life.
+            </p>
+        </div>
+
+        <div class="flex justify-center border-b border-gray-700 mb-8">
+            <div class="tab active" data-url="/pages/books.html">Books</div>
+            <div class="tab" data-url="/pages/tools.html">Tools</div>
+            <div class="tab" data-url="/pages/movies.html">Movies</div>
+            <div class="tab" data-url="/pages/series.html">Series</div>
+        </div>
+
+        <div class="w-full h-full">
+            <iframe id="content-frame" src="/pages/books.html" class="w-full h-full" frameborder="0"></iframe>
+        </div>
+
+    </main>
+
+    <script>
+function getIframeHeight(iframe) {
+    try {
+        const doc = iframe.contentDocument || iframe.contentWindow.document;
+        if (!doc) return;
+
+        const body = doc.body;
+        if (!body) return;
+
+        // Önce küçült, sonra gerçek ölçümü al
+        iframe.style.height = "0px";
+        iframe.style.height = body.scrollHeight + "px";
+
+        body.style.overflow = "hidden";
+    } catch (err) {
+        console.warn("iframe içeriğine erişilemedi (cross-origin olabilir):", err);
+    }
+}
+
+function waitForImages(iframe, callback) {
+    try {
+        const doc = iframe.contentDocument || iframe.contentWindow.document;
+        if (!doc) return;
+
+        const images = Array.from(doc.images);
+        if (images.length === 0) {
+            callback();
+            return;
+        }
+
+        let loadedCount = 0;
+        images.forEach(img => {
+            if (img.complete) {
+                loadedCount++;
+            } else {
+                img.addEventListener("load", () => {
+                    loadedCount++;
+                    if (loadedCount === images.length) callback();
+                });
+                img.addEventListener("error", () => {
+                    loadedCount++;
+                    if (loadedCount === images.length) callback();
+                });
+            }
+        });
+
+        if (loadedCount === images.length) {
+            callback();
+        }
+    } catch (err) {
+        console.warn("Resim yükleme kontrolü yapılamadı:", err);
+    }
+}
+
+const tabs = document.querySelectorAll('.tab');
+const iframe = document.getElementById('content-frame');
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        iframe.src = tab.getAttribute('data-url');
+    });
+});
+
+iframe.addEventListener("load", () => {
+    waitForImages(iframe, () => getIframeHeight(iframe));
+});
+</script>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>

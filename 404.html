@@ -1,191 +1,84 @@
 <!DOCTYPE html>
 <html lang="tr">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="🌐 Software Developer with experience since 2019. 🤝 For now, he is developing his own projects. JS, Python, Arduino, Raspberry-pi, Android Studio, Canva" />
-        <meta property="og:title" content="NAR" />
-        <meta property="og:description" content="🌐 Software Developer with experience since 2019. 🤝 For now, he is developing his own projects. JS, Python, Arduino, Raspberry-pi, Android Studio, Canva" />
-        <meta property="og:url" content="https://devnar.github.io/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://devnar.github.io/logos/nar.png" />
-        <meta property="og:image:alt" content="NAR Logo" />
-        <meta property="og:site_name" content="NAR" />
-        <link rel="icon" href="https://devnar.github.io/logos/nar.png" />
-        <title>NAR | Page Not Found</title>
-        <link rel="stylesheet" href="/src/styles.css" />
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet" />
-        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    </head>
-    <body>
-        <!-- Background Effects -->
-        <div class="background-effects">
-            <div class="bg-blur bg-blur-1"></div>
-            <div class="bg-blur bg-blur-2"></div>
-            <div class="bg-blur bg-blur-3"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A. Arda | Page Not Found</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="src/tailwind.css">
+</head>
+<body class="overflow-hidden">
+    <!-- Liquid Glass Background Effects -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-20 left-20 w-96 h-96 rounded-full blur-3xl animate-pulse-glow" style="background-color: var(--primary); opacity: 0.1;"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full blur-2xl animate-pulse-glow" style="background-color: var(--primary); opacity: 0.05;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="border-b glass-effect sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-xl font-semibold">ARDA</div>
+                <div class="flex items-center gap-6">
+                    <a href="index.html" class="text-sm font-medium muted-color hover:opacity-80 transition-opacity">Home</a>
+                    <a href="projects.html" class="text-sm font-medium muted-color hover:opacity-80 transition-opacity">Projects</a>
+                    <a href="bookmarks.html" class="text-sm font-medium muted-color hover:opacity-80 transition-opacity">Bookmarks</a>
+                </div>
+            </div>
         </div>
+    </nav>
 
-        <!-- Navigation -->
-        <header class="navigation">
-            <div class="nav-container">
-                <div class="nav-content">
-                    <a href="/" class="logo">NAR</a>
+    <!-- Main Content -->
+    <main class="relative z-10 flex items-center justify-center min-h-screen px-6">
+        <div class="max-w-2xl mx-auto text-center">
+            <!-- Liquid Glass Card -->
+            <div class="card glass-effect rounded-lg shadow-2xl relative overflow-hidden">
+                <!-- Glass reflection effect -->
+                <div class="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent"></div>
+                <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
 
-                    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menüyü aç">
-                        <svg class="menu-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="3" y1="6" x2="21" y2="6"></line>
-                            <line x1="3" y1="12" x2="21" y2="12"></line>
-                            <line x1="3" y1="18" x2="21" y2="18"></line>
-                        </svg>
-                        <svg class="close-icon hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="18" y1="6" x2="6" y2="18"></line>
-                            <line x1="6" y1="6" x2="18" y2="18"></line>
-                        </svg>
-                    </button>
+                <div class="relative p-12">
+                    <!-- 404 Number with glass effect -->
+                    <div class="relative mb-8">
+                        <div class="text-9xl font-bold select-none" style="color: var(--foreground); opacity: 0.4;">404</div>
+                        <div class="absolute inset-0 text-9xl font-bold bg-gradient-to-br from-current to-current bg-clip-text text-transparent primary-color" style="opacity: 0.6;">
+                            404
+                        </div>
+                    </div>
 
-                    <nav class="desktop-nav">
-                        <a href="/" class="nav-link">Home</a>
-                        <a href="projects.html" class="nav-link">Projects</a>
-                        <a href="about.html" class="nav-link">About</a>
-                        <a href="library.html" class="nav-link">Library</a>
-                    </nav>
-                </div>
+                    <h1 class="text-3xl font-bold mb-4">Sayfa Bulunamadı</h1>
+                    <p class="text-lg muted-color mb-8 leading-relaxed">
+                        Aradığınız sayfa mevcut değil veya taşınmış olabilir. Ana sayfaya dönebilir veya diğer bölümleri
+                        keşfedebilirsiniz.
+                    </p>
 
-                <div class="mobile-nav hidden" id="mobileNav">
-                    <div class="mobile-nav-content">
-                        <nav class="mobile-nav-links">
-                            <a href="/" class="mobile-nav-link">Home</a>
-                            <a href="projects.html" class="mobile-nav-link">Projects</a>
-                            <a href="about.html" class="mobile-nav-link">About</a>
-                            <a href="library.html" class="mobile-nav-link">Library</a>
-                        </nav>
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                        <a href="index.html" class="btn-primary px-6 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-all hover:opacity-90">
+                            Ana Sayfa
+                        </a>
+                        <button onclick="window.history.back()" class="card glass-effect px-6 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-all hover:opacity-90">
+                            Geri Dön
+                        </button>
                     </div>
                 </div>
             </div>
-        </header>
+        </div>
+    </main>
 
-        <!-- 404 Content -->
-        <main class="error-page">
-            <div class="container">
-                <div class="error-content">
-                    <!-- Animated 404 -->
-                    <div class="error-number">
-                        <span class="digit" data-digit="4">4</span>
-                        <div class="rooster-container">
-                            <div class="rooster" id="rooster">
-                                🐓
-                            </div>
-                            <div class="rooster-speech" id="roosterSpeech">
-                                <span class="speech-text" id="speechText">Bawk! Page disappeared!</span>
-                            </div>
-                        </div>
-                        <span class="digit" data-digit="4">4</span>
-                    </div>
+    <!-- Theme Toggle Script -->
+    <script>
+        function initTheme() {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.classList.toggle('dark', prefersDark);
+        }
 
-                    <!-- Error Message -->
-                    <div class="error-message">
-                        <h1 class="error-title">Oops! Page Not Found</h1>
-                        <p class="error-description" id="errorDescription">
-                            The page you were looking for appears to have disappeared. Maybe my rooster hid it? 🤔
-                        </p>
-                    </div>
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            document.documentElement.classList.toggle('dark', e.matches);
+        });
 
-                    <!-- Helpful Links -->
-                    <div class="helpful-links">
-                        <h3 class="links-title">Maybe these will be useful:</h3>
-                        <div class="links-grid">
-                            <a href="/" class="link-card">
-                                <i class="bx bx-home"></i>
-                                <span>Home</span>
-                            </a>
-                            <a href="/projects.html" class="link-card">
-                                <i class="bx bx-code-alt"></i>
-                                <span>My Projects</span>
-                            </a>
-                            <a href="/about.html" class="link-card">
-                                <i class="bx bx-user"></i>
-                                <span>About Me</span>
-                            </a>
-                            <a href="/library.html" class="link-card">
-                                <i class="bx bx-book-bookmark"></i>
-                                <span>My library</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                // Elements
-                const rooster = document.getElementById("rooster");
-                const roosterSpeech = document.getElementById("roosterSpeech");
-                const speechText = document.getElementById("speechText");
-                const errorDescription = document.getElementById("errorDescription");
-
-                // Funny messages
-                const roosterMessages = ["Cock-a-doodle-doo! The page is gone!", "Cock-a-doodle-doo! It’s a 404 error!", "Cluck cluck! There’s nothing here!", "Cock-a-doodle-doo! You’ve ended up in the wrong place!", "Cluck cluck! The page has flown the coop!", "Cock-a-doodle-doo! A missing page is on the loose!"];
-
-                const errorMessages = [
-                    "The page you're looking for appears to be missing. Maybe my rooster has hidden it? 🤔",
-                    "This page doesn't seem to exist at all... My rooster looks suspicious 👀",
-                    "404 error! My rooster claims innocence 🐓",
-                    "Page not found. My rooster says 'I didn't do it!' 😅",
-                    "This page might be in a parallel universe. My rooster might have learned how to open its portal 🌀",
-                ];
-
-                const randomMessage = errorMessages[Math.floor(Math.random() * errorMessages.length)];
-                errorDescription.textContent = randomMessage;
-
-                // Add some visual effects
-                document.body.style.filter = "hue-rotate(45deg)";
-                setTimeout(() => {
-                    document.body.style.filter = "none";
-                }, 1000);
-
-                // Rooster animations
-                function animateRooster() {
-                    rooster.style.transform = "rotate(10deg) scale(1.1)";
-                    setTimeout(() => {
-                        rooster.style.transform = "rotate(-10deg) scale(0.9)";
-                    }, 200);
-                    setTimeout(() => {
-                        rooster.style.transform = "rotate(0deg) scale(1)";
-                    }, 400);
-                }
-
-                function showRoosterMessage(message) {
-                    speechText.textContent = message;
-                    roosterSpeech.classList.add("show");
-                    setTimeout(() => {
-                        roosterSpeech.classList.remove("show");
-                    }, 3000);
-                }
-
-                // Rooster click interaction
-                rooster.addEventListener("click", () => {
-                    animateRooster();
-                    const randomMessage = roosterMessages[Math.floor(Math.random() * roosterMessages.length)];
-                    showRoosterMessage(randomMessage);
-                });
-
-                // Keyboard shortcuts
-                document.addEventListener("keydown", (e) => {
-                    switch (e.key.toLowerCase()) {
-                        case "h":
-                            window.location.href = "/";
-                            break;
-                        case "r":
-                            animateRooster();
-                            break;
-                        case "s":
-                            showRoosterMessage("help!");
-                            break;
-                    }
-                });
-            });
-        </script>
-        <script src="/src/script.js"></script>
-    </body>
+        initTheme();
+    </script>
+</body>
 </html>
-3
