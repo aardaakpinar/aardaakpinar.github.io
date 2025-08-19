@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="NAR">
+    <meta property="og:description" content="🌐 Software Developer with experience since 2019. 🤝 For now, he is developing his own projects. JS, Python, Arduino, Raspberry-pi, Android Studio, Canva">
+    <meta property="og:url" content="https://aardaakpinar.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://aardaakpinar.github.io/logos/nar.png">
+    <meta property="og:image:alt" content="NAR Logo">
+    <meta property="og:site_name" content="NAR">
+    <link rel="icon" href="https://aardaakpinar.github.io/assets/images/logos/nar.png">
     <title>A. Arda | Page Not Found</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="src/tailwind.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/tailwind.css" />
 </head>
 <body class="overflow-hidden">
     <!-- Liquid Glass Background Effects -->
@@ -21,7 +29,7 @@
             <div class="flex items-center justify-between">
                 <div class="text-xl font-semibold">ARDA</div>
                 <div class="flex items-center gap-6">
-                    <a href="index.html" class="text-sm font-medium muted-color hover:opacity-80 transition-opacity">Home</a>
+                    <a href="/" class="text-sm font-medium muted-color hover:opacity-80 transition-opacity">Home</a>
                     <a href="projects.html" class="text-sm font-medium muted-color hover:opacity-80 transition-opacity">Projects</a>
                     <a href="bookmarks.html" class="text-sm font-medium muted-color hover:opacity-80 transition-opacity">Bookmarks</a>
                 </div>
@@ -41,7 +49,7 @@
                 <div class="relative p-12">
                     <!-- 404 Number with glass effect -->
                     <div class="relative mb-8">
-                        <div class="text-9xl font-bold select-none" style="color: var(--foreground); opacity: 0.4;">404</div>
+                        <div class="text-9xl font-bold select-none" style="color: var(--foreground); opacity: 1;">404</div>
                         <div class="absolute inset-0 text-9xl font-bold bg-gradient-to-br from-current to-current bg-clip-text text-transparent primary-color" style="opacity: 0.6;">
                             404
                         </div>
@@ -68,17 +76,7 @@
     </main>
 
     <!-- Theme Toggle Script -->
-    <script>
-        function initTheme() {
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            document.documentElement.classList.toggle('dark', prefersDark);
-        }
-
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-            document.documentElement.classList.toggle('dark', e.matches);
-        });
-
-        initTheme();
-    </script>
+    <script src="assets/script.js"></script>
+    <script async="" src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 </body>
 </html>
