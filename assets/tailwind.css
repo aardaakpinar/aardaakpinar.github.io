@@ -45,6 +45,13 @@ body {
     border: 1px solid var(--border);
 }
 
+.background-image {
+    background-image: url(/assets/images/backgrounds/oda.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .primary-color {
     color: var(--primary);
 }
