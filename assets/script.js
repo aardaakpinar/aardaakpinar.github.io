@@ -42,72 +42,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // BOOKMARKS
 
-function getIframeHeight(iframe) {
+const buttons = document.querySelectorAll(".tab-btn");
+const contentDiv = document.getElementById("bookmark-content");
+
+async function loadPage(btn, page) {
+    // aktif buton stilini ayarla
+    buttons.forEach((b) => b.classList.remove("active-tab"));
+    btn.classList.add("active-tab");
+
     try {
-        const doc = iframe.contentDocument || iframe.contentWindow.document;
-        if (!doc) return;
-
-        const body = doc.body;
-        if (!body) return;
-
-        // Önce küçült, sonra gerçek ölçümü al
-        iframe.style.height = "0px";
-        iframe.style.height = body.scrollHeight + "px";
-
-        body.style.overflow = "hidden";
+        const res = await fetch("pages/"+page);
+        const html = await res.text();
+        contentDiv.innerHTML = html;
     } catch (err) {
-        console.warn("iframe içeriğine erişilemedi (cross-origin olabilir):", err);
+        contentDiv.innerHTML = `<p class="text-red-500">Veri yüklenemedi: ${err}</p>`;
     }
 }
 
-function waitForImages(iframe, callback) {
-    try {
-        const doc = iframe.contentDocument || iframe.contentWindow.document;
-        if (!doc) return;
-
-        const images = Array.from(doc.images);
-        if (images.length === 0) {
-            callback();
-            return;
-        }
-
-        let loadedCount = 0;
-        images.forEach(img => {
-            if (img.complete) {
-                loadedCount++;
-            } else {
-                img.addEventListener("load", () => {
-                    loadedCount++;
-                    if (loadedCount === images.length) callback();
-                });
-                img.addEventListener("error", () => {
-                    loadedCount++;
-                    if (loadedCount === images.length) callback();
-                });
-            }
-        });
-
-        if (loadedCount === images.length) {
-            callback();
-        }
-    } catch (err) {
-        console.warn("Resim yükleme kontrolü yapılamadı:", err);
-    }
-}
-
-const tabs = document.querySelectorAll('.tab');
-const iframe = document.getElementById('content-frame');
-
-tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        iframe.src = tab.getAttribute('data-url');
+// Butonlara tıklama eventleri
+buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const page = btn.getAttribute("data-page");
+        loadPage(btn, page);
     });
 });
 
-if (window.location.pathname.endsWith("/bookmarks.html")) {
-    iframe.addEventListener("load", () => {
-        waitForImages(iframe, () => getIframeHeight(iframe));
-    });
-}
+// Sayfa açıldığında otomatik Tools'u yükle
+window.addEventListener("DOMContentLoaded", () => {
+    const firstBtn = document.querySelector('[data-page="tools.html"]');
+    if (firstBtn) {
+        loadPage(firstBtn, "tools.html");
+    }
+});
