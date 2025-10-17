@@ -1,76 +1,116 @@
-// THEME
-
-function initTheme() {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    document.documentElement.classList.toggle('dark', prefersDark);
-}
-
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-    document.documentElement.classList.toggle('dark', e.matches);
-});
-
-initTheme();
-
-
-// AGE
-
 document.addEventListener("DOMContentLoaded", () => {
-    // sadece index.html'de çalışsın
-    if (window.location.pathname.endsWith("/index.html") || window.location.pathname === "/") {
-        function calculateAge(birthDateStr) {
-            const [day, month, year] = birthDateStr.split(".").map(Number);
-            const birthDate = new Date(year, month - 1, day);
-            const today = new Date();
+    const sky = document.querySelector(".sky");
+    const rainContainer = document.querySelector(".rain-container");
 
-            let age = today.getFullYear() - birthDate.getFullYear();
-            const m = today.getMonth() - birthDate.getMonth();
+    const month = new Date().getMonth() + 1;
+    const day = new Date().getDate();
+    const hour = new Date().getHours();
 
-            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-                age--;
-            }
+    // Temel efektleri temizle
+    rainContainer.innerHTML = "";
+    sky.innerHTML = "";
 
-            return age;
+    // Mevsim ve saat bazlı koşullar
+    if (month == 9 && day == 12) {
+        setInterval(createFireworks, 1000);
+    } else if (month >= 9 && month <= 11) {
+        // Sonbahar
+        createRain(50);
+    } else if (month == 12 || month <= 2) {
+        // Kış
+        createSnow(70);
+    } else if (month >= 3 && month <= 5) {
+        // İlkbahar
+        createRain(10);
+    } else if (month >= 6 && month <= 8) {
+        // Yaz
+        if (hour <= 6 || hour >= 18) {
+            createMovingStars(50);
         }
+    }
 
-        const ageElement = document.getElementById("age");
-        if (ageElement) {
-            ageElement.textContent = calculateAge("12.09.2006");
+    if (hour <= 6 || hour >= 18) {
+        createMovingStars(20);
+    }
+
+    // Fonksiyonlar
+    function createRain(count) {
+        for (let i = 0; i < count; i++) {
+            const drop = document.createElement("div");
+            drop.className = "rain";
+            drop.style.left = Math.random() * 100 + "vw";
+            drop.style.animationDuration = 0.5 + Math.random() * 0.5 + "s";
+            drop.style.animationDelay = Math.random() * 2 + "s";
+            rainContainer.appendChild(drop);
         }
     }
-});
 
-
-// BOOKMARKS
-
-const buttons = document.querySelectorAll(".tab-btn");
-const contentDiv = document.getElementById("bookmark-content");
-
-async function loadPage(btn, page) {
-    // aktif buton stilini ayarla
-    buttons.forEach((b) => b.classList.remove("active-tab"));
-    btn.classList.add("active-tab");
-
-    try {
-        const res = await fetch("pages/"+page);
-        const html = await res.text();
-        contentDiv.innerHTML = html;
-    } catch (err) {
-        contentDiv.innerHTML = `<p class="text-red-500">Veri yüklenemedi: ${err}</p>`;
+    function createSnow(count) {
+        for (let i = 0; i < count; i++) {
+            const flake = document.createElement("div");
+            flake.className = "snow";
+            flake.style.left = Math.random() * 100 + "vw";
+            flake.style.animationDuration = 5 + Math.random() * 5 + "s";
+            flake.style.animationDelay = Math.random() * 5 + "s";
+            rainContainer.appendChild(flake);
+        }
     }
-}
 
-// Butonlara tıklama eventleri
-buttons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-        const page = btn.getAttribute("data-page");
-        loadPage(btn, page);
-    });
-});
-
-// Sayfa açıldığında otomatik Tools'u yükle
-window.addEventListener("DOMContentLoaded", () => {
-    const firstBtn = document.querySelector('[data-page="tools.html"]');
-    if (firstBtn) {
-        loadPage(firstBtn, "tools.html");
+    function createMovingStars(count){
+      const sky = document.querySelector('.sky');
+      for(let i=0;i<count;i++){
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.top = Math.random()*50+'vh';
+        star.style.left = Math.random()*100+'vw';
+        star.style.width = 1+Math.random()*2+'px';
+        star.style.height = star.style.width;
+        // Rastgele yön için CSS değişkeni
+        star.style.setProperty('--dirX', Math.random()>0.5?1:-1);
+        star.style.setProperty('--dirY', Math.random()>0.5?1:-1);
+        // Animasyon süresini değiştir
+        star.style.animationDuration = 1+Math.random()*3+'s, '+5+Math.random()*5+'s';
+        sky.appendChild(star);
+      }
     }
+
+
+    function createFireworks() {
+      const container = document.querySelector('.sky');
+      
+      // Renkler
+      const colors = ['#FF3C38','#FFAD33','#33FFBD','#3380FF','#C833FF'];
+
+      const color = colors[Math.floor(Math.random() * colors.length)];
+
+      // Yukarı çıkan roket
+      const firework = document.createElement('div');
+      firework.classList.add('firework');
+      firework.style.left = `${Math.random() * 90 + 5}%`;
+      firework.style.setProperty('--color', color);
+      container.appendChild(firework);
+
+      // Patlama parçaları
+      setTimeout(() => {
+          for (let i = 0; i < 8; i++) {
+              const explosion = document.createElement('div');
+              explosion.classList.add('explosion');
+              explosion.style.left = firework.offsetLeft + 'px';
+              explosion.style.bottom = firework.offsetTop + 'px';
+              const angle = (i / 8) * 2 * Math.PI;
+              const distance = 50 + Math.random() * 50;
+              const x = Math.cos(angle) * distance;
+              const y = Math.sin(angle) * distance;
+              explosion.style.setProperty('--x', `${x}px`);
+              explosion.style.setProperty('--y', `${y}px`);
+              explosion.style.setProperty('--color', color);
+              container.appendChild(explosion);
+
+              // Temizle
+              setTimeout(() => explosion.remove(), 800);
+          }
+          firework.remove();
+      }, 800);
+  }
+
 });

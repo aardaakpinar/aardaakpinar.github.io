@@ -1,0 +1,471 @@
+:root {
+    --bg-color: #090909;
+    --text-color: #f0f0f0;
+    --accent-color: #23b5b5;
+    --card-bg-color: transparent;
+    --border-color: #343434;
+    --date-color: #999;
+    --link-hover-color: #ffffff;
+    --font-family: "Nunito", sans-serif;
+}
+
+/* Genel ayarlar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+    background-color: transparent;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+}
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 40px;
+}
+
+.container {
+    max-width: 832px;
+    margin: 0 auto;
+}
+
+/* -------- Hero Alanı -------- */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
+
+.hero-text {
+    max-width: 60%;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.slogan {
+    font-size: 1.25rem;
+    color: var(--date-color);
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+}
+
+.description {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: var(--text-color);
+    font-weight: 400;
+}
+
+.hero-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    margin-top: 10px;
+    background-color: var(--card-bg-color);
+    border: 3px solid var(--border-color);
+    display: flex;
+}
+
+
+/* -------- GRID Alanı -------- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 60px);
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.card.projects { grid-area: 1 / 1 / span 3 / span 3; }
+.card.experience  { grid-area: 1 / 4 / span 3 / span 3; }
+.card.education { grid-area: 4 / 2 / span 2 / span 2; }
+.card.reading { grid-area: 4 / 1 / span 2 / span 1; }
+.card.listening { grid-area: 4 / 4 / span 2 / span 3; }
+.card.notfound { grid-area: 1 / 1 / span 2 / span 6; }
+
+/* Tablet / Mobil */
+@media (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 60px;
+    }
+
+    .card.projects { grid-area: 1 / 1 / span 5 / span 2; }
+    .card.education  { grid-area: 1 / 3 / span 2 / span 2; }
+    .card.experience { grid-area: 3 / 3 / span 4 / span 2; }
+    .card.reading { grid-area: 6 / 1 / span 2 / span 2; }
+    .card.listening { grid-area: 7 / 3 / span 2 / span 2; }
+    .card.notfound { grid-area: 1 / 1 / span 2 / span 4; }
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 60px;
+    }
+
+    .card.projects { grid-area: 1 / 1 / span 4 / span 2; }
+    .card.education  { grid-area: 5 / 1 / span 2 / span 2; }
+    .card.experience { grid-area: 7 / 1 / span 3 / span 2; }
+    .card.reading { grid-area: 10 / 1 / span 2 / span 1; }
+    .card.listening { grid-area: 10 / 2 / span 3 / span 1; }
+    .card.notfound { grid-area: 1 / 1 / span 2 / span 2; }
+}
+
+/* -------- Kartlar -------- */
+.card {
+    position: relative;
+    background: var(--card-bg-color);
+    border: 3px solid var(--border-color);
+    border-radius: 10px;
+    padding: 30px 20px 20px 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    cursor: grab;
+    transition: transform 0.2s;
+    user-select: none;
+    z-index: 9;
+}
+
+.card:active {
+    cursor: grabbing;
+    z-index: 99;
+}
+
+/* -------- Kart Başlıkları -------- */
+.card-title {
+    position: absolute;
+    top: -18px;
+    left: 20px;
+    background-color: var(--bg-color);
+    border: 3px solid var(--border-color);
+    border-radius: 10px;
+    padding: 3px 9px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    z-index: 100;
+}
+
+/* -------- Butonlar -------- */
+
+.btn {
+    background-color: var(--border-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.btn:hover {
+    background-color: var(--accent-color);
+}
+
+
+/* -------- Liste Alanları -------- */
+.list {
+    list-style: none;
+    overflow-y: auto;
+}
+
+.list a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-radius: 10px;
+}
+
+.list-item img {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.list-item:hover {
+    border-radius: 10px;
+    background-color: var(--border-color);
+}
+
+.list-item i {
+    color: var(--date-color);
+    margin-right: 15px;
+    width: 20px;
+    text-align: center;
+}
+
+.list-item span {
+    flex-grow: 1;
+}
+
+.list-item .date {
+    color: var(--date-color);
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+.list-item:last-child {
+    border-bottom: none;
+}
+
+/* -------- Progress Bar -------- */
+.progress-bar {
+    background-color: var(--border-color);
+    border-radius: 5px;
+    height: 10px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.progress {
+    background-color: var(--accent-color);
+    height: 100%;
+    border-radius: 5px;
+}
+
+/* -------- Footer -------- */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    margin-top: 40px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    color: var(--date-color);
+}
+
+.social-links a {
+    color: var(--date-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-left: 20px;
+    transition: color 0.2s;
+}
+
+.social-links a:hover {
+    color: var(--link-hover-color);
+}
+
+/* -------- Responsive -------- */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+    }
+    .hero-text {
+        order: 2;
+        max-width: 100%;
+        margin-top: 20px;
+    }
+    .hero-image {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .social-links a {
+        margin: 0 10px;
+    }
+}
+
+
+/* Temel gökyüzü */
+.sky {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  z-index: -1;
+  transition: background 2s;
+}
+
+/* Yıldızlar */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 2s infinite alternate, starMove linear infinite;
+}
+
+/* Parıldama animasyonu */
+@keyframes twinkle {
+  0% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+/* Yatay ve dikey kayma animasyonu */
+@keyframes starMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(calc(20px * var(--dirX)), calc(10px * var(--dirY))); }
+}
+
+/* Bulutlar */
+.cloud {
+  position: absolute;
+  background: rgba(200,200,200,0.4);
+  border-radius: 50%;
+  width: 100px;
+  height: 50px;
+  animation: cloudMove linear infinite;
+}
+
+@keyframes cloudMove {
+  0% { transform: translateX(-150px); }
+  100% { transform: translateX(100vw); }
+}
+
+/* Yağmur */
+.rain-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+.rain {
+    position: absolute;
+    top: -50px;
+    width: 2px;
+    height: 15px;
+    background: rgba(35, 181, 181, 0.5);
+    animation: fall linear infinite;
+}
+@keyframes fall {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Kar */
+.snow {
+    width: 6px;
+    height: 6px;
+    top: -50px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    position: absolute;
+    animation: snowFall linear infinite;
+}
+@keyframes snowFall {
+    0% {
+        transform: translateY(-10px) translateX(0);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(100vh) translateX(20px);
+        opacity: 0.3;
+    }
+}
+
+.firework {
+    position: absolute;
+    bottom: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color, var(--accent-color));
+    animation: rise 0.8s ease-out forwards;
+}
+
+.explosion {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--color, var(--accent-color));
+    opacity: 0;
+    animation: explode 0.6s ease-out forwards;
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    80% {
+        transform: translateY(-200px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+}
+
+@keyframes explode {
+    0% {
+        transform: translate(0,0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--x, 0px), var(--y, 0px)) scale(0.5);
+        opacity: 0;
+    }
+}

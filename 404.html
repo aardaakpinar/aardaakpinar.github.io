@@ -1,77 +1,56 @@
 <!DOCTYPE html>
 <html lang="tr">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:title" content="NAR" />
-        <meta property="og:description" content="🌐 Software Developer with experience since 2019. 🤝 For now, he is developing his own projects. JS, Python, Arduino, Raspberry-pi, Android Studio, Canva" />
-        <meta property="og:url" content="https://aardaakpinar.github.io/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://aardaakpinar.github.io/logos/nar.png" />
-        <meta property="og:image:alt" content="NAR Logo" />
-        <meta property="og:site_name" content="NAR" />
-        <link rel="icon" href="https://aardaakpinar.github.io/assets/images/logos/nar.png" />
-        <title>A. Arda | Page Not Found</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="https://aardaakpinar.github.io/assets/tailwind.css" />
-    </head>
-    <body>
-        <main class="p-4 sm:p-8">
-            <!-- Ana düzen - Sidebar ve ana içerik -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-                <!-- Sol Sidebar -->
-                <aside class="sm:col-span-1 space-y-8">
-                    <!-- Profil Kartı -->
-                    <div class="card relative rounded-2xl p-6 text-center overflow-hidden">
-                        <!-- Blur arka plan -->
-                        <div class="absolute inset-0 background-image blur-[2px]"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="NAR">
+    <meta property="og:description" content="🌐 Software Developer with notfound since 2019. 🤝 For now, he is developing his own projects. JS, Python, Arduino, Raspberry-pi, Android Studio, Canva">
+    <meta property="og:url" content="https://aardaakpinar.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://aardaakpinar.github.io/logos/nar.png">
+    <meta property="og:image:alt" content="NAR Logo">
+    <meta property="og:site_name" content="NAR">
+    <link rel="icon" href="https://aardaakpinar.github.io/assets/images/logos/nar.png">
+    <title>Arda (NAR)</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@100..900&display=swap">
+    <link rel="stylesheet" defer href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <!-- Gökyüzü ve Efektler -->
+    <div class="sky" style="height: 100vh !important;"></div>
+    <div class="rain-container" style="height: 100vh !important;"></div>
 
-                        <div class="relative z-10">
-                            <div class="w-24 h-24 mx-auto mb-6 relative z-10">
-                                <img src="https://aardaakpinar.github.io/assets/images/logos/nar.png" alt="A. Arda's profile picture" class="rounded-full w-full h-full object-cover border-4 card border-opacity-20" />
-
-                                <!-- Müsait Badge -->
-                                <div class="card absolute -bottom-3 left-1/2 transform -translate-x-1/2 text-green-600 text-xs font-medium px-3 py-1 rounded-full shadow-md flex flex-nowrap items-center">
-                                    <span class="w-2.5 h-2.5 flex flex-wrap rounded-full bg-green-500 mr-1"></span>
-                                    Available
-                                </div>
-                            </div>
-
-                            <div class="profil-card-info">
-                                <h1 class="text-xl font-bold">A. Arda (NAR)</h1>
-                                <p class="text-sm muted-color mb-4">Frontend Developer</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Sosyal Medya ve İletişim -->
-                    <div class="w-full">
-                        
-                        <!-- Home Link -->
-                        <div class="flex flex-wrap justify-center pb-4 w-full">
-                            <a href="/" class="w-full flex flex-wrap justify-center p-2 w-full card rounded-xl" aria-label="Twitter">
-                                <i class="bx bx-home text-xl muted-color"></i>
-                            </a>
-                        </div>
-
-                        <!-- Bookmark Link -->
-                        <div class="flex flex-wrap justify-center pb-4 w-full">
-                            <a href="/" class="w-full flex flex-wrap justify-center p-2 w-full card rounded-xl" aria-label="Twitter">
-                                <i class="bx bx-bookmarks text-xl muted-color"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                </aside>
-                <!-- İçerik -->
-                <section class="md:col-span-2 lg:col-span-3 grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="card rounded-2xl p-6">
-                        <h1 class="text-4xl text-center">404</h1>
-                        <p class="muted-color text-center">Aradığın sayfa burda yok gibi :)</p>
-                    </div>
-                </section>
+    <div class="container">
+        <header class="hero">
+            <div class="hero-text">
+                <h1>404</h1>
+                <p class="slogan">Sorry page not found</p>
             </div>
+        </header>
+
+        <main class="grid-container" style="grid-template-rows: repeat(4, 60px);">
+            <div id="notfound" class="card notfound">
+                <h2 class="card-title">Not Found</h2>
+                <p>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+                
+            </div>
+            <a href="/"><button class="btn">Go to Homepage</button></a>
         </main>
-    </body>
+
+        <footer>
+            <div class="social-links">
+                <a rel="me" href="https://x.com/aardaakpinar"><i class="fab fa-x-twitter"></i></a>
+                <a rel="me" href="https://linkedin.com/in/aardaakpinar/"><i class="fab fa-linkedin"></i></a>
+                <a rel="me" href="https://youtube.com/@aardaakpinar"><i class="fab fa-youtube"></i></a> 
+                <a rel="me" href="https://github.com/aardaakpinar"><i class="fab fa-github"></i></a> 
+                <a rel="me" href="https://mastodon.social/@aardaakpinar"><i class="fab fa-mastodon"></i></a> 
+                <a rel="me" href="https://reddit.com/user/aardaakpinar/"><i class="fab fa-reddit-alien"></i></a>
+            </div>
+            <p>© 2025</p>
+        </footer>
+    </div>
+
+    <script src="assets/script.js"></script>
+</body>
 </html>

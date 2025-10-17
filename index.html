@@ -1,254 +1,141 @@
 <!DOCTYPE html>
 <html lang="tr">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:title" content="NAR" />
-        <meta property="og:description" content="🌐 Software Developer with experience since 2019. 🤝 For now, he is developing his own projects. JS, Python, Arduino, Raspberry-pi, Android Studio, Canva" />
-        <meta property="og:url" content="https://aardaakpinar.github.io/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://aardaakpinar.github.io/logos/nar.png" />
-        <meta property="og:image:alt" content="NAR Logo" />
-        <meta property="og:site_name" content="NAR" />
-        <link rel="icon" href="https://aardaakpinar.github.io/assets/images/logos/nar.png" />
-        <title>A. Arda (NAR)</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="assets/tailwind.css" />
-    </head>
-    <body>
-        <main class="p-4 sm:p-8">
-            <!-- Ana düzen - Sidebar ve ana içerik -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-                <!-- Sol Sidebar -->
-                <aside class="sm:col-span-1 space-y-8">
-                    <!-- Profil Kartı -->
-                    <div class="card relative rounded-2xl p-6 text-center overflow-hidden">
-                        <!-- Blur arka plan -->
-                        <div class="absolute inset-0 background-image blur-[2px]"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="NAR">
+    <meta property="og:description" content="🌐 Software Developer with experience since 2019. 🤝 For now, he is developing his own projects. JS, Python, Arduino, Raspberry-pi, Android Studio, Canva">
+    <meta property="og:url" content="https://aardaakpinar.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://aardaakpinar.github.io/logos/nar.png">
+    <meta property="og:image:alt" content="NAR Logo">
+    <meta property="og:site_name" content="NAR">
+    <link rel="icon" href="https://aardaakpinar.github.io/assets/images/logos/nar.png">
+    <title>Arda (NAR)</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@100..900&display=swap">
+    <link rel="stylesheet" defer href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <!-- Gökyüzü ve Efektler -->
+    <div class="sky"></div>
+    <div class="rain-container"></div>
 
-                        <div class="relative z-10">
-                            <div class="w-24 h-24 mx-auto mb-6 relative z-10">
-                                <img src="assets/images/logos/nar.png" alt="A. Arda's profile picture" class="rounded-full w-full h-full object-cover border-4 card border-opacity-20" />
+    <div class="container">
+        <header class="hero">
+            <div class="hero-text">
+                <h1>Hi, I'm Arda</h1>
+                <p class="slogan">Front-end Developer, he/him</p>
+                <a href="https://github.com/aardaakpinar/aardaakpinar/blob/main/README.md"><span class="description">🌐 Software Developer with experience since 2019. 🤝 For now, he is developing his own projects...</span></a>
+            </div>
+            <div class="hero-image">
+                <img src="https://aardaakpinar.github.io/assets/images/logos/nar.png" alt="Profile Picture">
+            </div>
+        </header>
 
-                                <!-- Müsait Badge -->
-                                <div class="card absolute -bottom-3 left-1/2 transform -translate-x-1/2 text-green-600 text-xs font-medium px-3 py-1 rounded-full shadow-md flex flex-nowrap items-center">
-                                    <span class="w-2.5 h-2.5 flex flex-wrap rounded-full bg-green-500 mr-1"></span>
-                                    Available
-                                </div>
-                            </div>
-
-                            <div class="profil-card-info">
-                                <h1 class="text-xl font-bold">A. Arda (NAR)</h1>
-                                <p class="text-sm muted-color mb-4">Frontend Developer</p>
-                            </div>
-                        </div>
+        <main class="grid-container">
+            <div id="projects" class="card projects">
+                <h2 class="card-title">Projects</h2>
+                <ul class="list">
+                    <a href="http://pitopichat.github.io">
+                        <li class="list-item">
+                            <img src="https://aardaakpinar.github.io/assets/images/logos/pitopi.png">
+                            <span>Pitopi</span>
+                            <span class="date">01.08.2021</span>
+                        </li>
+                    </a>
+                    <a href="http://aardaakpinar.github.io/sayidisi">
+                        <li class="list-item">
+                            <img src="https://aardaakpinar.github.io/assets/images/logos/sayidisi.png">
+                            <span>Sayıdışı</span>
+                            <span class="date">15.05.2024</span>
+                        </li>
+                    </a>
+                    <a href="https://github.com/naturalizedc/naturalizedc">
+                        <li class="list-item">
+                            <img src="https://avatars.githubusercontent.com/u/237202514?s=200&v=4">
+                            <span>Naturalized C</span>
+                            <span class="date">10.10.2025</span>
+                        </li>
+                    </a>
+                    <a href="http://aardaakpinar.github.io/targeto">
+                        <li class="list-item">
+                            <img src="https://aardaakpinar.github.io/assets/images/logos/targeto.png">
+                            <span>Target O</span>
+                            <span class="date">22.11.2024</span>
+                        </li>
+                    </a>
+                    <a href="http://aardaakpinar.github.io/pigeongo">
+                        <li class="list-item">
+                            <img src="https://aardaakpinar.github.io/assets/images/logos/pigeongo.png">
+                            <span>PigeonGo</span>
+                            <span class="date">22.06.2024</span>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+            <div id="education" class="card education">
+                <h2 class="card-title">Education</h2>
+                <ul class="list" id="events">
+                    <li class="list-item">
+                        <i class="fas fa-shield"></i>
+                        <span>Cyber Security</span>
+                        <span class="date">Istanbul Ticaret University</span>
+                    </li>
+                </ul>
+            </div>
+            <div id="experience" class="card experience">
+                <h2 class="card-title">Experience</h2>
+                <ul class="list" id="events">
+                    <li class="list-item">
+                        <img src="https://aardaakpinar.github.io/assets/images/logos/nar.png">
+                        <span>Frontend Developer</span>
+                        <span class="date">2020 - Present</span>
+                    </li>
+                    <li class="list-item">
+                        <img src="https://img-kariyer.mncdn.com/mnresize/150/150/UploadFiles/Clients/SquareLogo/845/353845_257643.jpg">
+                        <span>Website Design</span>
+                        <span class="date">2024</span>
+                    </li>
+                </ul>
+            </div>
+            <div id="reading" class="card reading">
+                <h2 class="card-title">Reading</h2>
+                <ul class="list">                
+                    <li class="list-item">
+                        <i class="fas fa-book"></i> Dune
+                    </li>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 13.78%;"></div>
                     </div>
-
-                    <!-- Sosyal Medya ve İletişim -->
-                    <div class="w-full">
-                        
-                        <!-- Bookmarks Link -->
-                        <div class="flex flex-wrap justify-center pb-4 w-full">
-                            <a href="/bookmarks.html" class="w-full flex flex-wrap justify-center p-2 w-full card rounded-xl" aria-label="Twitter">
-                                <i class="bx bx-bookmarks text-xl muted-color"></i>
-                            </a>
-                        </div>
-
-                        <!-- Social Links -->
-
-                        <nav class="flex gap-4 w-full">
-                            <div class="flex flex-wrap justify-center pb-4 w-full">
-                                <a rel="me" href="https://twitter.com/aardaakpinar" class="w-full flex flex-wrap justify-center p-2 card rounded-xl" aria-label="Twitter">
-                                    <i class="bx bxl-twitter text-xl muted-color"></i>
-                                </a>
-                            </div>
-
-                            <div class="flex flex-wrap justify-center pb-4 w-full">
-                                <a rel="me" href="https://linkedin.com/in/aardaakpinar" class="w-full flex flex-wrap justify-center p-2 card rounded-xl" aria-label="LinkedIn">
-                                    <i class="bx bxl-linkedin text-xl muted-color"></i>
-                                </a>
-                            </div>
-
-                            <div class="flex flex-wrap justify-center pb-4 w-full">
-                                <a rel="me" href="https://github.com/aardaakpinar" class="w-full flex flex-wrap justify-center p-2 card rounded-xl" aria-label="GitHub">
-                                    <i class="bx bxl-github text-xl muted-color"></i>
-                                </a>
-                            </div>
-
-                            <div class="flex flex-wrap justify-center pb-4 w-full">
-                                <a rel="me" href="https://codepen.io/aardaakpinar" class="w-full flex flex-wrap justify-center p-2 card rounded-xl" aria-label="CodePen">
-                                    <i class="bx bxl-codepen text-xl muted-color"></i>
-                                </a>
-                            </div>
-                        </nav>
-
-                        <nav class="flex gap-4 w-full">
-                            <div class="flex flex-wrap justify-center pb-4 w-full">
-                                <a rel="me" href="https://youtube.com/@aardaakpinar" class="w-full flex flex-wrap justify-center p-2 card rounded-xl" aria-label="YouTube">
-                                    <i class="bx bxl-youtube text-xl muted-color"></i>
-                                </a>
-                            </div>
-
-                            <div class="flex flex-wrap justify-center pb-4 w-full">
-                                <a rel="me" href="https://mastodon.social/@aardaakpinar" class="w-full flex flex-wrap justify-center p-2 card rounded-xl" aria-label="Mastodon">
-                                    <i class="bx bxl-mastodon text-xl muted-color"></i>
-                                </a>
-                            </div>
-
-                            <div class="flex flex-wrap justify-center pb-4 w-full">
-                                <a rel="me" href="https://patreon.com/aardaakpinar" class="w-full flex flex-wrap justify-center p-2 card rounded-xl" aria-label="Patreon">
-                                    <i class="bx bxl-patreon text-xl muted-color"></i>
-                                </a>
-                            </div>
-
-                            <div class="flex flex-wrap justify-center pb-4 w-full">
-                                <a rel="me" href="https://buymeacoffee.com/aardaakpinar" class="w-full flex flex-wrap justify-center p-2 card rounded-xl" aria-label="Buy Me a Coffee">
-                                    <i class="bx bx-coffee text-xl muted-color"></i>
-                                </a>
-                            </div>
-                        </nav>
+                </ul>
+            </div>
+            <div id="listening" class="card listening">
+                <h2 class="card-title">Listening</h2>
+                <ul class="list">                
+                    <li class="list-item">
+                        <i class="fas fa-music"></i> Bir Pesimistin Gözyaşları
+                    </li>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 13.78%;"></div>
                     </div>
-                </aside>
-
-                <main class="grid md:col-span-2 lg:col-span-3 grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="card rounded-2xl p-8 col-span-2">
-                        <h2 class="text-xl font-semibold mb-6">Hi 👋 I'm Arda</h2>
-                        <p class="muted-color leading-relaxed">
-                            I'm <span id="age"></span> years old. I’ve been into frontend development since November 22, 2019, starting with website builders like WordPress and Google Sites, but later I switched to coding my own projects
-                            after realizing their limitations.
-                        </p>
-                    </div>
-
-                    <div class="card rounded-2xl p-8 col-span-2">
-                        <h2 class="text-xl font-semibold mb-6">Skills</h2>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="badge px-3 py-1 rounded-full text-sm">HTML</span>
-                            <span class="badge px-3 py-1 rounded-full text-sm">Markdown</span>
-                            <span class="badge px-3 py-1 rounded-full text-sm">CSS</span>
-                            <span class="badge px-3 py-1 rounded-full text-sm">JavaScript</span>
-                            <span class="badge px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
-                            <span class="badge px-3 py-1 rounded-full text-sm">WordPress</span>
-                            <span class="badge px-3 py-1 rounded-full text-sm">Canva</span>
-                            <span class="badge px-3 py-1 rounded-full text-sm">Figma</span>
-                            <span class="badge px-3 py-1 rounded-full text-sm">Discord Bot</span>
-                            <span class="badge px-3 py-1 rounded-full text-sm">Firebase Database</span>
-                            <span class="badge px-3 py-1 rounded-full text-sm">Node.js</span>
-                            <span class="badge px-3 py-1 rounded-full text-sm">Python</span>
-                            <span class="badge px-3 py-1 rounded-full text-sm">PHP</span>
-                            <span class="badge px-3 py-1 rounded-full text-sm">Arduino</span>
-                        </div>
-                    </div>
-
-                    <div class="card rounded-2xl p-8 col-span-2">
-                        <h2 class="text-xl font-semibold mb-6">Experience</h2>
-                        <div class="relative pl-6 border-l-2 border-opacity-20" style="border-color: var(--primary);">
-                            <div class="absolute -left-2 top-0 w-4 h-4 rounded-full" style="background-color: var(--primary);"></div>
-                            <div class="space-y-1">
-                                <p class="text-sm primary-color font-medium">2020 - Present</p>
-                                <h4 class="font-medium">Frontend Developer</h4>
-                                <p class="text-sm muted-color">
-                                    I'm moving forward with my own projects
-                                </p><br>
-                            </div>
-                        </div>
-                        <div class="relative pl-6 border-l-2 border-opacity-20" style="border-color: var(--primary);">
-                            <div class="absolute -left-2 top-0 w-4 h-4 rounded-full" style="background-color: var(--primary);"></div>
-                            <div class="space-y-1">
-                                <p class="text-sm primary-color font-medium">2024</p>
-                                <h4 class="font-medium">Website Design</h4>
-                                <p class="text-sm muted-color">
-                                    Ka Serbest Muhasebecilik ve Mali Müşavirlik
-                                </p><br>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card rounded-2xl p-8 col-span-2">
-                        <h2 class="text-xl font-semibold mb-8">Education</h2>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div class="space-y-6">
-                                <div class="relative pl-6 border-l-2 border-opacity-20" style="border-color: var(--primary);">
-                                    <div class="absolute -left-2 top-0 w-4 h-4 rounded-full" style="background-color: var(--primary);"></div>
-                                    <div class="space-y-1">
-                                        <h4 class="primary-color font-medium">Cyber Security</h4>
-                                        <p class="text-sm muted-color">
-                                            Istanbul Ticaret University
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="rounded-2xl col-span-2 lg:col-span-4">
-                        <h2 class="text-xl font-semibold mb-6">Projects</h2>
-
-                        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                            <a class="card rounded-lg p-6 hover:shadow-lg transition" href="https://pitopichat.github.io/" target="_blank">
-                                <h3 class="text-lg font-semibold mb-2">Pitopi</h3>
-                                <p class="muted-color mb-4">Real-Time and Secure Peer to Peer Chat</p>
-                                <div class="flex gap-2 flex-wrap mb-1">
-                                    <span class="badge px-3 py-1 rounded-full text-sm">Create: 2025</span>
-                                    <span class="badge px-3 py-1 rounded-full text-sm">HTML</span>
-                                    <span class="badge px-3 py-1 rounded-full text-sm">CSS</span>
-                                    <span class="badge px-3 py-1 rounded-full text-sm">JS</span>
-                                    <span class="badge px-3 py-1 rounded-full text-sm">Node.js</span>
-                                    <span class="badge px-3 py-1 rounded-full text-sm">Tailwind</span>
-                                </div>
-                            </a>
-
-                            <a class="card rounded-lg p-6 hover:shadow-lg transition" href="/sayidisi" target="_blank">
-                                <h3 class="text-lg font-semibold mb-2">Sayıdışı</h3>
-                                <p class="muted-color mb-4">Find the digit that is not in a 9-digit number.</p>
-                                <div class="flex gap-2 flex-wrap mb-1">
-                                    <span class="badge px-3 py-1 rounded-full text-sm">Create: 2024</span>
-                                    <span class="badge px-3 py-1 rounded-full text-sm">HTML</span>
-                                    <span class="badge px-3 py-1 rounded-full text-sm">CSS</span>
-                                    <span class="badge px-3 py-1 rounded-full text-sm">JS</span>
-                                </div>
-                            </a>
-
-                            <a class="card rounded-lg p-6 hover:shadow-lg transition" href="https://github.com/naturalizedc/naturalizedc" target="_blank">
-                                <h3 class="text-lg font-semibold mb-2">Naturalized C</h3>
-                                <p class="muted-color mb-4">NaturalizedC (NAC), C benzeri basit bir sözdizimiyle, yorumlamalı bir betik dilidir. Eğitim, küçük otomasyon ve prototip geliştirme amaçlı tasarlanmıştır.</p>
-                                <div class="flex gap-2 flex-wrap mb-1">
-                                    <span class="badge px-3 py-1 rounded-full text-sm">Create: 2024</span>
-                                    <span class="badge px-3 py-1 rounded-full text-sm">Node.js</span>
-                                </div>
-                            </a>
-
-                            <a class="card rounded-lg p-6 hover:shadow-lg transition" href="/pigeongo" target="_blank">
-                                <h3 class="text-lg font-semibold mb-2">PigeonGo</h3>
-                                <p class="muted-color mb-4">A tiny search engine.</p>
-                                <div class="flex gap-2 flex-wrap mb-1">
-                                    <span class="badge px-3 py-1 rounded-full text-sm">Create: 2024</span>
-                                    <span class="badge px-3 py-1 rounded-full text-sm">HTML</span>
-                                    <span class="badge px-3 py-1 rounded-full text-sm">CSS</span>
-                                    <span class="badge px-3 py-1 rounded-full text-sm">JS</span>
-                                    <span class="badge px-3 py-1 rounded-full text-sm">Tailwind</span>
-                                    <span class="badge px-3 py-1 rounded-full text-sm">Costum Search API</span>
-                                </div>
-                            </a>
-                            
-                            <a class="card rounded-lg p-6 hover:shadow-lg transition" href="/targeto" target="_blank">
-                                <h3 class="text-lg font-semibold mb-2">Target O</h3>
-                                <p class="muted-color mb-4">Aim, shoot, survive!</p>
-                                <div class="flex gap-2 flex-wrap mb-1">
-                                    <span class="badge px-3 py-1 rounded-full text-sm">Create: 2024</span>
-                                    <span class="badge px-3 py-1 rounded-full text-sm">HTML</span>
-                                    <span class="badge px-3 py-1 rounded-full text-sm">CSS</span>
-                                    <span class="badge px-3 py-1 rounded-full text-sm">JS</span>
-                                </div>
-                            </a>
-
-                        </div>
-                    </div>
-                </main>
+                </ul>
             </div>
         </main>
 
-        <script src="assets/script.js"></script>
-        <script async="" src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-    </body>
+        <footer>
+            <div class="social-links">
+                <a rel="me" href="https://x.com/aardaakpinar"><i class="fab fa-x-twitter"></i></a>
+                <a rel="me" href="https://linkedin.com/in/aardaakpinar/"><i class="fab fa-linkedin"></i></a>
+                <a rel="me" href="https://youtube.com/@aardaakpinar"><i class="fab fa-youtube"></i></a> 
+                <a rel="me" href="https://github.com/aardaakpinar"><i class="fab fa-github"></i></a> 
+                <a rel="me" href="https://mastodon.social/@aardaakpinar"><i class="fab fa-mastodon"></i></a> 
+                <a rel="me" href="https://reddit.com/user/aardaakpinar/"><i class="fab fa-reddit-alien"></i></a>
+            </div>
+            <p>© 2025</p>
+        </footer>
+    </div>
+
+    <script src="assets/script.js"></script>
+</body>
 </html>
