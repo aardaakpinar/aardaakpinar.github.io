@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="NAR">
+    <meta property="og:description" content="🌐 Software Developer with experience since 2019. 🤝 For now, he is developing his own projects. JS, Python, Arduino, Raspberry-pi, Android Studio, Canva">
+    <meta property="og:url" content="https://aardaakpinar.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://aardaakpinar.github.io/logos/nar.png">
+    <meta property="og:image:alt" content="NAR Logo">
+    <meta property="og:site_name" content="NAR">
+    <link rel="icon" href="https://aardaakpinar.github.io/assets/images/logos/nar.png">
+    <title>Arda | Bookmark</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@100..900&display=swap">
+    <link rel="stylesheet" defer href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <!-- Gökyüzü ve Efektler -->
+    <div class="sky"></div>
+    <div class="rain-container"></div>
+
+    <div class="container">
+        <header class="hero">
+            <div class="hero-text">
+                <h1>Hi, I'm Arda</h1>
+                <p class="slogan">Front-end Developer, he/him</p>
+                <a href="https://github.com/aardaakpinar/aardaakpinar/blob/main/README.md"><span class="description">🌐 Software Developer with experience since 2019. 🤝 For now, he is developing his own projects...</span></a>
+            </div>
+            <div class="hero-image">
+                <img src="assets/images/logos/nar.png" alt="Profile Picture">
+            </div>
+        </header>
+
+        <main class="grid-container">
+            <div class="card navigation">
+                <ul class="list">
+                    <li data-page="/pages/books.html">Books</li>
+                    <li data-page="/pages/movies.html">Movies</li>
+                    <li data-page="/pages/series.html">Series</li>
+                </ul>
+            </div>
+            <div class="card bookmark">
+                <h2 class="card-title">Bookmark</h2>
+                <ul class="list" id="content"></ul>
+            </div>
+        </main>
+
+        <footer>
+            <div class="social-links">
+                <a rel="me" href="https://x.com/aardaakpinar"><i class="fab fa-x-twitter"></i></a>
+                <a rel="me" href="https://linkedin.com/in/aardaakpinar/"><i class="fab fa-linkedin"></i></a>
+                <a rel="me" href="https://youtube.com/@aardaakpinar"><i class="fab fa-youtube"></i></a> 
+                <a rel="me" href="https://github.com/aardaakpinar"><i class="fab fa-github"></i></a> 
+                <a rel="me" href="https://mastodon.social/@aardaakpinar"><i class="fab fa-mastodon"></i></a> 
+                <a rel="me" href="https://reddit.com/user/aardaakpinar/"><i class="fab fa-reddit-alien"></i></a>
+            </div>
+            <p>© 2025</p>
+        </footer>
+    </div>
+
+    <script>
+        const navItems = document.querySelectorAll('.navigation li');
+        const contentDiv = document.getElementById('content');
+
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+            const page = item.dataset.page;
+
+            fetch(page)
+                .then(response => {
+                if (!response.ok) throw new Error('Sayfa bulunamadı: ' + page);
+                return response.text();
+                })
+                .then(html => {
+                contentDiv.innerHTML = html;
+
+                // Aktif class'ı güncelle
+                navItems.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+                })
+                .catch(err => {
+                console.error(err);
+                contentDiv.innerHTML = `<p style="color:red;">İçerik yüklenemedi.</p>`;
+                });
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            navItems[0].click(); // Varsayılan olarak ilk sayfayı yükle
+        });
+    </script>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>

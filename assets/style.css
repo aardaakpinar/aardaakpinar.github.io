@@ -104,10 +104,13 @@ a {
 
 .card.projects { grid-area: 1 / 1 / span 3 / span 3; }
 .card.experience  { grid-area: 1 / 4 / span 3 / span 3; }
-.card.education { grid-area: 4 / 2 / span 2 / span 2; }
+.card.education { grid-area: 4 / 3 / span 2 / span 2; }
 .card.reading { grid-area: 4 / 1 / span 2 / span 1; }
-.card.listening { grid-area: 4 / 4 / span 2 / span 3; }
+.card.listening { grid-area: 4 / 5 / span 2 / span 3; }
 .card.notfound { grid-area: 1 / 1 / span 2 / span 6; }
+.card.navigation { grid-area: 1 / 1 / span 3 / span 1; }
+.card.bookmark { grid-area: 1 / 2 / span 6 / span 5; }
+.card.bookmarks { grid-area: 4 / 1 / span 2 / span 2; }
 
 /* Tablet / Mobil */
 @media (max-width: 900px) {
@@ -122,6 +125,9 @@ a {
     .card.reading { grid-area: 6 / 1 / span 2 / span 2; }
     .card.listening { grid-area: 7 / 3 / span 2 / span 2; }
     .card.notfound { grid-area: 1 / 1 / span 2 / span 4; }
+    .card.navigation { grid-area: 1 / 1 / span 3 / span 1; }
+    .card.bookmark { grid-area: 1 / 2 / span 6 / span 3; }
+    .card.bookmarks { grid-area: 6 / 1 / span 3 / span 2; }
 }
 
 @media (max-width: 600px) {
@@ -136,6 +142,9 @@ a {
     .card.reading { grid-area: 10 / 1 / span 2 / span 1; }
     .card.listening { grid-area: 10 / 2 / span 3 / span 1; }
     .card.notfound { grid-area: 1 / 1 / span 2 / span 2; }
+    .card.navigation { grid-area: 1 / 1 / span 3 / span 1; }
+    .card.bookmark { grid-area: 1 / 2 / span 6 / span 3; }
+    .card.bookmarks { grid-area: 10 / 1 / span 3 / span 1; }
 }
 
 /* -------- Kartlar -------- */
