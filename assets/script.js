@@ -114,3 +114,31 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
+
+
+function applyGridPositions() {
+  const width = window.innerWidth;
+  const isTablet = width <= 900 && width > 600;
+  const isMobile = width <= 600;
+
+  document.querySelectorAll('[position]').forEach(el => {
+    let pos = el.getAttribute('position');
+
+    if (isTablet && el.hasAttribute('position-md')) {
+      pos = el.getAttribute('position-md');
+    } else if (isMobile && el.hasAttribute('position-sm')) {
+      pos = el.getAttribute('position-sm');
+    }
+
+    if (pos) {
+      const [start, span] = pos.split(' ');
+      const [rowStart, colStart] = start.split('-').map(Number);
+      const [rowSpan, colSpan] = span.split('x').map(Number);
+      el.style.gridArea = `${rowStart} / ${colStart} / span ${rowSpan} / span ${colSpan}`;
+    }
+  });
+}
+
+window.addEventListener('resize', applyGridPositions);
+window.addEventListener('load', applyGridPositions);

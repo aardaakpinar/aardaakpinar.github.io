@@ -34,14 +34,21 @@
         </header>
 
         <main class="grid-container">
-            <div class="card navigation">
-                <ul class="list">
-                    <li data-page="/pages/books.html">Books</li>
-                    <li data-page="/pages/movies.html">Movies</li>
-                    <li data-page="/pages/series.html">Series</li>
+            <div class="card" 
+                position="1-1 3x1"
+                position-md="1-1 3x1"
+                position-sm="1-1 1x3">
+                <ul class="list" id="nav">
+                    <li class="list-item" data-page="/pages/books.html" data-hash="book">Books</li>
+                    <li class="list-item" data-page="/pages/movies.html" data-hash="movies">Movies</li>
+                    <li class="list-item" data-page="/pages/series.html" data-hash="series">Series</li>
+                    <a class="list-item" href="/">home</a>
                 </ul>
             </div>
-            <div class="card bookmark">
+            <div class="card"
+                position="1-2 6x5"
+                position-md="1-2 6x3"
+                position-sm="2-1 6x2">
                 <h2 class="card-title">Bookmark</h2>
                 <ul class="list" id="content"></ul>
             </div>
@@ -61,7 +68,7 @@
     </div>
 
     <script>
-        const navItems = document.querySelectorAll('.navigation li');
+        const navItems = document.querySelectorAll('#nav li');
         const contentDiv = document.getElementById('content');
 
         navItems.forEach(item => {
@@ -87,8 +94,45 @@
             });
         });
 
-        document.addEventListener("DOMContentLoaded", () => {
-            navItems[0].click(); // Varsayılan olarak ilk sayfayı yükle
+        function loadPageByHash(hash) {
+            const item = Array.from(navItems).find(i => i.dataset.hash === hash);
+            if (!item) return; // geçersiz hash
+
+            const page = item.dataset.page;
+            fetch(page)
+                .then(res => {
+                    if (!res.ok) throw new Error('Sayfa bulunamadı: ' + page);
+                    return res.text();
+                })
+                .then(html => {
+                    contentDiv.innerHTML = html;
+                    navItems.forEach(i => i.classList.remove('active'));
+                    item.classList.add('active');
+                })
+                .catch(err => {
+                    console.error(err);
+                    contentDiv.innerHTML = `<p style="color:red;">İçerik yüklenemedi.</p>`;
+                });
+        }
+
+        // Menü tıklamaları
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                location.hash = item.dataset.hash; // URL hash'i güncelle
+            });
+        });
+
+        // Hash değişimlerini dinle
+        window.addEventListener('hashchange', () => {
+            const hash = location.hash.slice(1); // "#books" → "books"
+            loadPageByHash(hash);
+        });
+
+        // Sayfa yüklendiğinde hash varsa yükle, yoksa default
+        document.addEventListener('DOMContentLoaded', () => {
+            const hash = location.hash.slice(1);
+            if (hash) loadPageByHash(hash);
+            else loadPageByHash('home'); // default sayfa
         });
     </script>
 

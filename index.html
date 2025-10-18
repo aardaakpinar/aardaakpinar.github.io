@@ -34,7 +34,11 @@
         </header>
 
         <main class="grid-container">
-            <div id="projects" class="card projects">
+            <!-- PROJECTS -->
+            <div id="projects" class="card projects"
+                position="1-1 3x3"
+                position-md="1-1 5x2"
+                position-sm="1-1 4x2">
                 <h2 class="card-title">Projects</h2>
                 <ul class="list">
                     <a href="https://pitopichat.github.io">
@@ -74,17 +78,12 @@
                     </a>
                 </ul>
             </div>
-            <div id="education" class="card education">
-                <h2 class="card-title">Education</h2>
-                <ul class="list" id="events">
-                    <li class="list-item">
-                        <i class="fas fa-shield"></i>
-                        <span>Cyber Security</span>
-                        <span class="date">Istanbul Ticaret University</span>
-                    </li>
-                </ul>
-            </div>
-            <div id="experience" class="card experience">
+
+            <!-- EXPERIENCE -->
+            <div id="experience" class="card experience"
+                position="1-4 3x3"
+                position-md="3-3 4x2"
+                position-sm="7-1 3x2">
                 <h2 class="card-title">Experience</h2>
                 <ul class="list" id="events">
                     <li class="list-item">
@@ -99,15 +98,40 @@
                     </li>
                 </ul>
             </div>
-            <div id="reading" class="card bookmarks">
-                <h2 class="card-title">Bookmarks</h2>
-                <ul class="list">                
-                    <a href="/bookmark.html"><li class="list-item"><i class="fas fa-book"></i>Reading</li>
-                    <li class="list-item"><i class="fas fa-film"></i>Watching</li>
-                    <li class="list-item"><i class="fas fa-tv"></i>Watching</li></a>
+
+            <!-- EDUCATION -->
+            <div id="education" class="card education"
+                position="4-3 2x2"
+                position-md="1-3 2x2"
+                position-sm="5-1 2x2">
+                <h2 class="card-title">Education</h2>
+                <ul class="list" id="events">
+                    <li class="list-item">
+                        <i class="fas fa-shield"></i>
+                        <span>Cyber Security</span>
+                        <span class="date">Istanbul Ticaret University</span>
+                    </li>
                 </ul>
             </div>
-            <div id="listening" class="card listening">
+
+            <!-- BOOKMARKS (Reading) -->
+            <div id="reading" class="card bookmarks"
+                position="4-1 2x2"
+                position-md="6-1 3x2"
+                position-sm="10-1 3x1">
+                <h2 class="card-title">Bookmarks</h2>
+                <ul class="list">                
+                        <li class="list-item"><a href="/bookmark.html#book"><i class="fas fa-book"></i>Reading</a></li>
+                        <li class="list-item"><a href="/bookmark.html#movies"><i class="fas fa-film"></i>Watching</a></li>
+                        <li class="list-item"><a href="/bookmark.html#series"><i class="fas fa-tv"></i>Watching</a></li>
+                </ul>
+            </div>
+
+            <!-- LISTENING -->
+            <div id="listening" class="card listening"
+                position="4-5 2x3"
+                position-md="7-3 2x2"
+                position-sm="10-2 3x1">
                 <h2 class="card-title">Listening</h2>
                 <ul class="list">                
                     <li class="list-item">
