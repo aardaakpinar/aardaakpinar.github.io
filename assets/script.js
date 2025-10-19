@@ -21,16 +21,18 @@ document.addEventListener("DOMContentLoaded", () => {
         createSnow(70);
     } else if (month >= 3 && month <= 5) {
         // İlkbahar
-        createRain(10);
+        createRain(20);
     } else if (month >= 6 && month <= 8) {
         // Yaz
-        if (hour <= 6 || hour >= 18) {
-            createMovingStars(50);
-        }
     }
 
     if (hour <= 6 || hour >= 18) {
-        createMovingStars(20);
+        createStars(30);
+        setInterval(() => {
+            if (Math.random() < 0.05) {
+                createMeteor();
+            }
+        }, 10000);
     }
 
     // Fonksiyonlar
@@ -56,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    function createMovingStars(count){
+    function createStars(count){
       const sky = document.querySelector('.sky');
       for(let i=0;i<count;i++){
         const star = document.createElement('div');
@@ -65,32 +67,45 @@ document.addEventListener("DOMContentLoaded", () => {
         star.style.left = Math.random()*100+'vw';
         star.style.width = 1+Math.random()*2+'px';
         star.style.height = star.style.width;
-        // Rastgele yön için CSS değişkeni
+
         star.style.setProperty('--dirX', Math.random()>0.5?1:-1);
         star.style.setProperty('--dirY', Math.random()>0.5?1:-1);
-        // Animasyon süresini değiştir
+
         star.style.animationDuration = 1+Math.random()*3+'s, '+5+Math.random()*5+'s';
         sky.appendChild(star);
       }
     }
 
+    function createMeteor() {
+      const meteor = document.createElement("div");
+      meteor.classList.add("meteor");
+
+      meteor.style.top = "-50px";
+      meteor.style.left = Math.random() * 100 + "vw";
+
+      const animationName = Math.random() < 0.5 ? "meteorFall1" : "meteorFall2";
+      meteor.style.animation = `${animationName} 2s linear forwards`;
+
+      sky.appendChild(meteor);
+
+      setTimeout(() => meteor.remove(), 2500);
+    }
+
+
 
     function createFireworks() {
       const container = document.querySelector('.sky');
       
-      // Renkler
       const colors = ['#FF3C38','#FFAD33','#33FFBD','#3380FF','#C833FF'];
 
       const color = colors[Math.floor(Math.random() * colors.length)];
 
-      // Yukarı çıkan roket
       const firework = document.createElement('div');
       firework.classList.add('firework');
       firework.style.left = `${Math.random() * 90 + 5}%`;
       firework.style.setProperty('--color', color);
       container.appendChild(firework);
 
-      // Patlama parçaları
       setTimeout(() => {
           for (let i = 0; i < 8; i++) {
               const explosion = document.createElement('div');
@@ -106,7 +121,6 @@ document.addEventListener("DOMContentLoaded", () => {
               explosion.style.setProperty('--color', color);
               container.appendChild(explosion);
 
-              // Temizle
               setTimeout(() => explosion.remove(), 800);
           }
           firework.remove();
