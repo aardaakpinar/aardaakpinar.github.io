@@ -303,14 +303,13 @@ footer {
     }
     #nav {
         display: flex;
-        flex-wrap: nowrap;   /* Tek satırda dizilsin */
-        overflow-x: auto;    /* Taşarsa yana kaydırma çıksın */
-        gap: 10px;           /* Aralarına boşluk */
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 10px;
     }
 
     #nav li {
-        flex: 0 0 auto;      /* Elemanlar sabit genişlikte olsun */
-        min-width: 120px;    /* İstersen burayı kart boyutuna göre değiştir */
+        flex: 0 0 auto;
         list-style: none;
         text-align: center;
     }
