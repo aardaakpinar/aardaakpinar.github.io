@@ -157,29 +157,72 @@ function applyGridPositions() {
 window.addEventListener('resize', applyGridPositions);
 window.addEventListener('load', applyGridPositions);
 
+
+
+let localInterval;
+let isPlaying = false;
+let currentProgress = 0;
+let currentDuration = 0;
+
 async function fetchCurrentlyPlaying() {
-try {
+  try {
     const res = await fetch('https://spotify-s87b.onrender.com/currently-playing');
     const data = await res.json();
 
     if (!data.isPlaying) {
-    document.getElementById('track-name').textContent = "Not playing";
-    document.getElementById('track-img').src = "";
-    document.getElementById('track-progress').style.width = "0%";
-    return;
+      isPlaying = false;
+      document.getElementById('track-name').textContent = "Not playing";
+      document.getElementById('track-img').src = "https://img.icons8.com/?size=96&id=12783&format=png&color=23b5b5";
+      document.getElementById('track-progress').style.width = "0%";
+      clearInterval(localInterval);
+      return;
     }
+
+    if (data.duration !== currentDuration) {
+      currentProgress = data.progress;
+      currentDuration = data.duration;
+    }
+
+    isPlaying = true;
 
     document.getElementById('track-name').textContent = data.title;
     document.getElementById('track-img').src = data.albumImage;
 
-    const progressPercent = (data.progress / data.duration) * 100;
+    const progressPercent = (currentProgress / currentDuration) * 100;
     document.getElementById('track-progress').style.width = progressPercent + "%";
 
-} catch (err) {
+    startLocalProgress();
+
+  } catch (err) {
     console.error("Frontend fetch error:", err);
-}
+    document.getElementById('track-name').textContent = "API error";
+    document.getElementById('track-progress').style.width = "0%";
+  }
 }
 
-// Her 5 saniyede bir güncelle
-setInterval(fetchCurrentlyPlaying, 5000);
+function startLocalProgress() {
+  clearInterval(localInterval);
+
+  localInterval = setInterval(() => {
+    if (!isPlaying) return;
+
+    currentProgress += 1000;
+
+    if (currentProgress >= currentDuration) {
+      currentProgress = currentDuration;
+
+      const progressPercent = (currentProgress / currentDuration) * 100;
+      document.getElementById('track-progress').style.width = progressPercent + "%";
+
+      fetchCurrentlyPlaying();
+      return clearInterval(localInterval);
+    }
+
+    const progressPercent = (currentProgress / currentDuration) * 100;
+    document.getElementById('track-progress').style.width = progressPercent + "%";
+
+  }, 1000);
+}
+
+setInterval(fetchCurrentlyPlaying, 20000);
 fetchCurrentlyPlaying();
