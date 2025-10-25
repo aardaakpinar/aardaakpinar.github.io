@@ -156,3 +156,30 @@ function applyGridPositions() {
 
 window.addEventListener('resize', applyGridPositions);
 window.addEventListener('load', applyGridPositions);
+
+async function fetchCurrentlyPlaying() {
+try {
+    const res = await fetch('https://spotify-s87b.onrender.com/currently-playing');
+    const data = await res.json();
+
+    if (!data.isPlaying) {
+    document.getElementById('track-name').textContent = "Not playing";
+    document.getElementById('track-img').src = "";
+    document.getElementById('track-progress').style.width = "0%";
+    return;
+    }
+
+    document.getElementById('track-name').textContent = data.title;
+    document.getElementById('track-img').src = data.albumImage;
+
+    const progressPercent = (data.progress / data.duration) * 100;
+    document.getElementById('track-progress').style.width = progressPercent + "%";
+
+} catch (err) {
+    console.error("Frontend fetch error:", err);
+}
+}
+
+// Her 5 saniyede bir güncelle
+setInterval(fetchCurrentlyPlaying, 5000);
+fetchCurrentlyPlaying();
