@@ -94,7 +94,7 @@ a {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 80px);
+    grid-template-rows: repeat(5, 80px);
     gap: 10px;
     row-gap: 25px;
     width: 100%;
