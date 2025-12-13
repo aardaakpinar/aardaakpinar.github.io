@@ -232,6 +232,13 @@ a {
     border-bottom: none;
 }
 
+#track-name {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+
 /* -------- Progress Bar -------- */
 .progress-bar {
     background-color: var(--border-color);
@@ -351,21 +358,6 @@ footer {
   100% { transform: translate(calc(20px * var(--dirX)), calc(10px * var(--dirY))); }
 }
 
-/* Bulutlar */
-.cloud {
-  position: absolute;
-  background: rgba(200,200,200,0.4);
-  border-radius: 50%;
-  width: 100px;
-  height: 50px;
-  animation: cloudMove linear infinite;
-}
-
-@keyframes cloudMove {
-  0% { transform: translateX(-150px); }
-  100% { transform: translateX(100vw); }
-}
-
 /* Yağmur */
 .rain-container {
     position: absolute;
@@ -401,23 +393,31 @@ footer {
 .snow {
     width: 6px;
     height: 6px;
-    top: -50px;
+    top: -20px;
     background: rgba(255, 255, 255, 0.7);
     border-radius: 50%;
     position: absolute;
-    animation: snowFall linear infinite;
+    animation: snowFall 10s linear infinite;
+    will-change: transform, opacity;
 }
 
 @keyframes snowFall {
     0% {
-        transform: translateY(-10px) translateX(0);
-        opacity: 0.7;
+        transform: translateY(-20px) translateX(0);
+        opacity: 0;
     }
+
+    50% {
+        transform: translateY(100px) translateX(8px);
+        opacity: 1;
+    }
+
     100% {
-        transform: translateY(100vh) translateX(20px);
-        opacity: 0.3;
+        transform: translateY(210px) translateX(2px);
+        opacity: 0;
     }
 }
+
 
 .firework {
     position: absolute;

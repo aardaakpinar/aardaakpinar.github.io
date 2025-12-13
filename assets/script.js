@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         createRain(50);
     } else if (month == 12 || month <= 2) {
         // Kış
-        createSnow(70);
+        createSnow(40);
     } else if (month >= 3 && month <= 5) {
         // İlkbahar
         createRain(20);
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (hour <= 6 || hour >= 18) {
         createStars(30);
         setInterval(() => {
-            if (Math.random() < 0.05) {
+            if (Math.random() < 0.07) {
                 createMeteor();
             }
         }, 10000);
