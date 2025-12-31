@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const nationalDays = [
         "29-10", // Cumhuriyet Bayramı
+        "31-12",
         "23-04", // Ulusal Egemenlik ve Çocuk Bayramı
         "19-05", // Atatürk'ü Anma Gençlik ve Spor Bayramı
         "30-08", // Zafer Bayramı
