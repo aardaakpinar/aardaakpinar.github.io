@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const nationalDays = [
         "29-10", // Cumhuriyet Bayramı
-        "31-12",
         "23-04", // Ulusal Egemenlik ve Çocuk Bayramı
         "19-05", // Atatürk'ü Anma Gençlik ve Spor Bayramı
         "30-08", // Zafer Bayramı
@@ -21,7 +20,14 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     // Mevsim ve saat bazlı koşullar
-    if (nationalDays.includes(`${day}-${month}`)) {
+    if ((month == 12 && day == 31 && hour == 23) || (month == 1 && day == 1 && hour <= 2)) {
+      setInterval(createFireworks, 1000);
+    }
+
+    const d = String(day).padStart(2, '0');
+    const m = String(month).padStart(2, '0');
+
+    if (nationalDays.includes(`${d}-${m}`)) {
         document.querySelector(".hero-text h1").innerHTML += " <svg xmlns='http://www.w3.org/2000/svg' width='50' height='30' style='border-radius: 4px;' viewBox='0 -30000 90000 60000'><title>Flag of Turkey</title><path fill='#e30a17' d='m0-30000h90000v60000H0z'/><path fill='#fff' d='m41750 0 13568-4408-8386 11541V-7133l8386 11541zm925 8021a15000 15000 0 1 1 0-16042 12000 12000 0 1 0 0 16042z'/></svg>";
     } else if (month == 9 && day == 12) {
         setInterval(createFireworks, 1000);
