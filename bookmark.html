@@ -35,10 +35,8 @@
         </header>
 
         <main class="grid-container">
-            <div class="card" 
-                position="1-1 2x1"
-                position-md="1-1 2x1"
-                position-sm="1-1 1x2">
+            <!-- MENU -->
+            <div class="card" position="1-1 2x1" position-md="1-1 2x1" position-sm="1-1 1x2" style="grid-area: 1 / 1 / span 1 / span 2;">
                 <ul class="list" id="nav">
                     <a class="list-item" href="/"><i class="fas fa-home"></i>Back</a>
                     <li class="list-item" data-page="/pages/books.html" data-hash="books"><i class="fas fa-book"></i> Books</li>
@@ -46,10 +44,9 @@
                     <li class="list-item" data-page="/pages/series.html" data-hash="series"><i class="fas fa-tv"></i> Series</li>
                 </ul>
             </div>
-            <div class="card"
-                position="1-2 4x5"
-                position-md="1-2 4x3"
-                position-sm="2-1 4x2">
+
+            <!-- BOOKMARKS -->
+            <div class="card" position="1-2 4x5" position-md="1-2 4x3" position-sm="2-1 4x2" style="grid-area: 2 / 1 / span 4 / span 2;">
                 <h2 class="card-title">Bookmark</h2>
                 <ul class="list" id="content">
                     <p>Select a category from the menu to view your bookmarks.</p>
@@ -61,15 +58,15 @@
             <div class="social-links">
                 <a rel="me" href="https://x.com/aardaakpinar"><i class="fab fa-x-twitter"></i></a>
                 <a rel="me" href="https://linkedin.com/in/aardaakpinar/"><i class="fab fa-linkedin"></i></a>
-                <a rel="me" href="https://youtube.com/@aardaakpinar"><i class="fab fa-youtube"></i></a> 
-                <a rel="me" href="https://github.com/aardaakpinar"><i class="fab fa-github"></i></a> 
-                <a rel="me" href="https://mastodon.social/@aardaakpinar"><i class="fab fa-mastodon"></i></a> 
+                <a rel="me" href="https://youtube.com/@aardaakpinar"><i class="fab fa-youtube"></i></a>
+                <a rel="me" href="https://github.com/aardaakpinar"><i class="fab fa-github"></i></a>
                 <a rel="me" href="https://reddit.com/user/aardaakpinar/"><i class="fab fa-reddit-alien"></i></a>
             </div>
             <p>© 2026</p>
         </footer>
     </div>
 
+    <script src="assets/script.js"></script>
     <script>
         const navItems = document.querySelectorAll('#nav li');
         const contentDiv = document.getElementById('content');
@@ -138,7 +135,6 @@
             else loadPageByHash('home'); // default sayfa
         });
     </script>
-
-    <script src="assets/script.js"></script>
+    <script async="" src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 </body>
 </html>
