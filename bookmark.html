@@ -127,12 +127,14 @@
         // Hash değişimlerini dinle
         window.addEventListener('hashchange', () => {
             const hash = location.hash.slice(1); // "#books" → "books"
+            document.querySelector(".card-title").textContent = hash.charAt(0).toUpperCase() + hash.slice(1);
             loadPageByHash(hash);
         });
 
         // Sayfa yüklendiğinde hash varsa yükle, yoksa default
         document.addEventListener('DOMContentLoaded', () => {
             const hash = location.hash.slice(1);
+            document.querySelector(".card-title").textContent = hash.charAt(0).toUpperCase() + hash.slice(1);
             if (hash) loadPageByHash(hash);
             else loadPageByHash('home'); // default sayfa
         });
