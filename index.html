@@ -9,112 +9,36 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://aardaakpinar.github.io/logos/nar.png">
     <meta property="og:image:alt" content="NAR Logo">
-    <meta property="og:site_name" content="NAR">
-    <link rel="icon" href="https://aardaakpinar.github.io/assets/images/logos/nar.png">
     <title>Arda (NAR)</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="icon" href="https://aardaakpinar.github.io/assets/images/logos/nar.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    <link rel="stylesheet" defer href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <script src="https://laynteam.github.io/src/loader.js"></script>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-    <!-- Gökyüzü ve Efektler -->
+    <!-- Arka plan -->
     <div class="sky"></div>
     <div class="rain-container"></div>
 
-    <div class="container">
-        <header class="hero">
-            <div class="hero-text">
-                <h1>Hi, I'm Arda</h1>
-                <p class="slogan">Software Dev & Sec · he/him</p>
-                <a href="https://github.com/aardaakpinar/aardaakpinar/blob/main/README.md"><span class="description">🌐 Software Developer with experience since 2019. 🤝 For now, he is developing his own projects...</span></a>
-            </div>
-            <div class="hero-image">
-                <img src="assets/images/logos/nar.png" alt="Profile Picture">
-            </div>
-        </header>
-
-        <main class="grid-container">
-            <!-- PROJECTS -->
-            <div id="projects" class="card"
-                position="1-1 3x4"
-                position-sm="1-1 3x2">
-                <h2 class="card-title">Projects</h2>
-                <ul class="list">
-                    <a href="https://pitopichat.github.io">
-                        <li class="list-item">
-                            <img src="assets/images/logos/pitopi.png">
-                            <span>Pitopi</span>
-                            <span class="date">01.08.2024</span>
-                        </li>
-                    </a>
-                    <a href="https://aardaakpinar.github.io/limon/">
-                        <li class="list-item">
-                            <img src="assets/images/logos/limon.png">
-                            <span>Limon</span>
-                            <span class="date">05.04.2020</span>
-                        </li>
-                    </a>
-                    <a href="https://aardaakpinar.github.io/bibak">
-                        <li class="list-item">
-                            <img src="assets/images/logos/bibak.png">
-                            <span>Bi'Bak</span>
-                            <span class="date">20.02.2020</span>
-                        </li>
-                    </a>
-                    <a href="https://naclang.github.io/">
-                        <li class="list-item">
-                            <img src="assets/images/logos/NaC.png">
-                            <span>NaC</span>
-                            <span class="date">10.10.2025</span>
-                        </li>
-                    </a>
-                    <a href="https://aardaakpinar.github.io/sayidisi">
-                        <li class="list-item">
-                            <img src="assets/images/logos/sayidisi.png">
-                            <span>Sayıdışı</span>
-                            <span class="date">15.05.2024</span>
-                        </li>
-                    </a>
-                    <a href="https://aardaakpinar.github.io/kargo">
-                        <li class="list-item">
-                            <img src="https://aardaakpinar.github.io/kargo/favicon.ico">
-                            <span>Kargo</span>
-                            <span class="date">04.02.2026</span>
-                        </li>
-                    </a>
-                </ul>
-            </div>
-
-            <!-- BOOKMARKS -->
-            <div id="listening" class="card"
-                position="1-5 2x2"
-                position-sm="4-1 2x2">
-                <h2 class="card-title">Bookmarks</h2>
-                <ul class="list">                
-                    <a href="/bookmark.html#books"><li class="list-item"><i class="fas fa-book"></i>Books</li></a>
-                    <a href="/bookmark.html#movies"><li class="list-item"><i class="fas fa-film"></i>Movies</li></a>
-                    <a href="/bookmark.html#series"><li class="list-item"><i class="fas fa-tv"></i>Series</li></a>
-                </ul>
-            </div>
-        </main>
-
-        <footer>
-            <div class="social-links">
-                <a rel="me" href="https://x.com/aardaakpinar"><i class="fab fa-x-twitter"></i></a>
-                <a rel="me" href="https://linkedin.com/in/aardaakpinar/"><i class="fab fa-linkedin"></i></a>
-                <a rel="me" href="https://youtube.com/@aardaakpinar"><i class="fab fa-youtube"></i></a>
-                <a rel="me" href="https://github.com/aardaakpinar"><i class="fab fa-github"></i></a>
-                <a rel="me" href="https://codepen.io/aardaakpinar"><i class="fab fa-codepen"></i></a>
-                <a rel="me" href="https://reddit.com/user/aardaakpinar/"><i class="fab fa-reddit-alien"></i></a>
-            </div>
-            <p><a href="https://layn.flarum.cloud/" class="tilde">~</a> © 2026</p>
-        </footer>
+    <!-- Ana içerik -->
+    <div class="main-content">
+        <img src="assets/images/logos/nar.png" alt="Profile Picture" class="profile-image">
+        <h1>Hi, I'm Arda</h1>
+        <p class="slogan">Software Dev & Sec · he/him · #opensource</p>
+        
+        <!-- Sosyal bağlantılar -->
+        <div class="social-links">
+            <a href="https://github.com/aardaakpinar" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/aardaakpinar/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/aardaakpinar" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://youtube.com/@aardaakpinar" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://codepen.io/aardaakpinar" target="_blank"><i class="fab fa-codepen"></i></a>
+            <a href="https://reddit.com/user/aardaakpinar/" target="_blank"><i class="fab fa-reddit-alien"></i></a>
+        </div>
     </div>
 
     <script src="assets/script.js"></script>
-    <script async="" src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 </body>
 </html>

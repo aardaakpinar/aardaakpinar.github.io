@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const month = new Date().getMonth() + 1;
     const day = new Date().getDate();
     const hour = new Date().getHours();
-
+    
     // Temel efektleri temizle
     rainContainer.innerHTML = "";
     sky.innerHTML = "";
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const m = String(month).padStart(2, '0');
 
     if (nationalDays.includes(`${d}-${m}`)) {
-        document.querySelector(".hero-text h1").innerHTML += " <svg xmlns='http://www.w3.org/2000/svg' width='50' height='30' style='border-radius: 4px;' viewBox='0 -30000 90000 60000'><title>Flag of Turkey</title><path fill='#e30a17' d='m0-30000h90000v60000H0z'/><path fill='#fff' d='m41750 0 13568-4408-8386 11541V-7133l8386 11541zm925 8021a15000 15000 0 1 1 0-16042 12000 12000 0 1 0 0 16042z'/></svg>";
+        document.querySelector(".main-content h1").innerHTML += " <svg xmlns='http://www.w3.org/2000/svg' width='50' height='30' style='border-radius: 4px;' viewBox='0 -30000 90000 60000'><title>Flag of Turkey</title><path fill='#e30a17' d='m0-30000h90000v60000H0z'/><path fill='#fff' d='m41750 0 13568-4408-8386 11541V-7133l8386 11541zm925 8021a15000 15000 0 1 1 0-16042 12000 12000 0 1 0 0 16042z'/></svg>";
     } else if (month == 9 && day == 12) {
         setInterval(createFireworks, 1000);
     } else if (month >= 9 && month <= 11) {
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
       for(let i=0;i<count;i++){
         const star = document.createElement('div');
         star.className = 'star';
-        star.style.top = Math.random()*50+'vh';
+        star.style.top = Math.random()*100+'vh';
         star.style.left = Math.random()*100+'vw';
         star.style.width = 1+Math.random()*2+'px';
         star.style.height = star.style.width;
@@ -112,65 +112,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     function createFireworks() {
-      const container = document.querySelector('.sky');
-      
-      const colors = ['#FF3C38','#FFAD33','#33FFBD','#3380FF','#C833FF'];
 
-      const color = colors[Math.floor(Math.random() * colors.length)];
+    const colors = ['#FF3C38','#FFAD33','#33FFBD','#3380FF','#C833FF'];
+    const color = colors[Math.floor(Math.random() * colors.length)];
 
-      const firework = document.createElement('div');
-      firework.classList.add('firework');
-      firework.style.left = `${Math.random() * 90 + 5}%`;
-      firework.style.setProperty('--color', color);
-      container.appendChild(firework);
+    const firework = document.createElement('div');
+    firework.className = 'firework';
+    firework.style.left = Math.random() * (window.innerWidth - 20) + 'px';
+    firework.style.top = window.innerHeight - 20 + 'px';
+    firework.style.setProperty('--color', color);
+    sky.appendChild(firework);
 
-      setTimeout(() => {
-          for (let i = 0; i < 8; i++) {
-              const explosion = document.createElement('div');
-              explosion.classList.add('explosion');
-              explosion.style.left = firework.offsetLeft + 'px';
-              explosion.style.bottom = firework.offsetTop + 'px';
-              const angle = (i / 8) * 2 * Math.PI;
-              const distance = 50 + Math.random() * 50;
-              const x = Math.cos(angle) * distance;
-              const y = Math.sin(angle) * distance;
-              explosion.style.setProperty('--x', `${x}px`);
-              explosion.style.setProperty('--y', `${y}px`);
-              explosion.style.setProperty('--color', color);
-              container.appendChild(explosion);
+    // Explosion zamanı
+    setTimeout(() => {
 
-              setTimeout(() => explosion.remove(), 800);
-          }
-          firework.remove();
-      }, 800);
-  }
+        for (let i = 0; i < 8; i++) {
 
-});
+            const explosion = document.createElement('div');
+            explosion.className = 'explosion';
+            explosion.style.left = firework.style.left;
+            explosion.style.top = window.innerHeight / 2 + 'px'; // orta yükseklik
+            const angle = (i / 8) * 2 * Math.PI;
+            const distance = 50 + Math.random() * 50;
+            const x = Math.cos(angle) * distance;
+            const y = Math.sin(angle) * distance;
+            explosion.style.setProperty('--x', x + 'px');
+            explosion.style.setProperty('--y', y + 'px');
+            explosion.style.setProperty('--color', color);
+            sky.appendChild(explosion);
 
-
-
-function applyGridPositions() {
-  const width = window.innerWidth;
-  const isTablet = width <= 900 && width > 600;
-  const isMobile = width <= 600;
-
-  document.querySelectorAll('[position]').forEach(el => {
-    let pos = el.getAttribute('position');
-
-    if (isTablet && el.hasAttribute('position-md')) {
-      pos = el.getAttribute('position-md');
-    } else if (isMobile && el.hasAttribute('position-sm')) {
-      pos = el.getAttribute('position-sm');
-    }
-
-    if (pos) {
-      const [start, span] = pos.split(' ');
-      const [rowStart, colStart] = start.split('-').map(Number);
-      const [rowSpan, colSpan] = span.split('x').map(Number);
-      el.style.gridArea = `${rowStart} / ${colStart} / span ${rowSpan} / span ${colSpan}`;
-    }
-  });
+            setTimeout(() => explosion.remove(), 800);
+        }
+        
+        firework.remove();
+    }, 800);
 }
 
-window.addEventListener('resize', applyGridPositions);
-window.addEventListener('load', applyGridPositions);
+});
