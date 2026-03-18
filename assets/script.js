@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sky.innerHTML = "";
 
     const nationalDays = [
+        "18-03", //
         "29-10", // Cumhuriyet Bayramı
         "23-04", // Ulusal Egemenlik ve Çocuk Bayramı
         "19-05", // Atatürk'ü Anma Gençlik ve Spor Bayramı
