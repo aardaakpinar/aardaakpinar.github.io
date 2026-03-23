@@ -261,6 +261,10 @@ h1 {
         padding: 20px;
     }
 
+    .screen-hero {
+        margin-top: -50px;
+    }
+
     .profile-image {
         width: 120px;
         height: 120px;
