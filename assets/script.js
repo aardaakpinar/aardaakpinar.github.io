@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     const sky = document.querySelector(".sky");
     const rainContainer = document.querySelector(".rain-container");
+    const page = document.querySelector(".page");
+    const screens = Array.from(document.querySelectorAll(".screen"));
 
     const month = new Date().getMonth() + 1;
     const day = new Date().getDate();
@@ -52,6 +54,96 @@ document.addEventListener("DOMContentLoaded", () => {
                 createMeteor();
             }
         }, 10000);
+    }
+
+    // Slayt gibi tam ekran gecis
+    let currentIndex = 0;
+    let isAnimating = false;
+
+    function setSlide(index) {
+        const clamped = Math.max(0, Math.min(index, screens.length - 1));
+        currentIndex = clamped;
+        if (page) {
+            page.style.transform = `translateY(-${clamped * 100}vh)`;
+        }
+    }
+
+    function nextSlide() {
+        if (currentIndex < screens.length - 1) {
+            setSlide(currentIndex + 1);
+        }
+    }
+
+    function prevSlide() {
+        if (currentIndex > 0) {
+            setSlide(currentIndex - 1);
+        }
+    }
+
+    function lockAnimation() {
+        isAnimating = true;
+        setTimeout(() => {
+            isAnimating = false;
+        }, 550);
+    }
+
+    window.addEventListener("wheel", (event) => {
+        if (isAnimating) return;
+        if (Math.abs(event.deltaY) < 10) return;
+        if (event.deltaY > 0) {
+            nextSlide();
+        } else {
+            prevSlide();
+        }
+        lockAnimation();
+    }, { passive: true });
+
+    window.addEventListener("keydown", (event) => {
+        if (isAnimating) return;
+        if (event.key === "ArrowDown" || event.key === "PageDown") {
+            nextSlide();
+            lockAnimation();
+        }
+        if (event.key === "ArrowUp" || event.key === "PageUp") {
+            prevSlide();
+            lockAnimation();
+        }
+        if (event.key === "Home") {
+            setSlide(0);
+        }
+        if (event.key === "End") {
+            setSlide(screens.length - 1);
+        }
+    });
+
+    let touchStartY = null;
+    window.addEventListener("touchstart", (event) => {
+        if (event.touches.length === 1) {
+            touchStartY = event.touches[0].clientY;
+        }
+    }, { passive: true });
+
+    window.addEventListener("touchend", (event) => {
+        if (touchStartY === null || isAnimating) return;
+        const endY = event.changedTouches[0].clientY;
+        const delta = touchStartY - endY;
+        if (Math.abs(delta) > 40) {
+            if (delta > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+            lockAnimation();
+        }
+        touchStartY = null;
+    }, { passive: true });
+
+    const projectLink = document.querySelector('.btn[href="#projects"]');
+    if (projectLink) {
+        projectLink.addEventListener("click", (event) => {
+            event.preventDefault();
+            setSlide(1);
+        });
     }
 
     // Fonksiyonlar

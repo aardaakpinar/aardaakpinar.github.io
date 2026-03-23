@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="tr">
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="NAR">
-    <meta property="og:description" content="🌐 Software Developer with notfound since 2019. 🤝 For now, he is developing his own projects.">
+    <meta property="og:description" content="Software Developer with notfound since 2019. For now, he is developing his own projects.">
     <meta property="og:url" content="https://aardaakpinar.github.io/">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://aardaakpinar.github.io/logos/nar.png">
+    <meta property="og:image" content="assets/images/logos/nar.png">
     <meta property="og:image:alt" content="NAR Logo">
     <title>Arda (NAR)</title>
     <link rel="icon" href="https://aardaakpinar.github.io/assets/images/logos/nar.png">
@@ -18,28 +18,109 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-    <!-- Arka plan -->
+    <!-- Background -->
     <div class="sky"></div>
     <div class="rain-container"></div>
 
-    <!-- Ana içerik -->
-    <div class="main-content">
-        <img src="assets/images/logos/nar.png" alt="Profile Picture" class="profile-image">
-        <h1>Hi, I'm Arda</h1>
-        <p class="slogan">Software Dev & Sec · he/him · #opensource</p>
-        
-        <!-- Sosyal bağlantılar -->
-        <div class="social-links">
-            <a href="https://github.com/aardaakpinar" rel="me" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/aardaakpinar/" rel="me" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://x.com/aardaakpinar" rel="me" target="_blank"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://youtube.com/@aardaakpinar" rel="me" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://codepen.io/aardaakpinar" rel="me" target="_blank"><i class="fab fa-codepen"></i></a>
-        </div>
-    </div>
+    <main class="page">
+        <!-- 1. Full screen: Hero -->
+        <section class="screen screen-hero">
+            <div class="main-content">
+                <img src="assets/images/logos/nar.png" alt="Profile Picture" class="profile-image">
+                <h1>Hi, I'm Arda</h1>
+                <p class="slogan">Software Dev & Sec · he/him · #opensource</p>
+
+                <!-- Social links -->
+                <div class="social-links">
+                    <a href="https://github.com/aardaakpinar" rel="me" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/aardaakpinar/" rel="me" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://x.com/aardaakpinar" rel="me" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://youtube.com/@aardaakpinar" rel="me" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://codepen.io/aardaakpinar" rel="me" target="_blank"><i class="fab fa-codepen"></i></a>
+                </div>
+            </div>
+            <div class="scroll-hint">Scroll down</div>
+        </section>
+
+        <!-- 2. Full screen: Projects -->
+        <section class="screen screen-projects" id="projects">
+            <div class="projects-content">
+                <h2>Projects</h2>
+
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-info">
+                            <img class="project-logo" src="assets/images/logos/pitopi.png" alt="Pitopi logo">
+                            <div class="project-meta">
+                                <h3>Pitopi</h3>
+                                <div class="project-tags">P2P · Realtime · Web</div>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <a class="project-btn" href="https://github.com/pitopichat/pitopi" target="_blank" rel="noopener">GitHub</a>
+                            <a class="project-btn project-btn-ghost" href="https://pitopi.onrender.com/" target="_blank" rel="noopener">Landing</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-info">
+                            <img class="project-logo" src="assets/images/logos/limon.png" alt="Limon logo">
+                            <div class="project-meta">
+                                <h3>Limon</h3>
+                                <div class="project-tags">CLI · Chatbot</div>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <a class="project-btn" href="https://github.com/aardaakpinar/limon" target="_blank" rel="noopener">GitHub</a>
+                            <a class="project-btn project-btn-ghost" href="https://aardaakpinar.github.io/limon" target="_blank" rel="noopener">Landing</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-info">
+                            <img class="project-logo" src="assets/images/logos/NaC.png" alt="NaC logo">
+                            <div class="project-meta">
+                                <h3>NaC (Not a C)</h3>
+                                <div class="project-tags">C · Language · Education</div>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <a class="project-btn" href="https://github.com/naclang/nac" target="_blank" rel="noopener">GitHub</a>
+                            <a class="project-btn project-btn-ghost" href="https://naclang.github.io/" target="_blank" rel="noopener">Landing</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-info">
+                            <img class="project-logo" src="assets/images/logos/bibak.png" alt="Bi'Bak logo">
+                            <div class="project-meta">
+                                <h3>Bi’Bak</h3>
+                                <div class="project-tags">RSS · IndexedDB · Web</div>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <a class="project-btn" href="https://github.com/aardaakpinar/bibak" target="_blank" rel="noopener">GitHub</a>
+                            <a class="project-btn project-btn-ghost" href="https://aardaakpinar.github.io/bibak/" target="_blank" rel="noopener">Landing</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-info">
+                            <img class="project-logo" src="assets/images/logos/sayidisi.png" alt="SayıDışı logo">
+                            <div class="project-meta">
+                                <h3>SayıDışı</h3>
+                                <div class="project-tags">RSS · IndexedDB · Web</div>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <a class="project-btn" href="https://github.com/aardaakpinar/sayidisi" target="_blank" rel="noopener">GitHub</a>
+                            <a class="project-btn project-btn-ghost" href="https://aardaakpinar.github.io/sayidisi/" target="_blank" rel="noopener">Landing</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script src="assets/script.js"></script>
     <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
     <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="aardaakpinar" data-description="Support me on Buy me a coffee!" data-message="" data-color="#23b5b5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
 </body>
 </html>
+
