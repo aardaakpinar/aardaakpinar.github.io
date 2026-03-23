@@ -199,12 +199,6 @@ h1 {
     text-align: left;
 }
 
-.project-card p {
-    color: #cfcfcf;
-    font-size: 0.95rem;
-    margin-bottom: 12px;
-}
-
 .project-logo {
     width: 48px;
     height: 48px;
@@ -227,7 +221,7 @@ h1 {
 }
 
 .project-tags {
-    color: #9cd9d9;
+    color: #bbb;
     font-size: 0.85rem;
     letter-spacing: 0.03rem;
 }
@@ -267,10 +261,6 @@ h1 {
         padding: 20px;
     }
 
-    .main-content {
-        margin-top: -100px;
-    }
-
     .profile-image {
         width: 120px;
         height: 120px;
@@ -284,6 +274,10 @@ h1 {
     .slogan {
         font-size: 1.1rem;
         margin-bottom: 10px;
+    }
+
+    .projects-content h2 {
+        font-size: 2rem;
     }
 
     .social-links a {
