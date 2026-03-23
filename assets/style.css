@@ -43,6 +43,7 @@ body {
 .screen-hero {
     gap: 24px;
     flex-direction: column;
+    position: relative;
 }
 
 /* Ana icerik */
@@ -106,8 +107,11 @@ h1 {
 }
 
 .scroll-hint {
-    margin-top: 40px;
-    font-size: 0.7rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+    font-size: 0.6rem;
     letter-spacing: 0.3rem;
     text-transform: uppercase;
     color: rgba(240, 240, 240, 0.6);
@@ -262,7 +266,7 @@ h1 {
     }
 
     .screen-hero {
-        margin-top: -50px;
+        margin-top: -70px;
     }
 
     .profile-image {
