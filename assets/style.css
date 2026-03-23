@@ -297,10 +297,6 @@ h1 {
         grid-auto-columns: minmax(240px, 80vw);
     }
 
-    .project-actions {
-        grid-template-columns: 1fr;
-    }
-
     .project-btn {
         text-align: center;
         width: 100%;
