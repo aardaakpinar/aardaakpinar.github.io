@@ -7,32 +7,36 @@ document.addEventListener("DOMContentLoaded", () => {
     const month = new Date().getMonth() + 1;
     const day = new Date().getDate();
     const hour = new Date().getHours();
-    
-    // Temel efektleri temizle
+
     rainContainer.innerHTML = "";
     sky.innerHTML = "";
 
-    const nationalDays = [
-        "18-03", // Çanakkale Zaferi ve Şehitleri Anma Günü
-        "29-10", // Cumhuriyet Bayramı
-        "23-04", // Ulusal Egemenlik ve Çocuk Bayramı
-        "19-05", // Atatürk'ü Anma Gençlik ve Spor Bayramı
-        "30-08", // Zafer Bayramı
-        "15-07", // Demokrasi ve Milli Birlik Günü
-        "01-05"  // Emek ve Dayanışma Günü 
-    ];
+    const specialBackgrounds = {
+        "18-03": "canakkale.png",   // Çanakkale Zaferi ve Şehitleri Anma Günü
+        "23-04": "cocuk.png",       // Ulusal Egemenlik ve Çocuk Bayramı
+        "01-05": "turk.png",        // Emek ve Dayanışma Günü
+        "19-05": "anitkabir.png",   // Atatürk'ü Anma, Gençlik ve Spor Bayramı
+        "15-07": "turk.png",        // Demokrasi ve Milli Birlik Günü
+        "30-08": "anitkabir.png",   // Zafer Bayramı
+        "29-10": "anitkabir.png",   // Cumhuriyet Bayramı
+        "10-11": "anitkabir.png",   // Atatürk'ü Anma Günü
+    };
 
-    // Mevsim ve saat bazlı koşullar
     if ((month == 12 && day == 31 && hour == 23) || (month == 1 && day == 1 && hour <= 2)) {
-      setInterval(createFireworks, 1000);
+        setInterval(createFireworks, 1000);
     }
 
-    const d = String(day).padStart(2, '0');
-    const m = String(month).padStart(2, '0');
+    const d = String(day).padStart(2, "0");
+    const m = String(month).padStart(2, "0");
 
-    if (nationalDays.includes(`${d}-${m}`)) {
-        document.querySelector(".main-content h1").innerHTML += " <svg xmlns='http://www.w3.org/2000/svg' width='50' height='30' style='border-radius: 4px;' viewBox='0 -30000 90000 60000'><title>Flag of Turkey</title><path fill='#e30a17' d='m0-30000h90000v60000H0z'/><path fill='#fff' d='m41750 0 13568-4408-8386 11541V-7133l8386 11541zm925 8021a15000 15000 0 1 1 0-16042 12000 12000 0 1 0 0 16042z'/></svg>";
-    } else if (month == 9 && day == 12) {
+    const today = `${d}-${m}`;
+
+    if (specialBackgrounds[today]) {
+        document.querySelector(".banner").style.background =
+            `url('./assets/images/backgrounds/${specialBackgrounds[today]}') center/cover`;
+    }
+
+    if (month == 9 && day == 12) {
         setInterval(createFireworks, 1000);
     } else if (month >= 9 && month <= 11) {
         // Sonbahar
@@ -56,97 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 10000);
     }
 
-    // Slayt gibi tam ekran gecis
-    let currentIndex = 0;
-    let isAnimating = false;
-
-    function setSlide(index) {
-        const clamped = Math.max(0, Math.min(index, screens.length - 1));
-        currentIndex = clamped;
-        if (page) {
-            page.style.transform = `translateY(-${clamped * 100}vh)`;
-        }
-    }
-
-    function nextSlide() {
-        if (currentIndex < screens.length - 1) {
-            setSlide(currentIndex + 1);
-        }
-    }
-
-    function prevSlide() {
-        if (currentIndex > 0) {
-            setSlide(currentIndex - 1);
-        }
-    }
-
-    function lockAnimation() {
-        isAnimating = true;
-        setTimeout(() => {
-            isAnimating = false;
-        }, 550);
-    }
-
-    window.addEventListener("wheel", (event) => {
-        if (isAnimating) return;
-        if (Math.abs(event.deltaY) < 10) return;
-        if (event.deltaY > 0) {
-            nextSlide();
-        } else {
-            prevSlide();
-        }
-        lockAnimation();
-    }, { passive: true });
-
-    window.addEventListener("keydown", (event) => {
-        if (isAnimating) return;
-        if (event.key === "ArrowDown" || event.key === "PageDown") {
-            nextSlide();
-            lockAnimation();
-        }
-        if (event.key === "ArrowUp" || event.key === "PageUp") {
-            prevSlide();
-            lockAnimation();
-        }
-        if (event.key === "Home") {
-            setSlide(0);
-        }
-        if (event.key === "End") {
-            setSlide(screens.length - 1);
-        }
-    });
-
-    let touchStartY = null;
-    window.addEventListener("touchstart", (event) => {
-        if (event.touches.length === 1) {
-            touchStartY = event.touches[0].clientY;
-        }
-    }, { passive: true });
-
-    window.addEventListener("touchend", (event) => {
-        if (touchStartY === null || isAnimating) return;
-        const endY = event.changedTouches[0].clientY;
-        const delta = touchStartY - endY;
-        if (Math.abs(delta) > 40) {
-            if (delta > 0) {
-                nextSlide();
-            } else {
-                prevSlide();
-            }
-            lockAnimation();
-        }
-        touchStartY = null;
-    }, { passive: true });
-
-    const projectLink = document.querySelector('.btn[href="#projects"]');
-    if (projectLink) {
-        projectLink.addEventListener("click", (event) => {
-            event.preventDefault();
-            setSlide(1);
-        });
-    }
-
-    // Fonksiyonlar
     function createRain(count) {
         for (let i = 0; i < count; i++) {
             const drop = document.createElement("div");
@@ -169,76 +82,70 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    function createStars(count){
-      const sky = document.querySelector('.sky');
-      for(let i=0;i<count;i++){
-        const star = document.createElement('div');
-        star.className = 'star';
-        star.style.top = Math.random()*100+'vh';
-        star.style.left = Math.random()*100+'vw';
-        star.style.width = 1+Math.random()*2+'px';
-        star.style.height = star.style.width;
+    function createStars(count) {
+        const sky = document.querySelector(".sky");
+        for (let i = 0; i < count; i++) {
+            const star = document.createElement("div");
+            star.className = "star";
+            star.style.top = Math.random() * 100 + "vh";
+            star.style.left = Math.random() * 100 + "vw";
+            star.style.width = 1 + Math.random() * 2 + "px";
+            star.style.height = star.style.width;
 
-        star.style.setProperty('--dirX', Math.random()>0.5?1:-1);
-        star.style.setProperty('--dirY', Math.random()>0.5?1:-1);
+            star.style.setProperty("--dirX", Math.random() > 0.5 ? 1 : -1);
+            star.style.setProperty("--dirY", Math.random() > 0.5 ? 1 : -1);
 
-        star.style.animationDuration = 1+Math.random()*3+'s, '+5+Math.random()*5+'s';
-        sky.appendChild(star);
-      }
+            star.style.animationDuration = 1 + Math.random() * 3 + "s, " + 5 + Math.random() * 5 + "s";
+            sky.appendChild(star);
+        }
     }
 
     function createMeteor() {
-      const meteor = document.createElement("div");
-      meteor.classList.add("meteor");
+        const meteor = document.createElement("div");
+        meteor.classList.add("meteor");
 
-      meteor.style.top = "-50px";
-      meteor.style.left = Math.random() * 100 + "vw";
+        meteor.style.top = "-50px";
+        meteor.style.left = Math.random() * 100 + "vw";
 
-      const animationName = Math.random() < 0.5 ? "meteorFall1" : "meteorFall2";
-      meteor.style.animation = `${animationName} 2s linear forwards`;
+        const animationName = Math.random() < 0.5 ? "meteorFall1" : "meteorFall2";
+        meteor.style.animation = `${animationName} 2s linear forwards`;
 
-      sky.appendChild(meteor);
+        sky.appendChild(meteor);
 
-      setTimeout(() => meteor.remove(), 2500);
+        setTimeout(() => meteor.remove(), 2500);
     }
 
-
-
     function createFireworks() {
+        const colors = ["#FF3C38", "#FFAD33", "#33FFBD", "#3380FF", "#C833FF"];
+        const color = colors[Math.floor(Math.random() * colors.length)];
 
-    const colors = ['#FF3C38','#FFAD33','#33FFBD','#3380FF','#C833FF'];
-    const color = colors[Math.floor(Math.random() * colors.length)];
+        const firework = document.createElement("div");
+        firework.className = "firework";
+        firework.style.left = Math.random() * (window.innerWidth - 20) + "px";
+        firework.style.top = window.innerHeight - 20 + "px";
+        firework.style.setProperty("--color", color);
+        sky.appendChild(firework);
 
-    const firework = document.createElement('div');
-    firework.className = 'firework';
-    firework.style.left = Math.random() * (window.innerWidth - 20) + 'px';
-    firework.style.top = window.innerHeight - 20 + 'px';
-    firework.style.setProperty('--color', color);
-    sky.appendChild(firework);
+        // Explosion zamanı
+        setTimeout(() => {
+            for (let i = 0; i < 8; i++) {
+                const explosion = document.createElement("div");
+                explosion.className = "explosion";
+                explosion.style.left = firework.style.left;
+                explosion.style.top = window.innerHeight / 2 + "px"; // orta yükseklik
+                const angle = (i / 8) * 2 * Math.PI;
+                const distance = 50 + Math.random() * 50;
+                const x = Math.cos(angle) * distance;
+                const y = Math.sin(angle) * distance;
+                explosion.style.setProperty("--x", x + "px");
+                explosion.style.setProperty("--y", y + "px");
+                explosion.style.setProperty("--color", color);
+                sky.appendChild(explosion);
 
-    // Explosion zamanı
-    setTimeout(() => {
+                setTimeout(() => explosion.remove(), 800);
+            }
 
-        for (let i = 0; i < 8; i++) {
-
-            const explosion = document.createElement('div');
-            explosion.className = 'explosion';
-            explosion.style.left = firework.style.left;
-            explosion.style.top = window.innerHeight / 2 + 'px'; // orta yükseklik
-            const angle = (i / 8) * 2 * Math.PI;
-            const distance = 50 + Math.random() * 50;
-            const x = Math.cos(angle) * distance;
-            const y = Math.sin(angle) * distance;
-            explosion.style.setProperty('--x', x + 'px');
-            explosion.style.setProperty('--y', y + 'px');
-            explosion.style.setProperty('--color', color);
-            sky.appendChild(explosion);
-
-            setTimeout(() => explosion.remove(), 800);
-        }
-        
-        firework.remove();
-    }, 800);
-}
-
+            firework.remove();
+        }, 800);
+    }
 });
