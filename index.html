@@ -9,132 +9,60 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="assets/images/logos/nar.png">
     <meta property="og:image:alt" content="NAR Logo">
-    <title>Arda</title>
+    <title>Arda Akpınar</title>
     <link rel="icon" href="https://aardaakpinar.github.io/assets/images/logos/nar.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link href="https://cdn.boxicons.com/3.0.8/fonts/brands/boxicons-brands.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/sky.css">
 </head>
 <body>
     <!-- Background -->
     <div class="sky"></div>
     <div class="rain-container"></div>
 
-    <main class="page">
-        <!-- 1. Full screen: Hero -->
-        <section class="screen screen-hero">
-            <div class="main-content">
-                <img src="assets/images/logos/nar.png" alt="Profile Picture" class="profile-image">
-                <h1>Hi, I'm Arda</h1>
-                <p class="slogan">Software Developer & Cyber Security Student</p>
+    <div class="container">
 
-                <!-- Social links -->
-                <div class="social-links">
-                    <a href="https://github.com/aardaakpinar" rel="me" target="_blank"><i class="bxl bx-github"></i></a>
-                    <a href="https://linkedin.com/in/aardaakpinar/" rel="me" target="_blank"><i class="bxl bx-linkedin"></i></a>
-                    <a href="https://x.com/aardaakpinar" rel="me" target="_blank"><i class="bxl bx-twitter-x"></i></a>
-                    <a href="https://youtube.com/@aardaakpinar" rel="me" target="_blank"><i class="bxl bx-youtube"></i></a>
-                    <a href="https://codepen.io/aardaakpinar" rel="me" target="_blank"><i class="bxl bx-codepen"></i></a>
-                    <a href="https://buymeacoffee.com/aardaakpinar" rel="me" target="_blank"><i class="bxl bx-buy-me-a-coffee"></i></a>
-                </div>
-            </div>
-            <div class="scroll-hint">Scroll down</div>
-        </section>
+        <!-- LEFT -->
+        <div class="left">
+            <div class="banner"></div>
+            <img src="assets/images/logos/nar.png" class="profile-image">
+            <h1>Arda Akpınar</h1>
+            <p class="title">Software Developer & Cyber Security Student</p>
+        </div>
 
-        <!-- 2. Full screen: Projects -->
-        <section class="screen screen-projects" id="projects">
-            <div class="projects-content">
-                <h2>Featured Projects</h2>
+        <!-- RIGHT -->
+        <div class="right">
+            <a class="link" href="https://github.com/aardaakpinar" target="_blank">
+                <i class="bxl bx-github"></i> GitHub
+            </a>
 
-                <div class="projects-grid">
-                    <article class="project-card">
-                        <div class="project-info">
-                            <img class="project-logo" src="assets/images/logos/pitopi.png" alt="Pitopi logo">
-                            <div class="project-meta">
-                                <h3>Pitopi</h3>
-                                <div class="project-tags">Peer-to-peer chat</div>
-                            </div>
-                        </div>
-                        <div class="project-actions">
-                            <a class="project-btn" href="https://github.com/aardaakpinar/pitopi" target="_blank" rel="noopener">Code</a>
-                            <a class="project-btn project-btn-ghost" href="https://aardaakpinar.github.io/pitopi" target="_blank" rel="noopener">Live</a>
-                        </div>
-                    </article>
-                    <article class="project-card">
-                        <div class="project-info">
-                            <img class="project-logo" src="assets/images/logos/limon.png" alt="Limon logo">
-                            <div class="project-meta">
-                                <h3>Limon</h3>
-                                <div class="project-tags">AI-powered terminal assistant</div>
-                            </div>
-                        </div>
-                        <div class="project-actions">
-                            <a class="project-btn" href="https://github.com/aardaakpinar/limon" target="_blank" rel="noopener">Code</a>
-                            <a class="project-btn project-btn-ghost" href="https://aardaakpinar.github.io/limon" target="_blank" rel="noopener">Live</a>
-                        </div>
-                    </article>
-                    <article class="project-card">
-                        <div class="project-info">
-                            <img class="project-logo" src="assets/images/logos/NaC.png" alt="NaC logo">
-                            <div class="project-meta">
-                                <h3>NaC (Not a C)</h3>
-                                <div class="project-tags">Interpreted language</div>
-                            </div>
-                        </div>
-                        <div class="project-actions">
-                            <a class="project-btn" href="https://github.com/naclang/nac" target="_blank" rel="noopener">Code</a>
-                            <a class="project-btn project-btn-ghost" href="https://naclang.github.io" target="_blank" rel="noopener">Live</a>
-                        </div>
-                    </article>
-                    <article class="project-card">
-                        <div class="project-info">
-                            <img class="project-logo" src="assets/images/logos/bibak.png" alt="Bi'Bak logo">
-                            <div class="project-meta">
-                                <h3>Bi’Bak</h3>
-                                <div class="project-tags">Client-side RSS reader</div>
-                            </div>
-                        </div>
-                        <div class="project-actions">
-                            <a class="project-btn" href="https://github.com/aardaakpinar/bibak" target="_blank" rel="noopener">Code</a>
-                            <a class="project-btn project-btn-ghost" href="https://aardaakpinar.github.io/bibak" target="_blank" rel="noopener">Live</a>
-                        </div>
-                    </article>
-                    <article class="project-card">
-                        <div class="project-info">
-                            <img class="project-logo" src="assets/images/logos/sayidisi.png" alt="SayıDışı logo">
-                            <div class="project-meta">
-                                <h3>SayıDışı</h3>
-                                <div class="project-tags">Find the missing digit</div>
-                            </div>
-                        </div>
-                        <div class="project-actions">
-                            <a class="project-btn" href="https://github.com/aardaakpinar/sayidisi" target="_blank" rel="noopener">Code</a>
-                            <a class="project-btn project-btn-ghost" href="https://aardaakpinar.github.io/sayidisi" target="_blank" rel="noopener">Live</a>
-                        </div>
-                    </article>
-                    <article class="project-card">
-                        <div class="project-info">
-                            <img class="project-logo" src="assets/images/logos/kargo.png" alt="Kargo logo">
-                            <div class="project-meta">
-                                <h3>Kargo</h3>
-                                <div class="project-tags">Browser with almost no UI.</div>
-                            </div>
-                        </div>
-                        <div class="project-actions">
-                            <a class="project-btn" href="https://github.com/aardaakpinar/kargo" target="_blank" rel="noopener">Code</a>
-                            <a class="project-btn project-btn-ghost" href="https://aardaakpinar.github.io/kargo" target="_blank" rel="noopener">Live</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-    </main>
+            <a class="link" href="https://linkedin.com/in/aardaakpinar/" target="_blank">
+                <i class="bxl bx-linkedin"></i> LinkedIn
+            </a>
 
+            <a class="link" href="https://x.com/aardaakpinar" target="_blank">
+                <i class="bxl bx-twitter-x"></i> X (Twitter)
+            </a>
+
+            <a class="link" href="https://youtube.com/@aardaakpinar" target="_blank">
+                <i class="bxl bx-youtube"></i> YouTube
+            </a>
+
+            <a class="link" href="https://codepen.io/aardaakpinar" target="_blank">
+                <i class="bxl bx-codepen"></i> CodePen
+            </a>
+
+            <a class="link" href="https://buymeacoffee.com/aardaakpinar" target="_blank">
+                <i class="bxl bx-buy-me-a-coffee"></i> Buy Me a Coffee
+            </a>
+        </div>
+
+    </div>
     <script src="assets/script.js"></script>
-    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+
 </body>
 </html>
-
 
