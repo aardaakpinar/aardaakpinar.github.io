@@ -2,7 +2,7 @@ const TOTAL = 206;
 
 const wallpapers = Array.from({ length: TOTAL }, (_, i) => ({
     id: i + 1,
-    src: `https://raw.githubusercontent.com/aardaakpinar/aardaakpinar/main/wallpapers/${i + 1}.jpg`
+    src: `https://raw.githubusercontent.com/aardaakpinar/aardaakpinar/main/bookmarks/wallpapers/${i + 1}.jpg`
 }));
 
 const grid = document.getElementById("grid");
