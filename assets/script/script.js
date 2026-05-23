@@ -31,6 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const today = `${d}-${m}`;
 
+    document.getElementById("banner").onclick = () => {
+        window.open("/gallery.html", "_blank");
+    }
+
     if (specialBackgrounds[today]) {
         document.querySelector(".banner").style.background =
             `url('./assets/images/backgrounds/${specialBackgrounds[today]}') center/cover`;
