@@ -99,6 +99,8 @@ h1 {
     transform: translateY(-2px);
 }
 
-.link i {
+.link i, .link svg {
     font-size: 20px;
+    width: 20px;
+    height: 20px;
 }
