@@ -1,106 +1,106 @@
 :root {
-    --bg: #0d0d0d;
-    --bg-secondary: #0d0d0d;
-    --bg-radial: #1a1a1a;
-    --card: rgba(255, 255, 255, 0.02);
-    --text: #ffffff;
-    --muted: rgba(255, 255, 255, 0.7);
-    --accent: #23b5b5;
-    --white-90: rgba(255, 255, 255, 0.9);
-    --white-60: rgba(255, 255, 255, 0.6);
-    --white-06: rgba(255, 255, 255, 0.06);
-    --white-05: rgba(255, 255, 255, 0.05);
-    --black-25: rgba(0, 0, 0, 0.25);
-    --black-35: rgba(0, 0, 0, 0.35);
+  --bg: #0d0d0d;
+  --bg-secondary: #0d0d0d;
+  --bg-radial: #1a1a1a;
+  --card: rgba(255, 255, 255, 0.02);
+  --text: #ffffff;
+  --muted: rgba(255, 255, 255, 0.7);
+  --accent: #23b5b5;
+  --white-90: rgba(255, 255, 255, 0.9);
+  --white-60: rgba(255, 255, 255, 0.6);
+  --white-06: rgba(255, 255, 255, 0.06);
+  --white-05: rgba(255, 255, 255, 0.05);
+  --black-25: rgba(0, 0, 0, 0.25);
+  --black-35: rgba(0, 0, 0, 0.35);
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family:
-        system-ui,
-        -apple-system,
-        Segoe UI,
-        Roboto,
-        Arial,
-        sans-serif;
-    background: radial-gradient(
-        1200px 800px at 15% 10%,
-        var(--bg-radial) 0,
-        var(--bg) 55%,
-        var(--bg-secondary) 100%
-    );
-    color: var(--text);
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
+  background: radial-gradient(
+    1200px 800px at 15% 10%,
+    var(--bg-radial) 0,
+    var(--bg) 55%,
+    var(--bg-secondary) 100%
+  );
+  color: var(--text);
 }
 
 header {
-    padding: 24px 28px;
-    position: sticky;
-    top: 0;
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--white-06);
-    z-index: 5;
+  padding: 24px 28px;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--white-06);
+  z-index: 5;
 }
 
 h1 {
-    margin: 0 0 6px;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 0.3px;
+  margin: 0 0 6px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
 }
 
 .sub {
-    color: var(--muted);
-    font-size: 13px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 main {
-    padding: 20px 24px 40px;
+  padding: 20px 24px 40px;
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 14px;
 }
 
 .card {
-    background: var(--card);
-    border: 1px solid var(--white-05);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 6px 18px var(--black-25);
-    transition:
-        transform 120ms ease,
-        box-shadow 120ms ease;
+  background: var(--card);
+  border: 1px solid var(--white-05);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px var(--black-25);
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease;
 }
 
 .card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 24px var(--black-35);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px var(--black-35);
 }
 
 .card img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
 }
 
 .label {
-    padding: 8px 10px;
-    font-size: 12px;
-    color: var(--muted);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  padding: 8px 10px;
+  font-size: 12px;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @media (max-width: 520px) {
-    .card img {
-        height: 120px;
-    }
+  .card img {
+    height: 120px;
+  }
 }

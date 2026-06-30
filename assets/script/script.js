@@ -1,151 +1,155 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const sky = document.querySelector(".sky");
+  const rainContainer = document.querySelector(".rain-container");
+  const page = document.querySelector(".page");
+  const screens = Array.from(document.querySelectorAll(".screen"));
+
+  const month = new Date().getMonth() + 1;
+  const day = new Date().getDate();
+  const hour = new Date().getHours();
+
+  rainContainer.innerHTML = "";
+  sky.innerHTML = "";
+
+  const specialBackgrounds = {
+    "18-03": "canakkale.png", // Çanakkale Zaferi ve Şehitleri Anma Günü
+    "23-04": "cocuk.png", // Ulusal Egemenlik ve Çocuk Bayramı
+    "01-05": "turk.png", // Emek ve Dayanışma Günü
+    "19-05": "anitkabir.png", // Atatürk'ü Anma, Gençlik ve Spor Bayramı
+    "15-07": "turk.png", // Demokrasi ve Milli Birlik Günü
+    "30-08": "anitkabir.png", // Zafer Bayramı
+    "29-10": "anitkabir.png", // Cumhuriyet Bayramı
+    "10-11": "anitkabir.png", // Atatürk'ü Anma Günü
+  };
+
+  if (
+    (month == 12 && day == 31 && hour == 23) ||
+    (month == 1 && day == 1 && hour <= 2)
+  ) {
+    setInterval(createFireworks, 1000);
+  }
+
+  const d = String(day).padStart(2, "0");
+  const m = String(month).padStart(2, "0");
+
+  const today = `${d}-${m}`;
+
+  if (specialBackgrounds[today]) {
+    document.querySelector(".banner").style.background =
+      `url('./assets/images/backgrounds/${specialBackgrounds[today]}') center/cover`;
+  }
+
+  if (month == 9 && day == 12) {
+    setInterval(createFireworks, 1000);
+  } else if (month >= 9 && month <= 11) {
+    // Sonbahar
+    createRain(50);
+  } else if (month == 12 || month <= 2) {
+    // Kış
+    createSnow(40);
+  } else if (month >= 3 && month <= 5) {
+    // İlkbahar
+    createRain(20);
+  } else if (month >= 6 && month <= 8) {
+    // Yaz
+  }
+
+  if (hour <= 6 || hour >= 18) {
+    createStars(30);
+    setInterval(() => {
+      if (Math.random() < 0.07) {
+        createMeteor();
+      }
+    }, 10000);
+  }
+
+  function createRain(count) {
+    for (let i = 0; i < count; i++) {
+      const drop = document.createElement("div");
+      drop.className = "rain";
+      drop.style.left = Math.random() * 100 + "vw";
+      drop.style.animationDuration = 0.5 + Math.random() * 0.5 + "s";
+      drop.style.animationDelay = Math.random() * 2 + "s";
+      rainContainer.appendChild(drop);
+    }
+  }
+
+  function createSnow(count) {
+    for (let i = 0; i < count; i++) {
+      const flake = document.createElement("div");
+      flake.className = "snow";
+      flake.style.left = Math.random() * 100 + "vw";
+      flake.style.animationDuration = 5 + Math.random() * 5 + "s";
+      flake.style.animationDelay = Math.random() * 5 + "s";
+      rainContainer.appendChild(flake);
+    }
+  }
+
+  function createStars(count) {
     const sky = document.querySelector(".sky");
-    const rainContainer = document.querySelector(".rain-container");
-    const page = document.querySelector(".page");
-    const screens = Array.from(document.querySelectorAll(".screen"));
+    for (let i = 0; i < count; i++) {
+      const star = document.createElement("div");
+      star.className = "star";
+      star.style.top = Math.random() * 100 + "vh";
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.width = 1 + Math.random() * 2 + "px";
+      star.style.height = star.style.width;
 
-    const month = new Date().getMonth() + 1;
-    const day = new Date().getDate();
-    const hour = new Date().getHours();
+      star.style.setProperty("--dirX", Math.random() > 0.5 ? 1 : -1);
+      star.style.setProperty("--dirY", Math.random() > 0.5 ? 1 : -1);
 
-    rainContainer.innerHTML = "";
-    sky.innerHTML = "";
-
-    const specialBackgrounds = {
-        "18-03": "canakkale.png",   // Çanakkale Zaferi ve Şehitleri Anma Günü
-        "23-04": "cocuk.png",       // Ulusal Egemenlik ve Çocuk Bayramı
-        "01-05": "turk.png",        // Emek ve Dayanışma Günü
-        "19-05": "anitkabir.png",   // Atatürk'ü Anma, Gençlik ve Spor Bayramı
-        "15-07": "turk.png",        // Demokrasi ve Milli Birlik Günü
-        "30-08": "anitkabir.png",   // Zafer Bayramı
-        "29-10": "anitkabir.png",   // Cumhuriyet Bayramı
-        "10-11": "anitkabir.png",   // Atatürk'ü Anma Günü
-    };
-
-    if ((month == 12 && day == 31 && hour == 23) || (month == 1 && day == 1 && hour <= 2)) {
-        setInterval(createFireworks, 1000);
+      star.style.animationDuration =
+        1 + Math.random() * 3 + "s, " + 5 + Math.random() * 5 + "s";
+      sky.appendChild(star);
     }
+  }
 
-    const d = String(day).padStart(2, "0");
-    const m = String(month).padStart(2, "0");
+  function createMeteor() {
+    const meteor = document.createElement("div");
+    meteor.classList.add("meteor");
 
-    const today = `${d}-${m}`;
+    meteor.style.top = "-50px";
+    meteor.style.left = Math.random() * 100 + "vw";
 
-    if (specialBackgrounds[today]) {
-        document.querySelector(".banner").style.background =
-            `url('./assets/images/backgrounds/${specialBackgrounds[today]}') center/cover`;
-    }
+    const animationName = Math.random() < 0.5 ? "meteorFall1" : "meteorFall2";
+    meteor.style.animation = `${animationName} 2s linear forwards`;
 
-    if (month == 9 && day == 12) {
-        setInterval(createFireworks, 1000);
-    } else if (month >= 9 && month <= 11) {
-        // Sonbahar
-        createRain(50);
-    } else if (month == 12 || month <= 2) {
-        // Kış
-        createSnow(40);
-    } else if (month >= 3 && month <= 5) {
-        // İlkbahar
-        createRain(20);
-    } else if (month >= 6 && month <= 8) {
-        // Yaz
-    }
+    sky.appendChild(meteor);
 
-    if (hour <= 6 || hour >= 18) {
-        createStars(30);
-        setInterval(() => {
-            if (Math.random() < 0.07) {
-                createMeteor();
-            }
-        }, 10000);
-    }
+    setTimeout(() => meteor.remove(), 2500);
+  }
 
-    function createRain(count) {
-        for (let i = 0; i < count; i++) {
-            const drop = document.createElement("div");
-            drop.className = "rain";
-            drop.style.left = Math.random() * 100 + "vw";
-            drop.style.animationDuration = 0.5 + Math.random() * 0.5 + "s";
-            drop.style.animationDelay = Math.random() * 2 + "s";
-            rainContainer.appendChild(drop);
-        }
-    }
+  function createFireworks() {
+    const colors = ["#FF3C38", "#FFAD33", "#33FFBD", "#3380FF", "#C833FF"];
+    const color = colors[Math.floor(Math.random() * colors.length)];
 
-    function createSnow(count) {
-        for (let i = 0; i < count; i++) {
-            const flake = document.createElement("div");
-            flake.className = "snow";
-            flake.style.left = Math.random() * 100 + "vw";
-            flake.style.animationDuration = 5 + Math.random() * 5 + "s";
-            flake.style.animationDelay = Math.random() * 5 + "s";
-            rainContainer.appendChild(flake);
-        }
-    }
+    const firework = document.createElement("div");
+    firework.className = "firework";
+    firework.style.left = Math.random() * (window.innerWidth - 20) + "px";
+    firework.style.top = window.innerHeight - 20 + "px";
+    firework.style.setProperty("--color", color);
+    sky.appendChild(firework);
 
-    function createStars(count) {
-        const sky = document.querySelector(".sky");
-        for (let i = 0; i < count; i++) {
-            const star = document.createElement("div");
-            star.className = "star";
-            star.style.top = Math.random() * 100 + "vh";
-            star.style.left = Math.random() * 100 + "vw";
-            star.style.width = 1 + Math.random() * 2 + "px";
-            star.style.height = star.style.width;
+    // Explosion zamanı
+    setTimeout(() => {
+      for (let i = 0; i < 8; i++) {
+        const explosion = document.createElement("div");
+        explosion.className = "explosion";
+        explosion.style.left = firework.style.left;
+        explosion.style.top = window.innerHeight / 2 + "px"; // orta yükseklik
+        const angle = (i / 8) * 2 * Math.PI;
+        const distance = 50 + Math.random() * 50;
+        const x = Math.cos(angle) * distance;
+        const y = Math.sin(angle) * distance;
+        explosion.style.setProperty("--x", x + "px");
+        explosion.style.setProperty("--y", y + "px");
+        explosion.style.setProperty("--color", color);
+        sky.appendChild(explosion);
 
-            star.style.setProperty("--dirX", Math.random() > 0.5 ? 1 : -1);
-            star.style.setProperty("--dirY", Math.random() > 0.5 ? 1 : -1);
+        setTimeout(() => explosion.remove(), 800);
+      }
 
-            star.style.animationDuration = 1 + Math.random() * 3 + "s, " + 5 + Math.random() * 5 + "s";
-            sky.appendChild(star);
-        }
-    }
-
-    function createMeteor() {
-        const meteor = document.createElement("div");
-        meteor.classList.add("meteor");
-
-        meteor.style.top = "-50px";
-        meteor.style.left = Math.random() * 100 + "vw";
-
-        const animationName = Math.random() < 0.5 ? "meteorFall1" : "meteorFall2";
-        meteor.style.animation = `${animationName} 2s linear forwards`;
-
-        sky.appendChild(meteor);
-
-        setTimeout(() => meteor.remove(), 2500);
-    }
-
-    function createFireworks() {
-        const colors = ["#FF3C38", "#FFAD33", "#33FFBD", "#3380FF", "#C833FF"];
-        const color = colors[Math.floor(Math.random() * colors.length)];
-
-        const firework = document.createElement("div");
-        firework.className = "firework";
-        firework.style.left = Math.random() * (window.innerWidth - 20) + "px";
-        firework.style.top = window.innerHeight - 20 + "px";
-        firework.style.setProperty("--color", color);
-        sky.appendChild(firework);
-
-        // Explosion zamanı
-        setTimeout(() => {
-            for (let i = 0; i < 8; i++) {
-                const explosion = document.createElement("div");
-                explosion.className = "explosion";
-                explosion.style.left = firework.style.left;
-                explosion.style.top = window.innerHeight / 2 + "px"; // orta yükseklik
-                const angle = (i / 8) * 2 * Math.PI;
-                const distance = 50 + Math.random() * 50;
-                const x = Math.cos(angle) * distance;
-                const y = Math.sin(angle) * distance;
-                explosion.style.setProperty("--x", x + "px");
-                explosion.style.setProperty("--y", y + "px");
-                explosion.style.setProperty("--color", color);
-                sky.appendChild(explosion);
-
-                setTimeout(() => explosion.remove(), 800);
-            }
-
-            firework.remove();
-        }, 800);
-    }
+      firework.remove();
+    }, 800);
+  }
 });
