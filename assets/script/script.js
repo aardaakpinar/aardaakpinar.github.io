@@ -12,14 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
   sky.innerHTML = "";
 
   const specialBackgrounds = {
-    "18-03": "canakkale.webp", // Çanakkale Zaferi ve Şehitleri Anma Günü
-    "23-04": "cocuk.webp", // Ulusal Egemenlik ve Çocuk Bayramı
-    "01-05": "turk.webp", // Emek ve Dayanışma Günü
-    "19-05": "anitkabir.webp", // Atatürk'ü Anma, Gençlik ve Spor Bayramı
-    "15-07": "turk.webp", // Demokrasi ve Milli Birlik Günü
-    "30-08": "anitkabir.webp", // Zafer Bayramı
-    "29-10": "anitkabir.webp", // Cumhuriyet Bayramı
-    "10-11": "anitkabir.webp", // Atatürk'ü Anma Günü
+    "18-03": "canakkale", // Çanakkale Zaferi ve Şehitleri Anma Günü
+    "23-04": "cocuk",     // Ulusal Egemenlik ve Çocuk Bayramı
+    "01-05": "turk",      // Emek ve Dayanışma Günü
+    "19-05": "anitkabir", // Atatürk'ü Anma, Gençlik ve Spor Bayramı
+    "15-07": "turk",      // Demokrasi ve Milli Birlik Günü
+    "30-08": "anitkabir", // Zafer Bayramı
+    "29-10": "anitkabir", // Cumhuriyet Bayramı
+    "10-11": "anitkabir", // Atatürk'ü Anma Günü
   };
 
   if (
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (specialBackgrounds[today]) {
     const bannerImg = document.querySelector(".banner-img");
     if (bannerImg) {
-      bannerImg.src = `./assets/images/backgrounds/${specialBackgrounds[today]}`;
+      bannerImg.src = `./assets/images/webp/${specialBackgrounds[today]}.webp`;
     }
   }
 
