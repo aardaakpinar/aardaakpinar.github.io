@@ -44,8 +44,8 @@ body {
 	margin: 0 auto;
 }
 
-/* LEFT SIDE (PROFILE) */
-.left {
+/* PROFILE */
+.profile-section {
 	width: 100%;
 	padding: 40px 20px 20px 20px;
 	display: flex;
@@ -90,8 +90,8 @@ h1 {
 	margin-top: 5px;
 }
 
-/* RIGHT SIDE (LINKS) */
-.right {
+/* LINKS */
+.links-section {
 	width: 100%;
 	padding: 0 20px 40px 20px;
 	display: flex;
