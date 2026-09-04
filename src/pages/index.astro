@@ -49,7 +49,7 @@ const experience = [
       <div class="hero-copy">
         <h1 id="hero-title">I'm<br /><em>Arda Akpınar</em></h1>
         <p class="intro">I am a software developer and cyber security student. I work on open-source software and ideas that keep me curious.</p>
-        <a class="text-link" href="#story">Story<span aria-hidden="true">↘</span></a>
+        <a class="text-link" href="#about">About<span aria-hidden="true">↘</span></a>
         <a class="text-link" href="#work">Projects<span aria-hidden="true">↘</span></a>
         <a class="text-link" href="#contact">Contact<span aria-hidden="true">↘</span></a>
       </div>
@@ -58,8 +58,8 @@ const experience = [
       </div>
     </section>
 
-    <section class="story-section" id="story" aria-labelledby="story-title">
-      <div class="story-heading"><h2 id="story-title">Curiosity became <br /><em>creating.</em></h2></div>
+    <section class="story-section" id="about" aria-labelledby="about-title">
+      <div class="story-heading"><h2 id="about-title">Curiosity became <br /><em>creating.</em></h2></div>
       <div class="story-grid">
         <div class="experience-list" aria-label="Experience and education">
         <h2>Experience and education</h2>
@@ -67,10 +67,7 @@ const experience = [
         </div>
         <div class="story-copy"><p class="story-lead">I discovered programming during the pandemic. <i>“If they can do it, so can I”</i> led me to build my first application, <strong>NAR</strong>.</p><p>Since then, I have been building personal projects, developing my problem-solving skills and curiosity with every experiment. Every project, whether completed, transformed, or a lesson in itself, is part of the journey.</p><p>Today, I look for simple solutions to real problems and still find that the best way to learn is to make.</p></div>
       </div>
-    </section>
-
-    <section class="stack-section" id="stack" aria-labelledby="stack-title">
-      <div class="section-heading"><h2 id="stack-title">Things I Work <br /><em>With.</em></h2></div>
+      <div class="stack-heading"><h3>Things I Work <em>With.</em></h3></div>
       <div class="stack-marquee" aria-label="Technologies I use">
         <div class="stack-track">
           {[...techStack, ...techStack].map((tech, index) => <span class="stack-item" aria-hidden={index >= techStack.length ? "true" : undefined}><img src={`https://skillicons.dev/icons?i=${tech.icon}`} alt="" aria-hidden="true" loading="lazy" decoding="async" />{tech.name}</span>)}
