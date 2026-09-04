@@ -518,24 +518,21 @@ footer {
 	font-size: 12px;
 	line-height: 1.5;
 }
-.story-lead {
-	margin: 0;
-	font-size: 24px;
-	line-height: 1.35;
-	letter-spacing: -0.03em;
-}
-.story-lead strong {
-	color: var(--acid);
-	font-weight: 500;
-}
 .story-copy {
 	max-width: 390px;
 	color: var(--muted);
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 1.7;
 }
 .story-copy p {
 	margin: 0 0 18px;
+}
+.story-copy i {
+	color: var(--ink);
+	font-size: 20px;
+}
+.story-copy strong {
+	color: var(--acid);
 }
 .story-links {
 	display: flex;
