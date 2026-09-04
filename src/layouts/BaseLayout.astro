@@ -1,0 +1,31 @@
+---
+import "../styles/global.css";
+
+const {
+  title = "Arda Akpınar",
+  description = "Arda Akpınar's open-source tools, experimental projects, and digital workspace.",
+  image = "/images/logos/nar.png"
+} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://aardaakpinar.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={`https://aardaakpinar.github.io${image}`} />
+    <link rel="icon" href={image} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Nunito:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.boxicons.com/3.0.8/fonts/brands/boxicons-brands.min.css" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
