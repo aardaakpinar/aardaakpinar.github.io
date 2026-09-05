@@ -4,12 +4,12 @@ import { Image } from "astro:assets";
 import "../styles/sky.css";
 
 const projects = [
-  { number: "01", title: "Kargo", description: "A minimalist Turkish web browser inspired by an existing browser concept.", started: "14 Apr 2026", source: "https://github.com/aardaakpinar/kargo", website: "https://aardaakpinar.github.io/kargo" },
-  { number: "02", title: "Pitopi", description: "A privacy-first, end-to-end encrypted chat platform for secure communication.", started: "01 Aug 2024", source: "https://github.com/aardaakpinar/pitopi", website: "https://aardaakpinar.github.io/pitopi" },
-  { number: "03", title: "Wall", description: "A zero-build portfolio engine with modular Bento Grid layouts powered by YAML.", started: "01 Aug 2022", source: "https://github.com/aardaakpinar/wall", website: "https://aardaakpinar.github.io/wall" },
-  { number: "04", title: "Masa", description: "A JavaScript/Firebase social app with authentication, posts, and real-time synchronization.", started: "01 Aug 2021", source: "https://github.com/aardaakpinar/masa", website: "https://aardaakpinar.github.io/masa" },
-  { number: "05", title: "Limon", description: "A command-line assistant supporting multiple AI providers, file operations, and risk-based approval.", started: "10 Apr 2020", source: "https://github.com/aardaakpinar/limon", website: "https://aardaakpinar.github.io/limon" },
-  { number: "06", title: "Bi'Bak", description: "An RSS/Atom reader with IndexedDB, OPML import, CORS proxy fallback, and real-time updates.", started: "20 Feb 2020", source: "https://github.com/aardaakpinar/bibak", website: "https://aardaakpinar.github.io/bibak" }
+  { title: "Kargo", logo: "/images/logos/kargo.png", description: "A minimalist Turkish web browser inspired by an existing browser concept.", started: "14 Apr 2026", source: "https://github.com/aardaakpinar/kargo", website: "https://aardaakpinar.github.io/kargo" },
+  { title: "Pitopi", logo: "/images/logos/pitopi.png", description: "A privacy-first, end-to-end encrypted chat platform for secure communication.", started: "01 Aug 2024", source: "https://github.com/aardaakpinar/pitopi", website: "https://aardaakpinar.github.io/pitopi" },
+  { title: "Wall", logo: "https://aardaakpinar.github.io/wall/images/logo.png", description: "A zero-build portfolio engine with modular Bento Grid layouts powered by YAML.", started: "01 Aug 2022", source: "https://github.com/aardaakpinar/wall", website: "https://aardaakpinar.github.io/wall" },
+  { title: "Masa", logo: "/images/logos/masa.png", description: "A JavaScript/Firebase social app with authentication, posts, and real-time synchronization.", started: "01 Aug 2021", source: "https://github.com/aardaakpinar/masa", website: "https://aardaakpinar.github.io/masa" },
+  { title: "Limon", logo: "/images/logos/limon.png", description: "A command-line assistant supporting multiple AI providers, file operations, and risk-based approval.", started: "10 Apr 2020", source: "https://github.com/aardaakpinar/limon", website: "https://aardaakpinar.github.io/limon" },
+  { title: "Bi'Bak", logo: "/images/logos/bibak.png", description: "An RSS/Atom reader with IndexedDB, OPML import, CORS proxy fallback, and real-time updates.", started: "20 Feb 2020", source: "https://github.com/aardaakpinar/bibak", website: "https://aardaakpinar.github.io/bibak" }
 ];
 
 const techStack = [
@@ -70,7 +70,7 @@ const experience = [
       <div class="stack-heading"><h3>Things I Work <em>With.</em></h3></div>
       <div class="stack-marquee" aria-label="Technologies I use">
         <div class="stack-track">
-          {[...techStack, ...techStack].map((tech, index) => <span class="stack-item" aria-hidden={index >= techStack.length ? "true" : undefined}><img src={`https://skillicons.dev/icons?i=${tech.icon}`} alt="" aria-hidden="true" loading="lazy" decoding="async" />{tech.name}</span>)}
+          {[...techStack, ...techStack].map((tech, index) => <span class="stack-item" aria-hidden={index >= techStack.length ? "true" : undefined}><img src={`https://skillicons.dev/icons?i=${tech.icon}`} alt="" aria-hidden="true" loading="lazy" />{tech.name}</span>)}
         </div>
       </div>
     </section>
@@ -82,7 +82,7 @@ const experience = [
           <div class="project-grid">
             {projects.map((project) => (
               <article class="project-card">
-                <div class="project-meta"><span>{project.number}</span><h3>{project.title}</h3><time>{project.started}</time></div>
+                <div class="project-meta">{project.logo && <img class="project-logo" src={project.logo} alt="" loading="lazy" decoding="async" />}<h3>{project.title}</h3><time>{project.started}</time></div>
                 <p>{project.description}</p>
                 <div class="project-links"><a href={project.source} target="_blank" rel="noopener noreferrer">Source <span aria-hidden="true">↗</span></a>{project.website && <a href={project.website} target="_blank" rel="noopener noreferrer">Website <span aria-hidden="true">↗</span></a>}</div>
               </article>
