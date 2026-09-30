@@ -54,6 +54,8 @@
 	--space-6: 32px;
 	--space-7: 48px;
 	--space-8: 64px;
+	--footer-h: 68px;
+	--section-pad: clamp(72px, 12dvh, 120px);
 
 	/* Motion and stacking */
 	--duration-fast: 0.2s;
@@ -115,8 +117,9 @@ body::before {
 .hero {
 	position: relative;
 	isolation: isolate;
-	min-height: 100svh;
-	padding: 104px 0 90px;
+	min-height: 100vh;
+	min-height: 100dvh;
+	padding: clamp(64px, 12dvh, 104px) 0 clamp(32px, 8dvh, 90px);
 	display: grid;
 	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 	gap: 64px;
@@ -171,7 +174,7 @@ body::before {
 }
 .intro {
 	max-width: 410px;
-	margin: 34px 0 32px;
+	margin: clamp(16px, 4dvh, 34px) 0 clamp(16px, 4dvh, 32px);
 	color: var(--muted);
 	font-size: var(--font-size-base);
 	line-height: 1.65;
@@ -186,17 +189,20 @@ body::before {
 	padding-bottom: 7px;
 	margin-right: 10px;
 }
-.text-link span {
-	color: var(--acid);
-	margin-left: 14px;
-	font-size: var(--font-size-md);
+.hero-nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px 26px;
+}
+.hero-nav .text-link {
+	margin-right: 0;
 }
 .hero-mark {
 	justify-self: center;
-	padding: 30px 0 22px;
+	padding: clamp(8px, 3dvh, 30px) 0 clamp(8px, 2dvh, 22px);
 }
 .hero-profile-image {
-	width: min(100%, 250px);
+	width: min(100%, 250px, 34dvh);
 	height: auto;
 	display: block;
 	margin: 0 auto;
@@ -207,14 +213,11 @@ body::before {
 .work-section {
 	position: relative;
 	height: calc(100vh + 1350px);
+	height: calc(100dvh + 1350px);
 }
 .project-sticky {
 	position: sticky;
-	top: 0;
-	height: 100dvh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	top: var(--project-top, 0px);
 	overflow: hidden;
 }
 .section-heading {
@@ -290,26 +293,12 @@ body::before {
 }
 .project-links {
 	display: flex;
-	gap: 24px;
-}
-.project-links a {
-	color: var(--ink);
-	font:
-		10px "DM Mono",
-		monospace;
-	text-decoration: none;
-	text-transform: uppercase;
-}
-.project-links a:hover {
-	color: var(--acid);
-}
-.project-links span {
-	color: var(--acid);
-	margin-left: 4px;
+	flex-wrap: wrap;
+	gap: 8px;
 }
 /* ---------- Blog: shared ---------- */
 .blog-section {
-	padding: 140px 0 40px;
+	padding: var(--section-pad) 0;
 }
 .blog-index-section {
 	padding: 140px 0 90px;
@@ -327,7 +316,8 @@ body::before {
 	gap: 8px;
 	margin-bottom: 18px;
 }
-.blog-tag {
+.blog-tag,
+.project-links a {
 	padding: 5px 10px;
 	color: var(--muted);
 	font:
@@ -342,7 +332,8 @@ body::before {
 		border-color 0.2s,
 		background 0.2s;
 }
-.blog-tag:hover {
+.blog-tag:hover,
+.project-links a:hover {
 	color: var(--acid);
 	border-color: var(--acid);
 	background: rgba(35, 181, 181, 0.1);
@@ -452,10 +443,6 @@ body::before {
 	text-decoration: none;
 	transition: color 0.2s;
 }
-.blog-read-more span {
-	color: var(--acid);
-	margin-left: 4px;
-}
 .blog-card:hover .blog-read-more {
 	color: var(--acid);
 }
@@ -524,8 +511,10 @@ body::before {
 .blog-post {
 	padding: 10px 0 60px;
 }
-.blog-back-link {
-	display: inline-block;
+.blog-back {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
 	margin-bottom: 50px;
 }
 .blog-post-header {
@@ -660,14 +649,10 @@ body::before {
 }
 @media (max-width: 700px) {
 	.blog-section {
-		padding: 60px 0 10px;
+		padding: clamp(56px, 9dvh, 80px) 0;
 	}
 	.blog-index-section {
 		padding-top: 100px;
-	}
-	.section-heading .text-link {
-		margin-top: 20px;
-		display: inline-block;
 	}
 	.blog-post-header h1 {
 		max-width: none;
@@ -681,7 +666,7 @@ body::before {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	padding: 0 0 80px;
+	padding: var(--section-pad) 0 clamp(40px, 8dvh, 80px);
 }
 .contact-content {
 	display: flex;
@@ -693,23 +678,33 @@ body::before {
 .contact-content h2 {
 	max-width: 700px;
 }
-.circle-link {
-	width: 86px;
-	height: 86px;
-	display: grid;
-	place-items: center;
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex: 0 0 auto;
+	padding: 14px 24px;
 	border: 1px solid var(--acid);
 	border-radius: var(--radius-pill);
 	color: var(--acid);
-	font-size: var(--font-size-xl);
+	font:
+		13px "DM Mono",
+		monospace;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
 	text-decoration: none;
+	white-space: nowrap;
 	transition:
 		background 0.2s,
 		color 0.2s;
 }
-.circle-link:hover {
+.button:hover {
 	background: var(--color-accent);
 	color: var(--color-background);
+}
+.button-sm {
+	padding: 9px 16px;
+	font-size: 11px;
 }
 .social-grid {
 	display: grid;
@@ -755,8 +750,10 @@ footer {
 }
 footer {
 	display: flex;
+	align-items: center;
 	justify-content: space-between;
-	padding: 22px 0 35px;
+	height: var(--footer-h);
+	padding: 0;
 	text-transform: uppercase;
 }
 @media (max-width: 700px) {
@@ -767,14 +764,17 @@ footer {
 		display: flex;
 		flex-direction: column-reverse;
 		align-items: stretch;
-		gap: 56px;
+		justify-content: center;
+		gap: clamp(20px, 6dvh, 56px);
 		min-height: 100vh;
+		min-height: 100dvh;
 	}
 	.hero h1 {
-		font-size: clamp(52px, 16vw, 82px);
+		font-size: clamp(40px, min(16vw, 9dvh), 82px);
 	}
 	.work-section {
 		height: calc(100vh + 1350px);
+		height: calc(100dvh + 1350px);
 	}
 	.section-heading {
 		gap: 30px;
@@ -801,10 +801,13 @@ footer {
 	.contact-content {
 		gap: 30px;
 	}
-	.circle-link {
-		width: 64px;
-		height: 64px;
-		flex: 0 0 auto;
+	.button {
+		padding: 11px 18px;
+		font-size: 12px;
+	}
+	.button-sm {
+		padding: 8px 14px;
+		font-size: 11px;
 	}
 	.social-grid {
 		grid-template-columns: 1fr;
@@ -820,10 +823,7 @@ footer {
 	}
 }
 .story-section {
-	min-height: 100svh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	padding: var(--section-pad) 0;
 }
 .story-heading {
 	display: flex;
@@ -850,7 +850,6 @@ footer {
 .experience-list h2 {
 	margin: 0 0 1rem 0;
 	font-size: var(--font-size-lg);
-	color: var(--muted);
 }
 .experience-item {
 	padding: 0 0 32px 24px;
@@ -999,12 +998,21 @@ footer {
 	margin-left: 8px;
 }
 @media (max-width: 700px) {
+	.hero-nav {
+		justify-content: space-between;
+	}
+	.section-heading,
+	.contact-content {
+		display: flex;
+		align-items: stretch;
+		flex-direction: column;
+	}
 	.hero-profile-image {
 		width: min(100%, 170px);
 		border-radius: var(--radius-pill);
 	}
 	.story-section {
-		margin: 100px 0;
+		padding: clamp(56px, 9dvh, 80px) 0;
 	}
 	.story-heading {
 		display: block;
@@ -1082,5 +1090,17 @@ footer {
 	.blog-read-more,
 	footer {
 		text-align: left;
+	}
+}
+
+/* Mobile hero: scale with the dynamic viewport height so it fits one screen (dvh). */
+@media (max-width: 700px) {
+	.hero-profile-image {
+		width: min(100%, 170px, 22dvh);
+	}
+	.intro {
+		margin: clamp(12px, 2.5dvh, 34px) 0 clamp(12px, 2.5dvh, 32px);
+		font-size: clamp(14px, 2dvh, 16px);
+		line-height: 1.55;
 	}
 }

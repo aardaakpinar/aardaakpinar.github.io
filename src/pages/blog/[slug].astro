@@ -3,12 +3,12 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
-  const entries = await getCollection("blog");
+	const entries = await getCollection("blog");
 
-  return entries.map((entry) => ({
-    params: { slug: entry.data.slug ?? entry.id },
-    props: { entry }
-  }));
+	return entries.map((entry) => ({
+		params: { slug: entry.data.slug ?? entry.id },
+		props: { entry },
+	}));
 }
 
 const { entry } = Astro.props;
@@ -18,25 +18,33 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", { day: "2-digit", month: 
 ---
 
 <BaseLayout title={`Arda Akpınar | ${entry.data.title}`} description={entry.data.description}>
-  <main class="site-shell">
-    <article class="blog-post">
-      <a class="text-link blog-back-link" href="/">Home<span aria-hidden="true">↗</span></a>
-      <a class="text-link blog-back-link" href="/blog/">Blog<span aria-hidden="true">↗</span></a>
-      <div class="blog-post-header">
-        <time datetime={entry.data.publishedAt.toISOString()}>{dateFormatter.format(entry.data.publishedAt)}</time>
-        <h1>{entry.data.title}</h1>
-        <p class="blog-post-description">{entry.data.description}</p>
-        {entry.data.tags && entry.data.tags.length > 0 && (
-          <div class="blog-tags">
-            {entry.data.tags.map((tag) => <a class="blog-tag" href={`/blog/?tag=${encodeURIComponent(tag.toLowerCase())}`}>{tag}</a>)}
-          </div>
-        )}
-      </div>
-      <div class="blog-post-content">
-        <Content />
-      </div>
-    </article>
+	<main class="site-shell">
+		<article class="blog-post">
+			<nav class="blog-back" aria-label="Back">
+				<a class="button button-sm" href="/">Home</a>
+				<a class="button button-sm" href="/blog/">All posts</a>
+			</nav>
+			<div class="blog-post-header">
+				<time datetime={entry.data.publishedAt.toISOString()}>{dateFormatter.format(entry.data.publishedAt)}</time>
+				<h1>{entry.data.title}</h1>
+				<p class="blog-post-description">{entry.data.description}</p>
+				{
+					entry.data.tags && entry.data.tags.length > 0 && (
+						<div class="blog-tags">
+							{entry.data.tags.map((tag) => (
+								<a class="blog-tag" href={`/blog/?tag=${encodeURIComponent(tag.toLowerCase())}`}>
+									{tag}
+								</a>
+							))}
+						</div>
+					)
+				}
+			</div>
+			<div class="blog-post-content">
+				<Content />
+			</div>
+		</article>
 
-    <footer><span>© 2026 Arda Akpınar</span><span>Made with ❤️.</span></footer>
-  </main>
+		<footer><span>© 2026 Arda Akpınar</span><span>Made with ❤️.</span></footer>
+	</main>
 </BaseLayout>

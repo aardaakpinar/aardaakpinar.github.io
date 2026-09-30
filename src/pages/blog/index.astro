@@ -5,90 +5,95 @@ import { getCollection } from "astro:content";
 const entries = await getCollection("blog");
 
 const posts = entries
-  .map((entry) => ({
-    slug: entry.data.slug ?? entry.id,
-    title: entry.data.title,
-    description: entry.data.description,
-    publishedAt: entry.data.publishedAt,
-    tags: entry.data.tags ?? []
-  }))
-  .sort((a, b) => b.publishedAt.valueOf() - a.publishedAt.valueOf());
+	.map((entry) => ({
+		slug: entry.data.slug ?? entry.id,
+		title: entry.data.title,
+		description: entry.data.description,
+		publishedAt: entry.data.publishedAt,
+		tags: entry.data.tags ?? [],
+	}))
+	.sort((a, b) => b.publishedAt.valueOf() - a.publishedAt.valueOf());
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", { day: "2-digit", month: "short", year: "numeric" });
 ---
 
 <BaseLayout title="Arda Akpınar | Blog" description="Arda Akpınar's writing on software, cyber security, and more.">
-  <main class="site-shell">
-    <section class="blog-index-section" aria-labelledby="blog-index-title">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">All</p>
-          <h2 id="blog-title">Things thought<br /><em>about.</em></h2>
-        </div>
-        <a class="circle-link" href="/" aria-label="Go to home">↗</a>
-      </div>
+	<main class="site-shell">
+		<section class="blog-index-section" aria-labelledby="blog-index-title">
+			<div class="section-heading">
+				<div>
+					<p class="eyebrow">All</p>
+					<h2 id="blog-title">Things thought<br /><em>about.</em></h2>
+				</div>
+				<a class="button" href="/">Home</a>
+			</div>
 
-      <div class="blog-filter-notice" hidden>
-        <span>Filtering by <strong class="blog-filter-notice-tag"></strong></span>
-        <a href="/blog/">Clear<span aria-hidden="true">✕</span></a>
-      </div>
- 
-      {posts.length === 0 ? (
-        <p class="blog-empty">No posts yet, check back soon.</p>
-      ) : (
-        <div class="blog-list">
-          {posts.map((post) => (
-            <article class="blog-list-item" data-tags={post.tags.map((tag) => tag.toLowerCase()).join("|")}>
-              <div class="blog-list-meta">
-                <time datetime={post.publishedAt.toISOString()}>{dateFormatter.format(post.publishedAt)}</time>
-                {post.tags.length > 0 && (
-                  <div class="blog-tags">
-                    {post.tags.map((tag) => <a class="blog-tag" href={`/blog/?tag=${encodeURIComponent(tag.toLowerCase())}`}>{tag}</a>)}
-                  </div>
-                )}
-              </div>
-              <a class="blog-list-link" href={`/blog/${post.slug}/`}>
-                <h2>{post.title}</h2>
-                <p>{post.description}</p>
-                <span class="blog-read-more">Read post <span aria-hidden="true">↗</span></span>
-              </a>
-            </article>
-          ))}
-        </div>
-      )}
- 
-      <p class="blog-filter-empty" hidden>No posts with this tag yet.</p>
-    </section>
- 
-    <footer><span>© 2026 Arda Akpınar</span><span>Made with ❤️.</span></footer>
-  </main>
- 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const activeTag = params.get("tag");
- 
-    if (activeTag) {
-      const normalizedTag = decodeURIComponent(activeTag).toLowerCase();
-      const items = document.querySelectorAll(".blog-list-item");
-      const notice = document.querySelector(".blog-filter-notice");
-      const noticeTag = document.querySelector(".blog-filter-notice-tag");
-      const emptyState = document.querySelector(".blog-filter-empty");
-      let visibleCount = 0;
- 
-      items.forEach((item) => {
-        const tags = (item.getAttribute("data-tags") || "").split("|");
-        const matches = tags.includes(normalizedTag);
-        item.hidden = !matches;
-        if (matches) visibleCount += 1;
-      });
- 
-      if (notice && noticeTag) {
-        noticeTag.textContent = normalizedTag;
-        notice.hidden = false;
-      }
- 
-      if (emptyState) emptyState.hidden = visibleCount > 0;
-    }
-  </script>
+			<div class="blog-filter-notice" hidden>
+				<span>Filtering by <strong class="blog-filter-notice-tag"></strong></span>
+				<a href="/blog/">Clear<span aria-hidden="true">✕</span></a>
+			</div>
+
+			{
+				posts.length === 0 ? (
+					<p class="blog-empty">No posts yet, check back soon.</p>
+				) : (
+					<div class="blog-list">
+						{posts.map((post) => (
+							<article class="blog-list-item" data-tags={post.tags.map((tag) => tag.toLowerCase()).join("|")}>
+								<div class="blog-list-meta">
+									<time datetime={post.publishedAt.toISOString()}>{dateFormatter.format(post.publishedAt)}</time>
+									{post.tags.length > 0 && (
+										<div class="blog-tags">
+											{post.tags.map((tag) => (
+												<a class="blog-tag" href={`/blog/?tag=${encodeURIComponent(tag.toLowerCase())}`}>
+													{tag}
+												</a>
+											))}
+										</div>
+									)}
+								</div>
+								<a class="blog-list-link" href={`/blog/${post.slug}/`}>
+									<h2>{post.title}</h2>
+									<p>{post.description}</p>
+									<span class="blog-read-more">Read post</span>
+								</a>
+							</article>
+						))}
+					</div>
+				)
+			}
+
+			<p class="blog-filter-empty" hidden>No posts with this tag yet.</p>
+		</section>
+
+		<footer><span>© 2026 Arda Akpınar</span><span>Made with ❤️.</span></footer>
+	</main>
+
+	<script>
+		const params = new URLSearchParams(window.location.search);
+		const activeTag = params.get("tag");
+
+		if (activeTag) {
+			const normalizedTag = decodeURIComponent(activeTag).toLowerCase();
+			const items = document.querySelectorAll(".blog-list-item");
+			const notice = document.querySelector(".blog-filter-notice");
+			const noticeTag = document.querySelector(".blog-filter-notice-tag");
+			const emptyState = document.querySelector(".blog-filter-empty");
+			let visibleCount = 0;
+
+			items.forEach((item) => {
+				const tags = (item.getAttribute("data-tags") || "").split("|");
+				const matches = tags.includes(normalizedTag);
+				item.hidden = !matches;
+				if (matches) visibleCount += 1;
+			});
+
+			if (notice && noticeTag) {
+				noticeTag.textContent = normalizedTag;
+				notice.hidden = false;
+			}
+
+			if (emptyState) emptyState.hidden = visibleCount > 0;
+		}
+	</script>
 </BaseLayout>
- 
