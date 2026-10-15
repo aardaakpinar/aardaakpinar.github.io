@@ -12,6 +12,7 @@ const latestPosts = blogEntries
 		description: entry.data.description,
 		publishedAt: entry.data.publishedAt,
 		tags: entry.data.tags ?? [],
+		minutes: Math.max(1, Math.ceil((entry.body ?? "").split(/\s+/).filter(Boolean).length / 200)),
 	}))
 	.sort((a, b) => b.publishedAt.valueOf() - a.publishedAt.valueOf())
 	.slice(0, 2);
@@ -122,23 +123,28 @@ const experience = [
 				latestPosts.length === 0 ? (
 					<p class="blog-empty">No posts yet, check back soon.</p>
 				) : (
-					<div class="blog-grid">
+					<div class="blog-list">
 						{latestPosts.map((post) => (
-							<article class="blog-card">
-								<a class="blog-card-link" href={`/blog/${post.slug}/`}>
+							<article class="blog-row">
+								<div class="blog-row-meta">
 									<time datetime={post.publishedAt.toISOString()}>{blogDateFormatter.format(post.publishedAt)}</time>
-									<h3>{post.title}</h3>
+									<span>{post.minutes} min read</span>
+								</div>
+								<div class="blog-row-body">
+									<h3>
+										<a href={`/blog/${post.slug}/`}>{post.title}</a>
+									</h3>
 									<p>{post.description}</p>
-								</a>
-								{post.tags.length > 0 && (
-									<div class="blog-tags">
-										{post.tags.map((tag) => (
-											<a class="blog-tag" href={`/blog/?tag=${encodeURIComponent(tag.toLowerCase())}`}>
-												{tag}
-											</a>
-										))}
-									</div>
-								)}
+									{post.tags.length > 0 && (
+										<div class="blog-tags">
+											{post.tags.map((tag) => (
+												<a class="blog-tag" href={`/blog/?tag=${encodeURIComponent(tag.toLowerCase())}`}>
+													{tag}
+												</a>
+											))}
+										</div>
+									)}
+								</div>
 							</article>
 						))}
 					</div>

@@ -3,45 +3,40 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
-	const entries = await getCollection("blog");
+	const entries = (await getCollection("blog")).sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+	const slugOf = (entry: (typeof entries)[number]) => entry.data.slug ?? entry.id;
 
-	return entries.map((entry) => ({
-		params: { slug: entry.data.slug ?? entry.id },
-		props: { entry },
+	return entries.map((entry, index) => ({
+		params: { slug: slugOf(entry) },
+		props: {
+			entry,
+			newer: index > 0 ? { slug: slugOf(entries[index - 1]), title: entries[index - 1].data.title } : null,
+			older: index < entries.length - 1 ? { slug: slugOf(entries[index + 1]), title: entries[index + 1].data.title } : null,
+		},
 	}));
 }
 
-const { entry } = Astro.props;
+const { entry, newer, older } = Astro.props;
 const { Content } = await render(entry);
+const minutes = Math.max(1, Math.ceil((entry.body ?? "").split(/\s+/).filter(Boolean).length / 200));
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", { day: "2-digit", month: "long", year: "numeric" });
 ---
 
-<script>
-	const backToTop = document.getElementById("backToTop");
-
-	if (backToTop) {
-		window.addEventListener("scroll", () => {
-			backToTop.classList.toggle("is-visible", window.scrollY > 300);
-		});
-
-		backToTop.addEventListener("click", () => {
-			window.scrollTo({
-				top: 0,
-				behavior: "smooth",
-			});
-		});
-	}
-</script>
-
 <BaseLayout title={`Arda Akpınar | ${entry.data.title}`} description={entry.data.description}>
+	<div class="read-progress" id="readProgress" aria-hidden="true"></div>
 	<main class="site-shell">
 		<article class="blog-post">
-			<nav class="blog-back" aria-label="Back">
+			<div class="blog-topbar">
+				<span class="blog-crumb"><a href="/">~</a>/blog/</span>
 				<a class="button" href="/blog/">All posts</a>
-			</nav>
-			<div class="blog-post-header">
-				<time datetime={entry.data.publishedAt.toISOString()}>{dateFormatter.format(entry.data.publishedAt)}</time>
+			</div>
+
+			<header class="blog-post-header">
+				<div class="blog-post-meta">
+					<time datetime={entry.data.publishedAt.toISOString()}>{dateFormatter.format(entry.data.publishedAt)}</time>
+					<span>{minutes} min read</span>
+				</div>
 				<h1>{entry.data.title}</h1>
 				<p class="blog-post-description">{entry.data.description}</p>
 				{
@@ -55,10 +50,30 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", { day: "2-digit", month: 
 						</div>
 					)
 				}
-			</div>
+			</header>
+
 			<div class="blog-post-content">
 				<Content />
 			</div>
+
+			{
+				(newer || older) && (
+					<nav class="blog-post-nav" aria-label="More posts">
+						{newer && (
+							<a class="post-link" href={`/blog/${newer.slug}/`}>
+								<small>← Newer</small>
+								<span>{newer.title}</span>
+							</a>
+						)}
+						{older && (
+							<a class="post-link next" href={`/blog/${older.slug}/`}>
+								<small>Older →</small>
+								<span>{older.title}</span>
+							</a>
+						)}
+					</nav>
+				)
+			}
 		</article>
 
 		<button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
@@ -66,4 +81,20 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", { day: "2-digit", month: 
 		</button>
 		<footer><span>© 2026 Arda Akpınar</span><span>Made with ❤️.</span></footer>
 	</main>
+
+	<script>
+		const backToTop = document.getElementById("backToTop");
+		const progress = document.getElementById("readProgress");
+
+		const update = () => {
+			const max = document.documentElement.scrollHeight - window.innerHeight;
+			if (progress) progress.style.transform = `scaleX(${max > 0 ? Math.min(1, window.scrollY / max) : 0})`;
+			backToTop?.classList.toggle("is-visible", window.scrollY > 300);
+		};
+
+		window.addEventListener("scroll", update, { passive: true });
+		update();
+
+		backToTop?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+	</script>
 </BaseLayout>

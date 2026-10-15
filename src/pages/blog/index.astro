@@ -11,37 +11,62 @@ const posts = entries
 		description: entry.data.description,
 		publishedAt: entry.data.publishedAt,
 		tags: entry.data.tags ?? [],
+		minutes: Math.max(1, Math.ceil((entry.body ?? "").split(/\s+/).filter(Boolean).length / 200)),
 	}))
 	.sort((a, b) => b.publishedAt.valueOf() - a.publishedAt.valueOf());
 
+const tagCounts = new Map<string, number>();
+posts.forEach((post) => post.tags.forEach((tag) => tagCounts.set(tag.toLowerCase(), (tagCounts.get(tag.toLowerCase()) ?? 0) + 1)));
+const allTags = [...tagCounts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+
 const dateFormatter = new Intl.DateTimeFormat("en-US", { day: "2-digit", month: "short", year: "numeric" });
+const pad = (n: number) => String(n).padStart(2, "0");
 ---
 
 <BaseLayout title="Arda Akpınar | Blog" description="Arda Akpınar's writing on software, cyber security, and more.">
 	<main class="site-shell">
 		<section class="blog-index-section" aria-labelledby="blog-index-title">
-			<div class="section-heading">
-				<div>
-					<p class="eyebrow">All</p>
-					<h2 id="blog-title">Things thought<br /><em>about.</em></h2>
-				</div>
+			<div class="blog-topbar">
+				<span class="blog-crumb"><a href="/">~</a>/blog</span>
 				<a class="button" href="/">Home</a>
 			</div>
 
-			<div class="blog-filter-notice" hidden>
-				<span>Filtering by <strong class="blog-filter-notice-tag"></strong></span>
-				<a href="/blog/">Clear<span aria-hidden="true">✕</span></a>
+			<div class="blog-index-head">
+				<h1 id="blog-index-title">Things thought<br /><em>about.</em></h1>
 			</div>
+
+			{
+				allTags.length > 0 && (
+					<nav class="blog-filters blog-tags" aria-label="Filter by tag">
+						<a class="blog-tag is-active" href="/blog/" data-filter="">
+							All<span>{pad(posts.length)}</span>
+						</a>
+						{allTags.map(([tag, count]) => (
+							<a class="blog-tag" href={`/blog/?tag=${encodeURIComponent(tag)}`} data-filter={tag}>
+								{tag}
+								<span>{pad(count)}</span>
+							</a>
+						))}
+					</nav>
+				)
+			}
 
 			{
 				posts.length === 0 ? (
 					<p class="blog-empty">No posts yet, check back soon.</p>
 				) : (
 					<div class="blog-list">
-						{posts.map((post) => (
-							<article class="blog-list-item" data-tags={post.tags.map((tag) => tag.toLowerCase()).join("|")}>
-								<div class="blog-list-meta">
+						{posts.map((post, index) => (
+							<article class="blog-row" data-tags={post.tags.map((tag) => tag.toLowerCase()).join("|")}>
+								<div class="blog-row-meta">
 									<time datetime={post.publishedAt.toISOString()}>{dateFormatter.format(post.publishedAt)}</time>
+									<span>{post.minutes} min read</span>
+								</div>
+								<div class="blog-row-body">
+									<h2>
+										<a href={`/blog/${post.slug}/`}>{post.title}</a>
+									</h2>
+									<p>{post.description}</p>
 									{post.tags.length > 0 && (
 										<div class="blog-tags">
 											{post.tags.map((tag) => (
@@ -52,11 +77,6 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", { day: "2-digit", month: 
 										</div>
 									)}
 								</div>
-								<a class="blog-list-link" href={`/blog/${post.slug}/`}>
-									<h2>{post.title}</h2>
-									<p>{post.description}</p>
-									<span class="blog-read-more">Read post</span>
-								</a>
 							</article>
 						))}
 					</div>
@@ -70,30 +90,24 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", { day: "2-digit", month: 
 	</main>
 
 	<script>
-		const params = new URLSearchParams(window.location.search);
-		const activeTag = params.get("tag");
+		const activeTag = (new URLSearchParams(window.location.search).get("tag") || "").toLowerCase();
 
 		if (activeTag) {
-			const normalizedTag = decodeURIComponent(activeTag).toLowerCase();
-			const items = document.querySelectorAll(".blog-list-item");
-			const notice = document.querySelector(".blog-filter-notice");
-			const noticeTag = document.querySelector(".blog-filter-notice-tag");
-			const emptyState = document.querySelector(".blog-filter-empty");
-			let visibleCount = 0;
+			const rows = document.querySelectorAll<HTMLElement>(".blog-row");
+			const emptyState = document.querySelector<HTMLElement>(".blog-filter-empty");
+			let visible = 0;
 
-			items.forEach((item) => {
-				const tags = (item.getAttribute("data-tags") || "").split("|");
-				const matches = tags.includes(normalizedTag);
-				item.hidden = !matches;
-				if (matches) visibleCount += 1;
+			rows.forEach((row) => {
+				const matches = (row.dataset.tags || "").split("|").includes(activeTag);
+				row.hidden = !matches;
+				if (matches) visible += 1;
 			});
 
-			if (notice && noticeTag) {
-				noticeTag.textContent = normalizedTag;
-				notice.hidden = false;
-			}
+			document.querySelectorAll<HTMLElement>(".blog-filters .blog-tag").forEach((chip) => {
+				chip.classList.toggle("is-active", (chip.dataset.filter || "") === activeTag);
+			});
 
-			if (emptyState) emptyState.hidden = visibleCount > 0;
+			if (emptyState) emptyState.hidden = visible > 0;
 		}
 	</script>
 </BaseLayout>
