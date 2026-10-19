@@ -1,100 +1,53 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getCollection, render } from "astro:content";
+import BlogTopbar from "../../components/blog/BlogTopbar.astro";
+import PostNav from "../../components/blog/PostNav.astro";
+import PostChrome from "../../components/blog/PostChrome.astro";
+import TagList from "../../components/blog/TagList.astro";
+import Footer from "../../components/ui/Footer.astro";
+import { getPosts } from "../../lib/blog";
+import { formatLongDate } from "../../lib/format";
+import { getSite } from "../../lib/content";
+import { render } from "astro:content";
 
 export async function getStaticPaths() {
-	const entries = (await getCollection("blog")).sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
-	const slugOf = (entry: (typeof entries)[number]) => entry.data.slug ?? entry.id;
+	const posts = await getPosts();
+	const neighbor = (index: number) => (posts[index] ? { slug: posts[index].slug, title: posts[index].title } : null);
 
-	return entries.map((entry, index) => ({
-		params: { slug: slugOf(entry) },
-		props: {
-			entry,
-			newer: index > 0 ? { slug: slugOf(entries[index - 1]), title: entries[index - 1].data.title } : null,
-			older: index < entries.length - 1 ? { slug: slugOf(entries[index + 1]), title: entries[index + 1].data.title } : null,
-		},
+	return posts.map((post, index) => ({
+		params: { slug: post.slug },
+		props: { post, newer: neighbor(index - 1), older: neighbor(index + 1) },
 	}));
 }
 
-const { entry, newer, older } = Astro.props;
-const { Content } = await render(entry);
-const minutes = Math.max(1, Math.ceil((entry.body ?? "").split(/\s+/).filter(Boolean).length / 200));
-
-const dateFormatter = new Intl.DateTimeFormat("en-US", { day: "2-digit", month: "long", year: "numeric" });
+const { post, newer, older } = Astro.props;
+const { name } = await getSite();
+const { Content } = await render(post.entry);
 ---
 
-<BaseLayout title={`Arda Akpınar | ${entry.data.title}`} description={entry.data.description}>
-	<div class="read-progress" id="readProgress" aria-hidden="true"></div>
+<BaseLayout title={`${name} | ${post.title}`} description={post.description}>
+	<PostChrome />
 	<main class="site-shell">
 		<article class="blog-post">
-			<div class="blog-topbar">
-				<span class="blog-crumb"><a href="/">~</a>/blog/</span>
-				<a class="button" href="/blog/">All posts</a>
-			</div>
+			<BlogTopbar crumb="/blog/" actionLabel="All posts" actionHref="/blog/" />
 
 			<header class="blog-post-header">
 				<div class="blog-post-meta">
-					<time datetime={entry.data.publishedAt.toISOString()}>{dateFormatter.format(entry.data.publishedAt)}</time>
-					<span>{minutes} min read</span>
+					<time datetime={post.publishedAt.toISOString()}>{formatLongDate(post.publishedAt)}</time>
+					<span>{post.minutes} min read</span>
 				</div>
-				<h1>{entry.data.title}</h1>
-				<p class="blog-post-description">{entry.data.description}</p>
-				{
-					entry.data.tags && entry.data.tags.length > 0 && (
-						<div class="blog-tags">
-							{entry.data.tags.map((tag) => (
-								<a class="blog-tag" href={`/blog/?tag=${encodeURIComponent(tag.toLowerCase())}`}>
-									{tag}
-								</a>
-							))}
-						</div>
-					)
-				}
+				<h1>{post.title}</h1>
+				<p class="blog-post-description">{post.description}</p>
+				<TagList tags={post.tags} />
 			</header>
 
 			<div class="blog-post-content">
 				<Content />
 			</div>
 
-			{
-				(newer || older) && (
-					<nav class="blog-post-nav" aria-label="More posts">
-						{newer && (
-							<a class="post-link" href={`/blog/${newer.slug}/`}>
-								<small>← Newer</small>
-								<span>{newer.title}</span>
-							</a>
-						)}
-						{older && (
-							<a class="post-link next" href={`/blog/${older.slug}/`}>
-								<small>Older →</small>
-								<span>{older.title}</span>
-							</a>
-						)}
-					</nav>
-				)
-			}
+			<PostNav newer={newer} older={older} />
 		</article>
 
-		<button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
-			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-up preview-icon"><path d="m17 11-5-5-5 5"></path><path d="m17 18-5-5-5 5"></path></svg>
-		</button>
-		<footer><span>© 2026 Arda Akpınar</span><span>Made with ❤️.</span></footer>
+		<Footer />
 	</main>
-
-	<script>
-		const backToTop = document.getElementById("backToTop");
-		const progress = document.getElementById("readProgress");
-
-		const update = () => {
-			const max = document.documentElement.scrollHeight - window.innerHeight;
-			if (progress) progress.style.transform = `scaleX(${max > 0 ? Math.min(1, window.scrollY / max) : 0})`;
-			backToTop?.classList.toggle("is-visible", window.scrollY > 300);
-		};
-
-		window.addEventListener("scroll", update, { passive: true });
-		update();
-
-		backToTop?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-	</script>
 </BaseLayout>

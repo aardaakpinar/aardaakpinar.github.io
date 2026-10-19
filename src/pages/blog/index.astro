@@ -1,113 +1,52 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
+import BlogTopbar from "../../components/blog/BlogTopbar.astro";
+import BlogList from "../../components/blog/BlogList.astro";
+import Heading from "../../components/ui/Heading.astro";
+import Footer from "../../components/ui/Footer.astro";
+import { countTags, getPosts, tagHref } from "../../lib/blog";
+import { padCount } from "../../lib/format";
+import { getSite } from "../../lib/content";
 
-const entries = await getCollection("blog");
-
-const posts = entries
-	.map((entry) => ({
-		slug: entry.data.slug ?? entry.id,
-		title: entry.data.title,
-		description: entry.data.description,
-		publishedAt: entry.data.publishedAt,
-		tags: entry.data.tags ?? [],
-		minutes: Math.max(1, Math.ceil((entry.body ?? "").split(/\s+/).filter(Boolean).length / 200)),
-	}))
-	.sort((a, b) => b.publishedAt.valueOf() - a.publishedAt.valueOf());
-
-const tagCounts = new Map<string, number>();
-posts.forEach((post) => post.tags.forEach((tag) => tagCounts.set(tag.toLowerCase(), (tagCounts.get(tag.toLowerCase()) ?? 0) + 1)));
-const allTags = [...tagCounts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
-
-const dateFormatter = new Intl.DateTimeFormat("en-US", { day: "2-digit", month: "short", year: "numeric" });
-const pad = (n: number) => String(n).padStart(2, "0");
+const { name, blog } = await getSite();
+const posts = await getPosts();
+const allTags = countTags(posts);
 ---
 
-<BaseLayout title="Arda Akpınar | Blog" description="Arda Akpınar's writing on software, cyber security, and more.">
+<BaseLayout title={`${name} | ${blog.title}`} description={blog.description}>
 	<main class="site-shell">
 		<section class="blog-index-section" aria-labelledby="blog-index-title">
-			<div class="blog-topbar">
-				<span class="blog-crumb"><a href="/">~</a>/blog</span>
-				<a class="button" href="/">Home</a>
-			</div>
+			<BlogTopbar crumb="/blog" actionLabel="Home" actionHref="/" />
 
 			<div class="blog-index-head">
-				<h1 id="blog-index-title">Things thought<br /><em>about.</em></h1>
+				<Heading as="h1" id="blog-index-title" {...blog.heading} />
 			</div>
 
 			{
 				allTags.length > 0 && (
 					<nav class="blog-filters blog-tags" aria-label="Filter by tag">
 						<a class="blog-tag is-active" href="/blog/" data-filter="">
-							All<span>{pad(posts.length)}</span>
+							All<span>{padCount(posts.length)}</span>
 						</a>
 						{allTags.map(([tag, count]) => (
-							<a class="blog-tag" href={`/blog/?tag=${encodeURIComponent(tag)}`} data-filter={tag}>
+							<a class="blog-tag" href={tagHref(tag)} data-filter={tag}>
 								{tag}
-								<span>{pad(count)}</span>
+								<span>{padCount(count)}</span>
 							</a>
 						))}
 					</nav>
 				)
 			}
 
-			{
-				posts.length === 0 ? (
-					<p class="blog-empty">No posts yet, check back soon.</p>
-				) : (
-					<div class="blog-list">
-						{posts.map((post, index) => (
-							<article class="blog-row" data-tags={post.tags.map((tag) => tag.toLowerCase()).join("|")}>
-								<div class="blog-row-meta">
-									<time datetime={post.publishedAt.toISOString()}>{dateFormatter.format(post.publishedAt)}</time>
-									<span>{post.minutes} min read</span>
-								</div>
-								<div class="blog-row-body">
-									<h2>
-										<a href={`/blog/${post.slug}/`}>{post.title}</a>
-									</h2>
-									<p>{post.description}</p>
-									{post.tags.length > 0 && (
-										<div class="blog-tags">
-											{post.tags.map((tag) => (
-												<a class="blog-tag" href={`/blog/?tag=${encodeURIComponent(tag.toLowerCase())}`}>
-													{tag}
-												</a>
-											))}
-										</div>
-									)}
-								</div>
-							</article>
-						))}
-					</div>
-				)
-			}
+			<BlogList posts={posts} as="h2" />
 
-			<p class="blog-filter-empty" hidden>No posts with this tag yet.</p>
+			<p class="blog-filter-empty" hidden>{blog.filterEmptyText}</p>
 		</section>
 
-		<footer><span>© 2026 Arda Akpınar</span><span>Made with ❤️.</span></footer>
+		<Footer />
 	</main>
 
 	<script>
-		const activeTag = (new URLSearchParams(window.location.search).get("tag") || "").toLowerCase();
-
-		if (activeTag) {
-			const rows = document.querySelectorAll<HTMLElement>(".blog-row");
-			const emptyState = document.querySelector<HTMLElement>(".blog-filter-empty");
-			let visible = 0;
-
-			rows.forEach((row) => {
-				const matches = (row.dataset.tags || "").split("|").includes(activeTag);
-				row.hidden = !matches;
-				if (matches) visible += 1;
-			});
-
-			document.querySelectorAll<HTMLElement>(".blog-filters .blog-tag").forEach((chip) => {
-				chip.classList.toggle("is-active", (chip.dataset.filter || "") === activeTag);
-			});
-
-			if (emptyState) emptyState.hidden = visible > 0;
-		}
+		import "../../scripts/blog-filter";
 	</script>
 </BaseLayout>

@@ -1,0 +1,7 @@
+{
+	"title": "Hop",
+	"logo": "/images/logos/hop.svg",
+	"description": "A dependency-free Python tool that finds open ports on your machine and gives them easy-to-remember names.",
+	"source": "https://github.com/aardaakpinar/hop",
+	"website": "https://aardaakpinar.github.io/hop/"
+}

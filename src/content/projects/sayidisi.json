@@ -1,0 +1,8 @@
+{
+	"title": "SayıDışı",
+	"logo": "/images/logos/sayidisi.png",
+	"description": "A puzzle game where players identify the missing digit in a randomly generated 9-digit number.",
+	"started": "2024-05-15",
+	"source": "https://github.com/aardaakpinar/sayidisi",
+	"website": "https://aardaakpinar.github.io/sayidisi"
+}

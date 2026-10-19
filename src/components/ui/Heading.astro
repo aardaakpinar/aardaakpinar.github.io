@@ -1,0 +1,15 @@
+---
+/** Two-part heading: plain `lead`, accented `accent` (rendered as <em>). */
+interface Props {
+	lead: string;
+	accent: string;
+	as?: "h1" | "h2" | "h3";
+	id?: string;
+	/** Put a line break between lead and accent (default) or just a space. */
+	br?: boolean;
+}
+
+const { lead, accent, as: Tag = "h2", id, br = true } = Astro.props;
+---
+
+<Tag id={id}>{lead}{br ? <br /> : " "}<em>{accent}</em></Tag>

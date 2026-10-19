@@ -1,0 +1,25 @@
+---
+import type { Post } from "../../lib/blog";
+import { getSite } from "../../lib/content";
+import BlogRow from "./BlogRow.astro";
+
+interface Props {
+	posts: Post[];
+	as?: "h2" | "h3";
+}
+
+const { posts, as } = Astro.props;
+const { blog } = await getSite();
+---
+
+{
+	posts.length === 0 ? (
+		<p class="blog-empty">{blog.emptyText}</p>
+	) : (
+		<div class="blog-list">
+			{posts.map((post) => (
+				<BlogRow post={post} as={as} />
+			))}
+		</div>
+	)
+}

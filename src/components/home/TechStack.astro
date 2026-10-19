@@ -1,0 +1,23 @@
+---
+import { getSite, getStack } from "../../lib/content";
+import Heading from "../ui/Heading.astro";
+
+const { about } = await getSite();
+const stack = await getStack();
+// Duplicated so the CSS marquee can loop seamlessly; the copy is hidden from assistive tech.
+const items = [...stack, ...stack];
+---
+
+<div class="stack-heading"><Heading as="h3" {...about.stackHeading} br={false} /></div>
+<div class="stack-marquee" aria-label="Technologies I use">
+	<div class="stack-track">
+		{
+			items.map((tech, index) => (
+				<span class="stack-item" aria-hidden={index >= stack.length ? "true" : undefined}>
+					<img src={`https://skillicons.dev/icons?i=${tech.icon}`} alt="" aria-hidden="true" loading="lazy" />
+					{tech.name}
+				</span>
+			))
+		}
+	</div>
+</div>

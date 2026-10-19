@@ -1,0 +1,14 @@
+[
+	{ "id": "javascript", "name": "JavaScript", "icon": "js" },
+	{ "id": "typescript", "name": "TypeScript", "icon": "ts" },
+	{ "id": "nodejs", "name": "Node.js", "icon": "nodejs" },
+	{ "id": "python", "name": "Python", "icon": "py" },
+	{ "id": "php", "name": "PHP", "icon": "php" },
+	{ "id": "c", "name": "C", "icon": "c" },
+	{ "id": "postgresql", "name": "PostgreSQL", "icon": "postgres" },
+	{ "id": "firebase", "name": "Firebase", "icon": "firebase" },
+	{ "id": "cloudflare", "name": "Cloudflare", "icon": "cloudflare" },
+	{ "id": "docker", "name": "Docker", "icon": "docker" },
+	{ "id": "git", "name": "Git", "icon": "git" },
+	{ "id": "kali", "name": "Kali", "icon": "kali" }
+]

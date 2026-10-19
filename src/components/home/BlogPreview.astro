@@ -1,0 +1,19 @@
+---
+import { getPosts } from "../../lib/blog";
+import { getSite } from "../../lib/content";
+import BlogList from "../blog/BlogList.astro";
+import Heading from "../ui/Heading.astro";
+
+const LATEST_COUNT = 2;
+
+const { blog } = await getSite();
+const posts = (await getPosts()).slice(0, LATEST_COUNT);
+---
+
+<section class="blog-section" id="blog" aria-labelledby="blog-title">
+	<div class="section-heading">
+		<div><Heading id="blog-title" {...blog.heading} /></div>
+		<a class="button" href="/blog/">{blog.allPostsLabel}</a>
+	</div>
+	<BlogList posts={posts} as="h3" />
+</section>

@@ -1,0 +1,6 @@
+[
+	{ "id": "github", "label": "GitHub", "handle": "@aardaakpinar", "icon": "bx-github", "href": "https://github.com/aardaakpinar" },
+	{ "id": "linkedin", "label": "LinkedIn", "handle": "/in/aardaakpinar", "icon": "bx-linkedin", "href": "https://linkedin.com/in/aardaakpinar/" },
+	{ "id": "x", "label": "X", "handle": "@aardaakpinar", "icon": "bx-twitter-x", "href": "https://x.com/aardaakpinar" },
+	{ "id": "youtube", "label": "YouTube", "handle": "@aardaakpinar", "icon": "bx-youtube", "href": "https://youtube.com/@aardaakpinar" }
+]

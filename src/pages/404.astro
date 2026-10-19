@@ -1,11 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Heading from "../components/ui/Heading.astro";
+import { getSite } from "../lib/content";
+
+const { name, notFound } = await getSite();
 ---
 
-<BaseLayout title="Arda Akpınar | Page not found">
+<BaseLayout title={`${name} | ${notFound.title}`}>
 	<main class="site-shell not-found">
 		<p class="eyebrow">404</p>
-		<h1>This page<br /><em>is not here.</em></h1>
-		<a class="button" href="/">Return home</a>
+		<Heading as="h1" {...notFound.heading} />
+		<a class="button" href="/">{notFound.buttonLabel}</a>
 	</main>
 </BaseLayout>

@@ -1,0 +1,30 @@
+---
+import { getExperience, getPage, getSite } from "../../lib/content";
+import { render } from "astro:content";
+import Heading from "../ui/Heading.astro";
+import TechStack from "./TechStack.astro";
+
+const { about } = await getSite();
+const experience = await getExperience();
+const { Content } = await render(await getPage("about"));
+---
+
+<section class="story-section" id="about" aria-labelledby="about-title">
+	<div class="story-heading"><Heading id="about-title" {...about.heading} /></div>
+	<div class="story-grid">
+		<div class="experience-list" aria-label="Experience and education">
+			<h2>{about.experienceTitle}</h2>
+			{
+				experience.map((item) => (
+					<article class="experience-item">
+						<span>{item.period}</span>
+						<h3>{item.title}</h3>
+						<p>{item.detail}</p>
+					</article>
+				))
+			}
+		</div>
+		<div class="story-copy"><Content /></div>
+	</div>
+	<TechStack />
+</section>

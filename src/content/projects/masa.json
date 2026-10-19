@@ -1,0 +1,8 @@
+{
+	"title": "Masa",
+	"logo": "/images/logos/masa.png",
+	"description": "A JavaScript/Firebase social app with authentication, posts, and real-time synchronization.",
+	"started": "2021-08-01",
+	"source": "https://github.com/aardaakpinar/masa",
+	"website": "https://aardaakpinar.github.io/masa"
+}

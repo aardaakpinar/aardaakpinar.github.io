@@ -252,8 +252,11 @@ body::before {
 	pointer-events: none;
 }
 .project-card {
+	display: flex;
+	flex-direction: column;
 	width: clamp(340px, 38vw, 460px);
 	flex: 0 0 auto;
+	justify-content: space-between;
 	padding: 28px 0 32px;
 	border-top: 1px solid var(--line);
 	border-bottom: 1px solid var(--line);

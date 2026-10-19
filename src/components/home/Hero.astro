@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+import { getSite } from "../../lib/content";
+import Heading from "../ui/Heading.astro";
+import "../../styles/sky.css";
+
+const { hero } = await getSite();
+---
+
+<section class="hero" aria-labelledby="hero-title">
+	<div class="sky" aria-hidden="true"></div>
+	<div class="rain-container" aria-hidden="true"></div>
+	<div class="hero-copy">
+		<Heading as="h1" id="hero-title" {...hero.heading} />
+		<p class="intro">{hero.intro}</p>
+		<nav class="hero-nav" aria-label="Sections">
+			{hero.nav.map((item) => <a class="text-link" href={item.href}>{item.label}</a>)}
+		</nav>
+	</div>
+	<div class="hero-mark" aria-label={hero.image.alt}>
+		<Image class="hero-profile-image" src={hero.image.src} alt={hero.image.alt} width={250} height={250} loading="eager" decoding="async" />
+	</div>
+</section>
+
+<script>
+	import "../../scripts/sky";
+</script>
