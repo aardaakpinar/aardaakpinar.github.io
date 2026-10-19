@@ -1,8 +1,0 @@
-{
-	"title": "Wall",
-	"logo": "https://aardaakpinar.github.io/wall/images/logo.png",
-	"description": "A zero-build portfolio engine with modular Bento Grid layouts powered by YAML.",
-	"started": "2022-08-01",
-	"source": "https://github.com/aardaakpinar/wall",
-	"website": "https://aardaakpinar.github.io/wall"
-}
