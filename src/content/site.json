@@ -11,7 +11,6 @@
 			"image": { "src": "/images/logos/nar.png", "alt": "Arda Akpınar" },
 			"nav": [
 				{ "label": "About", "href": "#about" },
-				{ "label": "Blog", "href": "#blog" },
 				{ "label": "Projects", "href": "#work" },
 				{ "label": "Contact", "href": "#contact" }
 			]
