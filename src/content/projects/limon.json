@@ -1,0 +1,8 @@
+{
+	"title": "Limon",
+	"logo": "/images/logos/limon.png",
+	"description": "A command-line assistant supporting multiple AI providers, file operations, and risk-based approval.",
+	"started": "2020-04-10",
+	"source": "https://github.com/aardaakpinar/limon",
+	"website": "https://aardaakpinar.github.io/limon"
+}
