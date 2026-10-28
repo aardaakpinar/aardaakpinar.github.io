@@ -9,12 +9,12 @@ const items = [...stack, ...stack];
 ---
 
 <div class="stack-heading"><Heading as="h3" {...copy.about.stackHeading} br={false} /></div>
-<div class="stack-marquee" aria-label={copy.about.stackLabel}>
+<div class="stack-marquee" role="group" aria-label={copy.about.stackLabel}>
 	<div class="stack-track">
 		{
 			items.map((tech, index) => (
 				<span class="stack-item" aria-hidden={index >= stack.length ? "true" : undefined}>
-					<img src={`https://skillicons.dev/icons?i=${tech.icon}`} alt="" aria-hidden="true" loading="lazy" />
+					<img src={`/icons/stack/${tech.icon}.svg`} alt="" width="32" height="32" decoding="async" aria-hidden="true" />
 					{tech.name}
 				</span>
 			))

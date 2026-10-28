@@ -7,13 +7,15 @@
 }
 html {
 	scroll-behavior: smooth;
+	/* `clip` keeps full-bleed sections in check without making the body a scroll container (sticky stays reliable). */
+	overflow-x: hidden;
+	overflow-x: clip;
 }
 body {
 	margin: 0;
 	background: var(--color-background);
 	color: var(--color-foreground);
 	font-family: var(--font-display);
-	overflow-x: hidden;
 }
 :focus-visible {
 	outline: 2px solid var(--acid);
