@@ -1,0 +1,20 @@
+/* Custom page scrollbar: a thin acid rail over the site background. */
+html {
+	scrollbar-width: thin;
+	scrollbar-color: var(--acid) var(--color-background);
+}
+html::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+html::-webkit-scrollbar-track {
+	background: var(--color-background);
+}
+html::-webkit-scrollbar-thumb {
+	background: linear-gradient(180deg, var(--acid), rgba(35, 181, 181, 0.35));
+	border: 2px solid var(--color-background);
+	border-radius: var(--radius-pill);
+}
+html::-webkit-scrollbar-thumb:hover {
+	box-shadow: 0 0 12px var(--color-rain);
+}

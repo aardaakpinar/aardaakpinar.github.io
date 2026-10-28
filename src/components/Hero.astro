@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+import avatar from "@/assets/nar.png";
+import { getCopy } from "@/lib/content";
+import Heading from "@/components/Heading.astro";
+import Sky from "@/components/Sky.astro";
+import "@/styles/hero.css";
+
+const copy = await getCopy();
+const { hero } = copy;
+const sectionNav = Object.values(copy.nav).map(({ id, label }) => ({ label, href: `#${id}` }));
+---
+
+<section class="hero" aria-labelledby="hero-title">
+	<Sky />
+	<div class="hero-copy">
+		<Heading as="h1" id="hero-title" {...hero.heading} />
+		<p class="intro">{hero.intro}</p>
+		<nav class="hero-nav" aria-label={hero.navLabel}>
+			{sectionNav.map((item) => <a class="text-link" href={item.href}>{item.label}</a>)}
+			<a class="text-link" href="/blog/">{copy.blog.title}</a>
+		</nav>
+	</div>
+	<div class="hero-mark" aria-label={hero.avatarAlt}>
+		<Image class="hero-profile-image" src={avatar} alt={hero.avatarAlt} width={250} height={250} loading="eager" decoding="async" />
+	</div>
+</section>

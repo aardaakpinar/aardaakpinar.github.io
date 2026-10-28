@@ -1,0 +1,26 @@
+---
+import { getCopy } from "@/lib/content";
+import type { Post } from "@/lib/posts";
+import BlogRow from "./BlogRow.astro";
+import "@/styles/blog-index.css";
+
+interface Props {
+	posts: Post[];
+	as?: "h2" | "h3";
+}
+
+const copy = await getCopy();
+const { posts, as } = Astro.props;
+---
+
+{
+	posts.length === 0 ? (
+		<p class="blog-empty">{copy.blog.empty}</p>
+	) : (
+		<div class="blog-list">
+			{posts.map((post) => (
+				<BlogRow post={post} as={as} />
+			))}
+		</div>
+	)
+}

@@ -1,6 +1,6 @@
 {
 	"title": "Pitopi",
-	"logo": "/images/logos/pitopi.png",
+	"logo": "../../assets/pitopi.png",
 	"description": "A privacy-first, end-to-end encrypted chat platform for secure communication.",
 	"started": "2024-08-01",
 	"source": "https://github.com/aardaakpinar/pitopi",

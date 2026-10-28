@@ -1,0 +1,51 @@
+.read-progress {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: var(--acid);
+	transform: scaleX(0);
+	transform-origin: 0 50%;
+	z-index: 100;
+}
+.back-to-top {
+	position: fixed;
+	right: 24px;
+	bottom: 24px;
+	width: 44px;
+	height: 44px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid var(--line);
+	border-radius: 50%;
+	color: var(--muted);
+	background: transparent;
+	font-size: 24px;
+	cursor: pointer;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(10px);
+	transition:
+		opacity 0.2s ease,
+		transform 0.2s ease,
+		visibility 0.2s;
+	z-index: 100;
+}
+
+.back-to-top.is-visible {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+
+.back-to-top:hover {
+	transform: translateY(-3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.back-to-top {
+		transition: none;
+	}
+}

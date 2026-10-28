@@ -1,6 +1,6 @@
 {
 	"title": "Hop",
-	"logo": "/images/logos/hop.svg",
+	"logo": "../../assets/hop.png",
 	"description": "A dependency-free Python tool that finds open ports and gives them memorable names.",
 	"started": "2026-10-16",
 	"source": "https://github.com/aardaakpinar/hop",

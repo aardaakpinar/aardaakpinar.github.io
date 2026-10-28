@@ -1,0 +1,23 @@
+---
+import { getCopy, getStack } from "@/lib/content";
+import Heading from "@/components/Heading.astro";
+import "@/styles/stack.css";
+
+const [copy, stack] = await Promise.all([getCopy(), getStack()]);
+// Duplicated so the CSS marquee can loop seamlessly; the copy is hidden from assistive tech.
+const items = [...stack, ...stack];
+---
+
+<div class="stack-heading"><Heading as="h3" {...copy.about.stackHeading} br={false} /></div>
+<div class="stack-marquee" aria-label={copy.about.stackLabel}>
+	<div class="stack-track">
+		{
+			items.map((tech, index) => (
+				<span class="stack-item" aria-hidden={index >= stack.length ? "true" : undefined}>
+					<img src={`https://skillicons.dev/icons?i=${tech.icon}`} alt="" aria-hidden="true" loading="lazy" />
+					{tech.name}
+				</span>
+			))
+		}
+	</div>
+</div>

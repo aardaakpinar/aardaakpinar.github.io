@@ -1,0 +1,22 @@
+/* Small pill used for tags and project links. */
+.chip {
+	padding: 5px 10px;
+	color: var(--muted);
+	font:
+		var(--font-size-xs) "DM Mono",
+		monospace;
+	text-transform: uppercase;
+	text-decoration: none;
+	border: 1px solid var(--line);
+	border-radius: var(--radius-pill);
+	transition:
+		color 0.2s,
+		border-color 0.2s,
+		background 0.2s;
+}
+.chip:hover,
+.chip.is-active {
+	color: var(--acid);
+	border-color: var(--acid);
+	background: rgba(35, 181, 181, 0.1);
+}

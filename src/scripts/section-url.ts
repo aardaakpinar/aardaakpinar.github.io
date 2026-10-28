@@ -6,6 +6,7 @@ export function initSectionUrl() {
 	if (!hero || sections.length === 0) return;
 
 	let activeSection = "";
+	let leftHero = false;
 
 	const updateUrl = (sectionId: string) => {
 		if (sectionId === activeSection) return;
@@ -31,7 +32,13 @@ export function initSectionUrl() {
 
 	const heroObserver = new IntersectionObserver(
 		([entry]) => {
-			if (!entry.isIntersecting) return;
+			if (!entry.isIntersecting) {
+				// Remember that we have been below the hero; only then may the hero clear the hash.
+				leftHero = true;
+				return;
+			}
+			// On first load the hero is visible before a #section jump happens: keep that hash.
+			if (!leftHero) return;
 			activeSection = "";
 			history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
 		},

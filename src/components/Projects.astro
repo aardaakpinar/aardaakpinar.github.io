@@ -1,0 +1,23 @@
+---
+import { getCopy, getProjects } from "@/lib/content";
+import Heading from "@/components/Heading.astro";
+import ProjectCard from "./ProjectCard.astro";
+import "@/styles/projects.css";
+
+const [copy, projects] = await Promise.all([getCopy(), getProjects()]);
+---
+
+<section class="work-section" id={copy.nav.work.id} aria-labelledby="work-title">
+	<div class="project-sticky">
+		<div class="section-heading"><Heading id="work-title" {...copy.projects.heading} /></div>
+		<div class="project-viewport">
+			<div class="project-grid">
+				{projects.map((project) => <ProjectCard {...project} />)}
+			</div>
+		</div>
+	</div>
+</section>
+
+<script>
+	import "@/scripts/project-scroller";
+</script>

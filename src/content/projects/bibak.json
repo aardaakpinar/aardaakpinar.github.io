@@ -1,6 +1,6 @@
 {
 	"title": "Bi'Bak",
-	"logo": "/images/logos/bibak.png",
+	"logo": "../../assets/bibak.png",
 	"description": "An RSS/Atom reader with IndexedDB, OPML import, CORS proxy fallback, and real-time updates.",
 	"started": "2020-02-20",
 	"source": "https://github.com/aardaakpinar/bibak",

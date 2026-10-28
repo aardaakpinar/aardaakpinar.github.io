@@ -1,0 +1,23 @@
+---
+import { tagHref } from "@/lib/posts";
+import "@/styles/chip.css";
+import "@/styles/blog-shell.css";
+
+interface Props {
+	tags: string[];
+}
+
+const { tags } = Astro.props;
+---
+
+{
+	tags.length > 0 && (
+		<div class="blog-tags">
+			{tags.map((tag) => (
+				<a class="chip blog-tag" href={tagHref(tag)}>
+					{tag}
+				</a>
+			))}
+		</div>
+	)
+}

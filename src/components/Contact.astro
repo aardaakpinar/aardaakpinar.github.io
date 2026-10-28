@@ -1,0 +1,27 @@
+---
+import { getCopy, getLinks, getSite } from "@/lib/content";
+import Button from "@/components/Button.astro";
+import Heading from "@/components/Heading.astro";
+import "@/styles/contact.css";
+
+const [copy, site, links] = await Promise.all([getCopy(), getSite(), getLinks()]);
+---
+
+<section class="contact-section" id={copy.nav.contact.id} aria-labelledby="contact-title">
+	<div class="contact-content">
+		<Heading id="contact-title" {...copy.contact.heading} />
+		<Button href={`mailto:${site.email}`}>{copy.contact.button}</Button>
+	</div>
+	<div class="social-grid">
+		{
+			links.map((link) => (
+				<a href={link.href} target="_blank" rel="me noopener noreferrer">
+					<i class={`bxl ${link.icon}`} aria-hidden="true" />
+					<span>
+						<strong>{link.label}</strong>
+					</span>
+				</a>
+			))
+		}
+	</div>
+</section>

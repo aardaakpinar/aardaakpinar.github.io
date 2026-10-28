@@ -1,15 +1,18 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Heading from "../components/ui/Heading.astro";
-import { getSite } from "../lib/content";
+import BaseLayout from "@/components/BaseLayout.astro";
+import Button from "@/components/Button.astro";
+import Heading from "@/components/Heading.astro";
+import { getCopy, getSite } from "@/lib/content";
+import "@/styles/not-found.css";
 
-const { name, notFound } = await getSite();
+const [copy, site] = await Promise.all([getCopy(), getSite()]);
+const { notFound } = copy;
 ---
 
-<BaseLayout title={`${name} | ${notFound.title}`}>
+<BaseLayout title={`${site.name} | ${notFound.title}`}>
 	<main class="site-shell not-found">
 		<p class="eyebrow">404</p>
 		<Heading as="h1" {...notFound.heading} />
-		<a class="button" href="/">{notFound.buttonLabel}</a>
+		<Button href="/">{notFound.button}</Button>
 	</main>
 </BaseLayout>

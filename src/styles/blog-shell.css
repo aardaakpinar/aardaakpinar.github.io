@@ -1,0 +1,23 @@
+.blog-index-section,
+.blog-post {
+	min-height: 60vh;
+	padding: 120px 0 90px;
+}
+
+.blog-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+@media (max-width: 700px) {
+	.blog-index-section,
+	.blog-post {
+		padding-top: 100px;
+	}
+	.blog-topbar {
+		margin-bottom: 44px;
+	}
+	.blog-tags {
+		text-align: left;
+	}
+}

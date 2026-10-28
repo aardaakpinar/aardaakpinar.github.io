@@ -1,0 +1,103 @@
+.work-section {
+	position: relative;
+	height: calc(100vh + 1350px);
+	height: calc(100dvh + 1350px);
+}
+.project-sticky {
+	position: sticky;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100vh;
+	height: 100dvh;
+	overflow: hidden;
+}
+.project-grid {
+	display: flex;
+	gap: 30px;
+	width: max-content;
+	will-change: transform;
+}
+.project-viewport {
+	position: relative;
+	overflow: hidden;
+	width: 100vw;
+	margin-left: calc(50% - 50vw);
+	/* 50% is the section width, so this matches the shell gutter on any screen or scrollbar width. */
+	padding: 0 max(16px, calc(50vw - 50%));
+}
+.project-card {
+	display: flex;
+	flex-direction: column;
+	width: clamp(340px, 38vw, 460px);
+	flex: 0 0 auto;
+	justify-content: space-between;
+	padding: 28px 0 32px;
+	border-top: 1px solid var(--line);
+	border-bottom: 1px solid var(--line);
+}
+.project-meta {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+}
+.project-logo {
+	width: 36px;
+	height: 36px;
+	flex: 0 0 36px;
+	object-fit: contain;
+	border-radius: var(--radius-sm);
+}
+.project-meta h3 {
+	flex: 1;
+	margin: 0;
+	font-size: 22px;
+	font-weight: var(--weight-medium);
+}
+.project-meta time {
+	color: var(--muted);
+	font:
+		var(--font-size-xs) "DM Mono",
+		monospace;
+	white-space: nowrap;
+}
+.project-card > p {
+	max-width: 410px;
+	min-height: 52px;
+	margin: 16px 0 24px;
+	color: var(--muted);
+	font-size: 15px;
+	line-height: 1.65;
+	text-align: justify;
+	text-justify: inter-word;
+}
+.project-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+@media (max-width: 700px) {
+	.work-section {
+		height: calc(100vh + 1350px);
+		height: calc(100dvh + 1350px);
+	}
+	.project-card {
+		width: min(88vw, 420px);
+	}
+	.project-card > p {
+		min-height: 0;
+	}
+	/* Standardized mobile typography */
+	.project-card > p {
+		text-align: justify;
+		text-justify: inter-word;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 100%;
+	}
+	.project-links,
+	.project-meta {
+		text-align: left;
+	}
+}

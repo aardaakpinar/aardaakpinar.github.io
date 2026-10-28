@@ -1,0 +1,29 @@
+---
+import { getCopy } from "@/lib/content";
+import { formatBlogDate } from "@/lib/date";
+import { minutesLabel, postHref, type Post } from "@/lib/posts";
+import TagList from "./TagList.astro";
+
+interface Props {
+	post: Post;
+	/** Heading level for the title; depends on where the list sits in the page outline. */
+	as?: "h2" | "h3";
+}
+
+const copy = await getCopy();
+const { post, as: Title = "h3" } = Astro.props;
+---
+
+<article class="blog-row" data-tags={post.tags.map((tag) => tag.toLowerCase()).join("|")}>
+	<div class="blog-row-meta">
+		<time datetime={post.publishedAt.toISOString()}>{formatBlogDate(post.publishedAt)}</time>
+		<span>{minutesLabel(copy.blog.minutesRead, post.minutes)}</span>
+	</div>
+	<div class="blog-row-body">
+		<Title>
+			<a href={postHref(post.slug)}>{post.title}</a>
+		</Title>
+		<p>{post.description}</p>
+		<TagList tags={post.tags} />
+	</div>
+</article>

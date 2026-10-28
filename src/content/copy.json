@@ -1,0 +1,52 @@
+{
+	"hero": {
+		"heading": { "lead": "I'm", "accent": "Arda Akpınar" },
+		"intro": "I am a software developer and cyber security student. I work on open-source software and ideas that keep me curious.",
+		"avatarAlt": "Arda Akpınar",
+		"navLabel": "Sections"
+	},
+	"nav": {
+		"about": { "id": "about", "label": "About" },
+		"work": { "id": "work", "label": "Projects" },
+		"contact": { "id": "contact", "label": "Contact" }
+	},
+	"about": {
+		"heading": { "lead": "Curiosity became", "accent": "creating." },
+		"experienceHeading": "Experience",
+		"educationHeading": "Education",
+		"previous": "Previous",
+		"next": "Next",
+		"stackHeading": { "lead": "Things I Work", "accent": "With." },
+		"stackLabel": "Technologies I use"
+	},
+	"projects": {
+		"heading": { "lead": "A few selected", "accent": "projects." },
+		"source": "Source",
+		"website": "Website"
+	},
+	"contact": {
+		"heading": { "lead": "Have an idea?", "accent": "Let's talk." },
+		"button": "Email me"
+	},
+	"blog": {
+		"title": "Blog",
+		"heading": { "lead": "Things thought", "accent": "about." },
+		"description": "Arda Akpınar's writing on software, cyber security, and more.",
+		"empty": "No posts yet, check back soon.",
+		"filterEmpty": "No posts with this tag yet.",
+		"filterLabel": "Filter by tag",
+		"allTags": "All",
+		"home": "Home",
+		"allPosts": "All posts",
+		"minutesRead": "{n} min read",
+		"newer": "← Newer",
+		"older": "Older →",
+		"moreAria": "More posts",
+		"backToTop": "Back to top"
+	},
+	"notFound": {
+		"title": "Page not found",
+		"heading": { "lead": "This page", "accent": "is not here." },
+		"button": "Return home"
+	}
+}

@@ -2,17 +2,17 @@
 title: "Protecting Your Privacy, One Level at a Time"
 slug: "privacy-levels"
 publishedAt: 2026-10-03
-description: "A step-by-step path from basic digital hygiene to a hardened setup, and how to know when to stop."
+description: "Most privacy advice starts with the extreme stuff. This is the ladder I wish I had seen first, and how to know which level to stop at."
 tags: ["privacy", "cybersecurity"]
 ---
 
-Most privacy guides make the same mistake: they start with the most extreme tools. Suddenly you're reading about live operating systems, hardened phones and onion services, when your biggest problem is that you use the same password on twelve websites.
+I've read more privacy guides than I can count, and most of them make the same mistake: they start with the most extreme tools. Suddenly you're reading about live operating systems, hardened phones and onion services, when your biggest problem is that you've been using the same password on twelve websites for years.
 
-Privacy works better as a ladder. Each level adds protection, and each one costs a little more time and convenience. Climb only as high as your situation requires.
+I know that feeling. When I first got interested in security, I wanted the impressive setup immediately. It took me a while to understand that privacy works better as a ladder. Each level adds protection, and each one costs a little more time and convenience. Climb only as high as your situation actually requires.
 
 ## Level 0: Know what you're defending
 
-Every serious guide, from [EFF's Security Self-Defense](https://ssd.eff.org/module/your-security-plan) to [Privacy Guides](https://www.privacyguides.org/en/basics/threat-modeling/), starts with a threat model. It comes down to a few questions:
+Every serious guide, from [EFF's Security Self-Defense](https://ssd.eff.org/module/your-security-plan) to [Privacy Guides](https://www.privacyguides.org/en/basics/threat-modeling/), starts with a threat model. I used to skip this part because it felt like homework, but it is the only step that tells you when to stop. It comes down to a few questions:
 
 1. What do I want to protect?
 2. Who do I want to protect it from?
@@ -22,11 +22,11 @@ Every serious guide, from [EFF's Security Self-Defense](https://ssd.eff.org/modu
 
 "Everyone" is not an answer to question 2. Advertisers tracking you across sites, someone stealing your accounts, a stalker or an abusive ex, your employer, a hostile government: each of these needs a different response. The more secure something is, the more inconvenient it usually is, so the goal is the right amount of protection, not the maximum.
 
-Write your answers down. You will come back to them.
+Write your answers down. I think that part matters more than people expect, because you will come back to them whenever your life changes.
 
 ## Level 1: Basic hygiene
 
-This level stops the vast majority of real-world attacks, and it is boring on purpose.
+This is the level I would recommend to absolutely everyone. It stops the vast majority of real-world attacks, and it is boring on purpose.
 
 - **Use a password manager** and a unique, random password for every account. Reusing passwords is the single most common way accounts get taken over.
 - **Turn on two-factor authentication**, preferably with an authenticator app or a hardware key instead of SMS.
@@ -35,15 +35,15 @@ This level stops the vast majority of real-world attacks, and it is boring on pu
 - **Keep backups**, at least one of them offline. A lost laptop should be an annoyance, not a disaster.
 - **Learn to spot phishing.** Most "hacks" are a person being tricked into typing a password into the wrong page.
 
-If you stop here, you are already ahead of most people.
+If you stop here, you are already ahead of most people. That is not a low bar; it is simply the truth.
 
 ## Level 2: Stop being tracked everywhere
 
-Now we reduce the data that leaks out of your normal daily life.
+Once the basics are in place, this is where I started noticing how much of my daily life was being quietly logged.
 
 - **Use a browser with real tracker blocking** and add uBlock Origin. Firefox, Brave, or a hardened Firefox configuration all work.
 - **Switch to a less invasive search engine** if you want to stop feeding one company your entire search history.
-- **Use email aliases** So that a leaked address from one site does not link to all your other accounts.
+- **Use email aliases** so that a leaked address from one site does not link to all your other accounts.
 - **Move your messages to an end-to-end encrypted messenger** such as Signal. Encryption only helps if the people you talk to use it too, so bring your friends along.
 - **Audit app permissions.** A flashlight app does not need your contacts and location.
 - **Delete old accounts** you no longer use, and consider opting out of data brokers.
@@ -60,19 +60,13 @@ Your IP address tells every site roughly where you are and who your provider is.
     - **Exit:** knows _where you're going_, but not _who you are_.
     - **Website:** sees the Exit Relay rather than your real IP.
 
-- **Tor VPN** is the Tor Project's own Android app, and it is still in beta. Instead of just the browser, it sends the traffic of the apps you choose through the Tor network, and it gives each app its own Tor circuit so that activity in one app can't be linked to another. It is free and open source, built on Arti (Tor's new Rust implementation), and available from Google Play, F-Droid, or the Tor Project's download page. Treat it as a useful tool with clear limits:
-    - It is **not Tor Browser**. It lacks the browser's anti-fingerprinting protections, so it is no replacement for it when anonymity matters.
-    - The Tor Project says it is **not suitable for high-risk users or sensitive use cases** during the beta, and that Android itself can still expose device identifiers.
-    - It is slower than a commercial VPN, and UDP-based services such as voice calls don't work properly.
-    - Its best use today is hiding your IP address for everyday apps and getting around censorship, not strong anonymity.
-      As of this writing (October 2026) the latest release on F-Droid is still labeled Beta, so check the current status before relying on it.
-
 - **Encrypted DNS** and always-on HTTPS close some smaller leaks.
-  The key lesson of this level is that tools protect one specific thing. A VPN protects your IP, Tor protects your network path, and neither protects you from your own behavior.
+
+The key lesson of this level is that tools protect one specific thing. A VPN protects your IP, Tor protects your network path, and neither protects you from your own behavior. A VPN is worth using for everyday network privacy, as long as you don't pretend it is doing more than it is.
 
 ## Level 4: Separate your identities
 
-This is where privacy starts to look like a discipline rather than a list of apps. The idea is compartmentalization: different parts of your life should not be linkable to each other.
+This is the level I find most interesting, and the one I am still getting better at. Privacy starts to look like a discipline rather than a list of apps. The idea is compartmentalization: different parts of your life should not be linkable to each other.
 
 - Use **separate browser profiles** (or separate browsers) for different activities.
 - Use **different usernames, emails and passwords** for different identities. A reused username is one of the easiest ways to connect two profiles.
@@ -80,11 +74,11 @@ This is where privacy starts to look like a discipline rather than a list of app
 - Consider **a separate phone number** for accounts that do not need your real one.
 - Think about **what your writing style, schedule and habits give away**. Metadata and behavior often reveal more than content.
 
-Many privacy failures are not broken cryptography. They are a person who logged into the wrong account once, or reused a name from five years ago.
+Many privacy failures are not broken cryptography. They are a person who logged into the wrong account once, or reused a name from five years ago. It only takes one moment of carelessness to remind you why the boring habits matter.
 
 ## Level 5: The hardened setup
 
-Most people never need this level. It is for journalists, activists, people in genuinely dangerous situations, and anyone who wants to learn how it works.
+I'll be honest: most people never need this level. It is for journalists, activists, people in genuinely dangerous situations, and anyone who wants to learn how it works.
 
 - **Tails**, a live operating system that routes everything through Tor and leaves no trace on the computer when you shut it down.
 - **Whonix** or **Qubes OS**, which isolate activities into separate virtual machines.
@@ -97,20 +91,20 @@ Each of these adds real maintenance and real ways to make mistakes. A hardened s
 
 ## What actually goes wrong
 
-If you read enough operational security material, one pattern repeats: people are rarely beaten by the technology. They are beaten by themselves.
+The more I read about operational security, the more one pattern repeats: people are rarely beaten by the technology. They are beaten by themselves.
 
 - **Mixing identities.** One slip, one reused handle, one login from the wrong place.
 - **Skipping the boring steps** while obsessing over the exciting tools.
 - **Over-trusting a single tool.** No product makes you invisible.
 - **Giving up** because the perfect setup looked impossible.
 
-Consistency beats cleverness. A modest setup that you follow every day is stronger than an elaborate one that you abandon after a week.
+Consistency beats cleverness. A modest setup that you follow every day is stronger than an elaborate one that you abandon after a week. That is the healthier way to look at it: a setup you can actually keep up with.
 
 ## Where should you stop?
 
 Go back to your Level 0 answers. For most people, Levels 1 and 2 remove most of the risk. Level 3 is worth adding if you care about your network privacy. Levels 4 and 5 are for specific threats, and you should be able to name the threat before you take on the cost.
 
-Start small, keep going, and review your plan from time to time as your life changes.
+Start small, keep going, and review your plan from time to time as your life changes. That is the part of privacy advice I would tell anyone starting out: you are allowed to stop at the level that fits your life.
 
 Privacy is not a crime. It is a basic part of human rights and freedom, protected by Article 12 of the [Universal Declaration of Human Rights](https://www.un.org/en/about-us/universal-declaration-of-human-rights). As Eric Hughes argued in A Cypherpunk's Manifesto, we can't wait for governments or companies to protect it for us, so we build the tools, share them, and use them.
 

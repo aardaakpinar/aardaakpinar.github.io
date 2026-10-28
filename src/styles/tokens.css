@@ -1,0 +1,62 @@
+/* Design tokens: colour, type, spacing, motion. */
+:root {
+	/* Color */
+	--color-background: #0b0d0c;
+	--color-surface: rgba(16, 16, 17, 0.72);
+	--color-foreground: #e9e7df;
+	--color-muted: #8d9193;
+	--color-accent: #23b5b5;
+	--color-border: rgba(223, 233, 233, 0.16);
+	--color-white: #ffffff;
+	--color-rain: rgba(35, 181, 181, 0.5);
+	--color-snow: rgba(255, 255, 255, 0.7);
+	--ink: var(--color-foreground);
+	--muted: var(--color-muted);
+	--acid: var(--color-accent);
+	--line: var(--color-border);
+	--panel: var(--color-surface);
+
+	/* Typography */
+	--font-display: "Space Grotesk", sans-serif;
+	--font-mono: "DM Mono", monospace;
+	--weight-regular: 400;
+	--weight-medium: 500;
+	--weight-bold: 700;
+	--font-size-xs: 10px;
+	--font-size-sm: 12px;
+	--font-size-md: 13px;
+	--font-size-base: 16px;
+	--font-size-lg: 20px;
+	--font-size-xl: 24px;
+	--font-size-display: clamp(48px, 6vw, 82px);
+	--tracking-tight: -0.07em;
+	--tracking-label: 0.08em;
+
+	/* Layout */
+	--content-width: 1160px;
+	--content-gutter: 48px;
+	--radius-xs: 4px;
+	--radius-sm: 8px;
+	--radius-md: 12px;
+	--radius-lg: 16px;
+	--radius-pill: 999px;
+	--radius-circle: 50%;
+	--space-1: 4px;
+	--space-2: 8px;
+	--space-3: 12px;
+	--space-4: 16px;
+	--space-5: 24px;
+	--space-6: 32px;
+	--space-7: 48px;
+	--space-8: 64px;
+	--footer-h: 68px;
+	--section-pad: clamp(72px, 12dvh, 120px);
+
+	/* Motion and stacking */
+	--duration-fast: 0.2s;
+	--duration-base: 0.3s;
+	--ease-standard: ease;
+	--z-background: -2;
+	--z-effect: -1;
+	--z-content: 2;
+}

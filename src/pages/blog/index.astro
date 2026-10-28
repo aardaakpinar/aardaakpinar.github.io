@@ -1,52 +1,80 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import BlogTopbar from "../../components/blog/BlogTopbar.astro";
-import BlogList from "../../components/blog/BlogList.astro";
-import Heading from "../../components/ui/Heading.astro";
-import Footer from "../../components/ui/Footer.astro";
-import { countTags, getPosts, tagHref } from "../../lib/blog";
-import { padCount } from "../../lib/format";
-import { getSite } from "../../lib/content";
+import BaseLayout from "@/components/BaseLayout.astro";
+import BlogList from "@/components/BlogList.astro";
+import Button from "@/components/Button.astro";
+import Heading from "@/components/Heading.astro";
+import Footer from "@/components/Footer.astro";
+import { getCopy, getSite } from "@/lib/content";
+import { countTags, getPosts, tagHref } from "@/lib/posts";
+import { padCount } from "@/lib/date";
+import "@/styles/blog-index.css";
 
-const { name, blog } = await getSite();
-const posts = await getPosts();
+const [copy, site, posts] = await Promise.all([getCopy(), getSite(), getPosts()]);
+const { blog } = copy;
 const allTags = countTags(posts);
 ---
 
-<BaseLayout title={`${name} | ${blog.title}`} description={blog.description}>
+<BaseLayout title={`${site.name} | ${blog.title}`} description={blog.description}>
 	<main class="site-shell">
 		<section class="blog-index-section" aria-labelledby="blog-index-title">
-			<BlogTopbar crumb="/blog" actionLabel="Home" actionHref="/" />
-
 			<div class="blog-index-head">
 				<Heading as="h1" id="blog-index-title" {...blog.heading} />
+				<Button href="/">{blog.home}</Button>
 			</div>
 
 			{
 				allTags.length > 0 && (
-					<nav class="blog-filters blog-tags" aria-label="Filter by tag">
-						<a class="blog-tag is-active" href="/blog/" data-filter="">
-							All<span>{padCount(posts.length)}</span>
-						</a>
-						{allTags.map(([tag, count]) => (
-							<a class="blog-tag" href={tagHref(tag)} data-filter={tag}>
-								{tag}
-								<span>{padCount(count)}</span>
-							</a>
-						))}
-					</nav>
+					<div class="blog-filters" data-blog-filters>
+						<button
+							type="button"
+							class="blog-filter-toggle"
+							data-filter-toggle
+							aria-expanded="false"
+							aria-controls="blog-filter-panel"
+						>
+							<span class="blog-filter-toggle-label">{blog.filterLabel}</span>
+							<span class="blog-filter-toggle-value">
+								<span data-filter-value>{blog.allTags}</span>
+								<span class="blog-filter-toggle-icon" aria-hidden="true" />
+							</span>
+						</button>
+						<div class="blog-filter-panel" id="blog-filter-panel" data-filter-panel inert>
+							<div class="blog-filter-panel-inner">
+								<nav class="blog-tags" aria-label={blog.filterLabel}>
+									<a
+										class:list={["chip", "blog-tag", "is-active"]}
+										href="/blog/"
+										data-filter=""
+										aria-current="true"
+									>
+										{blog.allTags}<span>{padCount(posts.length)}</span>
+									</a>
+									{allTags.map(([tag, count]) => (
+										<a
+											class="chip blog-tag"
+											href={tagHref(tag)}
+											data-filter={tag}
+										>
+											{tag}
+											<span>{padCount(count)}</span>
+										</a>
+									))}
+								</nav>
+							</div>
+						</div>
+					</div>
 				)
 			}
 
 			<BlogList posts={posts} as="h2" />
 
-			<p class="blog-filter-empty" hidden>{blog.filterEmptyText}</p>
+			<p class="blog-filter-empty" hidden>{blog.filterEmpty}</p>
 		</section>
 
 		<Footer />
 	</main>
 
 	<script>
-		import "../../scripts/blog-filter";
+		import "@/scripts/blog-filter";
 	</script>
 </BaseLayout>

@@ -1,0 +1,60 @@
+.stack-heading {
+	margin: 55px 0 20px;
+}
+.stack-heading h3 {
+	margin: 0;
+	font-size: 20px;
+	font-weight: var(--weight-medium);
+}
+.stack-heading em {
+	color: var(--acid);
+	font-style: normal;
+}
+.stack-marquee {
+	position: relative;
+	width: 100vw;
+	margin-left: calc(50% - 50vw);
+	overflow: hidden;
+	border-top: 1px solid var(--line);
+	border-bottom: 1px solid var(--line);
+	mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+.stack-track {
+	display: flex;
+	width: max-content;
+	animation: stack-scroll 32s linear infinite;
+}
+.stack-marquee:hover .stack-track {
+	animation-play-state: paused;
+}
+.stack-item {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	min-width: 190px;
+	padding: 19px 28px 19px 0;
+	color: var(--ink);
+	font-size: 15px;
+	white-space: nowrap;
+}
+.stack-item img {
+	width: 32px;
+	height: 32px;
+	object-fit: contain;
+	border-radius: var(--radius-sm);
+}
+@keyframes stack-scroll {
+	to {
+		transform: translateX(-50%);
+	}
+}
+@media (max-width: 700px) {
+	.stack-heading {
+		margin-top: 42px;
+	}
+	.stack-item {
+		min-width: 165px;
+		font-size: 14px;
+		text-align: left;
+	}
+}

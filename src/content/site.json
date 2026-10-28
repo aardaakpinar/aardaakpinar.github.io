@@ -1,45 +1,12 @@
 {
-	"main": {
-		"name": "Arda Akpınar",
-		"url": "https://aardaakpinar.github.io",
-		"description": "Arda Akpınar's open-source tools, experimental projects, and digital workspace.",
-		"image": "/images/logos/nar.png",
-		"footer": { "copyright": "© 2026 Arda Akpınar", "tagline": "Made with ❤️." },
-		"hero": {
-			"heading": { "lead": "I'm", "accent": "Arda Akpınar" },
-			"intro": "I am a software developer and cyber security student. I work on open-source software and ideas that keep me curious.",
-			"image": { "src": "/images/logos/nar.png", "alt": "Arda Akpınar" },
-			"nav": [
-				{ "label": "About", "href": "#about" },
-				{ "label": "Projects", "href": "#work" },
-				{ "label": "Contact", "href": "#contact" }
-			]
-		},
-		"about": {
-			"heading": { "lead": "Curiosity became", "accent": "creating." },
-			"experienceTitle": "Experience and education",
-			"stackHeading": { "lead": "Things I Work", "accent": "With." }
-		},
-		"blog": {
-			"heading": { "lead": "Things thought", "accent": "about." },
-			"title": "Blog",
-			"description": "Arda Akpınar's writing on software, cyber security, and more.",
-			"allPostsLabel": "All posts",
-			"emptyText": "No posts yet, check back soon.",
-			"filterEmptyText": "No posts with this tag yet."
-		},
-		"projects": {
-			"heading": { "lead": "A few selected", "accent": "projects." }
-		},
-		"contact": {
-			"heading": { "lead": "Have an idea?", "accent": "Let's talk." },
-			"email": "aardaakpinar@proton.me",
-			"buttonLabel": "Email me"
-		},
-		"notFound": {
-			"title": "Page not found",
-			"heading": { "lead": "This page", "accent": "is not here." },
-			"buttonLabel": "Return home"
-		}
+	"name": "Arda Akpınar",
+	"lang": "en",
+	"description": "Arda Akpınar's open-source tools, experimental projects, and digital workspace.",
+	"email": "aardaakpinar@proton.me",
+	"favicon": "/favicon.png",
+	"ogImage": "/og-image.png",
+	"footer": {
+		"copyright": "© 2026 Arda Akpınar",
+		"tagline": "Made with ❤️."
 	}
 }

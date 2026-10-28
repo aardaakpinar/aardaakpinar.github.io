@@ -1,0 +1,22 @@
+.not-found {
+	min-height: 100dvh;
+	display: grid;
+	place-content: center;
+	justify-items: center;
+	padding: 48px 0;
+	text-align: center;
+}
+.not-found .eyebrow {
+	margin-bottom: 26px;
+}
+.not-found h1 {
+	margin: 0 0 34px;
+	font-size: clamp(48px, 7vw, 82px);
+	font-weight: var(--weight-medium);
+	letter-spacing: -0.07em;
+	line-height: 0.91;
+}
+.not-found h1 em {
+	color: var(--acid);
+	font-style: normal;
+}

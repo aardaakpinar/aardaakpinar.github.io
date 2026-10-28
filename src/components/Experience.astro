@@ -1,0 +1,59 @@
+---
+import { getCopy, getEducation, getExperience } from "@/lib/content";
+import "@/styles/experience.css";
+
+const [copy, experience, education] = await Promise.all([getCopy(), getExperience(), getEducation()]);
+
+const groups = [
+	{ key: "experience", heading: copy.about.experienceHeading, items: experience },
+	{ key: "education", heading: copy.about.educationHeading, items: education },
+];
+---
+
+<div class="about-timeline">
+	{
+		groups.map((group) => (
+			<div
+				class="about-carousel"
+				data-carousel
+				role="group"
+				aria-roledescription="carousel"
+				aria-label={group.heading}
+			>
+				<div class="about-carousel-head">
+					<h3 class="about-subheading">{group.heading}</h3>
+					<div class="about-carousel-nav">
+						<button
+							type="button"
+							class="about-carousel-arrow"
+							data-carousel-prev
+							aria-label={`${copy.about.previous}: ${group.heading}`}
+						>
+							<span aria-hidden="true">←</span>
+						</button>
+						<button
+							type="button"
+							class="about-carousel-arrow"
+							data-carousel-next
+							aria-label={`${copy.about.next}: ${group.heading}`}
+						>
+							<span aria-hidden="true">→</span>
+						</button>
+					</div>
+				</div>
+
+				<div class="about-carousel-viewport">
+					<div class="about-carousel-track" data-carousel-track>
+						{group.items.map((item) => (
+							<article class="about-exp-item" data-carousel-slide>
+								<span class="about-exp-period">{item.period}</span>
+								<h4 class="about-exp-title">{item.title}</h4>
+								<p class="about-exp-detail">{item.detail}</p>
+							</article>
+						))}
+					</div>
+				</div>
+			</div>
+		))
+	}
+</div>

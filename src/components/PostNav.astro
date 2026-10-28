@@ -1,0 +1,36 @@
+---
+import { getCopy } from "@/lib/content";
+import { postHref } from "@/lib/posts";
+
+interface Neighbor {
+	slug: string;
+	title: string;
+}
+
+interface Props {
+	newer: Neighbor | null;
+	older: Neighbor | null;
+}
+
+const copy = await getCopy();
+const { newer, older } = Astro.props;
+---
+
+{
+	(newer || older) && (
+		<nav class="blog-post-nav" aria-label={copy.blog.moreAria}>
+			{newer && (
+				<a class="post-link" href={postHref(newer.slug)}>
+					<small>{copy.blog.newer}</small>
+					<span>{newer.title}</span>
+				</a>
+			)}
+			{older && (
+				<a class="post-link next" href={postHref(older.slug)}>
+					<small>{copy.blog.older}</small>
+					<span>{older.title}</span>
+				</a>
+			)}
+		</nav>
+	)
+}

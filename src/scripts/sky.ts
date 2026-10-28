@@ -82,8 +82,8 @@ function createFireworks(sky: Element) {
 }
 
 export function initSky() {
-	const sky = document.querySelector(".hero .sky");
-	const rainContainer = document.querySelector(".hero .rain-container");
+	const sky = document.querySelector(".sky");
+	const rainContainer = document.querySelector(".rain-container");
 	if (!sky || !rainContainer) return;
 	if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 

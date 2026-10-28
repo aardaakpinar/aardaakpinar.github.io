@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import { getCopy } from "@/lib/content";
+import { formatShortDate } from "@/lib/date";
+import "@/styles/chip.css";
+
+interface Props {
+	title: string;
+	logo?: ImageMetadata;
+	description: string;
+	started?: Date;
+	source: string;
+	website?: string;
+}
+
+const copy = await getCopy();
+const { title, logo, description, started, source, website } = Astro.props;
+---
+
+<article class="project-card">
+	<div class="project-meta">
+		{logo && <Image class="project-logo" src={logo} alt="" width={72} height={72} loading="lazy" decoding="async" />}
+		<h3>{title}</h3>
+		{started && <time datetime={started.toISOString().slice(0, 10)}>{formatShortDate(started)}</time>}
+	</div>
+	<p>{description}</p>
+	<div class="project-links">
+		<a class="chip" href={source} target="_blank" rel="noopener noreferrer">{copy.projects.source}</a>
+		{website && <a class="chip" href={website} target="_blank" rel="noopener noreferrer">{copy.projects.website}</a>}
+	</div>
+</article>

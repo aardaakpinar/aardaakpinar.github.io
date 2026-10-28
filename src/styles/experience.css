@@ -1,0 +1,116 @@
+/* Experience and Education: one-card-tall carousels, so extra entries only add slides. */
+.about-timeline {
+	display: flex;
+	flex-direction: column;
+	gap: 28px;
+	min-width: 0;
+}
+.about-carousel {
+	min-width: 0;
+}
+.about-carousel-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	margin-bottom: 10px;
+}
+.about-subheading {
+	margin: 0;
+	color: var(--muted);
+	font:
+		12px "DM Mono",
+		monospace;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+.about-carousel-nav {
+	display: flex;
+	gap: 6px;
+}
+.about-carousel-arrow {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	border: 1px solid var(--line);
+	border-radius: var(--radius-pill);
+	background: transparent;
+	color: var(--muted);
+	font:
+		14px "DM Mono",
+		monospace;
+	line-height: 1;
+	cursor: pointer;
+	transition:
+		border-color 0.2s,
+		color 0.2s;
+}
+.about-carousel-arrow:hover:not(:disabled) {
+	border-color: var(--acid);
+	color: var(--acid);
+}
+.about-carousel-arrow:focus-visible {
+	outline: 2px solid var(--acid);
+	outline-offset: 2px;
+}
+.about-carousel-arrow:disabled {
+	opacity: 0.35;
+	cursor: default;
+}
+.about-carousel-viewport {
+	overflow: hidden;
+	border-top: 1px solid var(--line);
+}
+.about-carousel-track {
+	display: flex;
+	align-items: stretch;
+	transition: transform 0.45s var(--ease-standard);
+	will-change: transform;
+}
+.about-exp-item {
+	display: flex;
+	flex: 0 0 100%;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	min-width: 0;
+	padding: 20px 0;
+	border-bottom: 1px solid var(--line);
+}
+.about-exp-period {
+	margin-bottom: 10px;
+	color: var(--acid);
+	font:
+		var(--font-size-xs) "DM Mono",
+		monospace;
+	letter-spacing: 0.04em;
+	white-space: nowrap;
+}
+.about-exp-title {
+	margin: 0 0 6px;
+	font-size: 18px;
+	font-weight: var(--weight-medium);
+	letter-spacing: -0.02em;
+	color: var(--ink);
+}
+.about-exp-detail {
+	margin: 0;
+	color: var(--muted);
+	font-size: 13px;
+	line-height: 1.55;
+	text-align: justify;
+	text-justify: inter-word;
+}
+@media (max-width: 700px) {
+	.about-timeline {
+		gap: 24px;
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.about-carousel-track {
+		transition: none;
+	}
+}

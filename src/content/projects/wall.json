@@ -1,6 +1,6 @@
 {
 	"title": "Wall",
-	"logo": "/images/logos/wall.png",
+	"logo": "../../assets/wall.png",
 	"description": "A YAML-powered static portfolio engine with Bento Grid layouts, dynamic theming, and zero-build deployment.",
 	"started": "2022-08-01",
 	"source": "https://github.com/aardaakpinar/wall",

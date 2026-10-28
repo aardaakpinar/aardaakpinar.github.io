@@ -10,18 +10,24 @@ export function initProjectScroller() {
 	if (!section || !sticky || !viewport || !grid) return;
 
 	let frame: number | undefined;
+	let userMoved = false;
+	const noteUser = () => {
+		userMoved = true;
+	};
+	window.addEventListener("wheel", noteUser, { passive: true, once: true });
+	window.addEventListener("touchmove", noteUser, { passive: true, once: true });
+	window.addEventListener("keydown", noteUser, { once: true });
 
 	const travelDistance = () => {
 		const style = getComputedStyle(viewport);
 		const sidePadding = parseFloat(style.paddingLeft) + parseFloat(style.paddingRight);
-		return Math.max(0, grid.scrollWidth - viewport.clientWidth + sidePadding + 10);
+		return Math.max(0, grid.scrollWidth - viewport.clientWidth + sidePadding);
 	};
 
 	const move = () => {
 		frame = undefined;
 		const scrollDistance = section.offsetHeight - sticky.clientHeight;
-		const pinTop = parseFloat(getComputedStyle(sticky).top) || 0;
-		const progress = Math.min(1, Math.max(0, (pinTop - section.getBoundingClientRect().top) / scrollDistance));
+		const progress = scrollDistance > 0 ? Math.min(1, Math.max(0, -section.getBoundingClientRect().top / scrollDistance)) : 0;
 		grid.style.transform = `translateX(${-travelDistance() * progress}px)`;
 	};
 
@@ -30,14 +36,33 @@ export function initProjectScroller() {
 	};
 
 	const resize = () => {
-		sticky.style.setProperty("--project-top", `${Math.max(0, (window.innerHeight - sticky.offsetHeight) / 2)}px`);
 		section.style.height = `${sticky.clientHeight + Math.max(0, travelDistance() * HOLD_MULTIPLIER)}px`;
 		requestMove();
 	};
 
+	/** Layout shifts (fonts, images) can leave a fragment jump short of the section; re-align it. */
+	const alignToHash = () => {
+		if (userMoved || window.location.hash !== `#${section.id}`) return;
+		const target = section.offsetTop;
+		if (Math.abs(window.scrollY - target) > window.innerHeight * 1.5) return;
+		const { scrollBehavior } = document.documentElement.style;
+		document.documentElement.style.scrollBehavior = "auto";
+		window.scrollTo(0, target);
+		document.documentElement.style.scrollBehavior = scrollBehavior;
+		requestMove();
+	};
+
+	const settle = () => {
+		resize();
+		alignToHash();
+	};
+
 	window.addEventListener("scroll", requestMove, { passive: true });
 	window.addEventListener("resize", resize);
+	window.addEventListener("load", settle);
+	void document.fonts.ready.then(settle);
 	resize();
+	alignToHash();
 }
 
 initProjectScroller();
