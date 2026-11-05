@@ -1,0 +1,39 @@
+/* Section primitives: every page section shares the same vertical rhythm. */
+.section {
+	padding-block: var(--section-pad);
+	min-width: 0;
+}
+.section--page {
+	min-height: 60vh;
+	padding-block: 120px 90px;
+}
+.section--flush {
+	padding-block: 0;
+}
+.section-heading {
+	display: flex;
+	align-items: end;
+	justify-content: space-between;
+	gap: 30px;
+	padding-bottom: var(--space-5);
+}
+.section-heading-copy {
+	min-width: 0;
+}
+.section-heading-action {
+	display: flex;
+	flex: 0 0 auto;
+	align-items: center;
+}
+@media (max-width: 700px) {
+	.section-heading {
+		flex-direction: column;
+		align-items: stretch;
+	}
+	.section-heading-action {
+		align-self: stretch;
+	}
+	.section--page {
+		padding-top: 100px;
+	}
+}

@@ -1,0 +1,31 @@
+---
+/** Shared section heading: optional eyebrow, two-part display heading and an optional action slot. */
+import Heading from "./Heading.astro";
+
+interface Props {
+	heading?: { lead: string; accent: string };
+	eyebrow?: string;
+	as?: "h1" | "h2" | "h3";
+	id?: string;
+	class?: string;
+}
+
+const { heading, eyebrow, as = "h2", id, class: className } = Astro.props;
+const classes = ["section-heading", className].filter(Boolean).join(" ");
+---
+
+{
+	(heading || eyebrow) && (
+		<div class={classes}>
+			<div class="section-heading-copy">
+				{eyebrow && <p class="eyebrow">{eyebrow}</p>}
+				{heading && <Heading id={id} lead={heading.lead} accent={heading.accent} as={as} />}
+			</div>
+			{Astro.slots.has("default") && (
+				<div class="section-heading-action">
+					<slot />
+				</div>
+			)}
+		</div>
+	)
+}

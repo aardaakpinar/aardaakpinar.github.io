@@ -1,30 +1,104 @@
+/* Button primitive. Class-only usage works too: <a class="button" href="…">. */
 .button {
+	--button-color: var(--acid);
+	--button-border: var(--acid);
+	--button-background: transparent;
+	--button-hover-color: var(--color-background);
+	--button-hover-background: var(--acid);
+	--button-padding: 14px 24px;
+	--button-font-size: var(--font-size-md);
+
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
+	gap: var(--space-2);
 	flex: 0 0 auto;
-	padding: 14px 24px;
-	border: 1px solid var(--acid);
+	padding: var(--button-padding);
+	border: 1px solid var(--button-border);
 	border-radius: var(--radius-pill);
-	color: var(--acid);
-	font:
-		13px "DM Mono",
-		monospace;
+	background: var(--button-background);
+	color: var(--button-color);
+	font-family: var(--font-mono);
+	font-size: var(--button-font-size);
 	letter-spacing: 0.04em;
 	text-transform: uppercase;
 	text-decoration: none;
 	white-space: nowrap;
+	cursor: pointer;
 	transition:
-		background 0.2s,
-		color 0.2s;
+		background var(--duration-fast) var(--ease-standard),
+		color var(--duration-fast) var(--ease-standard),
+		border-color var(--duration-fast) var(--ease-standard),
+		opacity var(--duration-fast) var(--ease-standard);
 }
 .button:hover {
-	background: var(--color-accent);
-	color: var(--color-background);
+	background: var(--button-hover-background);
+	color: var(--button-hover-color);
 }
+.button:disabled,
+.button[aria-disabled="true"] {
+	opacity: 0.35;
+	cursor: default;
+	pointer-events: none;
+}
+
+/* Variants */
+.button--solid {
+	--button-color: var(--color-background);
+	--button-border: var(--acid);
+	--button-background: var(--acid);
+	--button-hover-color: var(--acid);
+	--button-hover-background: transparent;
+}
+.button--ghost {
+	--button-color: var(--muted);
+	--button-border: transparent;
+	--button-background: transparent;
+	--button-hover-color: var(--acid);
+	--button-hover-background: transparent;
+}
+
+/* Sizes */
+.button--sm {
+	--button-padding: 11px 18px;
+	--button-font-size: var(--font-size-sm);
+}
+.button--lg {
+	--button-padding: 16px 30px;
+	--button-font-size: var(--font-size-base);
+}
+
+/* Square icon button (carousel arrows, back-to-top). */
+.button--icon {
+	--button-color: var(--muted);
+	--button-border: var(--line);
+	--button-background: transparent;
+	--button-hover-color: var(--acid);
+	--button-hover-background: transparent;
+
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	font-size: 14px;
+	line-height: 1;
+}
+.button--icon:hover:not(:disabled) {
+	--button-border: var(--acid);
+}
+.button--icon:focus-visible {
+	outline-offset: 2px;
+}
+.button--icon.button--lg {
+	width: 44px;
+	height: 44px;
+	border-width: 2px;
+	font-size: var(--font-size-xl);
+}
+
 @media (max-width: 700px) {
-	.button {
+	.button:not(.button--icon) {
+		width: 100%;
 		padding: 11px 18px;
-		font-size: 12px;
+		font-size: var(--font-size-sm);
 	}
 }

@@ -1,0 +1,67 @@
+---
+/**
+ * Section shell: shared spacing, optional heading and an action slot beside the heading.
+ * Use `padding="flush"` when the section owns its height/layout (e.g. the pinned projects rail).
+ */
+import Heading from "./Heading.astro";
+
+interface Props {
+	id?: string;
+	heading?: { lead: string; accent: string };
+	eyebrow?: string;
+	labelledby?: string;
+	as?: "h1" | "h2" | "h3";
+	padding?: "default" | "page" | "flush";
+	class?: string;
+	label?: string;
+	[key: string]: unknown;
+}
+
+const {
+	id,
+	heading,
+	eyebrow,
+	labelledby,
+	as = "h2",
+	padding = "default",
+	class: className,
+	label,
+	...rest
+} = Astro.props;
+
+const headingId = labelledby ?? (heading && id ? `${id}-title` : undefined);
+const classes = [
+	"section",
+	padding === "page" && "section--page",
+	padding === "flush" && "section--flush",
+	className,
+]
+	.filter(Boolean)
+	.join(" ");
+const hasHeading = Boolean(heading || eyebrow);
+---
+
+<section
+	id={id}
+	class={classes}
+	aria-labelledby={headingId}
+	aria-label={!headingId ? label : undefined}
+	{...rest}
+>
+	{
+		hasHeading && (
+			<div class="section-heading">
+				<div class="section-heading-copy">
+					{eyebrow && <p class="eyebrow">{eyebrow}</p>}
+					{heading && <Heading id={headingId} lead={heading.lead} accent={heading.accent} as={as} />}
+				</div>
+				{Astro.slots.has("action") && (
+					<div class="section-heading-action">
+						<slot name="action" />
+					</div>
+				)}
+			</div>
+		)
+	}
+	<slot />
+</section>

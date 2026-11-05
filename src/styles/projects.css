@@ -57,9 +57,7 @@
 }
 .project-meta time {
 	color: var(--muted);
-	font:
-		var(--font-size-xs) "DM Mono",
-		monospace;
+	font: var(--text-meta);
 	white-space: nowrap;
 }
 .project-card > p {
@@ -68,7 +66,7 @@
 	margin: 16px 0 24px;
 	color: var(--muted);
 	font-size: 15px;
-	line-height: 1.65;
+	line-height: var(--leading-body);
 	text-align: justify;
 	text-justify: inter-word;
 }

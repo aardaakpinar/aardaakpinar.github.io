@@ -1,0 +1,14 @@
+---
+/** Small pill link used for tags, filters and project links. */
+interface Props {
+	href: string;
+	active?: boolean;
+	class?: string;
+	[key: string]: unknown;
+}
+
+const { href, active = false, class: className, ...rest } = Astro.props;
+const classes = ["chip", active && "is-active", className].filter(Boolean).join(" ");
+---
+
+<a class={classes} href={href} aria-current={active ? "true" : undefined} {...rest}><slot /></a>

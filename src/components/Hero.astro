@@ -17,8 +17,8 @@ const sectionNav = Object.values(copy.nav).map(({ id, label }) => ({ label, href
 		<Heading as="h1" id="hero-title" {...hero.heading} />
 		<p class="intro">{hero.intro}</p>
 		<nav class="hero-nav" aria-label={hero.navLabel}>
-			{sectionNav.map((item) => <a class="text-link" href={item.href}>{item.label}</a>)}
-			<a class="text-link" href="/blog/">{copy.blog.title}</a>
+			{sectionNav.map((item) => <a class="link" href={item.href}>{item.label}</a>)}
+			<a class="link" href="/blog/">{copy.blog.title}</a>
 		</nav>
 	</div>
 	<div class="hero-mark" aria-label={hero.avatarAlt}>

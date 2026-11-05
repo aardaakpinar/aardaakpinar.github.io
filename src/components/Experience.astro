@@ -1,5 +1,6 @@
 ---
 import { getCopy, getEducation, getExperience } from "@/lib/content";
+import Button from "@/components/Button.astro";
 import "@/styles/experience.css";
 
 const [copy, experience, education] = await Promise.all([getCopy(), getExperience(), getEducation()]);
@@ -23,22 +24,20 @@ const groups = [
 				<div class="about-carousel-head">
 					<h3 class="about-subheading">{group.heading}</h3>
 					<div class="about-carousel-nav">
-						<button
-							type="button"
-							class="about-carousel-arrow"
+						<Button
+							variant="icon"
 							data-carousel-prev
 							aria-label={`${copy.about.previous}: ${group.heading}`}
 						>
 							<span aria-hidden="true">←</span>
-						</button>
-						<button
-							type="button"
-							class="about-carousel-arrow"
+						</Button>
+						<Button
+							variant="icon"
 							data-carousel-next
 							aria-label={`${copy.about.next}: ${group.heading}`}
 						>
 							<span aria-hidden="true">→</span>
-						</button>
+						</Button>
 					</div>
 				</div>
 

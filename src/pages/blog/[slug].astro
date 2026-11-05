@@ -1,7 +1,6 @@
 ---
 import { render } from "astro:content";
 import BaseLayout from "@/components/BaseLayout.astro";
-import Button from "@/components/Button.astro";
 import PostNav from "@/components/PostNav.astro";
 import PostChrome from "@/components/PostChrome.astro";
 import TagList from "@/components/TagList.astro";
@@ -29,14 +28,13 @@ const { Content } = await render(post.entry);
 <BaseLayout title={`${site.name} | ${post.title}`} description={post.description}>
 	<PostChrome />
 	<main class="site-shell">
-		<article class="blog-post">
+		<article class="section section--page blog-post">
 			<header class="blog-post-header">
 				<div class="blog-post-head">
 					<div class="blog-post-meta">
 						<time datetime={post.publishedAt.toISOString()}>{formatLongDate(post.publishedAt)}</time>
 						<span>{minutesLabel(copy.blog.minutesRead, post.minutes)}</span>
 					</div>
-					<Button href="/blog/">{copy.blog.allPosts}</Button>
 				</div>
 				<h1>{post.title}</h1>
 				<p class="blog-post-description">{post.description}</p>

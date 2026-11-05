@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 import { getCopy } from "@/lib/content";
 import { formatShortDate } from "@/lib/date";
-import "@/styles/chip.css";
+import Chip from "@/components/Chip.astro";
 
 interface Props {
 	title: string;
@@ -26,7 +26,7 @@ const { title, logo, description, started, source, website } = Astro.props;
 	</div>
 	<p>{description}</p>
 	<div class="project-links">
-		<a class="chip" href={source} target="_blank" rel="noopener noreferrer">{copy.projects.source}</a>
-		{website && <a class="chip" href={website} target="_blank" rel="noopener noreferrer">{copy.projects.website}</a>}
+		<Chip href={source} target="_blank" rel="noopener noreferrer">{copy.projects.source}</Chip>
+		{website && <Chip href={website} target="_blank" rel="noopener noreferrer">{copy.projects.website}</Chip>}
 	</div>
 </article>

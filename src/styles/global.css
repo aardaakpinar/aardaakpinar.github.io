@@ -3,3 +3,10 @@
 @import "./base.css";
 @import "./layout.css";
 @import "./scrollbar.css";
+
+/* Design-system primitives: available on every page, so class-only usage works everywhere. */
+@import "./section.css";
+@import "./heading.css";
+@import "./button.css";
+@import "./chip.css";
+@import "./link.css";

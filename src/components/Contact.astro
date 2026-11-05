@@ -1,17 +1,14 @@
 ---
 import { getCopy, getLinks, getSite } from "@/lib/content";
 import Button from "@/components/Button.astro";
-import Heading from "@/components/Heading.astro";
+import Section from "@/components/Section.astro";
 import "@/styles/contact.css";
 
 const [copy, site, links] = await Promise.all([getCopy(), getSite(), getLinks()]);
 ---
 
-<section class="contact-section" id={copy.nav.contact.id} aria-labelledby="contact-title">
-	<div class="contact-content">
-		<Heading id="contact-title" {...copy.contact.heading} />
-		<Button href={`mailto:${site.email}`}>{copy.contact.button}</Button>
-	</div>
+<Section id={copy.nav.contact.id} heading={copy.contact.heading} class="contact-section">
+	<Button slot="action" href={`mailto:${site.email}`}>{copy.contact.button}</Button>
 	<div class="social-grid">
 		{
 			links.map((link) => (
@@ -24,4 +21,4 @@ const [copy, site, links] = await Promise.all([getCopy(), getSite(), getLinks()]
 			))
 		}
 	</div>
-</section>
+</Section>

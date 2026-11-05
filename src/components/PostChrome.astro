@@ -1,15 +1,21 @@
 ---
-/** Reading-progress bar + back-to-top button. Place once inside the post page. */
+/** Reading-progress bar + floating post actions. Place once inside the post page. */
 import { getCopy } from "@/lib/content";
+import Button from "@/components/Button.astro";
 import "@/styles/post-chrome.css";
 
 const copy = await getCopy();
 ---
 
 <div class="read-progress" id="readProgress" aria-hidden="true"></div>
-<button class="back-to-top" id="backToTop" aria-label={copy.blog.backToTop} title={copy.blog.backToTop}>
-	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 11-5-5-5 5"></path><path d="m17 18-5-5-5 5"></path></svg>
-</button>
+<div class="post-actions">
+	<Button variant="icon" size="lg" class="back-to-top" id="backToTop" aria-label={copy.blog.backToTop} title={copy.blog.backToTop}>
+		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 11-5-5-5 5"></path><path d="m17 18-5-5-5 5"></path></svg>
+	</Button>
+	<Button href="/blog/" variant="icon" size="lg" class="post-back" aria-label={copy.blog.allPosts} title={copy.blog.allPosts}>
+		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left preview-icon"><path d="m15 18-6-6 6-6"></path></svg>
+	</Button>
+</div>
 
 <script>
 	import "@/scripts/post-chrome";

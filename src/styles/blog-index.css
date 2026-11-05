@@ -1,23 +1,4 @@
-.blog-index-head {
-	display: flex;
-	align-items: end;
-	justify-content: space-between;
-	gap: 30px;
-	margin-bottom: 48px;
-}
-.blog-index-head h1 {
-	max-width: 700px;
-	margin: 0;
-	font-size: var(--font-size-display);
-	font-weight: var(--weight-medium);
-	letter-spacing: -0.07em;
-	line-height: 0.91;
-}
-.blog-index-head h1 em {
-	color: var(--acid);
-	font-style: normal;
-}
-/* Collapsible tag filter: custom button and animated panel. */
+/* Collapsible tag filter: a disclosure row, not a regular action button. */
 .blog-filters {
 	border-top: 1px solid var(--line);
 }
@@ -31,16 +12,14 @@
 	background: none;
 	appearance: none;
 	color: var(--muted);
-	font:
-		var(--font-size-sm) "DM Mono",
-		monospace;
-	letter-spacing: 0.08em;
+	font: var(--text-label);
+	letter-spacing: var(--tracking-label);
 	text-transform: uppercase;
 	cursor: pointer;
-	transition: color 0.2s;
+	transition: color var(--duration-fast) var(--ease-standard);
 }
 .blog-filter-toggle-label {
-	transition: color 0.2s;
+	transition: color var(--duration-fast) var(--ease-standard);
 }
 .blog-filter-toggle:hover .blog-filter-toggle-label,
 .blog-filter-toggle:focus-visible .blog-filter-toggle-label {
@@ -56,12 +35,12 @@
 	border-radius: var(--radius-pill);
 	color: var(--acid);
 	transition:
-		border-color 0.2s,
-		background 0.2s;
+		border-color var(--duration-fast) var(--ease-standard),
+		background var(--duration-fast) var(--ease-standard);
 }
 .blog-filter-toggle:hover .blog-filter-toggle-value {
 	border-color: var(--acid);
-	background: rgba(35, 181, 181, 0.1);
+	background: var(--color-accent-soft);
 }
 .blog-filter-toggle-icon {
 	position: relative;
@@ -138,7 +117,7 @@
 	align-items: start;
 	padding: 34px 0;
 	border-bottom: 1px solid var(--line);
-	transition: border-color 0.2s;
+	transition: border-color var(--duration-fast) var(--ease-standard);
 }
 .blog-row::before {
 	content: "";
@@ -156,11 +135,9 @@
 .blog-row-meta {
 	display: flex;
 	flex-direction: column;
-	gap: 8px;
+	gap: var(--space-2);
 	padding-top: 6px;
-	font:
-		var(--font-size-sm) "DM Mono",
-		monospace;
+	font: var(--text-label);
 	text-transform: uppercase;
 }
 .blog-row-meta time {
@@ -177,13 +154,13 @@
 	font-size: clamp(22px, 2.6vw, 30px);
 	font-weight: var(--weight-medium);
 	letter-spacing: -0.03em;
-	line-height: 1.2;
+	line-height: var(--leading-tight);
 }
 .blog-row-body h2 a,
 .blog-row-body h3 a {
 	color: var(--ink);
 	text-decoration: none;
-	transition: color 0.2s;
+	transition: color var(--duration-fast) var(--ease-standard);
 }
 /* stretched link: whole row is clickable */
 .blog-row-body h2 a::after,
@@ -199,8 +176,8 @@
 .blog-row-body p {
 	margin: 0 0 18px;
 	color: var(--muted);
-	font-size: 16px;
-	line-height: 1.65;
+	font-size: var(--font-size-base);
+	line-height: var(--leading-body);
 	text-align: justify;
 	text-justify: inter-word;
 }
@@ -209,12 +186,6 @@
 	z-index: 1;
 }
 @media (max-width: 700px) {
-	.blog-index-head {
-		flex-direction: column;
-		align-items: stretch;
-		gap: 30px;
-		display: flex;
-	}
 	.blog-row {
 		grid-template-columns: minmax(0, 1fr);
 		gap: 14px 16px;

@@ -11,12 +11,18 @@
 }
 .not-found h1 {
 	margin: 0 0 34px;
-	font-size: clamp(48px, 7vw, 82px);
+	font-size: var(--font-size-display);
 	font-weight: var(--weight-medium);
-	letter-spacing: -0.07em;
+	letter-spacing: var(--tracking-tight);
 	line-height: 0.91;
 }
 .not-found h1 em {
 	color: var(--acid);
 	font-style: normal;
+}
+@media (max-width: 700px) {
+	.not-found {
+		justify-content: stretch;
+		justify-items: stretch;
+	}
 }

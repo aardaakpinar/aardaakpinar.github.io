@@ -9,43 +9,56 @@
 	transform-origin: 0 50%;
 	z-index: 100;
 }
-.back-to-top {
+/* Floating stack: back-to-top on top, back-to-all-posts underneath. */
+.post-actions {
 	position: fixed;
 	right: 24px;
 	bottom: 24px;
-	width: 44px;
-	height: 44px;
+	z-index: 100;
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	border: 2px solid var(--line);
-	border-radius: 50%;
-	color: var(--muted);
-	background: transparent;
-	font-size: 24px;
-	cursor: pointer;
+	flex-direction: column;
+	gap: 10px;
+}
+/* Frosted backdrop so the floating icons stay readable over article text. */
+.post-actions .button--icon {
+	--button-background: var(--color-glass);
+	--button-hover-background: var(--color-surface);
+	-webkit-backdrop-filter: blur(var(--backdrop-blur)) saturate(1.15);
+	backdrop-filter: blur(var(--backdrop-blur)) saturate(1.15);
+	box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Reveal animation only: the look comes from .button .button--icon. */
+.back-to-top {
 	opacity: 0;
 	visibility: hidden;
 	transform: translateY(10px);
 	transition:
-		opacity 0.2s ease,
-		transform 0.2s ease,
-		visibility 0.2s;
-	z-index: 100;
+		opacity var(--duration-fast) var(--ease-standard),
+		transform var(--duration-fast) var(--ease-standard),
+		visibility var(--duration-fast);
 }
-
 .back-to-top.is-visible {
 	opacity: 1;
 	visibility: visible;
 	transform: translateY(0);
 }
-
 .back-to-top:hover {
 	transform: translateY(-3px);
 }
-
+.post-back {
+	transition:
+		background var(--duration-fast) var(--ease-standard),
+		color var(--duration-fast) var(--ease-standard),
+		border-color var(--duration-fast) var(--ease-standard),
+		transform var(--duration-fast) var(--ease-standard);
+}
+.post-back:hover {
+	transform: translateY(-3px);
+}
 @media (prefers-reduced-motion: reduce) {
-	.back-to-top {
+	.back-to-top,
+	.post-back {
 		transition: none;
 	}
 }

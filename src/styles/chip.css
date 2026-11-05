@@ -1,22 +1,32 @@
-/* Small pill used for tags and project links. */
+/* Small pill used for tags, filters and project links. */
 .chip {
+	--chip-color: var(--muted);
+	--chip-border: var(--line);
+	--chip-background: transparent;
+
+	display: inline-flex;
+	align-items: center;
 	padding: 5px 10px;
-	color: var(--muted);
-	font:
-		var(--font-size-xs) "DM Mono",
-		monospace;
+	border: 1px solid var(--chip-border);
+	border-radius: var(--radius-pill);
+	background: var(--chip-background);
+	color: var(--chip-color);
+	font: var(--text-meta);
 	text-transform: uppercase;
 	text-decoration: none;
-	border: 1px solid var(--line);
-	border-radius: var(--radius-pill);
 	transition:
-		color 0.2s,
-		border-color 0.2s,
-		background 0.2s;
+		color var(--duration-fast) var(--ease-standard),
+		border-color var(--duration-fast) var(--ease-standard),
+		background var(--duration-fast) var(--ease-standard);
 }
 .chip:hover,
 .chip.is-active {
-	color: var(--acid);
-	border-color: var(--acid);
-	background: rgba(35, 181, 181, 0.1);
+	--chip-color: var(--acid);
+	--chip-border: var(--acid);
+	--chip-background: var(--color-accent-soft);
+}
+.chip--solid {
+	--chip-color: var(--color-background);
+	--chip-border: var(--acid);
+	--chip-background: var(--acid);
 }

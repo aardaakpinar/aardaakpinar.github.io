@@ -1,11 +1,34 @@
 ---
-import "@/styles/button.css";
+/**
+ * Themed action button. Renders an <a> when `href` is set, otherwise a <button>.
+ * Class-only usage also works: <a class="button" href="…">.
+ */
+type ButtonVariant = "outline" | "solid" | "ghost" | "icon";
+type ButtonSize = "sm" | "md" | "lg";
 
 interface Props {
-	href: string;
+	href?: string;
+	variant?: ButtonVariant;
+	size?: ButtonSize;
+	type?: "button" | "submit" | "reset";
+	class?: string;
+	[key: string]: unknown;
 }
 
-const { href } = Astro.props;
+const { href, variant = "outline", size = "md", type = "button", class: className, ...rest } = Astro.props;
+const classes = ["button", variant !== "outline" && `button--${variant}`, size !== "md" && `button--${size}`, className]
+	.filter(Boolean)
+	.join(" ");
 ---
 
-<a class="button" href={href}><slot /></a>
+{
+	href ? (
+		<a class={classes} href={href} {...rest}>
+			<slot />
+		</a>
+	) : (
+		<button class={classes} type={type} {...rest}>
+			<slot />
+		</button>
+	)
+}

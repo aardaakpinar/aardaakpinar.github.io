@@ -1,0 +1,12 @@
+/* Inline text link with the theme underline. */
+.link {
+	color: var(--ink);
+	font: var(--text-action);
+	text-decoration: none;
+	border-bottom: 1px solid var(--acid);
+	padding-bottom: 7px;
+	transition: color var(--duration-fast) var(--ease-standard);
+}
+.link:hover {
+	color: var(--acid);
+}
