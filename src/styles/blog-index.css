@@ -211,8 +211,9 @@
 @media (max-width: 700px) {
 	.blog-index-head {
 		flex-direction: column;
-		align-items: flex-start;
-		gap: 20px;
+		align-items: stretch;
+		gap: 30px;
+		display: flex;
 	}
 	.blog-row {
 		grid-template-columns: minmax(0, 1fr);
