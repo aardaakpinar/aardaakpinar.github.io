@@ -1,0 +1,36 @@
+---
+import { getCopy } from "@/lib/content";
+import Button from "@/components/Button.astro";
+import "@/styles/post-chrome.css";
+
+const copy = await getCopy();
+---
+
+<Button
+	variant="icon"
+	size="lg"
+	class="back-to-top"
+	id="backToTop"
+	aria-label={copy.blog.backToTop}
+	title={copy.blog.backToTop}
+>
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		stroke-width="2"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		aria-hidden="true"
+	>
+		<path d="m17 11-5-5-5 5"></path>
+		<path d="m17 18-5-5-5 5"></path>
+	</svg>
+</Button>
+
+<script>
+	import "@/scripts/back-to-top";
+</script>

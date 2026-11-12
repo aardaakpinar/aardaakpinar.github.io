@@ -77,6 +77,7 @@ const copy = defineCollection({
 			heading,
 			source: z.string(),
 			website: z.string(),
+			button: z.string(),
 		}),
 		contact: z.object({
 			heading,

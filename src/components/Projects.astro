@@ -2,20 +2,24 @@
 import { getCopy, getProjects } from "@/lib/content";
 import Section from "@/components/Section.astro";
 import SectionHeading from "@/components/SectionHeading.astro";
+import Button from "@/components/Button.astro";
 import ProjectCard from "./ProjectCard.astro";
 import "@/styles/projects.css";
 
 const [copy, projects] = await Promise.all([getCopy(), getProjects()]);
 ---
 
-<Section
-	id={copy.nav.work.id}
-	padding="flush"
-	labelledby="work-title"
-	class="work-section"
->
+<Section id={copy.nav.work.id} padding="flush" labelledby="work-title" class="work-section">
 	<div class="project-sticky">
-		<SectionHeading id="work-title" heading={copy.projects.heading} />
+		<SectionHeading id="work-title" heading={copy.projects.heading}>
+			<Button
+				href="https://github.com/aardaakpinar/aardaakpinar/blob/main/PROJECTS.md"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				{copy.projects.button}
+			</Button>
+		</SectionHeading>
 		<div class="project-viewport">
 			<div class="project-grid">
 				{projects.map((project) => <ProjectCard {...project} />)}

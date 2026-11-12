@@ -14,7 +14,7 @@
 	--color-accent-faint: rgba(35, 181, 181, 0.05);
 	--color-accent-line: rgba(35, 181, 181, 0.4);
 	--color-glass: rgba(11, 13, 12, 0.58);
-	--backdrop-blur: 12px;
+	--backdrop-blur: 6px;
 	--ink: var(--color-foreground);
 	--muted: var(--color-muted);
 	--acid: var(--color-accent);

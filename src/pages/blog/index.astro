@@ -2,6 +2,7 @@
 import BaseLayout from "@/components/BaseLayout.astro";
 import BlogList from "@/components/BlogList.astro";
 import Button from "@/components/Button.astro";
+import BackToTop from "@/components/BackToTop.astro";
 import Chip from "@/components/Chip.astro";
 import Footer from "@/components/Footer.astro";
 import Section from "@/components/Section.astro";
@@ -62,6 +63,10 @@ const allTags = countTags(posts);
 
 		<Footer />
 	</main>
+
+	<div class="post-actions">
+		<BackToTop />
+	</div>
 
 	<script>
 		import "@/scripts/blog-filter";

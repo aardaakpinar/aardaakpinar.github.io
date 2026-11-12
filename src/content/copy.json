@@ -22,7 +22,8 @@
 	"projects": {
 		"heading": { "lead": "A few selected", "accent": "projects." },
 		"source": "Source",
-		"website": "Website"
+		"website": "Website",
+		"button": "See all"
 	},
 	"contact": {
 		"heading": { "lead": "Have an idea?", "accent": "Let's talk." },
